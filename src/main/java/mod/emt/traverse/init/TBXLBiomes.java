@@ -1,7 +1,7 @@
 package mod.emt.traverse.init;
 
 import mod.emt.traverse.TraverseBiomesXL;
-import mod.emt.traverse.world.biomes.*;
+import mod.emt.traverse.world.biome.*;
 import net.minecraft.world.biome.Biome;
 import net.minecraftforge.common.BiomeDictionary;
 import net.minecraftforge.common.BiomeManager;
@@ -17,13 +17,23 @@ import net.minecraftforge.fml.common.registry.GameRegistry;
 @GameRegistry.ObjectHolder(TraverseBiomesXL.MOD_ID)
 public class TBXLBiomes {
     public static Biome FLATLANDS = new TBXLBiomeFlatlands();
+    public static Biome LUSH_JUNGLE = new TBXLBiomeLushJungle();
+    public static Biome ROLLING_HILLS = new TBXLBiomeRollingHills();
+    public static Biome WOODLANDS = new TBXLBiomeWoodlands();
 
     @SubscribeEvent
     public static void registerBiomes(RegistryEvent.Register<Biome> event) {
         registerBiome(FLATLANDS, "flatlands", true, Type.LUSH, Type.PLAINS, Type.WET);
+        registerBiome(LUSH_JUNGLE, "lush_jungle", false, Type.DENSE, Type.HOT, Type.JUNGLE, Type.WET);
+        registerBiome(ROLLING_HILLS, "rolling_hills", false, Type.LUSH, Type.HILLS, Type.SPARSE);
+        registerBiome(WOODLANDS, "woodlands", true, Type.DRY, Type.FOREST, Type.PLAINS);
 
         registerBiomeSpawn(FLATLANDS, 7, BiomeType.COOL);
         registerBiomeSpawn(FLATLANDS, 7, BiomeType.WARM);
+        registerBiomeSpawn(LUSH_JUNGLE, 4, BiomeType.WARM);
+        registerBiomeSpawn(ROLLING_HILLS, 6, BiomeType.COOL);
+        registerBiomeSpawn(WOODLANDS, 9, BiomeType.COOL);
+        registerBiomeSpawn(WOODLANDS, 9, BiomeType.WARM);
     }
 
     private static void registerBiome(Biome biome, String name, boolean hasVillages, BiomeDictionary.Type... types) {

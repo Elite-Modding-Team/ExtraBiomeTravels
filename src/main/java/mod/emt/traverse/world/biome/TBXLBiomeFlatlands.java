@@ -1,4 +1,4 @@
-package mod.emt.traverse.world.biomes;
+package mod.emt.traverse.world.biome;
 
 import java.util.Random;
 
@@ -31,20 +31,22 @@ public class TBXLBiomeFlatlands extends Biome {
         decorator.flowersPerChunk = 10;
         decorator.grassPerChunk = 15;
         decorator.reedsPerChunk = 2;
-
         this.flowers.clear();
 
         for (BlockFlower.EnumFlowerType type : BlockFlower.EnumFlowerType.values()) {
-            if (type.getBlockType() == BlockFlower.EnumFlowerColor.YELLOW)
+            if (type.getBlockType() == BlockFlower.EnumFlowerColor.YELLOW) {
                 continue;
+            }
 
-            if (type == BlockFlower.EnumFlowerType.BLUE_ORCHID)
+            if (type == BlockFlower.EnumFlowerType.BLUE_ORCHID) {
                 type = BlockFlower.EnumFlowerType.POPPY;
+            }
 
             addFlower(Blocks.RED_FLOWER.getDefaultState().withProperty(Blocks.RED_FLOWER.getTypeProperty(), type), 10);
         }
     }
 
+    @Override
     public BlockFlower.EnumFlowerType pickRandomFlower(Random rand, BlockPos pos) {
         double d0 = GRASS_COLOR_NOISE.getValue((double) pos.getX() / 200.0D, (double) pos.getZ() / 200.0D);
 
