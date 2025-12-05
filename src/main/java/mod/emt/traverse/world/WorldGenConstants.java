@@ -1,6 +1,9 @@
 package mod.emt.traverse.world;
 
-import mod.emt.traverse.world.feature.WorldGenSimpleFallenTree;
+import mod.emt.traverse.init.TBXLBlocks;
+import mod.emt.traverse.world.feature.TBXLWorldGenFirTree;
+import mod.emt.traverse.world.feature.TBXLWorldGenHugeFirTree;
+import mod.emt.traverse.world.feature.TBXLWorldGenSimpleFallenTree;
 import net.minecraft.block.BlockLeaves;
 import net.minecraft.block.BlockNewLeaf;
 import net.minecraft.block.BlockNewLog;
@@ -45,10 +48,14 @@ public interface WorldGenConstants {
     WorldGenTrees TALLER_OAK_TREE_FEATURE = new WorldGenTrees(false, 7, OAK_LOG, OAK_LEAVES, false);
 
     // TraverseBiomesXL Logs
+    IBlockState FIR_LOG = TBXLBlocks.fir_log.getDefaultState();
 
     // TraverseBiomesXL Leaves
+    IBlockState FIR_LEAVES = TBXLBlocks.fir_leaves.getDefaultState().withProperty(BlockLeaves.CHECK_DECAY, false);
 
     // TraverseBiomesXL Features
-    WorldGenSimpleFallenTree SIMPLE_FALLEN_TREE_FEATURE = new WorldGenSimpleFallenTree(false);
+    TBXLWorldGenFirTree FIR_TREE_FEATURE = new TBXLWorldGenFirTree(false);
+    TBXLWorldGenHugeFirTree HUGE_FIR_TREE_FEATURE = new TBXLWorldGenHugeFirTree(false, true);
+    TBXLWorldGenSimpleFallenTree SIMPLE_FALLEN_TREE_FEATURE = new TBXLWorldGenSimpleFallenTree(false);
 
 }

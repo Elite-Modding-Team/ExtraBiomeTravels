@@ -86,19 +86,19 @@ public class TBXLBiomeWoodlands extends Biome implements WorldGenConstants {
     }
 
     @Override
-    public void decorate(World worldIn, Random rand, BlockPos pos) {
-        if (TerrainGen.decorate(worldIn, rand, pos, DecorateBiomeEvent.Decorate.EventType.TREE)) {
+    public void decorate(World world, Random rand, BlockPos pos) {
+        if (TerrainGen.decorate(world, rand, pos, DecorateBiomeEvent.Decorate.EventType.TREE)) {
             int genChance = rand.nextInt(5);
 
             if (genChance == 0) {
                 int k6 = rand.nextInt(16) + 8;
                 int l = rand.nextInt(16) + 8;
-                BlockPos blockpos = worldIn.getHeight(pos.add(k6, 0, l));
-                SIMPLE_FALLEN_TREE_FEATURE.generate(worldIn, rand, blockpos);
+                BlockPos blockpos = world.getHeight(pos.add(k6, 0, l));
+                SIMPLE_FALLEN_TREE_FEATURE.generate(world, rand, blockpos);
             }
         }
 
-        super.decorate(worldIn, rand, pos);
+        super.decorate(world, rand, pos);
     }
 
     @Override

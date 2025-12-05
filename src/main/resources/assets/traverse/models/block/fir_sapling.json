@@ -1,0 +1,6 @@
+{
+  "parent": "block/cross",
+  "textures": {
+    "cross": "traverse:blocks/fir_sapling"
+  }
+}

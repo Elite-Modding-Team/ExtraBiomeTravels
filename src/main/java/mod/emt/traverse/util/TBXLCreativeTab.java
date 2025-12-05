@@ -1,7 +1,7 @@
 package mod.emt.traverse.util;
 
+import mod.emt.traverse.init.TBXLItems;
 import net.minecraft.creativetab.CreativeTabs;
-import net.minecraft.init.Blocks;
 import net.minecraft.item.ItemStack;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
@@ -14,6 +14,6 @@ public class TBXLCreativeTab extends CreativeTabs {
     @Override
     @SideOnly(Side.CLIENT)
     public ItemStack createIcon() {
-        return new ItemStack(Blocks.LOG, 1);
+        return new ItemStack(TBXLItems.fir_door);
     }
 }

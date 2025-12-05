@@ -1,1 +1,18 @@
-itemGroup.TraverseBiomesXLTab=TraverseBiomesXL
+itemGroup.traverse.tab=TraverseBiomesXL
+
+# BLOCKS
+tile.traverse.fir_button.name=Fir Button
+tile.traverse.fir_door.name=Fir Door
+tile.traverse.fir_fence_gate.name=Fir Fence Gate
+tile.traverse.fir_fence.name=Fir Fence
+tile.traverse.fir_leaves.name=Fir Leaves
+tile.traverse.fir_log.name=Fir Log
+tile.traverse.fir_planks.name=Fir Planks
+tile.traverse.fir_pressure_plate.name=Fir Pressure Plate
+tile.traverse.fir_sapling.name=Fir Sapling
+tile.traverse.fir_slab.name=Fir Slab
+tile.traverse.fir_stairs.name=Fir Stairs
+tile.traverse.fir_trapdoor.name=Fir Trapdoor
+
+# ITEMS
+item.traverse.fir_door.name=Fir Door

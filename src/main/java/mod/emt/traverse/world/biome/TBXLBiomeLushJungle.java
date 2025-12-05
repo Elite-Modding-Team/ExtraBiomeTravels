@@ -52,24 +52,24 @@ public class TBXLBiomeLushJungle extends Biome implements WorldGenConstants {
     }
 
     @Override
-    public void decorate(World worldIn, Random rand, BlockPos pos) {
-        super.decorate(worldIn, rand, pos);
+    public void decorate(World world, Random rand, BlockPos pos) {
+        super.decorate(world, rand, pos);
         int i = rand.nextInt(16) + 8;
         int j = rand.nextInt(16) + 8;
-        int height = worldIn.getHeight(pos.add(i, 0, j)).getY() * 2; // Could == 0, which crashes nextInt
+        int height = world.getHeight(pos.add(i, 0, j)).getY() * 2; // Could == 0, which crashes nextInt
         if (height < 1) height = 1;
         int k = rand.nextInt(height);
 
-        if (TerrainGen.decorate(worldIn, rand, pos, DecorateBiomeEvent.Decorate.EventType.PUMPKIN)) {
-            new WorldGenMelon().generate(worldIn, rand, pos.add(i, k, j));
+        if (TerrainGen.decorate(world, rand, pos, DecorateBiomeEvent.Decorate.EventType.PUMPKIN)) {
+            new WorldGenMelon().generate(world, rand, pos.add(i, k, j));
         }
 
         WorldGenVines vines = new WorldGenVines();
-        if (TerrainGen.decorate(worldIn, rand, pos, DecorateBiomeEvent.Decorate.EventType.GRASS)) {
+        if (TerrainGen.decorate(world, rand, pos, DecorateBiomeEvent.Decorate.EventType.GRASS)) {
             for (j = 0; j < 50; ++j) {
                 k = rand.nextInt(16) + 8;
                 int i1 = rand.nextInt(16) + 8;
-                vines.generate(worldIn, rand, pos.add(k, 128, i1));
+                vines.generate(world, rand, pos.add(k, 128, i1));
             }
         }
     }
