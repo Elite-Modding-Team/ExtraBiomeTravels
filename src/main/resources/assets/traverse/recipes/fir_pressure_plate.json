@@ -1,0 +1,14 @@
+{
+  "type": "forge:ore_shapeless",
+  "ingredients": [
+    {
+      "item": "minecraft:wooden_pressure_plate"
+    },
+    {
+      "item": "traverse:fir_planks"
+    }
+  ],
+  "result": {
+    "item": "traverse:fir_pressure_plate"
+  }
+}

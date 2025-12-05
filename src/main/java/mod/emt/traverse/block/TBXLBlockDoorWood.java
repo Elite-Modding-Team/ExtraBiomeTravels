@@ -16,7 +16,7 @@ import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.IBlockAccess;
 import net.minecraft.world.World;
 
-//NOTE: Wooden doors are not flammable in vanilla
+// NOTE: Wooden doors are not flammable in vanilla
 public class TBXLBlockDoorWood extends BlockDoor {
     private final MapColor mapColor;
 

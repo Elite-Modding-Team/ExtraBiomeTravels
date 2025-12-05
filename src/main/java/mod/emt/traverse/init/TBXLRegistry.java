@@ -10,6 +10,7 @@ import net.minecraft.item.Item;
 import net.minecraft.item.crafting.IRecipe;
 import net.minecraft.util.ResourceLocation;
 import net.minecraftforge.event.RegistryEvent;
+import net.minecraftforge.event.furnace.FurnaceFuelBurnTimeEvent;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
 import net.minecraftforge.oredict.OreDictionary;
@@ -33,6 +34,15 @@ public class TBXLRegistry {
         if (entry instanceof Item)
             ((Item) entry).setTranslationKey(registryName.getNamespace() + "." + registryName.getPath());
         return entry;
+    }
+
+    @SubscribeEvent
+    public static void registerFuels(FurnaceFuelBurnTimeEvent event) {
+        if (event.getItemStack().getItem() == Item.getItemFromBlock(TBXLBlocks.fir_button)) {
+            event.setBurnTime(100); // 0.5 items
+        } else if (event.getItemStack().getItem() == Item.getItemFromBlock(TBXLBlocks.fir_sapling)) {
+            event.setBurnTime(100); // 0.5 items
+        }
     }
 
     @SubscribeEvent

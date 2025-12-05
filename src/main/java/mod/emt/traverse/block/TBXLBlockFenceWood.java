@@ -9,7 +9,7 @@ import net.minecraft.util.EnumFacing;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.IBlockAccess;
 
-// NOTE: Wooden buttons are not flammable in vanilla
+// NOTE: Wooden fences are not flammable in vanilla
 public class TBXLBlockFenceWood extends BlockFence {
     public boolean flammable;
 
