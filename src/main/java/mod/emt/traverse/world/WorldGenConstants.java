@@ -10,6 +10,7 @@ import net.minecraft.block.BlockNewLog;
 import net.minecraft.block.BlockOldLeaf;
 import net.minecraft.block.BlockOldLog;
 import net.minecraft.block.BlockPlanks;
+import net.minecraft.block.BlockSand;
 import net.minecraft.block.state.IBlockState;
 import net.minecraft.init.Blocks;
 import net.minecraft.world.gen.feature.WorldGenBirchTree;
@@ -38,6 +39,7 @@ public interface WorldGenConstants {
     // Vanilla Misc
     IBlockState GRASS = Blocks.GRASS.getDefaultState();
     IBlockState SAND = Blocks.SAND.getDefaultState();
+    IBlockState RED_SAND = Blocks.SAND.getDefaultState().withProperty(BlockSand.VARIANT, BlockSand.EnumType.RED_SAND);
 
     // Vanilla Features
     WorldGenSavannaTree ACACIA_TREE_FEATURE = new WorldGenSavannaTree(false);
@@ -51,11 +53,14 @@ public interface WorldGenConstants {
     IBlockState FIR_LOG = TBXLBlocks.fir_log.getDefaultState();
 
     // TraverseBiomesXL Leaves
+    IBlockState BROWN_AUTUMNAL_OAK_LEAVES = TBXLBlocks.brown_autumnal_oak_leaves.getDefaultState().withProperty(BlockLeaves.CHECK_DECAY, false);
+    IBlockState ORANGE_AUTUMNAL_LEAVES = TBXLBlocks.orange_autumnal_oak_leaves.getDefaultState().withProperty(BlockLeaves.CHECK_DECAY, false);
+    IBlockState RED_AUTUMNAL_LEAVES = TBXLBlocks.red_autumnal_oak_leaves.getDefaultState().withProperty(BlockLeaves.CHECK_DECAY, false);
+    IBlockState YELLOW_AUTUMNAL_LEAVES = TBXLBlocks.yellow_autumnal_oak_leaves.getDefaultState().withProperty(BlockLeaves.CHECK_DECAY, false);
     IBlockState FIR_LEAVES = TBXLBlocks.fir_leaves.getDefaultState().withProperty(BlockLeaves.CHECK_DECAY, false);
 
     // TraverseBiomesXL Features
     TBXLWorldGenFirTree FIR_TREE_FEATURE = new TBXLWorldGenFirTree(false);
     TBXLWorldGenHugeFirTree HUGE_FIR_TREE_FEATURE = new TBXLWorldGenHugeFirTree(false, true);
-    TBXLWorldGenSimpleFallenTree SIMPLE_FALLEN_TREE_FEATURE = new TBXLWorldGenSimpleFallenTree(false);
-
+    TBXLWorldGenSimpleFallenTree SIMPLE_OAK_FALLEN_TREE_FEATURE = new TBXLWorldGenSimpleFallenTree(false);
 }

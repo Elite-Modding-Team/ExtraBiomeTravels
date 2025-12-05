@@ -2,8 +2,10 @@ package mod.emt.traverse.block;
 
 import java.util.Random;
 
+import mod.emt.traverse.init.TBXLBlocks;
 import mod.emt.traverse.world.feature.TBXLWorldGenFirTree;
 import mod.emt.traverse.world.feature.TBXLWorldGenHugeFirTree;
+import mod.emt.traverse.world.feature.TBXLWorldGenTallTree;
 import net.minecraft.block.*;
 import net.minecraft.block.material.MapColor;
 import net.minecraft.block.material.Material;
@@ -93,6 +95,24 @@ public class TBXLBlockSapling extends BlockBush implements IGrowable {
         boolean flag = false;
 
         switch (this.woodType) {
+            case AUTUMNAL_OAK_BROWN:
+                generator = new TBXLWorldGenTallTree(false, rand.nextBoolean(), Blocks.LOG.getDefaultState(), TBXLBlocks.brown_autumnal_oak_leaves.getDefaultState());
+                break;
+            case AUTUMNAL_OAK_GREEN:
+                generator = new TBXLWorldGenTallTree(false, rand.nextBoolean(), Blocks.LOG.getDefaultState(), TBXLBlocks.green_autumnal_oak_leaves.getDefaultState());
+                break;
+            case AUTUMNAL_OAK_ORANGE:
+                generator = new TBXLWorldGenTallTree(false, rand.nextBoolean(), Blocks.LOG.getDefaultState(), TBXLBlocks.orange_autumnal_oak_leaves.getDefaultState());
+                break;
+            case AUTUMNAL_OAK_PURPLE:
+                generator = new TBXLWorldGenTallTree(false, rand.nextBoolean(), Blocks.LOG.getDefaultState(), TBXLBlocks.purple_autumnal_oak_leaves.getDefaultState());
+                break;
+            case AUTUMNAL_OAK_RED:
+                generator = new TBXLWorldGenTallTree(false, rand.nextBoolean(), Blocks.LOG.getDefaultState(), TBXLBlocks.red_autumnal_oak_leaves.getDefaultState());
+                break;
+            case AUTUMNAL_OAK_YELLOW:
+                generator = new TBXLWorldGenTallTree(false, rand.nextBoolean(), Blocks.LOG.getDefaultState(), TBXLBlocks.yellow_autumnal_oak_leaves.getDefaultState());
+                break;
             case FIR:
                 check:
                 for (i = 0; i >= -1; --i) {
@@ -111,7 +131,6 @@ public class TBXLBlockSapling extends BlockBush implements IGrowable {
                     generator = new TBXLWorldGenFirTree(true);
                 }
                 break;
-
             default:
                 break;
         }
@@ -197,7 +216,13 @@ public class TBXLBlockSapling extends BlockBush implements IGrowable {
     }
 
     public enum EnumWoodType implements IStringSerializable {
-        FIR(0, "fir");
+        FIR(0, "fir"),
+        AUTUMNAL_OAK_BROWN(1, "autumnal_oak_brown"),
+        AUTUMNAL_OAK_GREEN(2, "autumnal_oak_green"),
+        AUTUMNAL_OAK_ORANGE(3, "autumnal_oak_orange"),
+        AUTUMNAL_OAK_PURPLE(4, "autumnal_oak_purple"),
+        AUTUMNAL_OAK_RED(5, "autumnal_oak_red"),
+        AUTUMNAL_OAK_YELLOW(6, "autumnal_oak_yellow");
 
         private final String name;
         private final int meta;

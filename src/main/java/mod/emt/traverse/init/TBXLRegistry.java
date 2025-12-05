@@ -38,7 +38,19 @@ public class TBXLRegistry {
 
     @SubscribeEvent
     public static void registerFuels(FurnaceFuelBurnTimeEvent event) {
-        if (event.getItemStack().getItem() == Item.getItemFromBlock(TBXLBlocks.fir_button)) {
+        if (event.getItemStack().getItem() == Item.getItemFromBlock(TBXLBlocks.brown_autumnal_oak_sapling)) {
+            event.setBurnTime(100); // 0.5 items
+        } else if (event.getItemStack().getItem() == Item.getItemFromBlock(TBXLBlocks.green_autumnal_oak_sapling)) {
+            event.setBurnTime(100); // 0.5 items
+        } else if (event.getItemStack().getItem() == Item.getItemFromBlock(TBXLBlocks.orange_autumnal_oak_sapling)) {
+            event.setBurnTime(100); // 0.5 items
+        } else if (event.getItemStack().getItem() == Item.getItemFromBlock(TBXLBlocks.purple_autumnal_oak_sapling)) {
+            event.setBurnTime(100); // 0.5 items
+        } else if (event.getItemStack().getItem() == Item.getItemFromBlock(TBXLBlocks.red_autumnal_oak_sapling)) {
+            event.setBurnTime(100); // 0.5 items
+        } else if (event.getItemStack().getItem() == Item.getItemFromBlock(TBXLBlocks.yellow_autumnal_oak_sapling)) {
+            event.setBurnTime(100); // 0.5 items
+        } else if (event.getItemStack().getItem() == Item.getItemFromBlock(TBXLBlocks.fir_button)) {
             event.setBurnTime(100); // 0.5 items
         } else if (event.getItemStack().getItem() == Item.getItemFromBlock(TBXLBlocks.fir_sapling)) {
             event.setBurnTime(100); // 0.5 items
@@ -57,8 +69,22 @@ public class TBXLRegistry {
         OreDictionary.registerOre("slabWood", TBXLBlocks.fir_slab);
         OreDictionary.registerOre("stairWood", TBXLBlocks.fir_stairs);
         //OreDictionary.registerOre("trapdoorWood", TBXLBlocks.fir_trapdoor);
+
+        OreDictionary.registerOre("treeLeaves", TBXLBlocks.brown_autumnal_oak_leaves);
         OreDictionary.registerOre("treeLeaves", TBXLBlocks.fir_leaves);
+        OreDictionary.registerOre("treeLeaves", TBXLBlocks.green_autumnal_oak_leaves);
+        OreDictionary.registerOre("treeLeaves", TBXLBlocks.orange_autumnal_oak_leaves);
+        OreDictionary.registerOre("treeLeaves", TBXLBlocks.purple_autumnal_oak_leaves);
+        OreDictionary.registerOre("treeLeaves", TBXLBlocks.red_autumnal_oak_leaves);
+        OreDictionary.registerOre("treeLeaves", TBXLBlocks.yellow_autumnal_oak_leaves);
+
+        OreDictionary.registerOre("treeSapling", TBXLBlocks.brown_autumnal_oak_sapling);
         OreDictionary.registerOre("treeSapling", TBXLBlocks.fir_sapling);
+        OreDictionary.registerOre("treeSapling", TBXLBlocks.green_autumnal_oak_sapling);
+        OreDictionary.registerOre("treeSapling", TBXLBlocks.orange_autumnal_oak_sapling);
+        OreDictionary.registerOre("treeSapling", TBXLBlocks.purple_autumnal_oak_sapling);
+        OreDictionary.registerOre("treeSapling", TBXLBlocks.red_autumnal_oak_sapling);
+        OreDictionary.registerOre("treeSapling", TBXLBlocks.yellow_autumnal_oak_sapling);
 
         //TraverseBiomesXL.LOGGER.info("Registering recipes...");
 

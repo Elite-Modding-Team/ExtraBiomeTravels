@@ -1,0 +1,6 @@
+{
+  "parent": "item/generated",
+  "textures": {
+    "layer0": "traverse:blocks/brown_autumnal_oak_sapling"
+  }
+}

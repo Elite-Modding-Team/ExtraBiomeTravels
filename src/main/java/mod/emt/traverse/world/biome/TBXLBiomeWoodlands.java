@@ -94,7 +94,7 @@ public class TBXLBiomeWoodlands extends Biome implements WorldGenConstants {
                 int k6 = rand.nextInt(16) + 8;
                 int l = rand.nextInt(16) + 8;
                 BlockPos blockpos = world.getHeight(pos.add(k6, 0, l));
-                SIMPLE_FALLEN_TREE_FEATURE.generate(world, rand, blockpos);
+                SIMPLE_OAK_FALLEN_TREE_FEATURE.generate(world, rand, blockpos);
             }
         }
 

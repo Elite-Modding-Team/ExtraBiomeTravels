@@ -1,6 +1,8 @@
 itemGroup.traverse.tab=TraverseBiomesXL
 
 # BLOCKS
+tile.traverse.brown_autumnal_oak_leaves.name=Brown Autumnal Oak Leaves
+tile.traverse.brown_autumnal_oak_sapling.name=Brown Autumnal Oak Sapling
 tile.traverse.fir_button.name=Fir Button
 tile.traverse.fir_door.name=Fir Door
 tile.traverse.fir_fence_gate.name=Fir Fence Gate
@@ -13,6 +15,16 @@ tile.traverse.fir_sapling.name=Fir Sapling
 tile.traverse.fir_slab.name=Fir Slab
 tile.traverse.fir_stairs.name=Fir Stairs
 tile.traverse.fir_trapdoor.name=Fir Trapdoor
+tile.traverse.green_autumnal_oak_leaves.name=Green Autumnal Oak Leaves
+tile.traverse.green_autumnal_oak_sapling.name=Green Autumnal Oak Sapling
+tile.traverse.orange_autumnal_oak_leaves.name=Orange Autumnal Oak Leaves
+tile.traverse.orange_autumnal_oak_sapling.name=Orange Autumnal Oak Sapling
+tile.traverse.purple_autumnal_oak_leaves.name=Purple Autumnal Oak Leaves
+tile.traverse.purple_autumnal_oak_sapling.name=Purple Autumnal Oak Sapling
+tile.traverse.red_autumnal_oak_leaves.name=Red Autumnal Oak Leaves
+tile.traverse.red_autumnal_oak_sapling.name=Red Autumnal Oak Sapling
+tile.traverse.yellow_autumnal_oak_leaves.name=Yellow Autumnal Oak Leaves
+tile.traverse.yellow_autumnal_oak_sapling.name=Yellow Autumnal Oak Sapling
 
 # ITEMS
 item.traverse.fir_door.name=Fir Door

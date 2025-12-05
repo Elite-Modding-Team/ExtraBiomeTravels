@@ -16,6 +16,7 @@ import net.minecraftforge.fml.common.registry.GameRegistry;
 @Mod.EventBusSubscriber(modid = TraverseBiomesXL.MOD_ID)
 @GameRegistry.ObjectHolder(TraverseBiomesXL.MOD_ID)
 public class TBXLBiomes {
+    public static Biome AUTUMNAL_WOODS = new TBXLBiomeAutumnalWoods();
     public static Biome CLIFFS = new TBXLBiomeCliffs();
     public static Biome CONIFEROUS_FOREST = new TBXLBiomeConiferousForest(false);
     public static Biome FLATLANDS = new TBXLBiomeFlatlands();
@@ -27,6 +28,7 @@ public class TBXLBiomes {
 
     @SubscribeEvent
     public static void registerBiomes(RegistryEvent.Register<Biome> event) {
+        registerBiome(AUTUMNAL_WOODS, "autumnal_woods", false, Type.DENSE, Type.FOREST);
         registerBiome(CLIFFS, "cliffs", false, Type.COLD, Type.HILLS, Type.MOUNTAIN, Type.SNOWY);
         registerBiome(CONIFEROUS_FOREST, "coniferous_forest", false, Type.COLD, Type.CONIFEROUS, Type.FOREST);
         registerBiome(FLATLANDS, "flatlands", true, Type.LUSH, Type.PLAINS, Type.WET);
@@ -36,6 +38,8 @@ public class TBXLBiomes {
         registerBiome(SNOWY_CONIFEROUS_FOREST, "snowy_coniferous_forest", false, Type.COLD, Type.CONIFEROUS, Type.FOREST, Type.SNOWY);
         registerBiome(WOODLANDS, "woodlands", true, Type.DRY, Type.FOREST, Type.PLAINS);
 
+        registerBiomeSpawn(AUTUMNAL_WOODS, 6, BiomeType.COOL);
+        registerBiomeSpawn(AUTUMNAL_WOODS, 6, BiomeType.WARM);
         registerBiomeSpawn(CLIFFS, 3, BiomeType.COOL);
         registerBiomeSpawn(CLIFFS, 3, BiomeType.ICY);
         registerBiomeSpawn(CLIFFS, 3, BiomeType.WARM);

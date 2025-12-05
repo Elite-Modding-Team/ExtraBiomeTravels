@@ -34,16 +34,44 @@ public class TBXLBlocks {
     public static final TBXLBlockFenceGateWood fir_fence_gate = null;
     @GameRegistry.ObjectHolder("fir_fence")
     public static final TBXLBlockFenceWood fir_fence = null;
+
+    @GameRegistry.ObjectHolder("brown_autumnal_oak_leaves")
+    public static final TBXLBlockLeaves brown_autumnal_oak_leaves = null;
+    @GameRegistry.ObjectHolder("green_autumnal_oak_leaves")
+    public static final TBXLBlockLeaves green_autumnal_oak_leaves = null;
+    @GameRegistry.ObjectHolder("orange_autumnal_oak_leaves")
+    public static final TBXLBlockLeaves orange_autumnal_oak_leaves = null;
+    @GameRegistry.ObjectHolder("purple_autumnal_oak_leaves")
+    public static final TBXLBlockLeaves purple_autumnal_oak_leaves = null;
+    @GameRegistry.ObjectHolder("red_autumnal_oak_leaves")
+    public static final TBXLBlockLeaves red_autumnal_oak_leaves = null;
+    @GameRegistry.ObjectHolder("yellow_autumnal_oak_leaves")
+    public static final TBXLBlockLeaves yellow_autumnal_oak_leaves = null;
     @GameRegistry.ObjectHolder("fir_leaves")
     public static final TBXLBlockLeaves fir_leaves = null;
+
     @GameRegistry.ObjectHolder("fir_log")
     public static final TBXLBlockLog fir_log = null;
     @GameRegistry.ObjectHolder("fir_planks")
     public static final TBXLBlockPlanks fir_planks = null;
     @GameRegistry.ObjectHolder("fir_pressure_plate")
     public static final TBXLBlockPressurePlateWood fir_pressure_plate = null;
+
+    @GameRegistry.ObjectHolder("brown_autumnal_oak_sapling")
+    public static final TBXLBlockSapling brown_autumnal_oak_sapling = null;
+    @GameRegistry.ObjectHolder("green_autumnal_oak_sapling")
+    public static final TBXLBlockSapling green_autumnal_oak_sapling = null;
+    @GameRegistry.ObjectHolder("orange_autumnal_oak_sapling")
+    public static final TBXLBlockSapling orange_autumnal_oak_sapling = null;
+    @GameRegistry.ObjectHolder("purple_autumnal_oak_sapling")
+    public static final TBXLBlockSapling purple_autumnal_oak_sapling = null;
+    @GameRegistry.ObjectHolder("red_autumnal_oak_sapling")
+    public static final TBXLBlockSapling red_autumnal_oak_sapling = null;
+    @GameRegistry.ObjectHolder("yellow_autumnal_oak_sapling")
+    public static final TBXLBlockSapling yellow_autumnal_oak_sapling = null;
     @GameRegistry.ObjectHolder("fir_sapling")
     public static final TBXLBlockSapling fir_sapling = null;
+
     @GameRegistry.ObjectHolder("fir_slab_double")
     public static final TBXLBlockSlab.Double fir_slab_double = null;
     @GameRegistry.ObjectHolder("fir_slab")
@@ -66,10 +94,22 @@ public class TBXLBlocks {
                         TBXLRegistry.setup(new TBXLBlockDoorWood(MapColor.ADOBE), "fir_door"),
                         TBXLRegistry.setup(new TBXLBlockFenceGateWood(MapColor.ADOBE, true), "fir_fence_gate").setCreativeTab(TraverseBiomesXL.TAB),
                         TBXLRegistry.setup(new TBXLBlockFenceWood(MapColor.ADOBE, true), "fir_fence").setCreativeTab(TraverseBiomesXL.TAB),
+                        TBXLRegistry.setup(new TBXLBlockLeaves(MapColor.BROWN_STAINED_HARDENED_CLAY, true, 20), "brown_autumnal_oak_leaves").setCreativeTab(TraverseBiomesXL.TAB).setHardness(0.2F).setLightOpacity(1),
+                        TBXLRegistry.setup(new TBXLBlockLeaves(MapColor.LIME_STAINED_HARDENED_CLAY, true, 20), "green_autumnal_oak_leaves").setCreativeTab(TraverseBiomesXL.TAB).setHardness(0.2F).setLightOpacity(1),
+                        TBXLRegistry.setup(new TBXLBlockLeaves(MapColor.ORANGE_STAINED_HARDENED_CLAY, true, 20), "orange_autumnal_oak_leaves").setCreativeTab(TraverseBiomesXL.TAB).setHardness(0.2F).setLightOpacity(1),
+                        TBXLRegistry.setup(new TBXLBlockLeaves(MapColor.PURPLE_STAINED_HARDENED_CLAY, true, 20), "purple_autumnal_oak_leaves").setCreativeTab(TraverseBiomesXL.TAB).setHardness(0.2F).setLightOpacity(1),
+                        TBXLRegistry.setup(new TBXLBlockLeaves(MapColor.RED_STAINED_HARDENED_CLAY, true, 20), "red_autumnal_oak_leaves").setCreativeTab(TraverseBiomesXL.TAB).setHardness(0.2F).setLightOpacity(1),
+                        TBXLRegistry.setup(new TBXLBlockLeaves(MapColor.YELLOW_STAINED_HARDENED_CLAY, true, 20), "yellow_autumnal_oak_leaves").setCreativeTab(TraverseBiomesXL.TAB).setHardness(0.2F).setLightOpacity(1),
                         TBXLRegistry.setup(new TBXLBlockLeaves(MapColor.FOLIAGE, true, 20), "fir_leaves").setCreativeTab(TraverseBiomesXL.TAB).setHardness(0.2F).setLightOpacity(1),
                         TBXLRegistry.setup(new TBXLBlockLog(MapColor.WOOD, true), "fir_log").setCreativeTab(TraverseBiomesXL.TAB).setHardness(2.0F),
                         TBXLRegistry.setup(new TBXLBlockPlanks(MapColor.ADOBE, true), "fir_planks").setCreativeTab(TraverseBiomesXL.TAB).setHardness(2.0F).setResistance(5.0F),
                         TBXLRegistry.setup(new TBXLBlockPressurePlateWood(MapColor.ADOBE), "fir_pressure_plate").setCreativeTab(TraverseBiomesXL.TAB),
+                        TBXLRegistry.setup(new TBXLBlockSapling(EnumWoodType.AUTUMNAL_OAK_BROWN, MapColor.FOLIAGE, true), "brown_autumnal_oak_sapling").setCreativeTab(TraverseBiomesXL.TAB).setHardness(0.0F),
+                        TBXLRegistry.setup(new TBXLBlockSapling(EnumWoodType.AUTUMNAL_OAK_GREEN, MapColor.FOLIAGE, true), "green_autumnal_oak_sapling").setCreativeTab(TraverseBiomesXL.TAB).setHardness(0.0F),
+                        TBXLRegistry.setup(new TBXLBlockSapling(EnumWoodType.AUTUMNAL_OAK_ORANGE, MapColor.FOLIAGE, true), "orange_autumnal_oak_sapling").setCreativeTab(TraverseBiomesXL.TAB).setHardness(0.0F),
+                        TBXLRegistry.setup(new TBXLBlockSapling(EnumWoodType.AUTUMNAL_OAK_PURPLE, MapColor.FOLIAGE, true), "purple_autumnal_oak_sapling").setCreativeTab(TraverseBiomesXL.TAB).setHardness(0.0F),
+                        TBXLRegistry.setup(new TBXLBlockSapling(EnumWoodType.AUTUMNAL_OAK_RED, MapColor.FOLIAGE, true), "red_autumnal_oak_sapling").setCreativeTab(TraverseBiomesXL.TAB).setHardness(0.0F),
+                        TBXLRegistry.setup(new TBXLBlockSapling(EnumWoodType.AUTUMNAL_OAK_YELLOW, MapColor.FOLIAGE, true), "yellow_autumnal_oak_sapling").setCreativeTab(TraverseBiomesXL.TAB).setHardness(0.0F),
                         TBXLRegistry.setup(new TBXLBlockSapling(EnumWoodType.FIR, MapColor.FOLIAGE, true), "fir_sapling").setCreativeTab(TraverseBiomesXL.TAB).setHardness(0.0F),
                         TBXLRegistry.setup(new TBXLBlockSlab.Double(Material.WOOD, MapColor.ADOBE, true), "fir_slab_double").setHardness(2.0F).setResistance(5.0F),
                         TBXLRegistry.setup(new TBXLBlockSlab.Half(Material.WOOD, MapColor.ADOBE, true), "fir_slab").setCreativeTab(TraverseBiomesXL.TAB).setHardness(2.0F).setResistance(5.0F),

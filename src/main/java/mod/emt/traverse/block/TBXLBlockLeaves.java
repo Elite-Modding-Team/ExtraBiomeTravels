@@ -118,7 +118,19 @@ public class TBXLBlockLeaves extends BlockLeaves {
 
     @Override
     public Item getItemDropped(final IBlockState state, final Random rand, final int fortune) {
-        if (this == TBXLBlocks.fir_leaves) {
+        if (this == TBXLBlocks.brown_autumnal_oak_leaves) {
+            return Item.getItemFromBlock(TBXLBlocks.brown_autumnal_oak_sapling);
+        } else if (this == TBXLBlocks.green_autumnal_oak_leaves) {
+            return Item.getItemFromBlock(TBXLBlocks.green_autumnal_oak_sapling);
+        } else if (this == TBXLBlocks.orange_autumnal_oak_leaves) {
+            return Item.getItemFromBlock(TBXLBlocks.orange_autumnal_oak_sapling);
+        } else if (this == TBXLBlocks.purple_autumnal_oak_leaves) {
+            return Item.getItemFromBlock(TBXLBlocks.purple_autumnal_oak_sapling);
+        } else if (this == TBXLBlocks.red_autumnal_oak_leaves) {
+            return Item.getItemFromBlock(TBXLBlocks.red_autumnal_oak_sapling);
+        } else if (this == TBXLBlocks.yellow_autumnal_oak_leaves) {
+            return Item.getItemFromBlock(TBXLBlocks.yellow_autumnal_oak_sapling);
+        } else if (this == TBXLBlocks.fir_leaves) {
             return Item.getItemFromBlock(TBXLBlocks.fir_sapling);
         } else {
             return Item.getItemFromBlock(Blocks.SAPLING);
