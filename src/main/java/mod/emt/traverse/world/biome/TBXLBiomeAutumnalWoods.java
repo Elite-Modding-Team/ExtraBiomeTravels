@@ -18,8 +18,6 @@ public class TBXLBiomeAutumnalWoods extends Biome {
         properties.setRainfall(Biomes.FOREST.getRainfall());
         properties.setBaseHeight(Biomes.FOREST.getBaseHeight());
         properties.setHeightVariation(Biomes.FOREST.getHeightVariation());
-        //properties.setBaseHeight(0.5F);
-        //properties.setHeightVariation(0.4F);
     }
 
     public TBXLBiomeAutumnalWoods() {

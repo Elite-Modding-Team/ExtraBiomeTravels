@@ -2,6 +2,7 @@ package mod.emt.traverse.init;
 
 import mod.emt.traverse.TraverseBiomesXL;
 import mod.emt.traverse.world.biome.*;
+import mod.emt.traverse.world.biome.sub.*;
 import net.minecraft.world.biome.Biome;
 import net.minecraftforge.common.BiomeDictionary;
 import net.minecraftforge.common.BiomeManager;
@@ -17,6 +18,7 @@ import net.minecraftforge.fml.common.registry.GameRegistry;
 @GameRegistry.ObjectHolder(TraverseBiomesXL.MOD_ID)
 public class TBXLBiomes {
     public static Biome AUTUMNAL_WOODS = new TBXLBiomeAutumnalWoods();
+    public static Biome AUTUMNAL_WOODED_HILLS = new TBXLBiomeAutumnalWoodedHills();
     public static Biome CLIFFS = new TBXLBiomeCliffs();
     public static Biome CONIFEROUS_FOREST = new TBXLBiomeConiferousForest(false);
     public static Biome FLATLANDS = new TBXLBiomeFlatlands();
@@ -28,6 +30,7 @@ public class TBXLBiomes {
 
     @SubscribeEvent
     public static void registerBiomes(RegistryEvent.Register<Biome> event) {
+        // Biomes
         registerBiome(AUTUMNAL_WOODS, "autumnal_woods", false, Type.DENSE, Type.FOREST);
         registerBiome(CLIFFS, "cliffs", false, Type.COLD, Type.HILLS, Type.MOUNTAIN, Type.SNOWY);
         registerBiome(CONIFEROUS_FOREST, "coniferous_forest", false, Type.COLD, Type.CONIFEROUS, Type.FOREST);
@@ -38,6 +41,10 @@ public class TBXLBiomes {
         registerBiome(SNOWY_CONIFEROUS_FOREST, "snowy_coniferous_forest", false, Type.COLD, Type.CONIFEROUS, Type.FOREST, Type.SNOWY);
         registerBiome(WOODLANDS, "woodlands", true, Type.DRY, Type.FOREST, Type.PLAINS);
 
+        // Sub-Biomes: These are never registered to biome spawns!
+        registerSubBiome(AUTUMNAL_WOODED_HILLS, AUTUMNAL_WOODS, "autumnal_wooded_hills", false, Type.DENSE, Type.FOREST, Type.HILLS);
+
+        // Biome Spawn: Makes them spawn on the world, apply multiple biome types if they are meant to spawn more commonly
         registerBiomeSpawn(AUTUMNAL_WOODS, 6, BiomeType.COOL);
         registerBiomeSpawn(AUTUMNAL_WOODS, 6, BiomeType.WARM);
         registerBiomeSpawn(CLIFFS, 3, BiomeType.COOL);
@@ -59,6 +66,14 @@ public class TBXLBiomes {
         ForgeRegistries.BIOMES.register(biome);
         BiomeDictionary.addTypes(biome, types);
         BiomeManager.addVillageBiome(biome, hasVillages);
+    }
+
+    private static void registerSubBiome(Biome biome, Biome baseBiome, String name, boolean hasVillages, BiomeDictionary.Type... types) {
+        biome.setRegistryName(name);
+        ForgeRegistries.BIOMES.register(biome);
+        BiomeDictionary.addTypes(biome, types);
+        BiomeManager.addVillageBiome(biome, hasVillages);
+        Biome.MUTATION_TO_BASE_ID_MAP.put(biome, Biome.getIdForBiome(ForgeRegistries.BIOMES.getValue(baseBiome.getRegistryName())));
     }
 
     private static void registerBiomeSpawn(Biome biome, int biomeWeight, BiomeManager.BiomeType biomeType) {
