@@ -23,6 +23,10 @@ tile.traverse.purple_autumnal_oak_leaves.name=Purple Autumnal Oak Leaves
 tile.traverse.purple_autumnal_oak_sapling.name=Purple Autumnal Oak Sapling
 tile.traverse.red_autumnal_oak_leaves.name=Red Autumnal Oak Leaves
 tile.traverse.red_autumnal_oak_sapling.name=Red Autumnal Oak Sapling
+tile.traverse.red_rock_bricks.name=Red Rock Bricks
+tile.traverse.red_rock_cobblestone.name=Cobbled Red Rock
+tile.traverse.red_rock_slab.name=Red Rock Slab
+tile.traverse.red_rock.name=Red Rock
 tile.traverse.yellow_autumnal_oak_leaves.name=Yellow Autumnal Oak Leaves
 tile.traverse.yellow_autumnal_oak_sapling.name=Yellow Autumnal Oak Sapling
 

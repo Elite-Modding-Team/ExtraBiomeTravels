@@ -48,6 +48,7 @@ public class TBXLItems {
                 .forEach(block -> registry.register(TBXLRegistry.setup(new ItemBlock(block), block.getRegistryName())));
 
         registry.register(TBXLRegistry.setup(new ItemSlab(TBXLBlocks.fir_slab, TBXLBlocks.fir_slab, TBXLBlocks.fir_slab_double), TBXLBlocks.fir_slab.getRegistryName()));
+        registry.register(TBXLRegistry.setup(new ItemSlab(TBXLBlocks.red_rock_slab, TBXLBlocks.red_rock_slab, TBXLBlocks.red_rock_slab_double), TBXLBlocks.red_rock_slab.getRegistryName()));
     }
 
     @SideOnly(Side.CLIENT)

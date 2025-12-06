@@ -7,12 +7,14 @@ import com.google.common.base.Preconditions;
 import mod.emt.traverse.TraverseBiomesXL;
 import net.minecraft.block.Block;
 import net.minecraft.item.Item;
+import net.minecraft.item.ItemStack;
 import net.minecraft.item.crafting.IRecipe;
 import net.minecraft.util.ResourceLocation;
 import net.minecraftforge.event.RegistryEvent;
 import net.minecraftforge.event.furnace.FurnaceFuelBurnTimeEvent;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
+import net.minecraftforge.fml.common.registry.GameRegistry;
 import net.minecraftforge.oredict.OreDictionary;
 import net.minecraftforge.registries.IForgeRegistryEntry;
 
@@ -61,6 +63,7 @@ public class TBXLRegistry {
     public static void registerRecipes(@Nonnull final RegistryEvent.Register<IRecipe> event) {
         TraverseBiomesXL.LOGGER.info("Registering ore dictionary entries...");
 
+        OreDictionary.registerOre("cobblestone", TBXLBlocks.red_rock_cobblestone);
         OreDictionary.registerOre("doorWood", TBXLItems.fir_door);
         OreDictionary.registerOre("fenceGateWood", TBXLBlocks.fir_fence_gate);
         OreDictionary.registerOre("fenceWood", TBXLBlocks.fir_fence);
@@ -69,6 +72,7 @@ public class TBXLRegistry {
         OreDictionary.registerOre("slabWood", TBXLBlocks.fir_slab);
         OreDictionary.registerOre("stairWood", TBXLBlocks.fir_stairs);
         //OreDictionary.registerOre("trapdoorWood", TBXLBlocks.fir_trapdoor);
+        OreDictionary.registerOre("stone", TBXLBlocks.red_rock);
 
         OreDictionary.registerOre("treeLeaves", TBXLBlocks.brown_autumnal_oak_leaves);
         OreDictionary.registerOre("treeLeaves", TBXLBlocks.fir_leaves);
@@ -89,6 +93,6 @@ public class TBXLRegistry {
         //TraverseBiomesXL.LOGGER.info("Registering recipes...");
 
         // Furnace Recipes
-        //GameRegistry.addSmelting(new ItemStack(Items.GOLD_INGOT), new ItemStack(Items.GOLD_INGOT), 0.1F);
+        GameRegistry.addSmelting(new ItemStack(TBXLBlocks.red_rock_cobblestone), new ItemStack(TBXLBlocks.red_rock), 0.1F);
     }
 }
