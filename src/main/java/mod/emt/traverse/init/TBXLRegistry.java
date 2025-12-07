@@ -6,6 +6,7 @@ import com.google.common.base.Preconditions;
 
 import mod.emt.traverse.TraverseBiomesXL;
 import net.minecraft.block.Block;
+import net.minecraft.init.Blocks;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraft.item.crafting.IRecipe;
@@ -69,6 +70,7 @@ public class TBXLRegistry {
         OreDictionary.registerOre("fenceWood", TBXLBlocks.fir_fence);
         OreDictionary.registerOre("logWood", TBXLBlocks.fir_log);
         OreDictionary.registerOre("plankWood", TBXLBlocks.fir_planks);
+        OreDictionary.registerOre("sand", TBXLBlocks.cracked_sand);
         OreDictionary.registerOre("slabWood", TBXLBlocks.fir_slab);
         OreDictionary.registerOre("stairWood", TBXLBlocks.fir_stairs);
         //OreDictionary.registerOre("trapdoorWood", TBXLBlocks.fir_trapdoor);
@@ -93,6 +95,7 @@ public class TBXLRegistry {
         //TraverseBiomesXL.LOGGER.info("Registering recipes...");
 
         // Furnace Recipes
+        GameRegistry.addSmelting(new ItemStack(TBXLBlocks.cracked_sand), new ItemStack(Blocks.GLASS), 0.1F);
         GameRegistry.addSmelting(new ItemStack(TBXLBlocks.red_rock_cobblestone), new ItemStack(TBXLBlocks.red_rock), 0.1F);
     }
 }

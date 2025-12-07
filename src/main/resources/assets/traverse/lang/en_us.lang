@@ -3,6 +3,7 @@ itemGroup.traverse.tab=TraverseBiomesXL
 # BLOCKS
 tile.traverse.brown_autumnal_oak_leaves.name=Brown Autumnal Oak Leaves
 tile.traverse.brown_autumnal_oak_sapling.name=Brown Autumnal Oak Sapling
+tile.traverse.cracked_sand.name=Cracked Sand
 tile.traverse.fir_button.name=Fir Button
 tile.traverse.fir_door.name=Fir Door
 tile.traverse.fir_fence_gate.name=Fir Fence Gate

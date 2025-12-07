@@ -59,6 +59,9 @@ public interface WorldGenConstants {
     IBlockState YELLOW_AUTUMNAL_LEAVES = TBXLBlocks.yellow_autumnal_oak_leaves.getDefaultState().withProperty(BlockLeaves.CHECK_DECAY, false);
     IBlockState FIR_LEAVES = TBXLBlocks.fir_leaves.getDefaultState().withProperty(BlockLeaves.CHECK_DECAY, false);
 
+    // TraverseBiomesXL Misc
+    IBlockState CRACKED_SAND = TBXLBlocks.cracked_sand.getDefaultState();
+
     // TraverseBiomesXL Features
     TBXLWorldGenFirTree FIR_TREE_FEATURE = new TBXLWorldGenFirTree(false);
     TBXLWorldGenHugeFirTree HUGE_FIR_TREE_FEATURE = new TBXLWorldGenHugeFirTree(false, true);

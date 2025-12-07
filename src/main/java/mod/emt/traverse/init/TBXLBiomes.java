@@ -26,6 +26,7 @@ public class TBXLBiomes {
     public static Biome RED_DESERT = new TBXLBiomeRedDesert();
     public static Biome ROLLING_HILLS = new TBXLBiomeRollingHills();
     public static Biome SNOWY_CONIFEROUS_FOREST = new TBXLBiomeConiferousForest(true);
+    public static Biome WASTELAND = new TBXLBiomeWasteland();
     public static Biome WOODLANDS = new TBXLBiomeWoodlands();
 
     @SubscribeEvent
@@ -39,6 +40,7 @@ public class TBXLBiomes {
         registerBiome(RED_DESERT, "red_desert", true, Type.DEAD, Type.DRY, Type.HOT, Type.SANDY);
         registerBiome(ROLLING_HILLS, "rolling_hills", false, Type.LUSH, Type.HILLS, Type.SPARSE);
         registerBiome(SNOWY_CONIFEROUS_FOREST, "snowy_coniferous_forest", false, Type.COLD, Type.CONIFEROUS, Type.FOREST, Type.SNOWY);
+        registerBiome(WASTELAND, "wasteland", false, Type.DEAD, Type.DRY, Type.HOT, Type.SPARSE, Type.WASTELAND);
         registerBiome(WOODLANDS, "woodlands", true, Type.DRY, Type.FOREST, Type.PLAINS);
 
         // Sub-Biomes: These are never registered to biome spawns!
@@ -57,6 +59,7 @@ public class TBXLBiomes {
         registerBiomeSpawn(RED_DESERT, 6, BiomeType.DESERT);
         registerBiomeSpawn(ROLLING_HILLS, 6, BiomeType.COOL);
         registerBiomeSpawn(SNOWY_CONIFEROUS_FOREST, 5, BiomeType.ICY);
+        registerBiomeSpawn(WASTELAND, 4, BiomeType.DESERT);
         registerBiomeSpawn(WOODLANDS, 9, BiomeType.COOL);
         registerBiomeSpawn(WOODLANDS, 9, BiomeType.WARM);
     }
@@ -65,7 +68,7 @@ public class TBXLBiomes {
         biome.setRegistryName(name);
         ForgeRegistries.BIOMES.register(biome);
         BiomeDictionary.addTypes(biome, types);
-        BiomeManager.addVillageBiome(biome, hasVillages);
+        BiomeManager.addVillageBiome(biome, hasVillages); // <- TODO: See if this is actually working properly
     }
 
     private static void registerSubBiome(Biome biome, Biome baseBiome, String name, boolean hasVillages, BiomeDictionary.Type... types) {
@@ -79,4 +82,9 @@ public class TBXLBiomes {
     private static void registerBiomeSpawn(Biome biome, int biomeWeight, BiomeManager.BiomeType biomeType) {
         BiomeManager.addBiome(biomeType, new BiomeManager.BiomeEntry(biome, biomeWeight));
     }
+
+    //  TODO: Plans
+    //  More trees and plants (have to list these soon)
+    //  Fancy falling leaves particles
+    //  Wasteland: Surface Fossils and Dead Trees
 }
