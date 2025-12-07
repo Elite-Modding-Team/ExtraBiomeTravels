@@ -6,6 +6,7 @@ import com.google.common.base.Preconditions;
 
 import mod.emt.traverse.TraverseBiomesXL;
 import net.minecraft.block.Block;
+import net.minecraft.block.SoundType;
 import net.minecraft.init.Blocks;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
@@ -21,6 +22,9 @@ import net.minecraftforge.registries.IForgeRegistryEntry;
 
 @Mod.EventBusSubscriber(modid = TraverseBiomesXL.MOD_ID)
 public class TBXLRegistry {
+    public static final SoundType HARDENED_SAND = new SoundType(1.0F, 1.0F, TBXLSoundEvents.hardenedSandBreak.getSoundEvent(), TBXLSoundEvents.hardenedSandStep.getSoundEvent(),
+            TBXLSoundEvents.hardenedSandPlace.getSoundEvent(), TBXLSoundEvents.hardenedSandHit.getSoundEvent(), TBXLSoundEvents.hardenedSandFall.getSoundEvent());
+
     @Nonnull
     public static <T extends IForgeRegistryEntry<T>> T setup(@Nonnull final T entry, @Nonnull final String name) {
         return setup(entry, new ResourceLocation(TraverseBiomesXL.MOD_ID, name));

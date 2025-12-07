@@ -1,0 +1,51 @@
+{
+  "blocks.hardened_sand.break": {
+    "sounds": [
+      "traverse:block/hardened_sand/break1",
+      "traverse:block/hardened_sand/break2",
+      "traverse:block/hardened_sand/break3",
+      "traverse:block/hardened_sand/break4",
+      "traverse:block/hardened_sand/break5"
+    ],
+    "subtitle": "subtitles.block.generic.break"
+  },
+  "blocks.hardened_sand.fall": {
+    "sounds": [
+      "traverse:block/hardened_sand/step1",
+      "traverse:block/hardened_sand/step2",
+      "traverse:block/hardened_sand/step3",
+      "traverse:block/hardened_sand/step4",
+      "traverse:block/hardened_sand/step5"
+    ]
+  },
+  "blocks.hardened_sand.hit": {
+    "sounds": [
+      "traverse:block/hardened_sand/step1",
+      "traverse:block/hardened_sand/step2",
+      "traverse:block/hardened_sand/step3",
+      "traverse:block/hardened_sand/step4",
+      "traverse:block/hardened_sand/step5"
+    ],
+    "subtitle": "subtitles.block.generic.hit"
+  },
+  "blocks.hardened_sand.place": {
+    "sounds": [
+      "traverse:block/hardened_sand/break1",
+      "traverse:block/hardened_sand/break2",
+      "traverse:block/hardened_sand/break3",
+      "traverse:block/hardened_sand/break4",
+      "traverse:block/hardened_sand/break5"
+    ],
+    "subtitle": "subtitles.block.generic.place"
+  },
+  "blocks.hardened_sand.step": {
+    "sounds": [
+      "traverse:block/hardened_sand/step1",
+      "traverse:block/hardened_sand/step2",
+      "traverse:block/hardened_sand/step3",
+      "traverse:block/hardened_sand/step4",
+      "traverse:block/hardened_sand/step5"
+    ],
+    "subtitle": "subtitles.block.generic.footsteps"
+  }
+}
