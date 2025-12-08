@@ -144,9 +144,11 @@ public class TBXLBlocks {
                         TBXLRegistry.setup(new TBXLBlockStairs(new TBXLBlockPlanks(MapColor.ADOBE, true).getDefaultState(), true), "fir_stairs").setCreativeTab(TraverseBiomesXL.TAB).setHardness(2.0F).setResistance(5.0F),
                         //TBXLRegistry.setup(new TBXLBlockTrapdoorWood(MapColor.ADOBE), "fir_trapdoor")
                         TBXLRegistry.setup(new TBXLBlockHardenedSand(MapColor.SILVER_STAINED_HARDENED_CLAY), "cracked_sand").setCreativeTab(TraverseBiomesXL.TAB),
+                        TBXLRegistry.setup(new TBXLBlockButtonStone(), "red_rock_button").setCreativeTab(TraverseBiomesXL.TAB),
                         TBXLRegistry.setup(new TBXLBlockRock(MapColor.ORANGE_STAINED_HARDENED_CLAY), "red_rock").setCreativeTab(TraverseBiomesXL.TAB),
                         TBXLRegistry.setup(new TBXLBlockMaterial(Material.ROCK, MapColor.ORANGE_STAINED_HARDENED_CLAY, 2.0F, 10.0F, SoundType.STONE), "red_rock_cobblestone").setCreativeTab(TraverseBiomesXL.TAB),
                         TBXLRegistry.setup(new TBXLBlockMaterial(Material.ROCK, MapColor.ORANGE_STAINED_HARDENED_CLAY, 2.0F, 10.0F, SoundType.STONE), "red_rock_bricks").setCreativeTab(TraverseBiomesXL.TAB),
+                        TBXLRegistry.setup(new TBXLBlockPressurePlateStone(MapColor.ORANGE_STAINED_HARDENED_CLAY), "red_rock_pressure_plate").setCreativeTab(TraverseBiomesXL.TAB),
                         TBXLRegistry.setup(new TBXLBlockSlab.Double(Material.ROCK, MapColor.ORANGE_STAINED_HARDENED_CLAY, false), "red_rock_slab_double").setHardness(2.0F).setResistance(10.0F),
                         TBXLRegistry.setup(new TBXLBlockSlab.Half(Material.ROCK, MapColor.ORANGE_STAINED_HARDENED_CLAY, false), "red_rock_slab").setCreativeTab(TraverseBiomesXL.TAB).setHardness(2.0F).setResistance(10.0F),
                         TBXLRegistry.setup(new TBXLBlockSlab.Double(Material.ROCK, MapColor.ORANGE_STAINED_HARDENED_CLAY, false), "red_rock_cobblestone_slab_double").setHardness(2.0F).setResistance(10.0F),
