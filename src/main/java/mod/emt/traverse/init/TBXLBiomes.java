@@ -29,6 +29,7 @@ public class TBXLBiomes {
     public static Biome ROLLING_HILLS = new TBXLBiomeRollingHills();
     public static Biome SNOWY_CONIFEROUS_FOREST = new TBXLBiomeConiferousForest(true);
     public static Biome WASTELAND = new TBXLBiomeWasteland();
+    public static Biome WOODED_RED_DESERT = new TBXLBiomeWoodedRedDesert();
     public static Biome WOODLANDS = new TBXLBiomeWoodlands();
 
     @SubscribeEvent
@@ -49,6 +50,7 @@ public class TBXLBiomes {
 
         // Sub-Biomes: These are never registered to biome spawns!
         registerSubBiome(AUTUMNAL_WOODED_HILLS, AUTUMNAL_WOODS, "autumnal_wooded_hills", false, Type.DENSE, Type.FOREST, Type.HILLS);
+        registerSubBiome(WOODED_RED_DESERT, RED_DESERT, "wooded_red_desert", false, Type.DRY, Type.HILLS, Type.HOT, Type.SPARSE);
 
         // Biome Spawn: Makes them spawn on the world, apply multiple biome types if they are meant to spawn more commonly
         registerBiomeSpawn(AUTUMNAL_WOODS, 6, BiomeType.COOL);

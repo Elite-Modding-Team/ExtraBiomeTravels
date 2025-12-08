@@ -137,11 +137,11 @@ public class TBXLBiomeRedRockRidge extends Biome implements WorldGenConstants {
 
     @Override
     public int getModdedBiomeGrassColor(int original) {
-        return super.getModdedBiomeGrassColor(0xFF9E814D);
+        return super.getModdedBiomeGrassColor(0xFFDBC77C);
     }
 
     @Override
     public int getModdedBiomeFoliageColor(int original) {
-        return super.getModdedBiomeFoliageColor(0xFF9E814D);
+        return super.getModdedBiomeFoliageColor(0xFFC2C168);
     }
 }

@@ -22,4 +22,14 @@ public class TBXLBiomeRedDesert extends BiomeDesert implements WorldGenConstants
         this.fillerBlock = RED_SAND;
         decorator.generateFalls = false;
     }
+
+    @Override
+    public int getModdedBiomeGrassColor(int original) {
+        return super.getModdedBiomeGrassColor(0xFFDBC77C);
+    }
+
+    @Override
+    public int getModdedBiomeFoliageColor(int original) {
+        return super.getModdedBiomeFoliageColor(0xFFC2C168);
+    }
 }
