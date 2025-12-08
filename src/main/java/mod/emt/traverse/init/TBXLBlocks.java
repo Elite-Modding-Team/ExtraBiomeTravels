@@ -86,14 +86,28 @@ public class TBXLBlocks {
     public static final TBXLBlockMaterial cracked_sand = null;
     @GameRegistry.ObjectHolder("red_rock")
     public static final TBXLBlockMaterial red_rock = null;
-    @GameRegistry.ObjectHolder("red_rock_cobblestone")
-    public static final TBXLBlockMaterial red_rock_cobblestone = null;
-    @GameRegistry.ObjectHolder("red_rock_bricks")
-    public static final TBXLBlockMaterial red_rock_bricks = null;
     @GameRegistry.ObjectHolder("red_rock_slab_double")
     public static final TBXLBlockSlab.Double red_rock_slab_double = null;
     @GameRegistry.ObjectHolder("red_rock_slab")
     public static final TBXLBlockSlab.Half red_rock_slab = null;
+    @GameRegistry.ObjectHolder("red_rock_wall")
+    public static final TBXLBlockWall red_rock_wall = null;
+    @GameRegistry.ObjectHolder("red_rock_bricks")
+    public static final TBXLBlockMaterial red_rock_bricks = null;
+    @GameRegistry.ObjectHolder("red_rock_bricks_slab_double")
+    public static final TBXLBlockSlab.Double red_rock_bricks_slab_double = null;
+    @GameRegistry.ObjectHolder("red_rock_bricks_slab")
+    public static final TBXLBlockSlab.Half red_rock_bricks_slab = null;
+    @GameRegistry.ObjectHolder("red_rock_bricks_wall")
+    public static final TBXLBlockWall red_rock_bricks_wall = null;
+    @GameRegistry.ObjectHolder("red_rock_cobblestone")
+    public static final TBXLBlockMaterial red_rock_cobblestone = null;
+    @GameRegistry.ObjectHolder("red_rock_cobblestone_slab_double")
+    public static final TBXLBlockSlab.Double red_rock_cobblestone_slab_double = null;
+    @GameRegistry.ObjectHolder("red_rock_cobblestone_slab")
+    public static final TBXLBlockSlab.Half red_rock_cobblestone_slab = null;
+    @GameRegistry.ObjectHolder("red_rock_cobblestone_wall")
+    public static final TBXLBlockWall red_rock_cobblestone_wall = null;
 
     @SubscribeEvent
     public static void onRegisterBlocksEvent(@Nonnull final RegistryEvent.Register<Block> event) {
@@ -134,7 +148,17 @@ public class TBXLBlocks {
                         TBXLRegistry.setup(new TBXLBlockMaterial(Material.ROCK, MapColor.ORANGE_STAINED_HARDENED_CLAY, 2.0F, 10.0F, SoundType.STONE), "red_rock_cobblestone").setCreativeTab(TraverseBiomesXL.TAB),
                         TBXLRegistry.setup(new TBXLBlockMaterial(Material.ROCK, MapColor.ORANGE_STAINED_HARDENED_CLAY, 2.0F, 10.0F, SoundType.STONE), "red_rock_bricks").setCreativeTab(TraverseBiomesXL.TAB),
                         TBXLRegistry.setup(new TBXLBlockSlab.Double(Material.ROCK, MapColor.ORANGE_STAINED_HARDENED_CLAY, false), "red_rock_slab_double").setHardness(2.0F).setResistance(10.0F),
-                        TBXLRegistry.setup(new TBXLBlockSlab.Half(Material.ROCK, MapColor.ORANGE_STAINED_HARDENED_CLAY, false), "red_rock_slab").setCreativeTab(TraverseBiomesXL.TAB).setHardness(2.0F).setResistance(10.0F)
+                        TBXLRegistry.setup(new TBXLBlockSlab.Half(Material.ROCK, MapColor.ORANGE_STAINED_HARDENED_CLAY, false), "red_rock_slab").setCreativeTab(TraverseBiomesXL.TAB).setHardness(2.0F).setResistance(10.0F),
+                        TBXLRegistry.setup(new TBXLBlockSlab.Double(Material.ROCK, MapColor.ORANGE_STAINED_HARDENED_CLAY, false), "red_rock_cobblestone_slab_double").setHardness(2.0F).setResistance(10.0F),
+                        TBXLRegistry.setup(new TBXLBlockSlab.Half(Material.ROCK, MapColor.ORANGE_STAINED_HARDENED_CLAY, false), "red_rock_cobblestone_slab").setCreativeTab(TraverseBiomesXL.TAB).setHardness(2.0F).setResistance(10.0F),
+                        TBXLRegistry.setup(new TBXLBlockSlab.Double(Material.ROCK, MapColor.ORANGE_STAINED_HARDENED_CLAY, false), "red_rock_bricks_slab_double").setHardness(2.0F).setResistance(10.0F),
+                        TBXLRegistry.setup(new TBXLBlockSlab.Half(Material.ROCK, MapColor.ORANGE_STAINED_HARDENED_CLAY, false), "red_rock_bricks_slab").setCreativeTab(TraverseBiomesXL.TAB).setHardness(2.0F).setResistance(10.0F),
+                        TBXLRegistry.setup(new TBXLBlockStairs(new TBXLBlockMaterial(Material.ROCK, MapColor.ORANGE_STAINED_HARDENED_CLAY, 2.0F, 10.0F, SoundType.STONE).getDefaultState(), false), "red_rock_stairs").setCreativeTab(TraverseBiomesXL.TAB),
+                        TBXLRegistry.setup(new TBXLBlockStairs(new TBXLBlockMaterial(Material.ROCK, MapColor.ORANGE_STAINED_HARDENED_CLAY, 2.0F, 10.0F, SoundType.STONE).getDefaultState(), false), "red_rock_cobblestone_stairs").setCreativeTab(TraverseBiomesXL.TAB),
+                        TBXLRegistry.setup(new TBXLBlockStairs(new TBXLBlockMaterial(Material.ROCK, MapColor.ORANGE_STAINED_HARDENED_CLAY, 2.0F, 10.0F, SoundType.STONE).getDefaultState(), false), "red_rock_bricks_stairs").setCreativeTab(TraverseBiomesXL.TAB),
+                        TBXLRegistry.setup(new TBXLBlockWall(new TBXLBlockMaterial(Material.ROCK, MapColor.ORANGE_STAINED_HARDENED_CLAY, 2.0F, 10.0F, SoundType.STONE), false), "red_rock_wall").setCreativeTab(TraverseBiomesXL.TAB),
+                        TBXLRegistry.setup(new TBXLBlockWall(new TBXLBlockMaterial(Material.ROCK, MapColor.ORANGE_STAINED_HARDENED_CLAY, 2.0F, 10.0F, SoundType.STONE), false), "red_rock_cobblestone_wall").setCreativeTab(TraverseBiomesXL.TAB),
+                        TBXLRegistry.setup(new TBXLBlockWall(new TBXLBlockMaterial(Material.ROCK, MapColor.ORANGE_STAINED_HARDENED_CLAY, 2.0F, 10.0F, SoundType.STONE), false), "red_rock_bricks_wall").setCreativeTab(TraverseBiomesXL.TAB)
                 );
     }
 
@@ -151,5 +175,9 @@ public class TBXLBlocks {
         ModelLoader.setCustomStateMapper(fir_door, (new StateMap.Builder()).ignore(TBXLBlockDoorWood.POWERED).build());
 
         ModelLoader.setCustomStateMapper(fir_fence_gate, (new StateMap.Builder()).ignore(TBXLBlockFenceGateWood.POWERED).build());
+
+        ModelLoader.setCustomStateMapper(red_rock_bricks_wall, (new StateMap.Builder()).ignore(TBXLBlockWall.VARIANT).build());
+        ModelLoader.setCustomStateMapper(red_rock_cobblestone_wall, (new StateMap.Builder()).ignore(TBXLBlockWall.VARIANT).build());
+        ModelLoader.setCustomStateMapper(red_rock_wall, (new StateMap.Builder()).ignore(TBXLBlockWall.VARIANT).build());
     }
 }
