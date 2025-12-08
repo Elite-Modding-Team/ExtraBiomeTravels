@@ -24,6 +24,7 @@ public class TBXLBiomes {
     public static Biome FLATLANDS = new TBXLBiomeFlatlands();
     public static Biome LUSH_JUNGLE = new TBXLBiomeLushJungle();
     public static Biome RED_DESERT = new TBXLBiomeRedDesert();
+    public static Biome RED_ROCK_RIDGE = new TBXLBiomeRedRockRidge();
     public static Biome ROLLING_HILLS = new TBXLBiomeRollingHills();
     public static Biome SNOWY_CONIFEROUS_FOREST = new TBXLBiomeConiferousForest(true);
     public static Biome WASTELAND = new TBXLBiomeWasteland();
@@ -38,6 +39,7 @@ public class TBXLBiomes {
         registerBiome(FLATLANDS, "flatlands", true, Type.LUSH, Type.PLAINS, Type.WET);
         registerBiome(LUSH_JUNGLE, "lush_jungle", false, Type.DENSE, Type.HOT, Type.JUNGLE, Type.WET);
         registerBiome(RED_DESERT, "red_desert", true, Type.DEAD, Type.DRY, Type.HOT, Type.SANDY);
+        registerBiome(RED_ROCK_RIDGE, "red_rock_ridge", false, Type.DRY, Type.HOT, Type.MESA, Type.MOUNTAIN);
         registerBiome(ROLLING_HILLS, "rolling_hills", false, Type.LUSH, Type.HILLS, Type.SPARSE);
         registerBiome(SNOWY_CONIFEROUS_FOREST, "snowy_coniferous_forest", false, Type.COLD, Type.CONIFEROUS, Type.FOREST, Type.SNOWY);
         registerBiome(WASTELAND, "wasteland", false, Type.DEAD, Type.DRY, Type.HOT, Type.SPARSE, Type.WASTELAND);
@@ -57,6 +59,7 @@ public class TBXLBiomes {
         registerBiomeSpawn(FLATLANDS, 7, BiomeType.WARM);
         registerBiomeSpawn(LUSH_JUNGLE, 4, BiomeType.WARM);
         registerBiomeSpawn(RED_DESERT, 6, BiomeType.DESERT);
+        registerBiomeSpawn(RED_ROCK_RIDGE, 5, BiomeType.DESERT);
         registerBiomeSpawn(ROLLING_HILLS, 6, BiomeType.COOL);
         registerBiomeSpawn(SNOWY_CONIFEROUS_FOREST, 5, BiomeType.ICY);
         registerBiomeSpawn(WASTELAND, 4, BiomeType.DESERT);

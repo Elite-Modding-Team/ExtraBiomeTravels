@@ -61,6 +61,7 @@ public interface WorldGenConstants {
 
     // TraverseBiomesXL Misc
     IBlockState CRACKED_SAND = TBXLBlocks.cracked_sand.getDefaultState();
+    IBlockState RED_ROCK = TBXLBlocks.red_rock.getDefaultState();
 
     // TraverseBiomesXL Features
     TBXLWorldGenFirTree FIR_TREE_FEATURE = new TBXLWorldGenFirTree(false);
