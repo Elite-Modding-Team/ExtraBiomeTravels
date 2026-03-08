@@ -64,8 +64,7 @@ public class TBXLRegistry {
         }
     }
 
-    @SubscribeEvent
-    public static void registerRecipes(@Nonnull final RegistryEvent.Register<IRecipe> event) {
+    public static void registerOreDictionaries() {
         TraverseBiomesXL.LOGGER.info("Registering ore dictionary entries...");
 
         OreDictionary.registerOre("cobblestone", TBXLBlocks.red_rock_cobblestone);
@@ -95,8 +94,11 @@ public class TBXLRegistry {
         OreDictionary.registerOre("treeSapling", TBXLBlocks.purple_autumnal_oak_sapling);
         OreDictionary.registerOre("treeSapling", TBXLBlocks.red_autumnal_oak_sapling);
         OreDictionary.registerOre("treeSapling", TBXLBlocks.yellow_autumnal_oak_sapling);
+    }
 
-        //TraverseBiomesXL.LOGGER.info("Registering recipes...");
+    @SubscribeEvent
+    public static void registerRecipes(@Nonnull final RegistryEvent.Register<IRecipe> event) {
+        TraverseBiomesXL.LOGGER.info("Registering recipes...");
 
         // Furnace Recipes
         GameRegistry.addSmelting(new ItemStack(TBXLBlocks.cracked_sand), new ItemStack(Blocks.GLASS), 0.1F);
