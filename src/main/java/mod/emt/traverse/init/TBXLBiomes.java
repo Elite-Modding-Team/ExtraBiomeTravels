@@ -14,6 +14,7 @@ import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
 import net.minecraftforge.fml.common.registry.ForgeRegistries;
 import net.minecraftforge.fml.common.registry.GameRegistry;
 
+// TODO: Some biomes should affect village blocks (e.g. red deserts have red sandstone villages)
 @Mod.EventBusSubscriber(modid = TraverseBiomesXL.MOD_ID)
 @GameRegistry.ObjectHolder(TraverseBiomesXL.MOD_ID)
 public class TBXLBiomes {
@@ -76,14 +77,18 @@ public class TBXLBiomes {
         biome.setRegistryName(name);
         ForgeRegistries.BIOMES.register(biome);
         BiomeDictionary.addTypes(biome, types);
-        BiomeManager.addVillageBiome(biome, hasVillages); // <- TODO: See if this is actually working properly
+        if (hasVillages) {
+            BiomeManager.addVillageBiome(biome, true);
+        }
     }
 
     private static void registerSubBiome(Biome biome, Biome baseBiome, String name, boolean hasVillages, BiomeDictionary.Type... types) {
         biome.setRegistryName(name);
         ForgeRegistries.BIOMES.register(biome);
         BiomeDictionary.addTypes(biome, types);
-        BiomeManager.addVillageBiome(biome, hasVillages);
+        if (hasVillages) {
+            BiomeManager.addVillageBiome(biome, true);
+        }
         Biome.MUTATION_TO_BASE_ID_MAP.put(biome, Biome.getIdForBiome(ForgeRegistries.BIOMES.getValue(baseBiome.getRegistryName())));
     }
 
