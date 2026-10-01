@@ -1,7 +1,9 @@
 package mod.emt.traverse.block;
 
+import java.util.Objects;
 import java.util.Random;
 
+import mod.emt.traverse.TraverseBiomesXL;
 import mod.emt.traverse.init.TBXLBlocks;
 import mod.emt.traverse.world.feature.TBXLWorldGenFirTree;
 import mod.emt.traverse.world.feature.TBXLWorldGenHugeFirTree;
@@ -21,16 +23,22 @@ import net.minecraft.world.IBlockAccess;
 import net.minecraft.world.World;
 import net.minecraft.world.gen.feature.WorldGenerator;
 import net.minecraftforge.event.terraingen.TerrainGen;
+import org.jetbrains.annotations.NotNull;
 
+@SuppressWarnings("deprecation")
 public class TBXLBlockSapling extends BlockBush implements IGrowable {
     public static final PropertyInteger STAGE = PropertyInteger.create("stage", 0, 1);
     protected static final AxisAlignedBB AABB = new AxisAlignedBB(0.1D, 0.0D, 0.1D, 0.9D, 0.8D, 0.9D);
     public boolean flammable;
     private EnumWoodType woodType;
 
-    public TBXLBlockSapling(EnumWoodType woodType, MapColor mapColor, boolean flammable) {
+    public TBXLBlockSapling(String unlocName, EnumWoodType woodType, MapColor mapColor, boolean flammable) {
         super(Material.PLANTS, mapColor);
+        this.setRegistryName(TraverseBiomesXL.MOD_ID, unlocName);
+        this.setTranslationKey(Objects.requireNonNull(this.getRegistryName()).toString());
+        this.setCreativeTab(TraverseBiomesXL.TAB);
         this.flammable = flammable;
+        this.setHardness(0.0F);
         this.setSoundType(SoundType.PLANT);
         this.setDefaultState(this.blockState.getBaseState().withProperty(STAGE, 0));
         this.woodType = woodType;
@@ -45,7 +53,7 @@ public class TBXLBlockSapling extends BlockBush implements IGrowable {
     }
 
     @Override
-    public int getFlammability(IBlockAccess world, BlockPos pos, EnumFacing face) {
+    public int getFlammability(@NotNull IBlockAccess world, @NotNull BlockPos pos, @NotNull EnumFacing face) {
         if (isFlammable()) {
             return Blocks.SAPLING.getFlammability(world, pos, face);
         } else {
@@ -54,7 +62,7 @@ public class TBXLBlockSapling extends BlockBush implements IGrowable {
     }
 
     @Override
-    public int getFireSpreadSpeed(IBlockAccess world, BlockPos pos, EnumFacing face) {
+    public int getFireSpreadSpeed(@NotNull IBlockAccess world, @NotNull BlockPos pos, @NotNull EnumFacing face) {
         if (isFlammable()) {
             return Blocks.SAPLING.getFireSpreadSpeed(world, pos, face);
         } else {
@@ -63,12 +71,12 @@ public class TBXLBlockSapling extends BlockBush implements IGrowable {
     }
 
     @Override
-    public AxisAlignedBB getBoundingBox(IBlockState state, IBlockAccess source, BlockPos pos) {
+    public @NotNull AxisAlignedBB getBoundingBox(@NotNull IBlockState state, @NotNull IBlockAccess source, @NotNull BlockPos pos) {
         return AABB;
     }
 
     @Override
-    public void updateTick(World world, BlockPos pos, IBlockState state, Random rand) {
+    public void updateTick(World world, @NotNull BlockPos pos, @NotNull IBlockState state, @NotNull Random rand) {
         if (!world.isRemote) {
             super.updateTick(world, pos, state, rand);
 
@@ -179,15 +187,15 @@ public class TBXLBlockSapling extends BlockBush implements IGrowable {
         }
     }
 
-    public boolean canGrow(World world, BlockPos pos, IBlockState state, boolean isClient) {
+    public boolean canGrow(@NotNull World world, @NotNull BlockPos pos, @NotNull IBlockState state, boolean isClient) {
         return true;
     }
 
-    public boolean canUseBonemeal(World world, Random rand, BlockPos pos, IBlockState state) {
+    public boolean canUseBonemeal(World world, @NotNull Random rand, @NotNull BlockPos pos, @NotNull IBlockState state) {
         return world.rand.nextFloat() < 0.45D;
     }
 
-    public void grow(World world, Random rand, BlockPos pos, IBlockState state) {
+    public void grow(@NotNull World world, @NotNull Random rand, @NotNull BlockPos pos, @NotNull IBlockState state) {
         this.grow(world, pos, state, rand);
     }
 
@@ -199,12 +207,12 @@ public class TBXLBlockSapling extends BlockBush implements IGrowable {
         return state.getValue(STAGE);
     }
 
-    protected BlockStateContainer createBlockState() {
+    protected @NotNull BlockStateContainer createBlockState() {
         return new BlockStateContainer(this, STAGE);
     }
 
     @Override
-    public boolean canBlockStay(World world, BlockPos pos, IBlockState state) {
+    public boolean canBlockStay(World world, BlockPos pos, @NotNull IBlockState state) {
         Block soil = world.getBlockState(pos.down()).getBlock();
         return soil instanceof BlockGrass || soil instanceof BlockDirt || soil instanceof BlockFarmland;
     }
@@ -249,7 +257,7 @@ public class TBXLBlockSapling extends BlockBush implements IGrowable {
             return this.name;
         }
 
-        public String getName() {
+        public @NotNull String getName() {
             return this.name;
         }
     }

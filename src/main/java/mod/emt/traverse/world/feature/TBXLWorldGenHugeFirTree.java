@@ -1,26 +1,27 @@
 package mod.emt.traverse.world.feature;
 
+import mod.emt.traverse.init.TBXLBlocks;
+import net.minecraft.block.BlockLeaves;
 import net.minecraft.block.state.IBlockState;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.MathHelper;
 import net.minecraft.world.World;
 import net.minecraft.world.gen.feature.WorldGenHugeTrees;
+import org.jetbrains.annotations.NotNull;
 
 import java.util.Random;
 
-import mod.emt.traverse.world.WorldGenConstants;
-
-public class TBXLWorldGenHugeFirTree extends WorldGenHugeTrees implements WorldGenConstants {
+public class TBXLWorldGenHugeFirTree extends WorldGenHugeTrees {
     private final boolean useBaseHeight;
 
     // useBaseHeight being set to false gives it the alternate tree variant
     public TBXLWorldGenHugeFirTree(boolean notify, boolean useBaseHeight) {
-        super(notify, 22, 18, FIR_LOG, FIR_LEAVES);
+        super(notify, 22, 18, TBXLBlocks.fir_log.getDefaultState(), TBXLBlocks.fir_leaves.getDefaultState().withProperty(BlockLeaves.CHECK_DECAY, false));
         this.useBaseHeight = useBaseHeight;
     }
 
     @Override
-    protected int getHeight(Random rand) {
+    protected int getHeight(@NotNull Random rand) {
         int i = this.baseHeight;
 
         if (this.extraRandomHeight > 1) {
@@ -30,7 +31,7 @@ public class TBXLWorldGenHugeFirTree extends WorldGenHugeTrees implements WorldG
         return i;
     }
 
-    public boolean generate(World world, Random rand, BlockPos position) {
+    public boolean generate(@NotNull World world, @NotNull Random rand, @NotNull BlockPos position) {
         int i = this.getHeight(rand);
 
         if (!this.ensureGrowable(world, rand, position, i)) {

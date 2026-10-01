@@ -1,15 +1,13 @@
 package mod.emt.traverse.world.biome;
 
-import java.util.Iterator;
-
-import mod.emt.traverse.world.WorldGenConstants;
+import mod.emt.traverse.init.TBXLBlocks;
 import net.minecraft.entity.monster.EntityHusk;
 import net.minecraft.entity.monster.EntityZombie;
 import net.minecraft.entity.monster.EntityZombieVillager;
 import net.minecraft.init.Biomes;
 import net.minecraft.world.biome.Biome;
 
-public class TBXLBiomeWasteland extends Biome implements WorldGenConstants {
+public class TBXLBiomeWasteland extends Biome {
     public static BiomeProperties properties = new BiomeProperties("Wasteland");
 
     static {
@@ -26,21 +24,13 @@ public class TBXLBiomeWasteland extends Biome implements WorldGenConstants {
         this.spawnableCreatureList.clear();
 
         // Remove Zombies from most spawns and replace them with Husks
-        Iterator<Biome.SpawnListEntry> iterator = this.spawnableMonsterList.iterator();
-        while (iterator.hasNext()) {
-            Biome.SpawnListEntry list = iterator.next();
-
-            if (list.entityClass == EntityZombie.class || list.entityClass == EntityZombieVillager.class) {
-                iterator.remove();
-            }
-        }
-
+        this.spawnableMonsterList.removeIf(list -> list.entityClass == EntityZombie.class || list.entityClass == EntityZombieVillager.class);
         this.spawnableMonsterList.add(new Biome.SpawnListEntry(EntityZombie.class, 19, 4, 4));
         this.spawnableMonsterList.add(new Biome.SpawnListEntry(EntityZombieVillager.class, 1, 1, 1));
         this.spawnableMonsterList.add(new Biome.SpawnListEntry(EntityHusk.class, 80, 4, 4));
 
-        this.topBlock = CRACKED_SAND;
-        this.fillerBlock = CRACKED_SAND;
+        this.topBlock = TBXLBlocks.cracked_sand.getDefaultState();
+        this.fillerBlock = TBXLBlocks.cracked_sand.getDefaultState();
 
         decorator.extraTreeChance = 0.01F;
         decorator.flowersPerChunk = 0;

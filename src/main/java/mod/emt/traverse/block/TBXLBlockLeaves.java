@@ -1,5 +1,6 @@
 package mod.emt.traverse.block;
 
+import mod.emt.traverse.TraverseBiomesXL;
 import mod.emt.traverse.init.TBXLBlocks;
 import net.minecraft.block.BlockLeaves;
 import net.minecraft.block.BlockPlanks.EnumType;
@@ -24,38 +25,46 @@ import net.minecraft.world.IBlockAccess;
 import net.minecraft.world.World;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
+import org.jetbrains.annotations.NotNull;
 
 import javax.annotation.Nullable;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Objects;
 import java.util.Random;
 
+@SuppressWarnings("deprecation")
 public class TBXLBlockLeaves extends BlockLeaves {
     private final MapColor mapColor;
     public boolean flammable;
     public int saplingDropChance;
 
-    public TBXLBlockLeaves(MapColor mapColor, boolean flammable, int saplingDropChance) {
+    public TBXLBlockLeaves(String unlocName, MapColor mapColor, boolean flammable, int saplingDropChance) {
+        this.setRegistryName(TraverseBiomesXL.MOD_ID, unlocName);
+        this.setTranslationKey(Objects.requireNonNull(this.getRegistryName()).toString());
+        this.setCreativeTab(TraverseBiomesXL.TAB);
         this.mapColor = mapColor;
         this.flammable = flammable;
         this.saplingDropChance = saplingDropChance;
-        setSoundType(SoundType.PLANT);
+        this.setHardness(0.2F);
+        this.setLightOpacity(1);
+        this.setSoundType(SoundType.PLANT);
     }
 
     @Override
-    public boolean isOpaqueCube(IBlockState state) {
+    public boolean isOpaqueCube(@NotNull IBlockState state) {
         return Blocks.LEAVES.getDefaultState().isOpaqueCube();
     }
 
     @Override
     @SideOnly(Side.CLIENT)
-    public BlockRenderLayer getRenderLayer() {
+    public @NotNull BlockRenderLayer getRenderLayer() {
         return Blocks.LEAVES.getRenderLayer();
     }
 
     @SideOnly(Side.CLIENT)
-    public boolean shouldSideBeRendered(IBlockState blockState, IBlockAccess blockAccess, BlockPos pos, EnumFacing side) {
+    public boolean shouldSideBeRendered(@NotNull IBlockState blockState, @NotNull IBlockAccess blockAccess, @NotNull BlockPos pos, @NotNull EnumFacing side) {
         if (!Minecraft.getMinecraft().gameSettings.fancyGraphics) {
             return !(blockAccess.getBlockState(pos.offset(side)).getBlock() instanceof BlockLeaves);
         }
@@ -63,7 +72,7 @@ public class TBXLBlockLeaves extends BlockLeaves {
     }
 
     @Override
-    public MapColor getMapColor(IBlockState state, IBlockAccess world, BlockPos pos) {
+    public @NotNull MapColor getMapColor(@NotNull IBlockState state, @NotNull IBlockAccess world, @NotNull BlockPos pos) {
         return mapColor;
     }
 
@@ -72,7 +81,7 @@ public class TBXLBlockLeaves extends BlockLeaves {
     }
 
     @Override
-    public int getFlammability(IBlockAccess world, BlockPos pos, EnumFacing face) {
+    public int getFlammability(@NotNull IBlockAccess world, @NotNull BlockPos pos, @NotNull EnumFacing face) {
         if (isFlammable()) {
             return Blocks.LEAVES.getFlammability(world, pos, face);
         } else {
@@ -81,7 +90,7 @@ public class TBXLBlockLeaves extends BlockLeaves {
     }
 
     @Override
-    public int getFireSpreadSpeed(IBlockAccess world, BlockPos pos, EnumFacing face) {
+    public int getFireSpreadSpeed(@NotNull IBlockAccess world, @NotNull BlockPos pos, @NotNull EnumFacing face) {
         if (isFlammable()) {
             return Blocks.LEAVES.getFireSpreadSpeed(world, pos, face);
         } else {
@@ -90,7 +99,7 @@ public class TBXLBlockLeaves extends BlockLeaves {
     }
 
     @Override
-    public void harvestBlock(World worldIn, EntityPlayer player, BlockPos pos, IBlockState state, @Nullable TileEntity te, ItemStack stack) {
+    public void harvestBlock(World worldIn, @NotNull EntityPlayer player, @NotNull BlockPos pos, @NotNull IBlockState state, @Nullable TileEntity te, @NotNull ItemStack stack) {
         if (!worldIn.isRemote && stack.getItem() == Items.SHEARS) {
             player.addStat(StatList.getBlockStats(this));
             spawnAsEntity(worldIn, pos, new ItemStack(this));
@@ -100,24 +109,24 @@ public class TBXLBlockLeaves extends BlockLeaves {
     }
 
     @Override
-    public List<ItemStack> onSheared(ItemStack item, IBlockAccess world, BlockPos pos, int fortune) {
+    public @NotNull List<ItemStack> onSheared(@NotNull ItemStack item, IBlockAccess world, BlockPos pos, int fortune) {
         List<ItemStack> list = new ArrayList<>();
         list.add(new ItemStack(this, 1, 0));
         return list;
     }
 
     @Override
-    public EnumType getWoodType(int meta) {
+    public @NotNull EnumType getWoodType(int meta) {
         return null;
     }
 
     @Override
-    protected BlockStateContainer createBlockState() {
+    protected @NotNull BlockStateContainer createBlockState() {
         return new BlockStateContainer(this, CHECK_DECAY, DECAYABLE);
     }
 
     @Override
-    public Item getItemDropped(final IBlockState state, final Random rand, final int fortune) {
+    public @NotNull Item getItemDropped(final @NotNull IBlockState state, final @NotNull Random rand, final int fortune) {
         if (this == TBXLBlocks.brown_autumnal_oak_leaves) {
             return Item.getItemFromBlock(TBXLBlocks.brown_autumnal_oak_sapling);
         } else if (this == TBXLBlocks.green_autumnal_oak_leaves) {
@@ -138,7 +147,7 @@ public class TBXLBlockLeaves extends BlockLeaves {
     }
 
     @Override
-    public IBlockState getStateFromMeta(int meta) {
+    public @NotNull IBlockState getStateFromMeta(int meta) {
         return this.getDefaultState().withProperty(DECAYABLE, (meta & 1) == 0)
                 .withProperty(CHECK_DECAY, (meta & 2) > 0);
     }
@@ -158,17 +167,17 @@ public class TBXLBlockLeaves extends BlockLeaves {
     }
 
     @Override
-    public IBlockState getStateForPlacement(World world, BlockPos pos, EnumFacing facing, float hitX, float hitY, float hitZ, int meta, EntityLivingBase placer, EnumHand hand) {
+    public @NotNull IBlockState getStateForPlacement(@NotNull World world, @NotNull BlockPos pos, @NotNull EnumFacing facing, float hitX, float hitY, float hitZ, int meta, @NotNull EntityLivingBase placer, @NotNull EnumHand hand) {
         return super.getStateForPlacement(world, pos, facing, hitX, hitY, hitZ, meta, placer, hand).withProperty(DECAYABLE, false);
     }
 
     @Override
-    protected int getSaplingDropChance(IBlockState state) {
+    protected int getSaplingDropChance(@NotNull IBlockState state) {
         return saplingDropChance;
     }
 
     @Override
-    protected void dropApple(final World world, final BlockPos pos, final IBlockState state, final int chance) {
+    protected void dropApple(final @NotNull World world, final @NotNull BlockPos pos, final @NotNull IBlockState state, final int chance) {
         /*if (world.rand.nextInt(chance) == 0) {
             if (this == TBXLBlocks.fir_leaves) {
                 spawnAsEntity(world, pos, new ItemStack(TBXLItems.fir_door));

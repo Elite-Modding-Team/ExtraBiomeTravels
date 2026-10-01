@@ -14,15 +14,16 @@ import net.minecraft.world.IBlockAccess;
 import net.minecraft.world.World;
 import net.minecraftforge.common.EnumPlantType;
 import net.minecraftforge.common.IPlantable;
+import org.jetbrains.annotations.NotNull;
 
 public class TBXLBlockHardenedSand extends TBXLBlockMaterial implements IGrowable {
-    public TBXLBlockHardenedSand(MapColor mapColor) {
-        super(Material.SAND, mapColor, 1.2F, TBXLRegistry.HARDENED_SAND);
+    public TBXLBlockHardenedSand(String unlocName, MapColor mapColor) {
+        super(unlocName, Material.SAND, mapColor, 1.2F, TBXLRegistry.HARDENED_SAND);
     }
 
     // These sand blocks can either be mined or dug to destroy them faster
     @Override
-    public boolean isToolEffective(String type, IBlockState state) {
+    public boolean isToolEffective(String type, @NotNull IBlockState state) {
         if (type.equals("pickaxe") || type.equals("shovel")) {
             return true;
         }
@@ -31,24 +32,24 @@ public class TBXLBlockHardenedSand extends TBXLBlockMaterial implements IGrowabl
     }
 
     @Override
-    public boolean canSustainPlant(IBlockState state, IBlockAccess world, BlockPos pos, EnumFacing direction, IPlantable plantable) {
+    public boolean canSustainPlant(@NotNull IBlockState state, @NotNull IBlockAccess world, BlockPos pos, @NotNull EnumFacing direction, IPlantable plantable) {
         return plantable.getPlantType(world, pos.offset(direction)) == EnumPlantType.Desert ||
                 plantable.getPlantType(world, pos.offset(direction)) == EnumPlantType.Beach;
     }
 
     @Override
-    public boolean canGrow(World world, BlockPos pos, IBlockState state, boolean isClient) {
+    public boolean canGrow(@NotNull World world, @NotNull BlockPos pos, @NotNull IBlockState state, boolean isClient) {
         return true;
     }
 
     @Override
-    public boolean canUseBonemeal(World world, Random rand, BlockPos pos, IBlockState state) {
+    public boolean canUseBonemeal(@NotNull World world, @NotNull Random rand, @NotNull BlockPos pos, @NotNull IBlockState state) {
         return true;
     }
 
     // Renewable dead bushes, WOW!
     @Override
-    public void grow(World world, Random rand, BlockPos pos, IBlockState state) {
+    public void grow(@NotNull World world, @NotNull Random rand, BlockPos pos, @NotNull IBlockState state) {
         BlockPos blockpos = pos.up();
 
         for (int i = 0; i < 32; ++i) {

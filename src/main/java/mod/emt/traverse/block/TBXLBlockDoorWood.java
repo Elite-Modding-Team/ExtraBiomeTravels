@@ -1,7 +1,9 @@
 package mod.emt.traverse.block;
 
+import java.util.Objects;
 import java.util.Random;
 
+import mod.emt.traverse.TraverseBiomesXL;
 import mod.emt.traverse.init.TBXLBlocks;
 import mod.emt.traverse.init.TBXLItems;
 import net.minecraft.block.BlockDoor;
@@ -15,13 +17,18 @@ import net.minecraft.item.ItemStack;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.IBlockAccess;
 import net.minecraft.world.World;
+import org.jetbrains.annotations.NotNull;
 
 // NOTE: Wooden doors are not flammable in vanilla
+@SuppressWarnings("deprecation")
 public class TBXLBlockDoorWood extends BlockDoor {
     private final MapColor mapColor;
 
-    public TBXLBlockDoorWood(MapColor mapColor) {
+    public TBXLBlockDoorWood(String unlocName, MapColor mapColor) {
         super(Material.WOOD);
+        this.setRegistryName(TraverseBiomesXL.MOD_ID, unlocName);
+        this.setTranslationKey(Objects.requireNonNull(this.getRegistryName()).toString());
+        this.setCreativeTab(TraverseBiomesXL.TAB);
         this.setSoundType(SoundType.WOOD);
         this.setHardness(3.0F);
         this.setHarvestLevel("axe", 0);
@@ -30,7 +37,7 @@ public class TBXLBlockDoorWood extends BlockDoor {
     }
 
     @Override
-    public ItemStack getItem(World worldIn, BlockPos pos, IBlockState state) {
+    public @NotNull ItemStack getItem(@NotNull World world, @NotNull BlockPos pos, @NotNull IBlockState state) {
         return new ItemStack(getItemBlock());
     }
 
@@ -46,12 +53,12 @@ public class TBXLBlockDoorWood extends BlockDoor {
     }
 
     @Override
-    public Item getItemDropped(IBlockState state, Random rand, int fortune) {
+    public @NotNull Item getItemDropped(IBlockState state, @NotNull Random rand, int fortune) {
         return state.getValue(HALF) == BlockDoor.EnumDoorHalf.UPPER ? Items.AIR : getItemBlock();
     }
 
     @Override
-    public MapColor getMapColor(IBlockState state, IBlockAccess world, BlockPos pos) {
+    public @NotNull MapColor getMapColor(@NotNull IBlockState state, @NotNull IBlockAccess world, @NotNull BlockPos pos) {
         return mapColor;
     }
 }

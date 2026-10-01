@@ -1,5 +1,6 @@
 package mod.emt.traverse.block;
 
+import mod.emt.traverse.TraverseBiomesXL;
 import net.minecraft.block.BlockFenceGate;
 import net.minecraft.block.BlockPlanks.EnumType;
 import net.minecraft.block.material.MapColor;
@@ -9,13 +10,19 @@ import net.minecraft.init.Blocks;
 import net.minecraft.util.EnumFacing;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.IBlockAccess;
+import org.jetbrains.annotations.NotNull;
+
+import java.util.Objects;
 
 public class TBXLBlockFenceGateWood extends BlockFenceGate {
     private final MapColor mapColor;
     public boolean flammable;
 
-    public TBXLBlockFenceGateWood(MapColor mapColor, boolean flammable) {
+    public TBXLBlockFenceGateWood(String unlocName, MapColor mapColor, boolean flammable) {
         super(EnumType.OAK);
+        this.setRegistryName(TraverseBiomesXL.MOD_ID, unlocName);
+        this.setTranslationKey(Objects.requireNonNull(this.getRegistryName()).toString());
+        this.setCreativeTab(TraverseBiomesXL.TAB);
         this.setSoundType(SoundType.WOOD);
         this.setHardness(2.0F);
         this.setResistance(5.0F);
@@ -29,7 +36,7 @@ public class TBXLBlockFenceGateWood extends BlockFenceGate {
     }
 
     @Override
-    public int getFlammability(IBlockAccess world, BlockPos pos, EnumFacing face) {
+    public int getFlammability(@NotNull IBlockAccess world, @NotNull BlockPos pos, @NotNull EnumFacing face) {
         if (isFlammable()) {
             return Blocks.PLANKS.getFlammability(world, pos, face);
         } else {
@@ -38,7 +45,7 @@ public class TBXLBlockFenceGateWood extends BlockFenceGate {
     }
 
     @Override
-    public int getFireSpreadSpeed(IBlockAccess world, BlockPos pos, EnumFacing face) {
+    public int getFireSpreadSpeed(@NotNull IBlockAccess world, @NotNull BlockPos pos, @NotNull EnumFacing face) {
         if (isFlammable()) {
             return Blocks.PLANKS.getFireSpreadSpeed(world, pos, face);
         } else {
@@ -47,7 +54,7 @@ public class TBXLBlockFenceGateWood extends BlockFenceGate {
     }
 
     @Override
-    public MapColor getMapColor(IBlockState state, IBlockAccess world, BlockPos pos) {
+    public @NotNull MapColor getMapColor(@NotNull IBlockState state, @NotNull IBlockAccess world, @NotNull BlockPos pos) {
         return mapColor;
     }
 }

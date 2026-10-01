@@ -10,6 +10,7 @@ import net.minecraft.init.Biomes;
 import net.minecraft.init.Blocks;
 import net.minecraft.world.biome.Biome;
 import net.minecraft.world.gen.feature.WorldGenAbstractTree;
+import org.jetbrains.annotations.NotNull;
 
 public class TBXLBiomeAutumnalWoodedHills extends Biome {
     public static Biome.BiomeProperties properties = new Biome.BiomeProperties("Autumnal Wooded Hills");
@@ -34,7 +35,7 @@ public class TBXLBiomeAutumnalWoodedHills extends Biome {
     }
 
     @Override
-    public WorldGenAbstractTree getRandomTreeFeature(Random rand) {
+    public @NotNull WorldGenAbstractTree getRandomTreeFeature(Random rand) {
         int num = rand.nextInt(6);
 
         if (num == 0) {

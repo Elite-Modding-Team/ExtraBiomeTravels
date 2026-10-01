@@ -8,8 +8,6 @@ import net.minecraft.client.renderer.color.IItemColor;
 import net.minecraft.init.Blocks;
 import net.minecraft.item.ItemBlock;
 import net.minecraft.item.ItemStack;
-import net.minecraft.util.math.BlockPos;
-import net.minecraft.world.IBlockAccess;
 
 @SuppressWarnings("deprecation")
 public class ClientProxy extends CommonProxy {
@@ -23,16 +21,13 @@ public class ClientProxy extends CommonProxy {
 
     @Override
     public void postInit() {
-        IBlockColor leavesColor = new IBlockColor() {
-            @Override
-            public int colorMultiplier(IBlockState state, IBlockAccess world, BlockPos pos, int tintIndex) {
-                // Custom Colors
-                if (tintIndex == 0 && state.getBlock() == TBXLBlocks.fir_leaves) {
-                    return Minecraft.getMinecraft().getBlockColors().colorMultiplier(Blocks.LEAVES.getStateFromMeta(1), null, null, tintIndex);
-                }
-
-                return Minecraft.getMinecraft().getBlockColors().colorMultiplier(Blocks.LEAVES.getDefaultState(), world, pos, tintIndex);
+        IBlockColor leavesColor = (state, world, pos, tintIndex) -> {
+            // Custom Colors
+            if (tintIndex == 0 && state.getBlock() == TBXLBlocks.fir_leaves) {
+                return Minecraft.getMinecraft().getBlockColors().colorMultiplier(Blocks.LEAVES.getStateFromMeta(1), null, null, tintIndex);
             }
+
+            return Minecraft.getMinecraft().getBlockColors().colorMultiplier(Blocks.LEAVES.getDefaultState(), world, pos, tintIndex);
         };
 
         IItemColor leavesItemColor = new IItemColor() {

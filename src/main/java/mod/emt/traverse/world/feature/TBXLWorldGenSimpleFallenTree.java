@@ -1,6 +1,8 @@
 package mod.emt.traverse.world.feature;
 
 import net.minecraft.block.BlockLog;
+import net.minecraft.block.BlockOldLog;
+import net.minecraft.block.BlockPlanks;
 import net.minecraft.block.BlockSapling;
 import net.minecraft.block.material.Material;
 import net.minecraft.block.state.IBlockState;
@@ -9,17 +11,16 @@ import net.minecraft.util.EnumFacing;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
 import net.minecraft.world.gen.feature.WorldGenAbstractTree;
+import org.jetbrains.annotations.NotNull;
 
 import java.util.Random;
 
-import mod.emt.traverse.world.WorldGenConstants;
-
-public class TBXLWorldGenSimpleFallenTree extends WorldGenAbstractTree implements WorldGenConstants {
+public class TBXLWorldGenSimpleFallenTree extends WorldGenAbstractTree {
     private final int minTreeLength;
     private IBlockState stateWood;
 
     public TBXLWorldGenSimpleFallenTree(boolean isWorldGen) {
-        this(isWorldGen, 3, OAK_LOG);
+        this(isWorldGen, 3, Blocks.LOG.getDefaultState().withProperty(BlockOldLog.VARIANT, BlockPlanks.EnumType.OAK));
     }
 
     public TBXLWorldGenSimpleFallenTree(boolean isWorldGen, int minTreeLength, IBlockState stateWood) {
@@ -28,7 +29,7 @@ public class TBXLWorldGenSimpleFallenTree extends WorldGenAbstractTree implement
         this.stateWood = stateWood;
     }
 
-    public boolean generate(World world, Random rand, BlockPos position) {
+    public boolean generate(@NotNull World world, Random rand, @NotNull BlockPos position) {
         int num = rand.nextInt(5);
         EnumFacing orientation;
 

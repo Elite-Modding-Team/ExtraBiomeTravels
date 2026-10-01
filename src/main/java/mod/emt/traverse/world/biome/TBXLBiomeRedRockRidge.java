@@ -1,9 +1,8 @@
 package mod.emt.traverse.world.biome;
 
-import java.util.Iterator;
 import java.util.Random;
 
-import mod.emt.traverse.world.WorldGenConstants;
+import mod.emt.traverse.init.TBXLBlocks;
 import net.minecraft.block.BlockSand;
 import net.minecraft.block.material.Material;
 import net.minecraft.block.state.IBlockState;
@@ -15,8 +14,9 @@ import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
 import net.minecraft.world.biome.Biome;
 import net.minecraft.world.chunk.ChunkPrimer;
+import org.jetbrains.annotations.NotNull;
 
-public class TBXLBiomeRedRockRidge extends Biome implements WorldGenConstants {
+public class TBXLBiomeRedRockRidge extends Biome {
     public static BiomeProperties properties = new BiomeProperties("Red Rock Ridge");
 
     static {
@@ -28,20 +28,12 @@ public class TBXLBiomeRedRockRidge extends Biome implements WorldGenConstants {
 
     public TBXLBiomeRedRockRidge() {
         super(properties);
-        this.topBlock = RED_ROCK;
-        this.fillerBlock = RED_ROCK;
+        this.topBlock = TBXLBlocks.red_rock.getDefaultState();
+        this.fillerBlock = TBXLBlocks.red_rock.getDefaultState();
         this.spawnableCreatureList.clear();
 
         // Remove Zombies from most spawns and replace them with Husks
-        Iterator<Biome.SpawnListEntry> iterator = this.spawnableMonsterList.iterator();
-        while (iterator.hasNext()) {
-            Biome.SpawnListEntry list = iterator.next();
-
-            if (list.entityClass == EntityZombie.class || list.entityClass == EntityZombieVillager.class) {
-                iterator.remove();
-            }
-        }
-
+        this.spawnableMonsterList.removeIf(list -> list.entityClass == EntityZombie.class || list.entityClass == EntityZombieVillager.class);
         this.spawnableMonsterList.add(new Biome.SpawnListEntry(EntityZombie.class, 19, 4, 4));
         this.spawnableMonsterList.add(new Biome.SpawnListEntry(EntityZombieVillager.class, 1, 1, 1));
         this.spawnableMonsterList.add(new Biome.SpawnListEntry(EntityHusk.class, 80, 4, 4));
@@ -59,7 +51,7 @@ public class TBXLBiomeRedRockRidge extends Biome implements WorldGenConstants {
     }
 
     @Override
-    public void genTerrainBlocks(World world, Random rand, ChunkPrimer chunkPrimer, int x, int z, double noiseVal) {
+    public void genTerrainBlocks(World world, Random rand, @NotNull ChunkPrimer chunkPrimer, int x, int z, double noiseVal) {
         int i = world.getSeaLevel();
         IBlockState state = this.topBlock;
         IBlockState state1 = this.fillerBlock;
@@ -115,14 +107,14 @@ public class TBXLBiomeRedRockRidge extends Biome implements WorldGenConstants {
                             state1 = state1.getValue(BlockSand.VARIANT) == BlockSand.EnumType.RED_SAND ? RED_SANDSTONE : SANDSTONE;
                         }
 
-                        if (j == 0 && state == RED_ROCK && k > 1) {
+                        if (j == 0 && state == TBXLBlocks.red_rock.getDefaultState() && k > 1) {
                             j = rand.nextInt(4) + Math.max(0, j1 - 63);
-                            state = RED_ROCK;
+                            state = TBXLBlocks.red_rock.getDefaultState();
                         }
 
-                        if (j == 0 && state1 == RED_ROCK && k > 1) {
+                        if (j == 0 && state1 == TBXLBlocks.red_rock.getDefaultState() && k > 1) {
                             j = rand.nextInt(4) + Math.max(0, j1 - 63);
-                            state1 = RED_ROCK;
+                            state1 = TBXLBlocks.red_rock.getDefaultState();
                         }
                     }
                 }

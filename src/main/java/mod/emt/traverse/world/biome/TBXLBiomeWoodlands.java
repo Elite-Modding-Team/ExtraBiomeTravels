@@ -1,6 +1,7 @@
 package mod.emt.traverse.world.biome;
 
-import net.minecraft.block.BlockFlower;
+import mod.emt.traverse.world.feature.TBXLWorldGenSimpleFallenTree;
+import net.minecraft.block.*;
 import net.minecraft.entity.passive.EntityWolf;
 import net.minecraft.init.Blocks;
 import net.minecraft.util.math.BlockPos;
@@ -10,13 +11,14 @@ import net.minecraft.world.gen.feature.WorldGenAbstractTree;
 import net.minecraft.world.gen.feature.WorldGenShrub;
 import net.minecraftforge.event.terraingen.DecorateBiomeEvent;
 import net.minecraftforge.event.terraingen.TerrainGen;
+import org.jetbrains.annotations.NotNull;
 
 import java.util.Random;
 
-import mod.emt.traverse.world.WorldGenConstants;
-
 @SuppressWarnings("deprecation")
-public class TBXLBiomeWoodlands extends Biome implements WorldGenConstants {
+public class TBXLBiomeWoodlands extends Biome {
+    TBXLWorldGenSimpleFallenTree SIMPLE_OAK_FALLEN_TREE_FEATURE = new TBXLWorldGenSimpleFallenTree(false);
+
     public static BiomeProperties properties = new BiomeProperties("Woodlands");
 
     static {
@@ -49,7 +51,7 @@ public class TBXLBiomeWoodlands extends Biome implements WorldGenConstants {
     }
 
     @Override
-    public BlockFlower.EnumFlowerType pickRandomFlower(Random rand, BlockPos pos) {
+    public BlockFlower.@NotNull EnumFlowerType pickRandomFlower(@NotNull Random rand, BlockPos pos) {
         double d0 = GRASS_COLOR_NOISE.getValue((double) pos.getX() / 200.0D, (double) pos.getZ() / 200.0D);
 
         if (d0 < -0.8D) {
@@ -75,18 +77,19 @@ public class TBXLBiomeWoodlands extends Biome implements WorldGenConstants {
     }
 
     @Override
-    public WorldGenAbstractTree getRandomTreeFeature(Random rand) {
+    public @NotNull WorldGenAbstractTree getRandomTreeFeature(Random rand) {
         int num = rand.nextInt(3);
 
         if (num == 0) {
-            return new WorldGenShrub(OAK_LOG, OAK_LEAVES);
+            return new WorldGenShrub(Blocks.LOG.getDefaultState().withProperty(BlockOldLog.VARIANT, BlockPlanks.EnumType.OAK),
+                    Blocks.LEAVES.getDefaultState().withProperty(BlockOldLeaf.VARIANT, BlockPlanks.EnumType.OAK).withProperty(BlockLeaves.CHECK_DECAY, false));
         }
 
         return TREE_FEATURE;
     }
 
     @Override
-    public void decorate(World world, Random rand, BlockPos pos) {
+    public void decorate(@NotNull World world, @NotNull Random rand, @NotNull BlockPos pos) {
         if (TerrainGen.decorate(world, rand, pos, DecorateBiomeEvent.Decorate.EventType.TREE)) {
             int genChance = rand.nextInt(5);
 

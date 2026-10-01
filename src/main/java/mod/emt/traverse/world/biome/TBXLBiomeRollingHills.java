@@ -7,6 +7,7 @@ import net.minecraft.init.Blocks;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.biome.Biome;
 import net.minecraft.world.gen.feature.WorldGenAbstractTree;
+import org.jetbrains.annotations.NotNull;
 
 public class TBXLBiomeRollingHills extends Biome {
     public static BiomeProperties properties = new BiomeProperties("Rolling Hills");
@@ -39,7 +40,7 @@ public class TBXLBiomeRollingHills extends Biome {
     }
 
     @Override
-    public BlockFlower.EnumFlowerType pickRandomFlower(Random rand, BlockPos pos) {
+    public BlockFlower.@NotNull EnumFlowerType pickRandomFlower(@NotNull Random rand, BlockPos pos) {
         double d0 = GRASS_COLOR_NOISE.getValue((double) pos.getX() / 200.0D, (double) pos.getZ() / 200.0D);
 
         if (d0 < -0.9D) {
@@ -65,7 +66,7 @@ public class TBXLBiomeRollingHills extends Biome {
     }
 
     @Override
-    public WorldGenAbstractTree getRandomTreeFeature(Random rand) {
+    public @NotNull WorldGenAbstractTree getRandomTreeFeature(@NotNull Random rand) {
         return TREE_FEATURE;
     }
 

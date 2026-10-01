@@ -1,5 +1,7 @@
 package mod.emt.traverse.block;
 
+import mod.emt.traverse.TraverseBiomesXL;
+import net.minecraft.block.Block;
 import net.minecraft.block.BlockSlab;
 import net.minecraft.block.SoundType;
 import net.minecraft.block.material.MapColor;
@@ -9,29 +11,40 @@ import net.minecraft.block.properties.PropertyEnum;
 import net.minecraft.block.state.BlockStateContainer;
 import net.minecraft.block.state.IBlockState;
 import net.minecraft.init.Blocks;
+import net.minecraft.init.Items;
+import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraft.util.EnumFacing;
 import net.minecraft.util.IStringSerializable;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.IBlockAccess;
+import org.jetbrains.annotations.NotNull;
 
+import java.util.Objects;
+import java.util.Random;
+
+@SuppressWarnings("deprecation")
 public abstract class TBXLBlockSlab extends BlockSlab {
     public static final PropertyEnum<Variant> VARIANT = PropertyEnum.create("variant", Variant.class);
 
     public boolean flammable;
 
-    public TBXLBlockSlab(Material material, MapColor mapColor, boolean flammable) {
+    public TBXLBlockSlab(String name, Material material, MapColor mapColor, boolean flammable, float hardness, float resistance) {
         super(material, mapColor);
-
+        this.setRegistryName(TraverseBiomesXL.MOD_ID, name);
+        this.setTranslationKey(Objects.requireNonNull(this.getRegistryName()).toString());
+        this.setCreativeTab(TraverseBiomesXL.TAB);
         IBlockState iblockstate = this.blockState.getBaseState().withProperty(VARIANT, Variant.DEFAULT);
 
         if (!this.isDouble()) {
-            iblockstate.withProperty(HALF, BlockSlab.EnumBlockHalf.BOTTOM);
+            iblockstate = iblockstate.withProperty(HALF, EnumBlockHalf.BOTTOM);
         }
 
         this.setDefaultState(iblockstate);
         this.useNeighborBrightness = !this.isDouble();
         this.setSoundType(material == Material.WOOD ? SoundType.WOOD : SoundType.STONE);
+        this.setHardness(hardness);
+        this.setResistance(resistance);
         this.flammable = flammable;
     }
 
@@ -40,7 +53,7 @@ public abstract class TBXLBlockSlab extends BlockSlab {
     }
 
     @Override
-    public int getFlammability(IBlockAccess world, BlockPos pos, EnumFacing face) {
+    public int getFlammability(@NotNull IBlockAccess world, @NotNull BlockPos pos, @NotNull EnumFacing face) {
         if (isFlammable()) {
             return Blocks.PLANKS.getFlammability(world, pos, face);
         } else {
@@ -49,7 +62,7 @@ public abstract class TBXLBlockSlab extends BlockSlab {
     }
 
     @Override
-    public int getFireSpreadSpeed(IBlockAccess world, BlockPos pos, EnumFacing face) {
+    public int getFireSpreadSpeed(@NotNull IBlockAccess world, @NotNull BlockPos pos, @NotNull EnumFacing face) {
         if (isFlammable()) {
             return Blocks.PLANKS.getFireSpreadSpeed(world, pos, face);
         } else {
@@ -58,22 +71,22 @@ public abstract class TBXLBlockSlab extends BlockSlab {
     }
 
     @Override
-    public String getTranslationKey(int meta) {
+    public @NotNull String getTranslationKey(int meta) {
         return super.getTranslationKey();
     }
 
     @Override
-    public IProperty<?> getVariantProperty() {
+    public @NotNull IProperty<?> getVariantProperty() {
         return VARIANT;
     }
 
     @Override
-    public Comparable<?> getTypeForItem(ItemStack stack) {
+    public @NotNull Comparable<?> getTypeForItem(@NotNull ItemStack stack) {
         return Variant.DEFAULT;
     }
 
     @Override
-    public final IBlockState getStateFromMeta(final int meta) {
+    public final @NotNull IBlockState getStateFromMeta(final int meta) {
         IBlockState blockstate = this.blockState.getBaseState().withProperty(VARIANT, Variant.DEFAULT);
 
         if (!this.isDouble()) {
@@ -84,7 +97,7 @@ public abstract class TBXLBlockSlab extends BlockSlab {
     }
 
     @Override
-    public final int getMetaFromState(final IBlockState state) {
+    public final int getMetaFromState(final @NotNull IBlockState state) {
         int meta = 0;
 
         if (!this.isDouble() && state.getValue(HALF) == EnumBlockHalf.TOP) {
@@ -95,39 +108,47 @@ public abstract class TBXLBlockSlab extends BlockSlab {
     }
 
     @Override
-    protected BlockStateContainer createBlockState() {
+    protected @NotNull BlockStateContainer createBlockState() {
         if (!this.isDouble()) {
             return new BlockStateContainer(this, VARIANT, HALF);
         }
         return new BlockStateContainer(this, VARIANT);
     }
 
+    @Override
+    public @NotNull Item getItemDropped(@NotNull IBlockState state, @NotNull Random rand, int fortune) {
+        if(this.isDouble()) {
+            Block singleBlock = Block.getBlockFromName(Objects.requireNonNull(this.getRegistryName()).toString().replace("_double", ""));
+            return singleBlock != null ? Item.getItemFromBlock(singleBlock) : Items.AIR;
+        }
+
+        return Item.getItemFromBlock(this);
+    }
+
     public enum Variant implements IStringSerializable {
         DEFAULT;
 
         @Override
-        public String getName() {
+        public @NotNull String getName() {
             return "default";
         }
     }
 
     public static class Double extends TBXLBlockSlab {
-
-        public Double(Material material, MapColor mapColor, boolean flammable) {
-            super(material, mapColor, flammable);
+        public Double(String name, Material material, MapColor mapColor, float hardness, float resistance, boolean flammable) {
+            super(name + "_double", material, mapColor, flammable, hardness, resistance);
+            this.setTranslationKey(Objects.requireNonNull(this.getRegistryName()).toString().replace("_double", ""));
         }
 
         @Override
         public boolean isDouble() {
             return true;
         }
-
     }
 
     public static class Half extends TBXLBlockSlab {
-
-        public Half(Material material, MapColor mapColor, boolean flammable) {
-            super(material, mapColor, flammable);
+        public Half(String name, Material material, MapColor mapColor, float hardness, float resistance, boolean flammable) {
+            super(name, material, mapColor, flammable, hardness, resistance);
         }
 
         @Override

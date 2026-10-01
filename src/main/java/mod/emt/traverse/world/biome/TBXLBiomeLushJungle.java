@@ -2,21 +2,22 @@ package mod.emt.traverse.world.biome;
 
 import java.util.Random;
 
-import mod.emt.traverse.world.WorldGenConstants;
-import net.minecraft.block.BlockTallGrass;
+import net.minecraft.block.*;
 import net.minecraft.entity.passive.EntityChicken;
 import net.minecraft.entity.passive.EntityOcelot;
 import net.minecraft.entity.passive.EntityParrot;
 import net.minecraft.init.Biomes;
+import net.minecraft.init.Blocks;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
 import net.minecraft.world.biome.Biome;
 import net.minecraft.world.gen.feature.*;
 import net.minecraftforge.event.terraingen.DecorateBiomeEvent;
 import net.minecraftforge.event.terraingen.TerrainGen;
+import org.jetbrains.annotations.NotNull;
 
 @SuppressWarnings("deprecation")
-public class TBXLBiomeLushJungle extends Biome implements WorldGenConstants {
+public class TBXLBiomeLushJungle extends Biome {
     public static BiomeProperties properties = new BiomeProperties("Lush Jungle");
 
     static {
@@ -42,17 +43,18 @@ public class TBXLBiomeLushJungle extends Biome implements WorldGenConstants {
     }
 
     @Override
-    public WorldGenerator getRandomWorldGenForGrass(Random rand) {
+    public @NotNull WorldGenerator getRandomWorldGenForGrass(Random rand) {
         return rand.nextInt(4) == 0 ? new WorldGenTallGrass(BlockTallGrass.EnumType.FERN) : new WorldGenTallGrass(BlockTallGrass.EnumType.GRASS);
     }
 
     @Override
-    public WorldGenAbstractTree getRandomTreeFeature(Random rand) {
-        return rand.nextInt(10) == 0 ? BIG_TREE_FEATURE : new WorldGenTrees(false, 2 + rand.nextInt(3), JUNGLE_LOG, JUNGLE_LEAVES, true);
+    public @NotNull WorldGenAbstractTree getRandomTreeFeature(Random rand) {
+        return rand.nextInt(10) == 0 ? BIG_TREE_FEATURE : new WorldGenTrees(false, 2 + rand.nextInt(3), Blocks.LOG.getDefaultState().withProperty(BlockOldLog.VARIANT, BlockPlanks.EnumType.JUNGLE),
+                Blocks.LEAVES.getDefaultState().withProperty(BlockOldLeaf.VARIANT, BlockPlanks.EnumType.JUNGLE).withProperty(BlockLeaves.CHECK_DECAY, false), true);
     }
 
     @Override
-    public void decorate(World world, Random rand, BlockPos pos) {
+    public void decorate(@NotNull World world, @NotNull Random rand, @NotNull BlockPos pos) {
         super.decorate(world, rand, pos);
         int i = rand.nextInt(16) + 8;
         int j = rand.nextInt(16) + 8;

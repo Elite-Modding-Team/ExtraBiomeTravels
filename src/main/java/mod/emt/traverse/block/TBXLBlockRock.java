@@ -11,8 +11,8 @@ import java.util.Random;
 import mod.emt.traverse.init.TBXLBlocks;
 
 public class TBXLBlockRock extends TBXLBlockMaterial {
-    public TBXLBlockRock(MapColor mapColor) {
-        super(Material.ROCK, mapColor, 1.5F, 10.0F, SoundType.STONE);
+    public TBXLBlockRock(String unlocName, MapColor mapColor) {
+        super(unlocName, Material.ROCK, mapColor, 1.5F, 10.0F, SoundType.STONE);
     }
 
     @Override

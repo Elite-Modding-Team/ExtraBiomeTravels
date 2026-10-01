@@ -1,5 +1,6 @@
 package mod.emt.traverse.block;
 
+import mod.emt.traverse.TraverseBiomesXL;
 import net.minecraft.block.BlockFence;
 import net.minecraft.block.SoundType;
 import net.minecraft.block.material.MapColor;
@@ -8,13 +9,19 @@ import net.minecraft.init.Blocks;
 import net.minecraft.util.EnumFacing;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.IBlockAccess;
+import org.jetbrains.annotations.NotNull;
+
+import java.util.Objects;
 
 // NOTE: Wooden fences are not flammable in vanilla
 public class TBXLBlockFenceWood extends BlockFence {
     public boolean flammable;
 
-    public TBXLBlockFenceWood(MapColor mapColor, boolean flammable) {
+    public TBXLBlockFenceWood(String unlocName, MapColor mapColor, boolean flammable) {
         super(Material.WOOD, mapColor);
+        this.setRegistryName(TraverseBiomesXL.MOD_ID, unlocName);
+        this.setTranslationKey(Objects.requireNonNull(this.getRegistryName()).toString());
+        this.setCreativeTab(TraverseBiomesXL.TAB);
         this.setSoundType(SoundType.WOOD);
         this.setHardness(2.0F);
         this.setResistance(5.0F);
@@ -27,7 +34,7 @@ public class TBXLBlockFenceWood extends BlockFence {
     }
 
     @Override
-    public int getFlammability(IBlockAccess world, BlockPos pos, EnumFacing face) {
+    public int getFlammability(@NotNull IBlockAccess world, @NotNull BlockPos pos, @NotNull EnumFacing face) {
         if (isFlammable()) {
             return Blocks.PLANKS.getFlammability(world, pos, face);
         } else {

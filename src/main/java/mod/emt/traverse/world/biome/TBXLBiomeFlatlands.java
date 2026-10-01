@@ -9,6 +9,7 @@ import net.minecraft.entity.passive.EntityRabbit;
 import net.minecraft.init.Blocks;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.biome.Biome;
+import org.jetbrains.annotations.NotNull;
 
 public class TBXLBiomeFlatlands extends Biome {
     public static BiomeProperties properties = new BiomeProperties("Flatlands");
@@ -47,7 +48,7 @@ public class TBXLBiomeFlatlands extends Biome {
     }
 
     @Override
-    public BlockFlower.EnumFlowerType pickRandomFlower(Random rand, BlockPos pos) {
+    public BlockFlower.@NotNull EnumFlowerType pickRandomFlower(@NotNull Random rand, BlockPos pos) {
         double d0 = GRASS_COLOR_NOISE.getValue((double) pos.getX() / 200.0D, (double) pos.getZ() / 200.0D);
 
         if (d0 < -0.8D) {

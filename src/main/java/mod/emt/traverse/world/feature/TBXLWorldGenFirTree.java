@@ -1,5 +1,7 @@
 package mod.emt.traverse.world.feature;
 
+import mod.emt.traverse.init.TBXLBlocks;
+import net.minecraft.block.BlockLeaves;
 import net.minecraft.block.BlockSapling;
 import net.minecraft.block.state.IBlockState;
 import net.minecraft.init.Blocks;
@@ -7,23 +9,22 @@ import net.minecraft.util.EnumFacing;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
 import net.minecraft.world.gen.feature.WorldGenAbstractTree;
+import org.jetbrains.annotations.NotNull;
 
 import java.util.Random;
 
-import mod.emt.traverse.world.WorldGenConstants;
-
-public class TBXLWorldGenFirTree extends WorldGenAbstractTree implements WorldGenConstants {
+public class TBXLWorldGenFirTree extends WorldGenAbstractTree {
     public final boolean isWorldGen;
     private final int minTreeHeight;
-    private IBlockState stateWood;
-    private IBlockState stateLeaves;
+    private final IBlockState stateWood;
+    private final IBlockState stateLeaves;
 
     public TBXLWorldGenFirTree(boolean isWorldGen) {
         this(isWorldGen, 12);
     }
 
     public TBXLWorldGenFirTree(boolean isWorldGen, int minTreeHeight) {
-        this(isWorldGen, minTreeHeight, FIR_LOG, FIR_LEAVES);
+        this(isWorldGen, minTreeHeight, TBXLBlocks.fir_log.getDefaultState(), TBXLBlocks.fir_leaves.getDefaultState().withProperty(BlockLeaves.CHECK_DECAY, false));
     }
 
     public TBXLWorldGenFirTree(boolean isWorldGen, int minTreeHeight, IBlockState stateWood, IBlockState stateLeaves) {
@@ -34,7 +35,7 @@ public class TBXLWorldGenFirTree extends WorldGenAbstractTree implements WorldGe
         this.stateLeaves = stateLeaves;
     }
 
-    public boolean generate(World world, Random rand, BlockPos position) {
+    public boolean generate(@NotNull World world, Random rand, BlockPos position) {
         int treeHeight = rand.nextInt(15) + minTreeHeight;
         int nakedLogHeight = 3 + rand.nextInt(3);
         int leavesHeight = treeHeight - nakedLogHeight;

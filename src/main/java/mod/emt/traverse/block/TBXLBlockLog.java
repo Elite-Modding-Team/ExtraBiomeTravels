@@ -1,5 +1,6 @@
 package mod.emt.traverse.block;
 
+import mod.emt.traverse.TraverseBiomesXL;
 import net.minecraft.block.BlockLog;
 import net.minecraft.block.material.MapColor;
 import net.minecraft.block.state.BlockStateContainer;
@@ -8,18 +9,25 @@ import net.minecraft.init.Blocks;
 import net.minecraft.util.EnumFacing;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.IBlockAccess;
+import org.jetbrains.annotations.NotNull;
+
+import java.util.Objects;
 
 public class TBXLBlockLog extends BlockLog {
     private final MapColor mapColor;
     public boolean flammable;
 
-    public TBXLBlockLog(MapColor mapColor, boolean flammable) {
+    public TBXLBlockLog(String unlocName, MapColor mapColor, float hardness, boolean flammable) {
+        this.setRegistryName(TraverseBiomesXL.MOD_ID, unlocName);
+        this.setTranslationKey(Objects.requireNonNull(this.getRegistryName()).toString());
+        this.setCreativeTab(TraverseBiomesXL.TAB);
         this.setDefaultState(this.blockState.getBaseState().withProperty(LOG_AXIS, BlockLog.EnumAxis.Y));
+        this.setHardness(hardness);
         this.mapColor = mapColor;
         this.flammable = flammable;
     }
 
-    protected BlockStateContainer createBlockState() {
+    protected @NotNull BlockStateContainer createBlockState() {
         return new BlockStateContainer(this, LOG_AXIS);
     }
 
@@ -29,7 +37,7 @@ public class TBXLBlockLog extends BlockLog {
     }
 
     @Override
-    public IBlockState getStateFromMeta(int meta) {
+    public @NotNull IBlockState getStateFromMeta(int meta) {
         for (EnumAxis axis : EnumAxis.values()) {
             if (axis.ordinal() == meta) {
                 return getDefaultState().withProperty(LOG_AXIS, axis);
@@ -40,7 +48,7 @@ public class TBXLBlockLog extends BlockLog {
     }
 
     @Override
-    public MapColor getMapColor(IBlockState state, IBlockAccess world, BlockPos pos) {
+    public @NotNull MapColor getMapColor(@NotNull IBlockState state, @NotNull IBlockAccess world, @NotNull BlockPos pos) {
         return mapColor;
     }
 
@@ -49,7 +57,7 @@ public class TBXLBlockLog extends BlockLog {
     }
 
     @Override
-    public int getFlammability(IBlockAccess world, BlockPos pos, EnumFacing face) {
+    public int getFlammability(@NotNull IBlockAccess world, @NotNull BlockPos pos, @NotNull EnumFacing face) {
         if (isFlammable()) {
             return Blocks.LOG.getFlammability(world, pos, face);
         } else {
@@ -58,7 +66,7 @@ public class TBXLBlockLog extends BlockLog {
     }
 
     @Override
-    public int getFireSpreadSpeed(IBlockAccess world, BlockPos pos, EnumFacing face) {
+    public int getFireSpreadSpeed(@NotNull IBlockAccess world, @NotNull BlockPos pos, @NotNull EnumFacing face) {
         if (isFlammable()) {
             return Blocks.LOG.getFireSpreadSpeed(world, pos, face);
         } else {
