@@ -1,0 +1,23 @@
+{
+  "forge_marker": 1,
+  "defaults": {
+    "model": "cube_all",
+    "textures": {
+      "particle": "traverse:blocks/bald_cypress_planks",
+      "bottom": "traverse:blocks/bald_cypress_planks",
+      "top": "traverse:blocks/bald_cypress_planks",
+      "side": "traverse:blocks/bald_cypress_planks"
+    }
+  },
+  "variants": {
+    "half=bottom,variant=default": {
+      "model": "half_slab"
+    },
+    "half=top,variant=default": {
+      "model": "upper_slab"
+    },
+    "normal": {
+      "model": "half_slab"
+    }
+  }
+}

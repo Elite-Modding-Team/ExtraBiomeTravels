@@ -1,0 +1,20 @@
+{
+  "type": "forge:ore_shaped",
+  "pattern": [
+    "X*X",
+    "X*X"
+  ],
+  "key": {
+    "X": {
+      "item": "traverse:autumnal_planks"
+    },
+    "*": {
+      "type": "forge:ore_dict",
+      "ore": "stickWood"
+    }
+  },
+  "result": {
+    "item": "traverse:autumnal_fence",
+    "count": 3
+  }
+}

@@ -1,0 +1,15 @@
+{
+  "type": "forge:ore_shapeless",
+  "ingredients": [
+    {
+      "item": "minecraft:wooden_button"
+    },
+    {
+      "item": "traverse:autumnal_planks"
+    }
+  ],
+  "result": {
+    "item": "traverse:autumnal_button",
+    "count": 1
+  }
+}

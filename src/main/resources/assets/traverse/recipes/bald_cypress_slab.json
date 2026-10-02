@@ -1,0 +1,16 @@
+{
+  "type": "forge:ore_shaped",
+  "pattern": [
+    "XXX"
+  ],
+  "key": {
+    "X": {
+      "item": "traverse:bald_cypress_planks"
+    }
+  },
+  "result": {
+    "item": "traverse:bald_cypress_slab",
+    "data": 0,
+    "count": 6
+  }
+}

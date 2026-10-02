@@ -1,0 +1,26 @@
+{
+  "forge_marker": 1,
+  "defaults": {
+    "model": "cross",
+    "textures": {
+      "cross": "traverse:blocks/cypress_sapling"
+    }
+  },
+  "variants": {
+    "normal": [
+      {
+        "model": "builtin/generated",
+        "transform": "forge:default-item",
+        "textures": {
+          "layer0": "traverse:blocks/cypress_sapling"
+        }
+      }
+    ],
+    "stage=0": [
+      {}
+    ],
+    "stage=1": [
+      {}
+    ]
+  }
+}

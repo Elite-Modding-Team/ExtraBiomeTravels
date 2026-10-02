@@ -1,0 +1,12 @@
+{
+  "type": "forge:ore_shapeless",
+  "ingredients": [
+    {
+      "item": "traverse:autumnal_log"
+    }
+  ],
+  "result": {
+    "item": "traverse:autumnal_planks",
+    "count": 4
+  }
+}

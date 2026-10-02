@@ -1,0 +1,15 @@
+{
+  "type": "forge:ore_shapeless",
+  "ingredients": [
+    {
+      "item": "minecraft:wooden_button"
+    },
+    {
+      "item": "traverse:japanese_maple_planks"
+    }
+  ],
+  "result": {
+    "item": "traverse:japanese_maple_button",
+    "count": 1
+  }
+}

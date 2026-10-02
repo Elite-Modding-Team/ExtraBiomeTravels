@@ -11,5 +11,6 @@ public class TBXLItemDoor extends ItemDoor {
         super(block);
         this.setRegistryName(TraverseBiomesXL.MOD_ID, unlocName);
         this.setTranslationKey(Objects.requireNonNull(this.getRegistryName()).toString());
+        this.setCreativeTab(TraverseBiomesXL.TAB);
     }
 }

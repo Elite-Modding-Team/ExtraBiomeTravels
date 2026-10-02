@@ -1,0 +1,20 @@
+{
+  "type": "forge:ore_shaped",
+  "pattern": [
+    "X*X",
+    "X*X"
+  ],
+  "key": {
+    "X": {
+      "item": "traverse:japanese_maple_planks"
+    },
+    "*": {
+      "type": "forge:ore_dict",
+      "ore": "stickWood"
+    }
+  },
+  "result": {
+    "item": "traverse:japanese_maple_fence",
+    "count": 3
+  }
+}

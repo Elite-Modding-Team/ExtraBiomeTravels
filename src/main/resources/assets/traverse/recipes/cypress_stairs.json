@@ -1,0 +1,17 @@
+{
+  "type": "forge:ore_shaped",
+  "pattern": [
+    "X  ",
+    "XX ",
+    "XXX"
+  ],
+  "key": {
+    "X": {
+      "item": "traverse:cypress_planks"
+    }
+  },
+  "result": {
+    "item": "traverse:cypress_stairs",
+    "count": 4
+  }
+}
