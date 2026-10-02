@@ -66,7 +66,7 @@ public class TBXLRegistry {
                 .filter(block -> !(block instanceof BlockDoor))
                 .filter(block -> !(block instanceof BlockSlab))
                 .forEach(block -> {
-                    ModelResourceLocation loc = new ModelResourceLocation(Objects.requireNonNull(block.getRegistryName()), "inventory");
+                    ModelResourceLocation loc = new ModelResourceLocation(Objects.requireNonNull(block.getRegistryName()), "normal");
                     ModelLoader.setCustomModelResourceLocation(Item.getItemFromBlock(block), 0, loc);
                 });
 

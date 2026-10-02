@@ -1,11 +1,26 @@
 {
   "forge_marker": 1,
-  "variants": {
-    "stage=0": {
-      "model": "traverse:brown_autumnal_oak_sapling"
-    },
-    "stage=1": {
-      "model": "traverse:brown_autumnal_oak_sapling"
+  "defaults": {
+    "model": "cross",
+    "textures": {
+      "cross": "traverse:blocks/brown_autumnal_oak_sapling"
     }
+  },
+  "variants": {
+    "normal": [
+      {
+        "model": "builtin/generated",
+        "transform": "forge:default-item",
+        "textures": {
+          "layer0": "traverse:blocks/brown_autumnal_oak_sapling"
+        }
+      }
+    ],
+    "stage=0": [
+      {}
+    ],
+    "stage=1": [
+      {}
+    ]
   }
 }

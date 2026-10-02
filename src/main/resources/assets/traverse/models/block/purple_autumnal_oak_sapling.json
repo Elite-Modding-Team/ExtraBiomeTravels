@@ -1,6 +1,0 @@
-{
-  "parent": "block/cross",
-  "textures": {
-    "cross": "traverse:blocks/purple_autumnal_oak_sapling"
-  }
-}
