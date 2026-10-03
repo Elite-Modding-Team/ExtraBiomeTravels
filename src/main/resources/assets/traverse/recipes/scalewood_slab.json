@@ -1,0 +1,16 @@
+{
+  "type": "forge:ore_shaped",
+  "pattern": [
+    "XXX"
+  ],
+  "key": {
+    "X": {
+      "item": "traverse:scalewood_planks"
+    }
+  },
+  "result": {
+    "item": "traverse:scalewood_slab",
+    "data": 0,
+    "count": 6
+  }
+}

@@ -82,14 +82,22 @@ public class TBXLRegistry {
         ModelLoader.setCustomStateMapper(TBXLBlocks.cypress_door, (new StateMap.Builder()).ignore(TBXLBlockDoorWood.POWERED).build());
         ModelLoader.setCustomStateMapper(TBXLBlocks.douglas_fir_door, (new StateMap.Builder()).ignore(TBXLBlockDoorWood.POWERED).build());
         ModelLoader.setCustomStateMapper(TBXLBlocks.japanese_maple_door, (new StateMap.Builder()).ignore(TBXLBlockDoorWood.POWERED).build());
+        ModelLoader.setCustomStateMapper(TBXLBlocks.peach_sakura_door, (new StateMap.Builder()).ignore(TBXLBlockDoorWood.POWERED).build());
         ModelLoader.setCustomStateMapper(TBXLBlocks.rainbow_eucalyptus_door, (new StateMap.Builder()).ignore(TBXLBlockDoorWood.POWERED).build());
+        ModelLoader.setCustomStateMapper(TBXLBlocks.scalewood_door, (new StateMap.Builder()).ignore(TBXLBlockDoorWood.POWERED).build());
+        ModelLoader.setCustomStateMapper(TBXLBlocks.wattle_door, (new StateMap.Builder()).ignore(TBXLBlockDoorWood.POWERED).build());
+        ModelLoader.setCustomStateMapper(TBXLBlocks.white_fir_door, (new StateMap.Builder()).ignore(TBXLBlockDoorWood.POWERED).build());
 
         ModelLoader.setCustomStateMapper(TBXLBlocks.autumnal_fence_gate, (new StateMap.Builder()).ignore(TBXLBlockFenceGateWood.POWERED).build());
         ModelLoader.setCustomStateMapper(TBXLBlocks.bald_cypress_fence_gate, (new StateMap.Builder()).ignore(TBXLBlockFenceGateWood.POWERED).build());
         ModelLoader.setCustomStateMapper(TBXLBlocks.cypress_fence_gate, (new StateMap.Builder()).ignore(TBXLBlockFenceGateWood.POWERED).build());
         ModelLoader.setCustomStateMapper(TBXLBlocks.douglas_fir_fence_gate, (new StateMap.Builder()).ignore(TBXLBlockFenceGateWood.POWERED).build());
         ModelLoader.setCustomStateMapper(TBXLBlocks.japanese_maple_fence_gate, (new StateMap.Builder()).ignore(TBXLBlockFenceGateWood.POWERED).build());
+        ModelLoader.setCustomStateMapper(TBXLBlocks.peach_sakura_fence_gate, (new StateMap.Builder()).ignore(TBXLBlockFenceGateWood.POWERED).build());
         ModelLoader.setCustomStateMapper(TBXLBlocks.rainbow_eucalyptus_fence_gate, (new StateMap.Builder()).ignore(TBXLBlockFenceGateWood.POWERED).build());
+        ModelLoader.setCustomStateMapper(TBXLBlocks.scalewood_fence_gate, (new StateMap.Builder()).ignore(TBXLBlockFenceGateWood.POWERED).build());
+        ModelLoader.setCustomStateMapper(TBXLBlocks.wattle_fence_gate, (new StateMap.Builder()).ignore(TBXLBlockFenceGateWood.POWERED).build());
+        ModelLoader.setCustomStateMapper(TBXLBlocks.white_fir_fence_gate, (new StateMap.Builder()).ignore(TBXLBlockFenceGateWood.POWERED).build());
 
         ModelLoader.setCustomStateMapper(TBXLBlocks.red_rock_bricks_wall, (new StateMap.Builder()).ignore(TBXLBlockWall.VARIANT).build());
         ModelLoader.setCustomStateMapper(TBXLBlocks.red_rock_cobblestone_wall, (new StateMap.Builder()).ignore(TBXLBlockWall.VARIANT).build());

@@ -1,0 +1,12 @@
+{
+  "type": "forge:ore_shapeless",
+  "ingredients": [
+    {
+      "item": "traverse:scalewood_log"
+    }
+  ],
+  "result": {
+    "item": "traverse:scalewood_planks",
+    "count": 4
+  }
+}

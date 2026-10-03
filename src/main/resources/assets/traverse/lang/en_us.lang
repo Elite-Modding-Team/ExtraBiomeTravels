@@ -77,6 +77,19 @@ tile.traverse:orange_autumnal_oak_sapling.name=Orange Autumnal Oak Sapling
 tile.traverse:purple_autumnal_oak_leaves.name=Purple Autumnal Oak Leaves
 tile.traverse:purple_autumnal_oak_sapling.name=Purple Autumnal Oak Sapling
 
+tile.traverse:peach_sakura_button.name=Peach Sakura Button
+tile.traverse:peach_sakura_door.name=Peach Sakura Door
+tile.traverse:peach_sakura_fence_gate.name=Peach Sakura Fence Gate
+tile.traverse:peach_sakura_fence.name=Peach Sakura Fence
+tile.traverse:peach_sakura_leaves.name=Peach Sakura Leaves
+tile.traverse:peach_sakura_log.name=Peach Sakura Log
+tile.traverse:peach_sakura_planks.name=Peach Sakura Planks
+tile.traverse:peach_sakura_pressure_plate.name=Peach Sakura Plate
+tile.traverse:peach_sakura_sapling.name=Peach Sakura Sapling
+tile.traverse:peach_sakura_slab.name=Peach Sakura Slab
+tile.traverse:peach_sakura_stairs.name=Peach Sakura Stairs
+tile.traverse:peach_sakura_trapdoor.name=Peach Sakura Trapdoor
+
 tile.traverse:rainbow_eucalyptus_button.name=Rainbow Eucalyptus Button
 tile.traverse:rainbow_eucalyptus_door.name=Rainbow Eucalyptus Door
 tile.traverse:rainbow_eucalyptus_fence_gate.name=Rainbow Eucalyptus Fence Gate
@@ -106,8 +119,49 @@ tile.traverse:red_rock_slab.name=Red Rock Slab
 tile.traverse:red_rock_stairs.name=Red Rock Stairs
 tile.traverse:red_rock_wall.name=Red Rock Wall
 tile.traverse:red_rock.name=Red Rock
+
+tile.traverse:scalewood_button.name=Scalewood Button
+tile.traverse:scalewood_door.name=Scalewood Door
+tile.traverse:scalewood_fence_gate.name=Scalewood Fence Gate
+tile.traverse:scalewood_fence.name=Scalewood Fence
+tile.traverse:scalewood_leaves.name=Scalewood Leaves
+tile.traverse:scalewood_log.name=Scalewood Log
+tile.traverse:scalewood_planks.name=Scalewood Planks
+tile.traverse:scalewood_pressure_plate.name=Scalewood Plate
+tile.traverse:scalewood_sapling.name=Scalewood Sapling
+tile.traverse:scalewood_slab.name=Scalewood Slab
+tile.traverse:scalewood_stairs.name=Scalewood Stairs
+tile.traverse:scalewood_trapdoor.name=Scalewood Trapdoor
+
 tile.traverse:umber_autumnal_sapling.name=Umber Autumnal Sapling
 tile.traverse:vermillion_autumnal_sapling.name=Vermillion Autumnal Sapling
+
+tile.traverse:wattle_button.name=Wattle Button
+tile.traverse:wattle_door.name=Wattle Door
+tile.traverse:wattle_fence_gate.name=Wattle Fence Gate
+tile.traverse:wattle_fence.name=Wattle Fence
+tile.traverse:wattle_leaves.name=Wattle Leaves
+tile.traverse:wattle_log.name=Wattle Log
+tile.traverse:wattle_planks.name=Wattle Planks
+tile.traverse:wattle_pressure_plate.name=Wattle Plate
+tile.traverse:wattle_sapling.name=Wattle Sapling
+tile.traverse:wattle_slab.name=Wattle Slab
+tile.traverse:wattle_stairs.name=Wattle Stairs
+tile.traverse:wattle_trapdoor.name=Wattle Trapdoor
+
+tile.traverse:white_fir_button.name=White Fir Button
+tile.traverse:white_fir_door.name=White Fir Door
+tile.traverse:white_fir_fence_gate.name=White Fir Fence Gate
+tile.traverse:white_fir_fence.name=White Fir Fence
+tile.traverse:white_fir_leaves.name=White Fir Leaves
+tile.traverse:white_fir_log.name=White Fir Log
+tile.traverse:white_fir_planks.name=White Fir Planks
+tile.traverse:white_fir_pressure_plate.name=White Fir Plate
+tile.traverse:white_fir_sapling.name=White Fir Sapling
+tile.traverse:white_fir_slab.name=White Fir Slab
+tile.traverse:white_fir_stairs.name=White Fir Stairs
+tile.traverse:white_fir_trapdoor.name=White Fir Trapdoor
+
 tile.traverse:yellow_autumnal_oak_leaves.name=Yellow Autumnal Oak Leaves
 tile.traverse:yellow_autumnal_oak_sapling.name=Yellow Autumnal Oak Sapling
 
@@ -117,4 +171,8 @@ item.traverse:bald_cypress_door.name=Bald Cypress Door
 item.traverse:cypress_door.name=Cypress Door
 item.traverse:douglas_fir_door.name=Douglas Fir Door
 item.traverse:japanese_maple_door.name=Japanese Maple Door
+item.traverse:peach_sakura_door.name=Peach Sakura Door
 item.traverse:rainbow_eucalyptus_door.name=Rainbow Eucalyptus Door
+item.traverse:scalewood_door.name=Scalewood Door
+item.traverse:wattle_door.name=Wattle Door
+item.traverse:white_fir_door.name=White Fir Door

@@ -1,0 +1,20 @@
+{
+  "type": "forge:ore_shaped",
+  "pattern": [
+    "*X*",
+    "*X*"
+  ],
+  "key": {
+    "X": {
+      "item": "traverse:scalewood_planks"
+    },
+    "*": {
+      "type": "forge:ore_dict",
+      "ore": "stickWood"
+    }
+  },
+  "result": {
+    "item": "traverse:scalewood_fence_gate",
+    "count": 1
+  }
+}

@@ -1,0 +1,17 @@
+{
+  "type": "forge:ore_shaped",
+  "pattern": [
+    "X  ",
+    "XX ",
+    "XXX"
+  ],
+  "key": {
+    "X": {
+      "item": "traverse:peach_sakura_planks"
+    }
+  },
+  "result": {
+    "item": "traverse:peach_sakura_stairs",
+    "count": 4
+  }
+}

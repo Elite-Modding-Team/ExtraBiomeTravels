@@ -1,0 +1,12 @@
+{
+  "type": "forge:ore_shapeless",
+  "ingredients": [
+    {
+      "item": "traverse:white_fir_log"
+    }
+  ],
+  "result": {
+    "item": "traverse:white_fir_planks",
+    "count": 4
+  }
+}
