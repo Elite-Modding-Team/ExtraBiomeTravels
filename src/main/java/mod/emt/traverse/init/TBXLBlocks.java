@@ -17,7 +17,7 @@ public class TBXLBlocks {
     public static TBXLBlockLeaves purple_autumnal_oak_leaves = null;
     public static TBXLBlockLeaves red_autumnal_oak_leaves = null;
     public static TBXLBlockLeaves yellow_autumnal_oak_leaves = null;
-    public static TBXLBlockLeaves fir_leaves = null;
+    public static TBXLBlockLeaves douglas_fir_leaves = null;
     public static TBXLBlockLeaves japanese_maple_leaves = null;
 
     public static TBXLBlockButtonWood autumnal_button = null;
@@ -56,17 +56,17 @@ public class TBXLBlocks {
     public static TBXLBlockStairs cypress_stairs = null;
     public static TBXLBlockTrapdoorWood cypress_trapdoor = null;
 
-    public static TBXLBlockButtonWood fir_button = null;
-    public static TBXLBlockDoorWood fir_door = null;
-    public static TBXLBlockFenceGateWood fir_fence_gate = null;
-    public static TBXLBlockFenceWood fir_fence = null;
-    public static TBXLBlockLog fir_log = null;
-    public static TBXLBlockPlanks fir_planks = null;
-    public static TBXLBlockPressurePlateWood fir_pressure_plate = null;
-    public static TBXLBlockSlab.Double fir_slab_double = null;
-    public static TBXLBlockSlab.Half fir_slab = null;
-    public static TBXLBlockStairs fir_stairs = null;
-    public static TBXLBlockTrapdoorWood fir_trapdoor = null;
+    public static TBXLBlockButtonWood douglas_fir_button = null;
+    public static TBXLBlockDoorWood douglas_fir_door = null;
+    public static TBXLBlockFenceGateWood douglas_fir_fence_gate = null;
+    public static TBXLBlockFenceWood douglas_fir_fence = null;
+    public static TBXLBlockLog douglas_fir_log = null;
+    public static TBXLBlockPlanks douglas_fir_planks = null;
+    public static TBXLBlockPressurePlateWood douglas_fir_pressure_plate = null;
+    public static TBXLBlockSlab.Double douglas_fir_slab_double = null;
+    public static TBXLBlockSlab.Half douglas_fir_slab = null;
+    public static TBXLBlockStairs douglas_fir_stairs = null;
+    public static TBXLBlockTrapdoorWood douglas_fir_trapdoor = null;
 
     public static TBXLBlockButtonWood japanese_maple_button = null;
     public static TBXLBlockDoorWood japanese_maple_door = null;
@@ -98,7 +98,7 @@ public class TBXLBlocks {
     public static TBXLBlockSapling purple_autumnal_oak_sapling = null;
     public static TBXLBlockSapling red_autumnal_oak_sapling = null;
     public static TBXLBlockSapling yellow_autumnal_oak_sapling = null;
-    public static TBXLBlockSapling fir_sapling = null;
+    public static TBXLBlockSapling douglas_fir_sapling = null;
 
     public static TBXLBlockMaterial cracked_sand = null;
     public static TBXLBlockMaterial red_rock = null;
@@ -128,7 +128,7 @@ public class TBXLBlocks {
         MOD_BLOCKS.add(purple_autumnal_oak_leaves = new TBXLBlockLeaves("purple_autumnal_oak_leaves", MapColor.PURPLE_STAINED_HARDENED_CLAY, true, 20));
         MOD_BLOCKS.add(red_autumnal_oak_leaves = new TBXLBlockLeaves("red_autumnal_oak_leaves", MapColor.RED_STAINED_HARDENED_CLAY, true, 20));
         MOD_BLOCKS.add(yellow_autumnal_oak_leaves = new TBXLBlockLeaves("yellow_autumnal_oak_leaves", MapColor.YELLOW_STAINED_HARDENED_CLAY, true, 20));
-        MOD_BLOCKS.add(fir_leaves = new TBXLBlockLeaves("fir_leaves", MapColor.FOLIAGE, true, 20));
+        MOD_BLOCKS.add(douglas_fir_leaves = new TBXLBlockLeaves("douglas_fir_leaves", MapColor.FOLIAGE, true, 20));
 
         MOD_BLOCKS.add(autumnal_button = new TBXLBlockButtonWood("autumnal_button"));
         MOD_BLOCKS.add(autumnal_door = new TBXLBlockDoorWood("autumnal_door", MapColor.ADOBE));
@@ -163,16 +163,16 @@ public class TBXLBlocks {
         MOD_BLOCKS.add(cypress_slab_double = new TBXLBlockSlab.Double("cypress_slab", Material.WOOD, MapColor.ADOBE, 2.0F, 5.0F, true));
         MOD_BLOCKS.add(cypress_stairs = new TBXLBlockStairs("cypress_stairs", new TBXLBlockPlanks("cypress_planks", MapColor.ADOBE, 2.0F, 5.0F, true).getDefaultState(), true));
 
-        MOD_BLOCKS.add(fir_button = new TBXLBlockButtonWood("fir_button"));
-        MOD_BLOCKS.add(fir_door = new TBXLBlockDoorWood("fir_door", MapColor.ADOBE));
-        MOD_BLOCKS.add(fir_fence_gate = new TBXLBlockFenceGateWood("fir_fence_gate", MapColor.ADOBE, true));
-        MOD_BLOCKS.add(fir_fence = new TBXLBlockFenceWood("fir_fence", MapColor.ADOBE, true));
-        MOD_BLOCKS.add(fir_log = new TBXLBlockLog("fir_log", MapColor.WOOD, 2.0F, true));
-        MOD_BLOCKS.add(fir_planks = new TBXLBlockPlanks("fir_planks", MapColor.ADOBE, 2.0F, 5.0F, true));
-        MOD_BLOCKS.add(fir_pressure_plate = new TBXLBlockPressurePlateWood("fir_pressure_plate", MapColor.ADOBE));
-        MOD_BLOCKS.add(fir_slab = new TBXLBlockSlab.Half("fir_slab", Material.WOOD, MapColor.ADOBE, 2.0F, 5.0F, true));
-        MOD_BLOCKS.add(fir_slab_double = new TBXLBlockSlab.Double("fir_slab", Material.WOOD, MapColor.ADOBE, 2.0F, 5.0F, true));
-        MOD_BLOCKS.add(fir_stairs = new TBXLBlockStairs("fir_stairs", new TBXLBlockPlanks("fir_planks", MapColor.ADOBE, 2.0F, 5.0F, true).getDefaultState(), true));
+        MOD_BLOCKS.add(douglas_fir_button = new TBXLBlockButtonWood("douglas_fir_button"));
+        MOD_BLOCKS.add(douglas_fir_door = new TBXLBlockDoorWood("douglas_fir_door", MapColor.ADOBE));
+        MOD_BLOCKS.add(douglas_fir_fence_gate = new TBXLBlockFenceGateWood("douglas_fir_fence_gate", MapColor.ADOBE, true));
+        MOD_BLOCKS.add(douglas_fir_fence = new TBXLBlockFenceWood("douglas_fir_fence", MapColor.ADOBE, true));
+        MOD_BLOCKS.add(douglas_fir_log = new TBXLBlockLog("douglas_fir_log", MapColor.WOOD, 2.0F, true));
+        MOD_BLOCKS.add(douglas_fir_planks = new TBXLBlockPlanks("douglas_fir_planks", MapColor.ADOBE, 2.0F, 5.0F, true));
+        MOD_BLOCKS.add(douglas_fir_pressure_plate = new TBXLBlockPressurePlateWood("douglas_fir_pressure_plate", MapColor.ADOBE));
+        MOD_BLOCKS.add(douglas_fir_slab = new TBXLBlockSlab.Half("douglas_fir_slab", Material.WOOD, MapColor.ADOBE, 2.0F, 5.0F, true));
+        MOD_BLOCKS.add(douglas_fir_slab_double = new TBXLBlockSlab.Double("douglas_fir_slab", Material.WOOD, MapColor.ADOBE, 2.0F, 5.0F, true));
+        MOD_BLOCKS.add(douglas_fir_stairs = new TBXLBlockStairs("douglas_fir_stairs", new TBXLBlockPlanks("douglas_fir_planks", MapColor.ADOBE, 2.0F, 5.0F, true).getDefaultState(), true));
 
         MOD_BLOCKS.add(japanese_maple_button = new TBXLBlockButtonWood("japanese_maple_button"));
         MOD_BLOCKS.add(japanese_maple_door = new TBXLBlockDoorWood("japanese_maple_door", MapColor.ADOBE));
@@ -202,7 +202,7 @@ public class TBXLBlocks {
         MOD_BLOCKS.add(purple_autumnal_oak_sapling = new TBXLBlockSapling("purple_autumnal_oak_sapling", EnumWoodType.AUTUMNAL_OAK_PURPLE, MapColor.FOLIAGE, true));
         MOD_BLOCKS.add(red_autumnal_oak_sapling = new TBXLBlockSapling("red_autumnal_oak_sapling", EnumWoodType.AUTUMNAL_OAK_RED, MapColor.FOLIAGE, true));
         MOD_BLOCKS.add(yellow_autumnal_oak_sapling = new TBXLBlockSapling("yellow_autumnal_oak_sapling", EnumWoodType.AUTUMNAL_OAK_YELLOW, MapColor.FOLIAGE, true));
-        MOD_BLOCKS.add(fir_sapling = new TBXLBlockSapling("fir_sapling", EnumWoodType.FIR, MapColor.FOLIAGE, true));
+        MOD_BLOCKS.add(douglas_fir_sapling = new TBXLBlockSapling("douglas_fir_sapling", EnumWoodType.FIR, MapColor.FOLIAGE, true));
 
         MOD_BLOCKS.add(cracked_sand = new TBXLBlockHardenedSand("cracked_sand", MapColor.SILVER_STAINED_HARDENED_CLAY));
         MOD_BLOCKS.add(red_rock_button = new TBXLBlockButtonStone("red_rock_button"));

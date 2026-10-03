@@ -2,8 +2,8 @@
   "forge_marker": 1,
   "defaults": {
     "textures": {
-      "bottom": "traverse:blocks/fir_door_bottom",
-      "top": "traverse:blocks/fir_door_top"
+      "bottom": "traverse:blocks/douglas_fir_door_bottom",
+      "top": "traverse:blocks/douglas_fir_door_top"
     }
   },
   "variants": {
@@ -12,7 +12,7 @@
         "transform": "forge:default-item",
         "model": "builtin/generated",
         "textures": {
-          "layer0": "traverse:items/fir_door"
+          "layer0": "traverse:items/douglas_fir_door"
         }
       }
     ],
@@ -21,7 +21,7 @@
         "transform": "forge:default-item",
         "model": "builtin/generated",
         "textures": {
-          "layer0": "traverse:items/fir_door"
+          "layer0": "traverse:items/douglas_fir_door"
         }
       }
     ],

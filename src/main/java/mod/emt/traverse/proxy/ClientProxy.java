@@ -23,7 +23,7 @@ public class ClientProxy extends CommonProxy {
     public void postInit() {
         IBlockColor leavesColor = (state, world, pos, tintIndex) -> {
             // Custom Colors
-            if (tintIndex == 0 && state.getBlock() == TBXLBlocks.fir_leaves) {
+            if (tintIndex == 0 && state.getBlock() == TBXLBlocks.douglas_fir_leaves) {
                 return Minecraft.getMinecraft().getBlockColors().colorMultiplier(Blocks.LEAVES.getStateFromMeta(1), null, null, tintIndex);
             }
 
@@ -36,7 +36,7 @@ public class ClientProxy extends CommonProxy {
                 IBlockState state = ((ItemBlock) stack.getItem()).getBlock().getStateFromMeta(stack.getMetadata());
 
                 // Custom Colors
-                if (tintIndex == 0 && state.getBlock() == TBXLBlocks.fir_leaves) {
+                if (tintIndex == 0 && state.getBlock() == TBXLBlocks.douglas_fir_leaves) {
                     return 6594930;
                 }
 
@@ -44,8 +44,8 @@ public class ClientProxy extends CommonProxy {
             }
         };
 
-        Minecraft.getMinecraft().getBlockColors().registerBlockColorHandler(leavesColor, TBXLBlocks.fir_leaves);
+        Minecraft.getMinecraft().getBlockColors().registerBlockColorHandler(leavesColor, TBXLBlocks.douglas_fir_leaves);
 
-        Minecraft.getMinecraft().getItemColors().registerItemColorHandler(leavesItemColor, TBXLBlocks.fir_leaves);
+        Minecraft.getMinecraft().getItemColors().registerItemColorHandler(leavesItemColor, TBXLBlocks.douglas_fir_leaves);
     }
 }

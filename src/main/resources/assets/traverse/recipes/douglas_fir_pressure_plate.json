@@ -5,11 +5,11 @@
       "item": "minecraft:wooden_pressure_plate"
     },
     {
-      "item": "traverse:fir_planks"
+      "item": "traverse:douglas_fir_planks"
     }
   ],
   "result": {
-    "item": "traverse:fir_pressure_plate",
+    "item": "traverse:douglas_fir_pressure_plate",
     "count": 1
   }
 }

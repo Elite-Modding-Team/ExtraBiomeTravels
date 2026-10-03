@@ -4,7 +4,7 @@
     "variant=default": {
       "model": "cube_all",
       "textures": {
-        "all": "traverse:blocks/fir_planks"
+        "all": "traverse:blocks/douglas_fir_planks"
       }
     }
   }

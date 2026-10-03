@@ -7,11 +7,11 @@
   ],
   "key": {
     "X": {
-      "item": "traverse:fir_planks"
+      "item": "traverse:douglas_fir_planks"
     }
   },
   "result": {
-    "item": "traverse:fir_stairs",
+    "item": "traverse:douglas_fir_stairs",
     "count": 4
   }
 }

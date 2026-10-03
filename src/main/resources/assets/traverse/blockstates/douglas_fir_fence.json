@@ -3,7 +3,7 @@
   "defaults": {
     "model": "fence_post",
     "textures": {
-      "texture": "traverse:blocks/fir_planks"
+      "texture": "traverse:blocks/douglas_fir_planks"
     }
   },
   "variants": {

@@ -1,12 +1,12 @@
 {
   "type": "forge:ore_shaped",
   "pattern": [
-    "*X*",
-    "*X*"
+    "X*X",
+    "X*X"
   ],
   "key": {
     "X": {
-      "item": "traverse:fir_planks"
+      "item": "traverse:douglas_fir_planks"
     },
     "*": {
       "type": "forge:ore_dict",
@@ -14,7 +14,7 @@
     }
   },
   "result": {
-    "item": "traverse:fir_fence_gate",
-    "count": 1
+    "item": "traverse:douglas_fir_fence",
+    "count": 3
   }
 }

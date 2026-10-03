@@ -3,7 +3,7 @@
   "defaults": {
     "model": "cross",
     "textures": {
-      "cross": "traverse:blocks/fir_sapling"
+      "cross": "traverse:blocks/douglas_fir_sapling"
     }
   },
   "variants": {
@@ -12,7 +12,7 @@
         "model": "builtin/generated",
         "transform": "forge:default-item",
         "textures": {
-          "layer0": "traverse:blocks/fir_sapling"
+          "layer0": "traverse:blocks/douglas_fir_sapling"
         }
       }
     ],

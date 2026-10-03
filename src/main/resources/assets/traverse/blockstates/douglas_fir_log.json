@@ -3,8 +3,8 @@
   "defaults": {
     "model": "cube_column",
     "textures": {
-      "end": "traverse:blocks/fir_log_top",
-      "side": "traverse:blocks/fir_log_side"
+      "end": "traverse:blocks/douglas_fir_log_top",
+      "side": "traverse:blocks/douglas_fir_log_side"
     }
   },
   "variants": {
@@ -31,7 +31,7 @@
     "axis=none": {
       "model": "cube_all",
       "textures": {
-        "all": "traverse:blocks/fir_log_side"
+        "all": "traverse:blocks/douglas_fir_log_side"
       }
     }
   }

@@ -3,10 +3,10 @@
   "defaults": {
     "model": "cube_all",
     "textures": {
-      "particle": "traverse:blocks/fir_planks",
-      "bottom": "traverse:blocks/fir_planks",
-      "top": "traverse:blocks/fir_planks",
-      "side": "traverse:blocks/fir_planks"
+      "particle": "traverse:blocks/douglas_fir_planks",
+      "bottom": "traverse:blocks/douglas_fir_planks",
+      "top": "traverse:blocks/douglas_fir_planks",
+      "side": "traverse:blocks/douglas_fir_planks"
     }
   },
   "variants": {

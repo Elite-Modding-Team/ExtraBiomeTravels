@@ -14,8 +14,8 @@ public class TBXLItems {
     public static TBXLItemSlab bald_cypress_slab;
     public static TBXLItemDoor cypress_door;
     public static TBXLItemSlab cypress_slab;
-    public static TBXLItemDoor fir_door;
-    public static TBXLItemSlab fir_slab;
+    public static TBXLItemDoor douglas_fir_door;
+    public static TBXLItemSlab douglas_fir_slab;
     public static TBXLItemDoor japanese_maple_door;
     public static TBXLItemSlab japanese_maple_slab;
     public static TBXLItemDoor rainbow_eucalyptus_door;
@@ -33,8 +33,8 @@ public class TBXLItems {
         MOD_ITEMS.add(bald_cypress_slab = new TBXLItemSlab("bald_cypress_slab", TBXLBlocks.bald_cypress_slab, TBXLBlocks.bald_cypress_slab, TBXLBlocks.bald_cypress_slab_double));
         MOD_ITEMS.add(cypress_door = new TBXLItemDoor("cypress_door", TBXLBlocks.cypress_door));
         MOD_ITEMS.add(cypress_slab = new TBXLItemSlab("cypress_slab", TBXLBlocks.cypress_slab, TBXLBlocks.cypress_slab, TBXLBlocks.cypress_slab_double));
-        MOD_ITEMS.add(fir_door = new TBXLItemDoor("fir_door", TBXLBlocks.fir_door));
-        MOD_ITEMS.add(fir_slab = new TBXLItemSlab("fir_slab", TBXLBlocks.fir_slab, TBXLBlocks.fir_slab, TBXLBlocks.fir_slab_double));
+        MOD_ITEMS.add(douglas_fir_door = new TBXLItemDoor("douglas_fir_door", TBXLBlocks.douglas_fir_door));
+        MOD_ITEMS.add(douglas_fir_slab = new TBXLItemSlab("douglas_fir_slab", TBXLBlocks.douglas_fir_slab, TBXLBlocks.douglas_fir_slab, TBXLBlocks.douglas_fir_slab_double));
         MOD_ITEMS.add(japanese_maple_door = new TBXLItemDoor("japanese_maple_door", TBXLBlocks.japanese_maple_door));
         MOD_ITEMS.add(japanese_maple_slab = new TBXLItemSlab("japanese_maple_slab", TBXLBlocks.japanese_maple_slab, TBXLBlocks.japanese_maple_slab, TBXLBlocks.japanese_maple_slab_double));
         MOD_ITEMS.add(rainbow_eucalyptus_door = new TBXLItemDoor("rainbow_eucalyptus_door", TBXLBlocks.rainbow_eucalyptus_door));

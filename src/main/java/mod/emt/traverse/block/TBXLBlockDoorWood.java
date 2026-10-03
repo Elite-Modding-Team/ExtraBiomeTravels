@@ -42,8 +42,8 @@ public class TBXLBlockDoorWood extends BlockDoor {
     }
 
     protected Item getItemBlock() {
-        if (this == TBXLBlocks.fir_door) {
-            return new ItemStack(TBXLItems.fir_door, 1).getItem();
+        if (this == TBXLBlocks.douglas_fir_door) {
+            return new ItemStack(TBXLItems.douglas_fir_door, 1).getItem();
         }
 
         // If door is not listed here give an oak one instead to prevent issues

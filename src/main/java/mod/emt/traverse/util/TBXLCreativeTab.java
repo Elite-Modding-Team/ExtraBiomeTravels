@@ -15,6 +15,6 @@ public class TBXLCreativeTab extends CreativeTabs {
     @Override
     @SideOnly(Side.CLIENT)
     public @NotNull ItemStack createIcon() {
-        return new ItemStack(TBXLItems.fir_door);
+        return new ItemStack(TBXLItems.douglas_fir_door);
     }
 }

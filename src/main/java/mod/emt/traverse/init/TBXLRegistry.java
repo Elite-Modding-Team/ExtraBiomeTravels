@@ -80,14 +80,14 @@ public class TBXLRegistry {
         ModelLoader.setCustomStateMapper(TBXLBlocks.autumnal_door, (new StateMap.Builder()).ignore(TBXLBlockDoorWood.POWERED).build());
         ModelLoader.setCustomStateMapper(TBXLBlocks.bald_cypress_door, (new StateMap.Builder()).ignore(TBXLBlockDoorWood.POWERED).build());
         ModelLoader.setCustomStateMapper(TBXLBlocks.cypress_door, (new StateMap.Builder()).ignore(TBXLBlockDoorWood.POWERED).build());
-        ModelLoader.setCustomStateMapper(TBXLBlocks.fir_door, (new StateMap.Builder()).ignore(TBXLBlockDoorWood.POWERED).build());
+        ModelLoader.setCustomStateMapper(TBXLBlocks.douglas_fir_door, (new StateMap.Builder()).ignore(TBXLBlockDoorWood.POWERED).build());
         ModelLoader.setCustomStateMapper(TBXLBlocks.japanese_maple_door, (new StateMap.Builder()).ignore(TBXLBlockDoorWood.POWERED).build());
         ModelLoader.setCustomStateMapper(TBXLBlocks.rainbow_eucalyptus_door, (new StateMap.Builder()).ignore(TBXLBlockDoorWood.POWERED).build());
 
         ModelLoader.setCustomStateMapper(TBXLBlocks.autumnal_fence_gate, (new StateMap.Builder()).ignore(TBXLBlockFenceGateWood.POWERED).build());
         ModelLoader.setCustomStateMapper(TBXLBlocks.bald_cypress_fence_gate, (new StateMap.Builder()).ignore(TBXLBlockFenceGateWood.POWERED).build());
         ModelLoader.setCustomStateMapper(TBXLBlocks.cypress_fence_gate, (new StateMap.Builder()).ignore(TBXLBlockFenceGateWood.POWERED).build());
-        ModelLoader.setCustomStateMapper(TBXLBlocks.fir_fence_gate, (new StateMap.Builder()).ignore(TBXLBlockFenceGateWood.POWERED).build());
+        ModelLoader.setCustomStateMapper(TBXLBlocks.douglas_fir_fence_gate, (new StateMap.Builder()).ignore(TBXLBlockFenceGateWood.POWERED).build());
         ModelLoader.setCustomStateMapper(TBXLBlocks.japanese_maple_fence_gate, (new StateMap.Builder()).ignore(TBXLBlockFenceGateWood.POWERED).build());
         ModelLoader.setCustomStateMapper(TBXLBlocks.rainbow_eucalyptus_fence_gate, (new StateMap.Builder()).ignore(TBXLBlockFenceGateWood.POWERED).build());
 
@@ -110,9 +110,9 @@ public class TBXLRegistry {
             event.setBurnTime(100); // 0.5 items
         } else if (event.getItemStack().getItem() == Item.getItemFromBlock(TBXLBlocks.yellow_autumnal_oak_sapling)) {
             event.setBurnTime(100); // 0.5 items
-        } else if (event.getItemStack().getItem() == Item.getItemFromBlock(TBXLBlocks.fir_button)) {
+        } else if (event.getItemStack().getItem() == Item.getItemFromBlock(TBXLBlocks.douglas_fir_button)) {
             event.setBurnTime(100); // 0.5 items
-        } else if (event.getItemStack().getItem() == Item.getItemFromBlock(TBXLBlocks.fir_sapling)) {
+        } else if (event.getItemStack().getItem() == Item.getItemFromBlock(TBXLBlocks.douglas_fir_sapling)) {
             event.setBurnTime(100); // 0.5 items
         }
     }
@@ -124,35 +124,35 @@ public class TBXLRegistry {
         OreDictionary.registerOre("doorWood", TBXLItems.autumnal_door);
         OreDictionary.registerOre("doorWood", TBXLItems.bald_cypress_door);
         OreDictionary.registerOre("doorWood", TBXLItems.cypress_door);
-        OreDictionary.registerOre("doorWood", TBXLItems.fir_door);
+        OreDictionary.registerOre("doorWood", TBXLItems.douglas_fir_door);
         OreDictionary.registerOre("doorWood", TBXLItems.japanese_maple_door);
         OreDictionary.registerOre("doorWood", TBXLItems.rainbow_eucalyptus_door);
 
         OreDictionary.registerOre("fenceGateWood", TBXLBlocks.autumnal_fence_gate);
         OreDictionary.registerOre("fenceGateWood", TBXLBlocks.bald_cypress_fence_gate);
         OreDictionary.registerOre("fenceGateWood", TBXLBlocks.cypress_fence_gate);
-        OreDictionary.registerOre("fenceGateWood", TBXLBlocks.fir_fence_gate);
+        OreDictionary.registerOre("fenceGateWood", TBXLBlocks.douglas_fir_fence_gate);
         OreDictionary.registerOre("fenceGateWood", TBXLBlocks.japanese_maple_fence_gate);
         OreDictionary.registerOre("fenceGateWood", TBXLBlocks.rainbow_eucalyptus_fence_gate);
 
         OreDictionary.registerOre("fenceWood", TBXLBlocks.autumnal_fence);
         OreDictionary.registerOre("fenceWood", TBXLBlocks.bald_cypress_fence);
         OreDictionary.registerOre("fenceWood", TBXLBlocks.cypress_fence);
-        OreDictionary.registerOre("fenceWood", TBXLBlocks.fir_fence);
+        OreDictionary.registerOre("fenceWood", TBXLBlocks.douglas_fir_fence);
         OreDictionary.registerOre("fenceWood", TBXLBlocks.japanese_maple_fence);
         OreDictionary.registerOre("fenceWood", TBXLBlocks.rainbow_eucalyptus_fence);
 
         OreDictionary.registerOre("logWood", TBXLBlocks.autumnal_log);
         OreDictionary.registerOre("logWood", TBXLBlocks.bald_cypress_log);
         OreDictionary.registerOre("logWood", TBXLBlocks.cypress_log);
-        OreDictionary.registerOre("logWood", TBXLBlocks.fir_log);
+        OreDictionary.registerOre("logWood", TBXLBlocks.douglas_fir_log);
         OreDictionary.registerOre("logWood", TBXLBlocks.japanese_maple_log);
         OreDictionary.registerOre("logWood", TBXLBlocks.rainbow_eucalyptus_log);
 
         OreDictionary.registerOre("plankWood", TBXLBlocks.autumnal_planks);
         OreDictionary.registerOre("plankWood", TBXLBlocks.bald_cypress_planks);
         OreDictionary.registerOre("plankWood", TBXLBlocks.cypress_planks);
-        OreDictionary.registerOre("plankWood", TBXLBlocks.fir_planks);
+        OreDictionary.registerOre("plankWood", TBXLBlocks.douglas_fir_planks);
         OreDictionary.registerOre("plankWood", TBXLBlocks.japanese_maple_planks);
         OreDictionary.registerOre("plankWood", TBXLBlocks.rainbow_eucalyptus_planks);
 
@@ -161,14 +161,14 @@ public class TBXLRegistry {
         OreDictionary.registerOre("slabWood", TBXLItems.autumnal_slab);
         OreDictionary.registerOre("slabWood", TBXLItems.bald_cypress_slab);
         OreDictionary.registerOre("slabWood", TBXLItems.cypress_slab);
-        OreDictionary.registerOre("slabWood", TBXLItems.fir_slab);
+        OreDictionary.registerOre("slabWood", TBXLItems.douglas_fir_slab);
         OreDictionary.registerOre("slabWood", TBXLItems.japanese_maple_slab);
         OreDictionary.registerOre("slabWood", TBXLItems.rainbow_eucalyptus_slab);
 
         OreDictionary.registerOre("stairWood", TBXLBlocks.autumnal_stairs);
         OreDictionary.registerOre("stairWood", TBXLBlocks.bald_cypress_stairs);
         OreDictionary.registerOre("stairWood", TBXLBlocks.cypress_stairs);
-        OreDictionary.registerOre("stairWood", TBXLBlocks.fir_stairs);
+        OreDictionary.registerOre("stairWood", TBXLBlocks.douglas_fir_stairs);
         OreDictionary.registerOre("stairWood", TBXLBlocks.japanese_maple_stairs);
         OreDictionary.registerOre("stairWood", TBXLBlocks.rainbow_eucalyptus_stairs);
 
@@ -177,7 +177,7 @@ public class TBXLRegistry {
         OreDictionary.registerOre("stone", TBXLBlocks.red_rock);
 
         OreDictionary.registerOre("treeLeaves", TBXLBlocks.brown_autumnal_oak_leaves);
-        OreDictionary.registerOre("treeLeaves", TBXLBlocks.fir_leaves);
+        OreDictionary.registerOre("treeLeaves", TBXLBlocks.douglas_fir_leaves);
         OreDictionary.registerOre("treeLeaves", TBXLBlocks.green_autumnal_oak_leaves);
         OreDictionary.registerOre("treeLeaves", TBXLBlocks.orange_autumnal_oak_leaves);
         OreDictionary.registerOre("treeLeaves", TBXLBlocks.purple_autumnal_oak_leaves);
@@ -185,7 +185,7 @@ public class TBXLRegistry {
         OreDictionary.registerOre("treeLeaves", TBXLBlocks.yellow_autumnal_oak_leaves);
 
         OreDictionary.registerOre("treeSapling", TBXLBlocks.brown_autumnal_oak_sapling);
-        OreDictionary.registerOre("treeSapling", TBXLBlocks.fir_sapling);
+        OreDictionary.registerOre("treeSapling", TBXLBlocks.douglas_fir_sapling);
         OreDictionary.registerOre("treeSapling", TBXLBlocks.green_autumnal_oak_sapling);
         OreDictionary.registerOre("treeSapling", TBXLBlocks.orange_autumnal_oak_sapling);
         OreDictionary.registerOre("treeSapling", TBXLBlocks.purple_autumnal_oak_sapling);

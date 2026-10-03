@@ -2,7 +2,7 @@
   "forge_marker": 1,
   "defaults": {
     "textures": {
-      "texture": "traverse:blocks/fir_trapdoor"
+      "texture": "traverse:blocks/douglas_fir_trapdoor"
     }
   },
   "variants": {

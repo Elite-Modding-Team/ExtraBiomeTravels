@@ -2,11 +2,11 @@
   "type": "forge:ore_shapeless",
   "ingredients": [
     {
-      "item": "traverse:fir_log"
+      "item": "traverse:douglas_fir_log"
     }
   ],
   "result": {
-    "item": "traverse:fir_planks",
+    "item": "traverse:douglas_fir_planks",
     "count": 4
   }
 }
