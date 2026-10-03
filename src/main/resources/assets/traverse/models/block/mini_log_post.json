@@ -1,0 +1,52 @@
+{
+  "parent": "block/block",
+  "display": {
+    "gui": {
+      "rotation": [30, 135, 0],
+      "translation": [0, 0, 0],
+      "scale": [0.625, 0.625, 0.625]
+    },
+    "fixed": {
+      "rotation": [0, 90, 0],
+      "translation": [0, 0, 0],
+      "scale": [0.5, 0.5, 0.5]
+    }
+  },
+  "textures": {
+    "side": "#side",
+    "end": "#end",
+    "particle": "#side"
+  },
+  "elements": [
+    {
+      "from": [3, 0, 3],
+      "to": [13, 16, 13],
+      "faces": {
+        "down": {
+          "uv": [3, 3, 13, 13],
+          "texture": "#end"
+        },
+        "up": {
+          "uv": [3, 3, 13, 13],
+          "texture": "#end"
+        },
+        "north": {
+          "uv": [3, 0, 13, 16],
+          "texture": "#side"
+        },
+        "south": {
+          "uv": [3, 0, 13, 16],
+          "texture": "#side"
+        },
+        "west": {
+          "uv": [3, 0, 13, 16],
+          "texture": "#side"
+        },
+        "east": {
+          "uv": [3, 0, 13, 16],
+          "texture": "#side"
+        }
+      }
+    }
+  ]
+}

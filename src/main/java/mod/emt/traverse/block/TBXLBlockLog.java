@@ -13,6 +13,7 @@ import org.jetbrains.annotations.NotNull;
 
 import java.util.Objects;
 
+@SuppressWarnings("deprecation")
 public class TBXLBlockLog extends BlockLog {
     private final MapColor mapColor;
     public boolean flammable;

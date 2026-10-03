@@ -1,7 +1,6 @@
 {
   "forge_marker": 1,
   "defaults": {
-    "model": "cube_column",
     "textures": {
       "end": "traverse:blocks/peach_sakura_log_top",
       "side": "traverse:blocks/peach_sakura_log_side"
@@ -9,27 +8,111 @@
   },
   "variants": {
     "normal": [
-      {}
-    ],
-    "inventory": [
       {
-        "transform": "forge:default-block"
+        "model": "traverse:mini_log_post"
       }
     ],
-    "axis=x": {
-      "model": "cube_column",
-      "x": 90,
-      "y": 90
+    "inventory": [
+      {}
+    ],
+    "axis": {
+      "y": {
+        "submodel": {
+          "post": {
+            "model": "traverse:mini_log_post"
+          }
+        }
+      },
+
+      "x": {
+        "submodel": {
+          "post": {
+            "model": "traverse:mini_log_post",
+            "x": 90,
+            "y": 90
+          }
+        }
+      },
+      "z": {
+        "submodel": {
+          "post": {
+            "model": "traverse:mini_log_post",
+            "x": 90
+          }
+        }
+      },
+      "none": {
+        "submodel": {
+          "post": {
+            "model": "traverse:mini_log_post"
+          }
+        }
+      }
     },
-    "axis=y": {
-      "model": "cube_column"
+    "north": {
+      "true": {
+        "submodel": {
+          "north": {
+            "model": "traverse:mini_log_side",
+            "y": 180
+          }
+        }
+      },
+      "false": {}
     },
-    "axis=z": {
-      "model": "cube_column",
-      "x": 90
+    "south": {
+      "true": {
+        "submodel": {
+          "south": {
+            "model": "traverse:mini_log_side"
+          }
+        }
+      },
+      "false": {}
     },
-    "axis=none": {
-      "model": "cube_all"
+    "east": {
+      "true": {
+        "submodel": {
+          "east": {
+            "model": "traverse:mini_log_side",
+            "y": 270
+          }
+        }
+      },
+      "false": {}
+    },
+    "west": {
+      "true": {
+        "submodel": {
+          "west": {
+            "model": "traverse:mini_log_side",
+            "y": 90
+          }
+        }
+      },
+      "false": {}
+    },
+    "up": {
+      "true": {
+        "submodel": {
+          "up": {
+            "model": "traverse:mini_log_side",
+            "x": 90
+          }
+        }
+      },
+      "false": {}
+    },
+    "down": {
+      "true": {
+        "submodel": {
+          "down": {
+            "model": "traverse:mini_log_side",
+            "x": 270
+          }
+        }
+      },
+      "false": {}
     }
   }
 }

@@ -84,7 +84,7 @@ public class TBXLBlocks {
     public static TBXLBlockDoorWood peach_sakura_door = null;
     public static TBXLBlockFenceGateWood peach_sakura_fence_gate = null;
     public static TBXLBlockFenceWood peach_sakura_fence = null;
-    public static TBXLBlockLog peach_sakura_log = null;
+    public static TBXLBlockMiniLog peach_sakura_log = null;
     public static TBXLBlockPlanks peach_sakura_planks = null;
     public static TBXLBlockPressurePlateWood peach_sakura_pressure_plate = null;
     public static TBXLBlockSlab.Double peach_sakura_slab_double = null;
@@ -238,7 +238,7 @@ public class TBXLBlocks {
         MOD_BLOCKS.add(peach_sakura_door = new TBXLBlockDoorWood("peach_sakura_door", MapColor.ADOBE));
         MOD_BLOCKS.add(peach_sakura_fence_gate = new TBXLBlockFenceGateWood("peach_sakura_fence_gate", MapColor.ADOBE, true));
         MOD_BLOCKS.add(peach_sakura_fence = new TBXLBlockFenceWood("peach_sakura_fence", MapColor.ADOBE, true));
-        MOD_BLOCKS.add(peach_sakura_log = new TBXLBlockLog("peach_sakura_log", MapColor.WOOD, 2.0F, true));
+        MOD_BLOCKS.add(peach_sakura_log = new TBXLBlockMiniLog("peach_sakura_log", MapColor.WOOD, 2.0F, true));
         MOD_BLOCKS.add(peach_sakura_planks = new TBXLBlockPlanks("peach_sakura_planks", MapColor.ADOBE, 2.0F, 5.0F, true));
         MOD_BLOCKS.add(peach_sakura_pressure_plate = new TBXLBlockPressurePlateWood("peach_sakura_pressure_plate", MapColor.ADOBE));
         MOD_BLOCKS.add(peach_sakura_slab = new TBXLBlockSlab.Half("peach_sakura_slab", Material.WOOD, MapColor.ADOBE, 2.0F, 5.0F, true));
