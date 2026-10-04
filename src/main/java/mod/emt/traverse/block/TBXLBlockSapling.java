@@ -121,11 +121,11 @@ public class TBXLBlockSapling extends BlockBush implements IGrowable {
             case AUTUMNAL_OAK_YELLOW:
                 generator = new TBXLWorldGenTallTree(false, rand.nextBoolean(), Blocks.LOG.getDefaultState(), TBXLBlocks.yellow_autumnal_oak_leaves.getDefaultState());
                 break;
-            case FIR:
+            case DOUGLAS_FIR:
                 check:
                 for (i = 0; i >= -1; --i) {
                     for (j = 0; j >= -1; --j) {
-                        if (this.isTwoByTwoOfType(world, pos, i, j, EnumWoodType.FIR)) {
+                        if (this.isTwoByTwoOfType(world, pos, i, j, EnumWoodType.DOUGLAS_FIR)) {
                             generator = new TBXLWorldGenHugeFirTree(false, true);
                             flag = true;
                             break check;
@@ -224,7 +224,7 @@ public class TBXLBlockSapling extends BlockBush implements IGrowable {
     }
 
     public enum EnumWoodType implements IStringSerializable {
-        FIR(0, "fir"),
+        DOUGLAS_FIR(0, "douglas_fir"),
         AUTUMNAL_OAK_BROWN(1, "autumnal_oak_brown"),
         AUTUMNAL_OAK_GREEN(2, "autumnal_oak_green"),
         AUTUMNAL_OAK_ORANGE(3, "autumnal_oak_orange"),
@@ -246,7 +246,7 @@ public class TBXLBlockSapling extends BlockBush implements IGrowable {
                     return woodType;
                 }
             }
-            return EnumWoodType.FIR;
+            return EnumWoodType.DOUGLAS_FIR;
         }
 
         public int getMetadata() {
