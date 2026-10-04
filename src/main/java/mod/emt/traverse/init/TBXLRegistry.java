@@ -106,43 +106,45 @@ public class TBXLRegistry {
 
     @SubscribeEvent
     public static void registerFuels(FurnaceFuelBurnTimeEvent event) {
-        if (event.getItemStack().getItem() == Item.getItemFromBlock(TBXLBlocks.citrine_autumnal_sapling)) {
+        if (event.getItemStack().getItem() == Item.getItemFromBlock(TBXLBlocks.bald_cypress_sapling)) {
             event.setBurnTime(100); // 0.5 items
-        } else if (event.getItemStack().getItem() == Item.getItemFromBlock(TBXLBlocks.goldenrod_autumnal_sapling)) {
+        } else if (event.getItemStack().getItem() == Item.getItemFromBlock(TBXLBlocks.brown_autumnal_oak_sapling)) {
             event.setBurnTime(100); // 0.5 items
-        } else if (event.getItemStack().getItem() == Item.getItemFromBlock(TBXLBlocks.umber_autumnal_sapling)) {
-            event.setBurnTime(100); // 0.5 items
-        } else if (event.getItemStack().getItem() == Item.getItemFromBlock(TBXLBlocks.vermillion_autumnal_sapling)) {
-            event.setBurnTime(100); // 0.5 items
-        } else if (event.getItemStack().getItem() == Item.getItemFromBlock(TBXLBlocks.green_autumnal_oak_sapling)) {
-            event.setBurnTime(100); // 0.5 items
-        } else if (event.getItemStack().getItem() == Item.getItemFromBlock(TBXLBlocks.orange_autumnal_oak_sapling)) {
-            event.setBurnTime(100); // 0.5 items
-        } else if (event.getItemStack().getItem() == Item.getItemFromBlock(TBXLBlocks.purple_autumnal_oak_sapling)) {
-            event.setBurnTime(100); // 0.5 items
-        } else if (event.getItemStack().getItem() == Item.getItemFromBlock(TBXLBlocks.red_autumnal_oak_sapling)) {
-            event.setBurnTime(100); // 0.5 items
-        } else if (event.getItemStack().getItem() == Item.getItemFromBlock(TBXLBlocks.yellow_autumnal_oak_sapling)) {
-            event.setBurnTime(100); // 0.5 items
-        } else if (event.getItemStack().getItem() == Item.getItemFromBlock(TBXLBlocks.bald_cypress_sapling)) {
+        } else if (event.getItemStack().getItem() == Item.getItemFromBlock(TBXLBlocks.citrine_autumnal_sapling)) {
             event.setBurnTime(100); // 0.5 items
         } else if (event.getItemStack().getItem() == Item.getItemFromBlock(TBXLBlocks.cypress_sapling)) {
             event.setBurnTime(100); // 0.5 items
         } else if (event.getItemStack().getItem() == Item.getItemFromBlock(TBXLBlocks.douglas_fir_button)) {
             event.setBurnTime(100); // 0.5 items
+        } else if (event.getItemStack().getItem() == Item.getItemFromBlock(TBXLBlocks.goldenrod_autumnal_sapling)) {
+            event.setBurnTime(100); // 0.5 items
+        } else if (event.getItemStack().getItem() == Item.getItemFromBlock(TBXLBlocks.green_autumnal_oak_sapling)) {
+            event.setBurnTime(100); // 0.5 items
         } else if (event.getItemStack().getItem() == Item.getItemFromBlock(TBXLBlocks.japanese_maple_sapling)) {
             event.setBurnTime(100); // 0.5 items
         } else if (event.getItemStack().getItem() == Item.getItemFromBlock(TBXLBlocks.japanese_maple_shrub_sapling)) {
             event.setBurnTime(100); // 0.5 items
+        } else if (event.getItemStack().getItem() == Item.getItemFromBlock(TBXLBlocks.orange_autumnal_oak_sapling)) {
+            event.setBurnTime(100); // 0.5 items
         } else if (event.getItemStack().getItem() == Item.getItemFromBlock(TBXLBlocks.peach_sakura_sapling)) {
+            event.setBurnTime(100); // 0.5 items
+        } else if (event.getItemStack().getItem() == Item.getItemFromBlock(TBXLBlocks.purple_autumnal_oak_sapling)) {
             event.setBurnTime(100); // 0.5 items
         } else if (event.getItemStack().getItem() == Item.getItemFromBlock(TBXLBlocks.rainbow_eucalyptus_sapling)) {
             event.setBurnTime(100); // 0.5 items
+        } else if (event.getItemStack().getItem() == Item.getItemFromBlock(TBXLBlocks.red_autumnal_oak_sapling)) {
+            event.setBurnTime(100); // 0.5 items
         } else if (event.getItemStack().getItem() == Item.getItemFromBlock(TBXLBlocks.scalewood_sapling)) {
+            event.setBurnTime(100); // 0.5 items
+        } else if (event.getItemStack().getItem() == Item.getItemFromBlock(TBXLBlocks.umber_autumnal_sapling)) {
+            event.setBurnTime(100); // 0.5 items
+        } else if (event.getItemStack().getItem() == Item.getItemFromBlock(TBXLBlocks.vermillion_autumnal_sapling)) {
             event.setBurnTime(100); // 0.5 items
         } else if (event.getItemStack().getItem() == Item.getItemFromBlock(TBXLBlocks.wattle_sapling)) {
             event.setBurnTime(100); // 0.5 items
         } else if (event.getItemStack().getItem() == Item.getItemFromBlock(TBXLBlocks.white_fir_sapling)) {
+            event.setBurnTime(100); // 0.5 items
+        } else if (event.getItemStack().getItem() == Item.getItemFromBlock(TBXLBlocks.yellow_autumnal_oak_sapling)) {
             event.setBurnTime(100); // 0.5 items
         }
     }
