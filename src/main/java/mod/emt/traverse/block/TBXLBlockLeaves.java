@@ -129,6 +129,8 @@ public class TBXLBlockLeaves extends BlockLeaves {
     public @NotNull Item getItemDropped(final @NotNull IBlockState state, final @NotNull Random rand, final int fortune) {
         if (this == TBXLBlocks.brown_autumnal_oak_leaves) {
             return Item.getItemFromBlock(TBXLBlocks.brown_autumnal_oak_sapling);
+        } else if (this == TBXLBlocks.cypress_leaves) {
+            return Item.getItemFromBlock(TBXLBlocks.cypress_sapling);
         } else if (this == TBXLBlocks.douglas_fir_leaves) {
             return Item.getItemFromBlock(TBXLBlocks.douglas_fir_sapling);
         } else if (this == TBXLBlocks.green_autumnal_oak_leaves) {

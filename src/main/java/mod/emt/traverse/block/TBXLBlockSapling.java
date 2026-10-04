@@ -119,6 +119,9 @@ public class TBXLBlockSapling extends BlockBush implements IGrowable {
             case AUTUMNAL_OAK_YELLOW:
                 generator = new TBXLWorldGenTallTree(false, rand.nextBoolean(), Blocks.LOG.getDefaultState(), TBXLBlocks.yellow_autumnal_oak_leaves.getDefaultState());
                 break;
+            case CYPRESS:
+                generator = new TBXLWorldGenCypressTree(true);
+                break;
             case DOUGLAS_FIR:
                 check:
                 for (i = 0; i >= -1; --i) {
@@ -250,8 +253,9 @@ public class TBXLBlockSapling extends BlockBush implements IGrowable {
         AUTUMNAL_OAK_PURPLE(4, "autumnal_oak_purple"),
         AUTUMNAL_OAK_RED(5, "autumnal_oak_red"),
         AUTUMNAL_OAK_YELLOW(6, "autumnal_oak_yellow"),
-        WATTLE (7, "wattle"),
-        WHITE_FIR(7, "white_fir");
+        CYPRESS(7, "cypress"),
+        WATTLE (8, "wattle"),
+        WHITE_FIR(9, "white_fir");
 
         private final String name;
         private final int meta;
