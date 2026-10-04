@@ -339,8 +339,8 @@ public class TBXLBlocks {
         MOD_BLOCKS.add(bald_cypress_sapling = new TBXLBlockSapling("bald_cypress_sapling", EnumWoodType.DOUGLAS_FIR, MapColor.FOLIAGE, true));
         MOD_BLOCKS.add(cypress_sapling = new TBXLBlockSapling("cypress_sapling", EnumWoodType.CYPRESS, MapColor.FOLIAGE, true));
         MOD_BLOCKS.add(douglas_fir_sapling = new TBXLBlockSapling("douglas_fir_sapling", EnumWoodType.DOUGLAS_FIR, MapColor.FOLIAGE, true));
-        MOD_BLOCKS.add(japanese_maple_sapling = new TBXLBlockSapling("japanese_maple_sapling", EnumWoodType.DOUGLAS_FIR, MapColor.FOLIAGE, true));
-        MOD_BLOCKS.add(japanese_maple_shrub_sapling = new TBXLBlockSapling("japanese_maple_shrub_sapling", EnumWoodType.DOUGLAS_FIR, MapColor.FOLIAGE, true));
+        MOD_BLOCKS.add(japanese_maple_sapling = new TBXLBlockSapling("japanese_maple_sapling", EnumWoodType.JAPANESE_MAPLE, MapColor.FOLIAGE, true));
+        MOD_BLOCKS.add(japanese_maple_shrub_sapling = new TBXLBlockSapling("japanese_maple_shrub_sapling", EnumWoodType.JAPANESE_MAPLE_SHRUB, MapColor.FOLIAGE, true));
         MOD_BLOCKS.add(peach_sakura_sapling = new TBXLBlockSapling("peach_sakura_sapling", EnumWoodType.DOUGLAS_FIR, MapColor.FOLIAGE, true));
         MOD_BLOCKS.add(rainbow_eucalyptus_sapling = new TBXLBlockSapling("rainbow_eucalyptus_sapling", EnumWoodType.DOUGLAS_FIR, MapColor.FOLIAGE, true));
         MOD_BLOCKS.add(scalewood_sapling = new TBXLBlockSapling("scalewood_sapling", EnumWoodType.DOUGLAS_FIR, MapColor.FOLIAGE, true));

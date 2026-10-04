@@ -135,6 +135,10 @@ public class TBXLBlockLeaves extends BlockLeaves {
             return Item.getItemFromBlock(TBXLBlocks.douglas_fir_sapling);
         } else if (this == TBXLBlocks.green_autumnal_oak_leaves) {
             return Item.getItemFromBlock(TBXLBlocks.green_autumnal_oak_sapling);
+        } else if (this == TBXLBlocks.japanese_maple_leaves) {
+            return Item.getItemFromBlock(TBXLBlocks.japanese_maple_sapling);
+        } else if (this == TBXLBlocks.japanese_maple_shrub_leaves) {
+            return Item.getItemFromBlock(TBXLBlocks.japanese_maple_shrub_sapling);
         } else if (this == TBXLBlocks.orange_autumnal_oak_leaves) {
             return Item.getItemFromBlock(TBXLBlocks.orange_autumnal_oak_sapling);
         } else if (this == TBXLBlocks.purple_autumnal_oak_leaves) {

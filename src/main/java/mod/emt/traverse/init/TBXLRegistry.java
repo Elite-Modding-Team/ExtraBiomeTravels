@@ -153,7 +153,7 @@ public class TBXLRegistry {
         TraverseBiomesXL.LOGGER.info("Registering ore dictionary entries...");
         OreDictionary.registerOre("cobblestone", TBXLBlocks.red_rock_cobblestone);
 
-        OreDictionary.registerOre("doorWood", TBXLItems.autumnal_door);
+        /*OreDictionary.registerOre("doorWood", TBXLItems.autumnal_door);
         OreDictionary.registerOre("doorWood", TBXLItems.bald_cypress_door);
         OreDictionary.registerOre("doorWood", TBXLItems.cypress_door);
         OreDictionary.registerOre("doorWood", TBXLItems.douglas_fir_door);
@@ -162,7 +162,7 @@ public class TBXLRegistry {
         OreDictionary.registerOre("doorWood", TBXLItems.rainbow_eucalyptus_door);
         OreDictionary.registerOre("doorWood", TBXLBlocks.scalewood_door);
         OreDictionary.registerOre("doorWood", TBXLBlocks.wattle_door);
-        OreDictionary.registerOre("doorWood", TBXLBlocks.white_fir_door);
+        OreDictionary.registerOre("doorWood", TBXLBlocks.white_fir_door);*/
 
         OreDictionary.registerOre("fenceGateWood", TBXLBlocks.autumnal_fence_gate);
         OreDictionary.registerOre("fenceGateWood", TBXLBlocks.bald_cypress_fence_gate);

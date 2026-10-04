@@ -140,6 +140,9 @@ public class TBXLBlockSapling extends BlockBush implements IGrowable {
                     generator = new TBXLWorldGenFirTree2(true);
                 }
                 break;
+            case JAPANESE_MAPLE:
+                generator = new TBXLWorldGenJapaneseMapleTree(true);
+                break;
             case WHITE_FIR:
                 check:
                 for (i = 0; i >= -1; --i) {
@@ -254,8 +257,10 @@ public class TBXLBlockSapling extends BlockBush implements IGrowable {
         AUTUMNAL_OAK_RED(5, "autumnal_oak_red"),
         AUTUMNAL_OAK_YELLOW(6, "autumnal_oak_yellow"),
         CYPRESS(7, "cypress"),
-        WATTLE (8, "wattle"),
-        WHITE_FIR(9, "white_fir");
+        JAPANESE_MAPLE(8, "japanese_maple"),
+        JAPANESE_MAPLE_SHRUB(9, "japanese_maple_shrub"),
+        WATTLE (10, "wattle"),
+        WHITE_FIR(11, "white_fir");
 
         private final String name;
         private final int meta;
