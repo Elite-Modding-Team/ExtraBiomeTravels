@@ -155,6 +155,9 @@ public class TBXLBlockSapling extends BlockBush implements IGrowable {
                     generator = new TBXLWorldGenFirTree(true);
                 }
                 break;
+            case WATTLE:
+                generator = new TBXLWorldGenWattleTree();
+                break;
             default:
                 break;
         }
@@ -247,6 +250,7 @@ public class TBXLBlockSapling extends BlockBush implements IGrowable {
         AUTUMNAL_OAK_PURPLE(4, "autumnal_oak_purple"),
         AUTUMNAL_OAK_RED(5, "autumnal_oak_red"),
         AUTUMNAL_OAK_YELLOW(6, "autumnal_oak_yellow"),
+        WATTLE (7, "wattle"),
         WHITE_FIR(7, "white_fir");
 
         private final String name;
