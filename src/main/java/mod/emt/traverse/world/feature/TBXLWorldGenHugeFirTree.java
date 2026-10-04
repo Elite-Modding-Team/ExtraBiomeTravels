@@ -16,7 +16,7 @@ public class TBXLWorldGenHugeFirTree extends WorldGenHugeTrees {
 
     // useBaseHeight being set to false gives it the alternate tree variant
     public TBXLWorldGenHugeFirTree(boolean notify, boolean useBaseHeight) {
-        super(notify, 22, 18, TBXLBlocks.douglas_fir_log.getDefaultState(), TBXLBlocks.douglas_fir_leaves.getDefaultState().withProperty(BlockLeaves.CHECK_DECAY, false));
+        super(notify, 22, 18, TBXLBlocks.white_fir_log.getDefaultState(), TBXLBlocks.white_fir_leaves.getDefaultState().withProperty(BlockLeaves.CHECK_DECAY, false));
         this.useBaseHeight = useBaseHeight;
     }
 

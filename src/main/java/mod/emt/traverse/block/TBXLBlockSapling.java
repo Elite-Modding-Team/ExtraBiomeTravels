@@ -5,9 +5,7 @@ import java.util.Random;
 
 import mod.emt.traverse.TraverseBiomesXL;
 import mod.emt.traverse.init.TBXLBlocks;
-import mod.emt.traverse.world.feature.TBXLWorldGenFirTree;
-import mod.emt.traverse.world.feature.TBXLWorldGenHugeFirTree;
-import mod.emt.traverse.world.feature.TBXLWorldGenTallTree;
+import mod.emt.traverse.world.feature.*;
 import net.minecraft.block.*;
 import net.minecraft.block.material.MapColor;
 import net.minecraft.block.material.Material;
@@ -126,6 +124,24 @@ public class TBXLBlockSapling extends BlockBush implements IGrowable {
                 for (i = 0; i >= -1; --i) {
                     for (j = 0; j >= -1; --j) {
                         if (this.isTwoByTwoOfType(world, pos, i, j, EnumWoodType.DOUGLAS_FIR)) {
+                            generator = new TBXLWorldGenHugeFirTree2(false);
+                            flag = true;
+                            break check;
+                        }
+                    }
+                }
+
+                if (!flag) {
+                    i = 0;
+                    j = 0;
+                    generator = new TBXLWorldGenFirTree2(true);
+                }
+                break;
+            case WHITE_FIR:
+                check:
+                for (i = 0; i >= -1; --i) {
+                    for (j = 0; j >= -1; --j) {
+                        if (this.isTwoByTwoOfType(world, pos, i, j, EnumWoodType.WHITE_FIR)) {
                             generator = new TBXLWorldGenHugeFirTree(false, true);
                             flag = true;
                             break check;
@@ -230,7 +246,8 @@ public class TBXLBlockSapling extends BlockBush implements IGrowable {
         AUTUMNAL_OAK_ORANGE(3, "autumnal_oak_orange"),
         AUTUMNAL_OAK_PURPLE(4, "autumnal_oak_purple"),
         AUTUMNAL_OAK_RED(5, "autumnal_oak_red"),
-        AUTUMNAL_OAK_YELLOW(6, "autumnal_oak_yellow");
+        AUTUMNAL_OAK_YELLOW(6, "autumnal_oak_yellow"),
+        WHITE_FIR(7, "white_fir");
 
         private final String name;
         private final int meta;

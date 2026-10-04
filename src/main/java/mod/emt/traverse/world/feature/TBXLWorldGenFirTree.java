@@ -24,7 +24,7 @@ public class TBXLWorldGenFirTree extends WorldGenAbstractTree {
     }
 
     public TBXLWorldGenFirTree(boolean isWorldGen, int minTreeHeight) {
-        this(isWorldGen, minTreeHeight, TBXLBlocks.douglas_fir_log.getDefaultState(), TBXLBlocks.douglas_fir_leaves.getDefaultState().withProperty(BlockLeaves.CHECK_DECAY, false));
+        this(isWorldGen, minTreeHeight, TBXLBlocks.white_fir_log.getDefaultState(), TBXLBlocks.white_fir_leaves.getDefaultState().withProperty(BlockLeaves.CHECK_DECAY, false));
     }
 
     public TBXLWorldGenFirTree(boolean isWorldGen, int minTreeHeight, IBlockState stateWood, IBlockState stateLeaves) {
