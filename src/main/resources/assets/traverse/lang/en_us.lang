@@ -29,6 +29,7 @@ tile.traverse:bald_cypress_trapdoor.name=Bald Cypress Trapdoor
 
 tile.traverse:brown_autumnal_oak_leaves.name=Brown Autumnal Oak Leaves
 tile.traverse:brown_autumnal_oak_sapling.name=Brown Autumnal Oak Sapling
+tile.traverse:citrine_autumnal_leaves.name=Citrine Autumnal Leaves
 tile.traverse:citrine_autumnal_sapling.name=Citrine Autumnal Sapling
 tile.traverse:cracked_sand.name=Cracked Sand
 
@@ -57,6 +58,7 @@ tile.traverse:douglas_fir_sapling.name=Douglas Fir Sapling
 tile.traverse:douglas_fir_slab.name=Douglas Fir Slab
 tile.traverse:douglas_fir_stairs.name=Douglas Fir Stairs
 tile.traverse:douglas_fir_trapdoor.name=Douglas Fir Trapdoor
+tile.traverse:goldenrod_autumnal_leaves.name=Goldenrod Autumnal Leaves
 tile.traverse:goldenrod_autumnal_sapling.name=Goldenrod Autumnal Sapling
 tile.traverse:green_autumnal_oak_leaves.name=Green Autumnal Oak Leaves
 tile.traverse:green_autumnal_oak_sapling.name=Green Autumnal Oak Sapling
@@ -69,6 +71,7 @@ tile.traverse:japanese_maple_log.name=Japanese Maple Log
 tile.traverse:japanese_maple_planks.name=Japanese Maple Planks
 tile.traverse:japanese_maple_pressure_plate.name=Japanese Maple Pressure Plate
 tile.traverse:japanese_maple_sapling.name=Japanese Maple Sapling
+tile.traverse:japanese_maple_shrub_leaves.name=Japanese Maple Shrub Leaves
 tile.traverse:japanese_maple_slab.name=Japanese Maple Slab
 tile.traverse:japanese_maple_stairs.name=Japanese Maple Stairs
 tile.traverse:japanese_maple_trapdoor.name=Japanese Maple Trapdoor
@@ -133,7 +136,9 @@ tile.traverse:scalewood_slab.name=Scalewood Slab
 tile.traverse:scalewood_stairs.name=Scalewood Stairs
 tile.traverse:scalewood_trapdoor.name=Scalewood Trapdoor
 
+tile.traverse:umber_autumnal_leaves.name=Umber Autumnal Leaves
 tile.traverse:umber_autumnal_sapling.name=Umber Autumnal Sapling
+tile.traverse:vermillion_autumnal_leaves.name=Vermillion Autumnal Leaves
 tile.traverse:vermillion_autumnal_sapling.name=Vermillion Autumnal Sapling
 
 tile.traverse:wattle_button.name=Wattle Button

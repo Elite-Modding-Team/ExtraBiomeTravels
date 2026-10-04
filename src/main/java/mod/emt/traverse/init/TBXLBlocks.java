@@ -11,14 +11,26 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class TBXLBlocks {
+    public static TBXLBlockLeaves citrine_autumnal_leaves = null;
+    public static TBXLBlockLeaves goldenrod_autumnal_leaves = null;
+    public static TBXLBlockLeaves umber_autumnal_leaves = null;
+    public static TBXLBlockLeaves vermillion_autumnal_leaves = null;
     public static TBXLBlockLeaves brown_autumnal_oak_leaves = null;
     public static TBXLBlockLeaves green_autumnal_oak_leaves = null;
     public static TBXLBlockLeaves orange_autumnal_oak_leaves = null;
     public static TBXLBlockLeaves purple_autumnal_oak_leaves = null;
     public static TBXLBlockLeaves red_autumnal_oak_leaves = null;
     public static TBXLBlockLeaves yellow_autumnal_oak_leaves = null;
+    public static TBXLBlockLeaves bald_cypress_leaves = null;
+    public static TBXLBlockLeaves cypress_leaves = null;
     public static TBXLBlockLeaves douglas_fir_leaves = null;
     public static TBXLBlockLeaves japanese_maple_leaves = null;
+    public static TBXLBlockLeaves japanese_maple_shrub_leaves = null;
+    public static TBXLBlockLeaves peach_sakura_leaves = null;
+    public static TBXLBlockLeaves rainbow_eucalyptus_leaves = null;
+    public static TBXLBlockLeaves scalewood_leaves = null;
+    public static TBXLBlockLeaves wattle_leaves = null;
+    public static TBXLBlockLeaves white_fir_leaves = null;
 
     public static TBXLBlockButtonWood autumnal_button = null;
     public static TBXLBlockDoorWood autumnal_door = null;
@@ -171,13 +183,26 @@ public class TBXLBlocks {
     public static final List<Block> MOD_BLOCKS = new ArrayList<>();
 
     public static void initBlocks() {
+        MOD_BLOCKS.add(citrine_autumnal_leaves = new TBXLBlockLeaves("citrine_autumnal_leaves", MapColor.FOLIAGE, true, 20));
+        MOD_BLOCKS.add(goldenrod_autumnal_leaves = new TBXLBlockLeaves("goldenrod_autumnal_leaves", MapColor.FOLIAGE, true, 20));
+        MOD_BLOCKS.add(umber_autumnal_leaves = new TBXLBlockLeaves("umber_autumnal_leaves", MapColor.FOLIAGE, true, 20));
+        MOD_BLOCKS.add(vermillion_autumnal_leaves = new TBXLBlockLeaves("vermillion_autumnal_leaves", MapColor.FOLIAGE, true, 20));
         MOD_BLOCKS.add(brown_autumnal_oak_leaves = new TBXLBlockLeaves("brown_autumnal_oak_leaves", MapColor.BROWN_STAINED_HARDENED_CLAY, true, 20));
         MOD_BLOCKS.add(green_autumnal_oak_leaves = new TBXLBlockLeaves("green_autumnal_oak_leaves", MapColor.LIME_STAINED_HARDENED_CLAY, true, 20));
         MOD_BLOCKS.add(orange_autumnal_oak_leaves = new TBXLBlockLeaves("orange_autumnal_oak_leaves", MapColor.ORANGE_STAINED_HARDENED_CLAY, true, 20));
         MOD_BLOCKS.add(purple_autumnal_oak_leaves = new TBXLBlockLeaves("purple_autumnal_oak_leaves", MapColor.PURPLE_STAINED_HARDENED_CLAY, true, 20));
         MOD_BLOCKS.add(red_autumnal_oak_leaves = new TBXLBlockLeaves("red_autumnal_oak_leaves", MapColor.RED_STAINED_HARDENED_CLAY, true, 20));
         MOD_BLOCKS.add(yellow_autumnal_oak_leaves = new TBXLBlockLeaves("yellow_autumnal_oak_leaves", MapColor.YELLOW_STAINED_HARDENED_CLAY, true, 20));
+        MOD_BLOCKS.add(bald_cypress_leaves = new TBXLBlockLeaves("bald_cypress_leaves", MapColor.FOLIAGE, true, 20));
+        MOD_BLOCKS.add(cypress_leaves = new TBXLBlockLeaves("cypress_leaves", MapColor.FOLIAGE, true, 20));
         MOD_BLOCKS.add(douglas_fir_leaves = new TBXLBlockLeaves("douglas_fir_leaves", MapColor.FOLIAGE, true, 20));
+        MOD_BLOCKS.add(japanese_maple_leaves = new TBXLBlockLeaves("japanese_maple_leaves", MapColor.FOLIAGE, true, 20));
+        MOD_BLOCKS.add(japanese_maple_shrub_leaves = new TBXLBlockLeaves("japanese_maple_shrub_leaves", MapColor.FOLIAGE, true, 20));
+        MOD_BLOCKS.add(peach_sakura_leaves = new TBXLBlockLeaves("peach_sakura_leaves", MapColor.FOLIAGE, true, 20));
+        MOD_BLOCKS.add(rainbow_eucalyptus_leaves = new TBXLBlockLeaves("rainbow_eucalyptus_leaves", MapColor.FOLIAGE, true, 20));
+        MOD_BLOCKS.add(scalewood_leaves = new TBXLBlockLeaves("scalewood_leaves", MapColor.FOLIAGE, true, 20));
+        MOD_BLOCKS.add(wattle_leaves = new TBXLBlockLeaves("wattle_leaves", MapColor.FOLIAGE, true, 20));
+        MOD_BLOCKS.add(white_fir_leaves = new TBXLBlockLeaves("white_fir_leaves", MapColor.FOLIAGE, true, 20));
 
         MOD_BLOCKS.add(autumnal_button = new TBXLBlockButtonWood("autumnal_button"));
         MOD_BLOCKS.add(autumnal_door = new TBXLBlockDoorWood("autumnal_door", MapColor.ADOBE));

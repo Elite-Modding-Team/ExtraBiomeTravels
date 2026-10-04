@@ -3,7 +3,7 @@
   "defaults": {
     "model": "leaves",
     "textures": {
-      "all": "traverse:blocks/douglas_fir_leaves"
+      "all": "traverse:blocks/fir_leaves"
     }
   },
   "variants": {
