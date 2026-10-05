@@ -31,7 +31,7 @@ public class TBXLWorldGenJapaneseMapleTree extends WorldGenAbstractTree {
     int trunkSize = 1;
     int heightLimitLimit = 12;
     int leafDistanceLimit = 4;
-    List<TBXLWorldGenJapaneseMapleTree.FoliageCoordinates> foliageCoords;
+    List<FoliageCoordinates> foliageCoords;
 
     private final IBlockState woodState;
     private final IBlockState leavesState;
@@ -59,7 +59,7 @@ public class TBXLWorldGenJapaneseMapleTree extends WorldGenAbstractTree {
         int j = this.basePos.getY() + this.height;
         int k = this.heightLimit - this.leafDistanceLimit;
         this.foliageCoords = Lists.newArrayList();
-        this.foliageCoords.add(new TBXLWorldGenJapaneseMapleTree.FoliageCoordinates(this.basePos.up(k), j));
+        this.foliageCoords.add(new FoliageCoordinates(this.basePos.up(k), j));
 
         for (; k >= 0; --k) {
             float f = this.layerSize(k);
@@ -81,7 +81,7 @@ public class TBXLWorldGenJapaneseMapleTree extends WorldGenAbstractTree {
                         BlockPos blockpos2 = new BlockPos(this.basePos.getX(), k1, this.basePos.getZ());
 
                         if (this.checkBlockLine(blockpos2, blockpos) == -1) {
-                            this.foliageCoords.add(new TBXLWorldGenJapaneseMapleTree.FoliageCoordinates(blockpos, blockpos2.getY()));
+                            this.foliageCoords.add(new FoliageCoordinates(blockpos, blockpos2.getY()));
                         }
                     }
                 }
@@ -178,7 +178,7 @@ public class TBXLWorldGenJapaneseMapleTree extends WorldGenAbstractTree {
     }
 
     void generateLeaves() {
-        for (TBXLWorldGenJapaneseMapleTree.FoliageCoordinates worldgenbigtree$foliagecoordinates : this.foliageCoords) {
+        for (FoliageCoordinates worldgenbigtree$foliagecoordinates : this.foliageCoords) {
             this.generateLeafNode(worldgenbigtree$foliagecoordinates);
         }
     }
@@ -200,7 +200,7 @@ public class TBXLWorldGenJapaneseMapleTree extends WorldGenAbstractTree {
     }
 
     void generateLeafNodeBases() {
-        for (TBXLWorldGenJapaneseMapleTree.FoliageCoordinates worldgenbigtree$foliagecoordinates : this.foliageCoords) {
+        for (FoliageCoordinates worldgenbigtree$foliagecoordinates : this.foliageCoords) {
             int i = worldgenbigtree$foliagecoordinates.getBranchBase();
             BlockPos blockpos = new BlockPos(this.basePos.getX(), i, this.basePos.getZ());
 

@@ -101,23 +101,35 @@ public class TBXLBlockSapling extends BlockBush implements IGrowable {
         boolean flag = false;
 
         switch (this.woodType) {
+            case AUTUMNAL_CITRINE:
+                generator = new TBXLWorldGenAutumnalTree(true, TBXLBlocks.autumnal_log.getDefaultState(), TBXLBlocks.citrine_autumnal_leaves.getDefaultState().withProperty(BlockLeaves.CHECK_DECAY, Boolean.FALSE));
+                break;
+            case AUTUMNAL_GOLDENROD:
+                generator = new TBXLWorldGenAutumnalTree(true, TBXLBlocks.autumnal_log.getDefaultState(), TBXLBlocks.goldenrod_autumnal_leaves.getDefaultState().withProperty(BlockLeaves.CHECK_DECAY, Boolean.FALSE));
+                break;
+            case AUTUMNAL_UMBER:
+                generator = new TBXLWorldGenAutumnalTree(true, TBXLBlocks.autumnal_log.getDefaultState(), TBXLBlocks.umber_autumnal_leaves.getDefaultState().withProperty(BlockLeaves.CHECK_DECAY, Boolean.FALSE));
+                break;
+            case AUTUMNAL_VERMILLION:
+                generator = new TBXLWorldGenAutumnalTree(true, TBXLBlocks.autumnal_log.getDefaultState(), TBXLBlocks.vermillion_autumnal_leaves.getDefaultState().withProperty(BlockLeaves.CHECK_DECAY, Boolean.FALSE));
+                break;
             case AUTUMNAL_OAK_BROWN:
-                generator = new TBXLWorldGenTallTree(false, rand.nextBoolean(), Blocks.LOG.getDefaultState(), TBXLBlocks.brown_autumnal_oak_leaves.getDefaultState());
+                generator = new TBXLWorldGenTallTree(false, rand.nextBoolean(), Blocks.LOG.getDefaultState(), TBXLBlocks.brown_autumnal_oak_leaves.getDefaultState().withProperty(BlockLeaves.CHECK_DECAY, Boolean.FALSE));
                 break;
             case AUTUMNAL_OAK_GREEN:
-                generator = new TBXLWorldGenTallTree(false, rand.nextBoolean(), Blocks.LOG.getDefaultState(), TBXLBlocks.green_autumnal_oak_leaves.getDefaultState());
+                generator = new TBXLWorldGenTallTree(false, rand.nextBoolean(), Blocks.LOG.getDefaultState(), TBXLBlocks.green_autumnal_oak_leaves.getDefaultState().withProperty(BlockLeaves.CHECK_DECAY, Boolean.FALSE));
                 break;
             case AUTUMNAL_OAK_ORANGE:
-                generator = new TBXLWorldGenTallTree(false, rand.nextBoolean(), Blocks.LOG.getDefaultState(), TBXLBlocks.orange_autumnal_oak_leaves.getDefaultState());
+                generator = new TBXLWorldGenTallTree(false, rand.nextBoolean(), Blocks.LOG.getDefaultState(), TBXLBlocks.orange_autumnal_oak_leaves.getDefaultState().withProperty(BlockLeaves.CHECK_DECAY, Boolean.FALSE));
                 break;
             case AUTUMNAL_OAK_PURPLE:
-                generator = new TBXLWorldGenTallTree(false, rand.nextBoolean(), Blocks.LOG.getDefaultState(), TBXLBlocks.purple_autumnal_oak_leaves.getDefaultState());
+                generator = new TBXLWorldGenTallTree(false, rand.nextBoolean(), Blocks.LOG.getDefaultState(), TBXLBlocks.purple_autumnal_oak_leaves.getDefaultState().withProperty(BlockLeaves.CHECK_DECAY, Boolean.FALSE));
                 break;
             case AUTUMNAL_OAK_RED:
-                generator = new TBXLWorldGenTallTree(false, rand.nextBoolean(), Blocks.LOG.getDefaultState(), TBXLBlocks.red_autumnal_oak_leaves.getDefaultState());
+                generator = new TBXLWorldGenTallTree(false, rand.nextBoolean(), Blocks.LOG.getDefaultState(), TBXLBlocks.red_autumnal_oak_leaves.getDefaultState().withProperty(BlockLeaves.CHECK_DECAY, Boolean.FALSE));
                 break;
             case AUTUMNAL_OAK_YELLOW:
-                generator = new TBXLWorldGenTallTree(false, rand.nextBoolean(), Blocks.LOG.getDefaultState(), TBXLBlocks.yellow_autumnal_oak_leaves.getDefaultState());
+                generator = new TBXLWorldGenTallTree(false, rand.nextBoolean(), Blocks.LOG.getDefaultState(), TBXLBlocks.yellow_autumnal_oak_leaves.getDefaultState().withProperty(BlockLeaves.CHECK_DECAY, Boolean.FALSE));
                 break;
             case CYPRESS:
                 generator = new TBXLWorldGenCypressTree(true);
@@ -256,11 +268,15 @@ public class TBXLBlockSapling extends BlockBush implements IGrowable {
         AUTUMNAL_OAK_PURPLE(4, "autumnal_oak_purple"),
         AUTUMNAL_OAK_RED(5, "autumnal_oak_red"),
         AUTUMNAL_OAK_YELLOW(6, "autumnal_oak_yellow"),
-        CYPRESS(7, "cypress"),
-        JAPANESE_MAPLE(8, "japanese_maple"),
-        JAPANESE_MAPLE_SHRUB(9, "japanese_maple_shrub"),
-        WATTLE (10, "wattle"),
-        WHITE_FIR(11, "white_fir");
+        AUTUMNAL_CITRINE(7, "autumnal_citrine"),
+        AUTUMNAL_GOLDENROD(8, "autumnal_goldenrod"),
+        AUTUMNAL_UMBER(9, "autumnal_umber"),
+        AUTUMNAL_VERMILLION(10, "autumnal_vermillion"),
+        CYPRESS(11, "cypress"),
+        JAPANESE_MAPLE(12, "japanese_maple"),
+        JAPANESE_MAPLE_SHRUB(13, "japanese_maple_shrub"),
+        WATTLE (14, "wattle"),
+        WHITE_FIR(15, "white_fir");
 
         private final String name;
         private final int meta;

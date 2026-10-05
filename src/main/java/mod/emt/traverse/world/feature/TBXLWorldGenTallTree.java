@@ -9,8 +9,8 @@ import net.minecraft.world.World;
 import net.minecraft.world.gen.feature.WorldGenAbstractTree;
 
 public class TBXLWorldGenTallTree extends WorldGenAbstractTree {
-    private IBlockState stateWood;
-    private IBlockState stateLeaves;
+    private final IBlockState stateWood;
+    private final IBlockState stateLeaves;
     private final boolean useExtraRandomHeight;
 
     public TBXLWorldGenTallTree(boolean notify, boolean useExtraRandomHeight, IBlockState stateWood, IBlockState stateLeaves) {

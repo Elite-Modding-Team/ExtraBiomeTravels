@@ -326,10 +326,10 @@ public class TBXLBlocks {
         MOD_BLOCKS.add(white_fir_slab_double = new TBXLBlockSlab.Double("white_fir_slab", Material.WOOD, MapColor.ADOBE, 2.0F, 5.0F, true));
         MOD_BLOCKS.add(white_fir_stairs = new TBXLBlockStairs("white_fir_stairs", new TBXLBlockPlanks("white_fir_planks", MapColor.ADOBE, 2.0F, 5.0F, true).getDefaultState(), true));
 
-        MOD_BLOCKS.add(citrine_autumnal_sapling = new TBXLBlockSapling("citrine_autumnal_sapling", EnumWoodType.DOUGLAS_FIR, MapColor.FOLIAGE, true));
-        MOD_BLOCKS.add(goldenrod_autumnal_sapling = new TBXLBlockSapling("goldenrod_autumnal_sapling", EnumWoodType.DOUGLAS_FIR, MapColor.FOLIAGE, true));
-        MOD_BLOCKS.add(umber_autumnal_sapling = new TBXLBlockSapling("umber_autumnal_sapling", EnumWoodType.DOUGLAS_FIR, MapColor.FOLIAGE, true));
-        MOD_BLOCKS.add(vermillion_autumnal_sapling = new TBXLBlockSapling("vermillion_autumnal_sapling", EnumWoodType.DOUGLAS_FIR, MapColor.FOLIAGE, true));
+        MOD_BLOCKS.add(citrine_autumnal_sapling = new TBXLBlockSapling("citrine_autumnal_sapling", EnumWoodType.AUTUMNAL_CITRINE, MapColor.FOLIAGE, true));
+        MOD_BLOCKS.add(goldenrod_autumnal_sapling = new TBXLBlockSapling("goldenrod_autumnal_sapling", EnumWoodType.AUTUMNAL_GOLDENROD, MapColor.FOLIAGE, true));
+        MOD_BLOCKS.add(umber_autumnal_sapling = new TBXLBlockSapling("umber_autumnal_sapling", EnumWoodType.AUTUMNAL_UMBER, MapColor.FOLIAGE, true));
+        MOD_BLOCKS.add(vermillion_autumnal_sapling = new TBXLBlockSapling("vermillion_autumnal_sapling", EnumWoodType.AUTUMNAL_VERMILLION, MapColor.FOLIAGE, true));
         MOD_BLOCKS.add(brown_autumnal_oak_sapling = new TBXLBlockSapling("brown_autumnal_oak_sapling", EnumWoodType.AUTUMNAL_OAK_BROWN, MapColor.FOLIAGE, true));
         MOD_BLOCKS.add(green_autumnal_oak_sapling = new TBXLBlockSapling("green_autumnal_oak_sapling", EnumWoodType.AUTUMNAL_OAK_GREEN, MapColor.FOLIAGE, true));
         MOD_BLOCKS.add(orange_autumnal_oak_sapling = new TBXLBlockSapling("orange_autumnal_oak_sapling", EnumWoodType.AUTUMNAL_OAK_ORANGE, MapColor.FOLIAGE, true));
