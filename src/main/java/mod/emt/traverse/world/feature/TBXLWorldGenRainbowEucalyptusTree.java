@@ -17,6 +17,7 @@ import net.minecraft.world.World;
 import net.minecraft.world.gen.feature.WorldGenAbstractTree;
 import org.jetbrains.annotations.NotNull;
 
+// Majority of code is based on the large oak tree
 public class TBXLWorldGenRainbowEucalyptusTree extends WorldGenAbstractTree {
     private static final int BASE_HEIGHT = 19;
     private static final int BASE_HEIGHT_VARIANCE = 8;

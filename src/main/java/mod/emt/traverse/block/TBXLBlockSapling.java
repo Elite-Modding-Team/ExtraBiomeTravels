@@ -196,6 +196,23 @@ public class TBXLBlockSapling extends BlockBush implements IGrowable {
                 }
 
                 break;
+            case SCALEWOOD:
+                check:
+                for (i = 0; i >= -1; --i) {
+                    for (j = 0; j >= -1; --j) {
+                        if (this.isTwoByTwoOfType(world, pos, i, j, EnumWoodType.SCALEWOOD)) {
+                            generator = new TBXLWorldGenScalewoodTree(true);
+                            flag = true;
+                            break check;
+                        }
+                    }
+                }
+
+                if (!flag) {
+                    return;
+                }
+
+                break;
             case WATTLE:
                 generator = new TBXLWorldGenWattleTree();
                 break;
@@ -317,10 +334,11 @@ public class TBXLBlockSapling extends BlockBush implements IGrowable {
         CYPRESS(12, "cypress"),
         JAPANESE_MAPLE(13, "japanese_maple"),
         JAPANESE_MAPLE_SHRUB(14, "japanese_maple_shrub"),
-        RAINBOW_EUCALYPTUS(15, "rainbow_eucalyptus"),
-        PEACH_SAKURA(16, "peach_sakura"),
-        WATTLE (17, "wattle"),
-        WHITE_FIR(18, "white_fir");
+        PEACH_SAKURA(15, "peach_sakura"),
+        RAINBOW_EUCALYPTUS(16, "rainbow_eucalyptus"),
+        SCALEWOOD(17, "scalewood"),
+        WATTLE (18, "wattle"),
+        WHITE_FIR(19, "white_fir");
 
         private final String name;
         private final int meta;

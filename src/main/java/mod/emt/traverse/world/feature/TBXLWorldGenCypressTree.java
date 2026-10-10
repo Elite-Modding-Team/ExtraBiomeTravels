@@ -13,6 +13,7 @@ import org.jetbrains.annotations.NotNull;
 
 import java.util.Random;
 
+// Majority of code is based on the large oak tree
 public class TBXLWorldGenCypressTree extends WorldGenAbstractTree {
     private static final int BASE_HEIGHT = 12;
     private static final int BASE_HEIGHT_VARIANCE = 6;
