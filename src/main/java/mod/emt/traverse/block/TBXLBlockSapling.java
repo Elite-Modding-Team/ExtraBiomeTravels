@@ -19,6 +19,7 @@ import net.minecraft.util.math.AxisAlignedBB;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.IBlockAccess;
 import net.minecraft.world.World;
+import net.minecraft.world.gen.feature.WorldGenShrub;
 import net.minecraft.world.gen.feature.WorldGenerator;
 import net.minecraftforge.event.terraingen.TerrainGen;
 import org.jetbrains.annotations.NotNull;
@@ -154,6 +155,9 @@ public class TBXLBlockSapling extends BlockBush implements IGrowable {
                 break;
             case JAPANESE_MAPLE:
                 generator = new TBXLWorldGenJapaneseMapleTree(true);
+                break;
+            case JAPANESE_MAPLE_SHRUB:
+                generator = new WorldGenShrub(TBXLBlocks.japanese_maple_log.getDefaultState(), TBXLBlocks.japanese_maple_shrub_leaves.getDefaultState().withProperty(BlockLeaves.CHECK_DECAY, Boolean.FALSE));
                 break;
             case PEACH_SAKURA:
                 generator = new TBXLWorldGenPeachSakuraTree(true);
