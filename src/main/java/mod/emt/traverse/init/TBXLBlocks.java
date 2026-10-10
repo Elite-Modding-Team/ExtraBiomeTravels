@@ -342,7 +342,7 @@ public class TBXLBlocks {
         MOD_BLOCKS.add(japanese_maple_sapling = new TBXLBlockSapling("japanese_maple_sapling", EnumWoodType.JAPANESE_MAPLE, MapColor.FOLIAGE, true));
         MOD_BLOCKS.add(japanese_maple_shrub_sapling = new TBXLBlockSapling("japanese_maple_shrub_sapling", EnumWoodType.JAPANESE_MAPLE_SHRUB, MapColor.FOLIAGE, true));
         MOD_BLOCKS.add(peach_sakura_sapling = new TBXLBlockSapling("peach_sakura_sapling", EnumWoodType.PEACH_SAKURA, MapColor.FOLIAGE, true));
-        MOD_BLOCKS.add(rainbow_eucalyptus_sapling = new TBXLBlockSapling("rainbow_eucalyptus_sapling", EnumWoodType.DOUGLAS_FIR, MapColor.FOLIAGE, true));
+        MOD_BLOCKS.add(rainbow_eucalyptus_sapling = new TBXLBlockSapling("rainbow_eucalyptus_sapling", EnumWoodType.RAINBOW_EUCALYPTUS, MapColor.FOLIAGE, true));
         MOD_BLOCKS.add(scalewood_sapling = new TBXLBlockSapling("scalewood_sapling", EnumWoodType.DOUGLAS_FIR, MapColor.FOLIAGE, true));
         MOD_BLOCKS.add(wattle_sapling = new TBXLBlockSapling("wattle_sapling", EnumWoodType.WATTLE, MapColor.FOLIAGE, true));
         MOD_BLOCKS.add(white_fir_sapling = new TBXLBlockSapling("white_fir_sapling", EnumWoodType.WHITE_FIR, MapColor.FOLIAGE, true));
