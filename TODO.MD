@@ -1,0 +1,18 @@
+- Alpine
+- Arid Highland
+- Autumnal Grove
+- Crag Plateau
+- Desert Shrubland
+- Glacier
+- Glacier Spikes
+- Cypress Swampland
+- Ice Wasteland
+- Lush Swampland
+- Marsh
+- Rainforest
+- Rocky Plains
+- Rocky Plateau
+- Savanna Flats
+- Shrubland
+- Thicket
+- Tundra
