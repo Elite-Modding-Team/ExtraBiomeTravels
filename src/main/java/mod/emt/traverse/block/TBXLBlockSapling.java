@@ -132,6 +132,23 @@ public class TBXLBlockSapling extends BlockBush implements IGrowable {
             case AUTUMNAL_OAK_YELLOW:
                 generator = new TBXLWorldGenTallTree(false, rand.nextBoolean(), Blocks.LOG.getDefaultState(), TBXLBlocks.yellow_autumnal_oak_leaves.getDefaultState().withProperty(BlockLeaves.CHECK_DECAY, Boolean.FALSE));
                 break;
+            case BALD_CYPRESS:
+                check:
+                for (i = 0; i >= -1; --i) {
+                    for (j = 0; j >= -1; --j) {
+                        if (this.isTwoByTwoOfType(world, pos, i, j, EnumWoodType.BALD_CYPRESS)) {
+                            generator = new TBXLWorldGenBaldCypressTree(true);
+                            flag = true;
+                            break check;
+                        }
+                    }
+                }
+
+                if (!flag) {
+                    return;
+                }
+
+                break;
             case CYPRESS:
                 generator = new TBXLWorldGenCypressTree(true);
                 break;
@@ -279,12 +296,13 @@ public class TBXLBlockSapling extends BlockBush implements IGrowable {
         AUTUMNAL_GOLDENROD(8, "autumnal_goldenrod"),
         AUTUMNAL_UMBER(9, "autumnal_umber"),
         AUTUMNAL_VERMILLION(10, "autumnal_vermillion"),
-        CYPRESS(11, "cypress"),
-        JAPANESE_MAPLE(12, "japanese_maple"),
-        JAPANESE_MAPLE_SHRUB(13, "japanese_maple_shrub"),
-        PEACH_SAKURA(14, "peach_sakura"),
-        WATTLE (15, "wattle"),
-        WHITE_FIR(16, "white_fir");
+        BALD_CYPRESS(11, "bald_cypress"),
+        CYPRESS(12, "cypress"),
+        JAPANESE_MAPLE(13, "japanese_maple"),
+        JAPANESE_MAPLE_SHRUB(14, "japanese_maple_shrub"),
+        PEACH_SAKURA(15, "peach_sakura"),
+        WATTLE (16, "wattle"),
+        WHITE_FIR(17, "white_fir");
 
         private final String name;
         private final int meta;
