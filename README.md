@@ -12,17 +12,20 @@ More biomes to traverse through in 1.12.2, featuring biomes from ExtrabiomesXL a
 - **Cliffs**
 - **Coniferous Forest**
 - **Flatlands**
+- **Glacier**
 - **Lush Jungle**
 - **Red Desert**
 - **Red Rock Drylands**
 - **Red Rock Ridge**
 - **Rolling Hills**
 - **Snowy Coniferous Forest**
+- **Thicket**
 - **Wasteland**
 - **Woodlands**
 
 #### Sub-Biomes
 - **Autumnal Wooded Hills**
+- **Glacier Spikes**
 - **Wooded Red Desert**
 
 #### Trees
