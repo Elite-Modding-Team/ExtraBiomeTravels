@@ -3,6 +3,7 @@ package mod.emt.traverse.world.feature.tree;
 import mod.emt.traverse.init.TBXLBlocks;
 import net.minecraft.block.BlockLeaves;
 import net.minecraft.block.BlockSapling;
+import net.minecraft.block.material.Material;
 import net.minecraft.block.state.IBlockState;
 import net.minecraft.init.Blocks;
 import net.minecraft.util.EnumFacing;
@@ -49,8 +50,7 @@ public class TBXLWorldGenWattleTree extends WorldGenAbstractTree {
             for (int x = position.getX() - clearance; x <= position.getX() + clearance; x++) {
                 for (int z = position.getZ() - clearance; z <= position.getZ() + clearance; z++) {
                     BlockPos checkPos = new BlockPos(x, y, z);
-                    IBlockState state = world.getBlockState(checkPos);
-                    if (!state.getBlock().isLeaves(state, world, checkPos) && state.getBlock() != Blocks.GRASS && state.getBlock() != Blocks.DIRT && !state.getBlock().isWood(world, checkPos) && !state.getBlock().isReplaceable(world, checkPos)) {
+                    if (!this.isReplaceable(world, checkPos)) {
                         return false;
                     }
                 }
@@ -90,7 +90,7 @@ public class TBXLWorldGenWattleTree extends WorldGenAbstractTree {
         for (int y = 0; y < height; y++) {
             BlockPos trunkPos = position.up(y);
             IBlockState state = world.getBlockState(trunkPos);
-            if (state.getBlock().isLeaves(state, world, trunkPos) || state.getBlock().isAir(state, world, trunkPos)) {
+            if (state.getBlock().isAir(state, world, trunkPos) || state.getBlock().isLeaves(state, world, trunkPos) || state.getMaterial() == Material.VINE || state.getBlock().isReplaceable(world, trunkPos)) {
                 setBlockAndNotifyAdequately(world, trunkPos, stateWood);
             }
         }

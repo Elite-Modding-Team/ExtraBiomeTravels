@@ -10,6 +10,5 @@
 - Rainforest
 - Rocky Plains
 - Rocky Plateau
-- Savanna Flats
 - Shrubland
 - Tundra
