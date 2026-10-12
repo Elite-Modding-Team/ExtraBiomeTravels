@@ -1,12 +1,10 @@
-package mod.emt.traverse.world.feature;
+package mod.emt.traverse.world.feature.tree;
 
 import com.google.common.collect.Lists;
 
 import java.util.List;
 import java.util.Random;
 
-import mod.emt.traverse.init.TBXLBlocks;
-import net.minecraft.block.BlockLeaves;
 import net.minecraft.block.BlockLog;
 import net.minecraft.block.BlockSapling;
 import net.minecraft.block.state.IBlockState;
@@ -19,30 +17,30 @@ import net.minecraft.world.gen.feature.WorldGenAbstractTree;
 import org.jetbrains.annotations.NotNull;
 
 // Majority of code is based on the large oak tree
-public class TBXLWorldGenPeachSakuraTree extends WorldGenAbstractTree {
+public class TBXLWorldGenAutumnalTree extends WorldGenAbstractTree {
     public final boolean isWorldGen;
     private Random rand;
     private World world;
     private BlockPos basePos = BlockPos.ORIGIN;
     int heightLimit;
     int height;
-    double heightAttenuation = 0.58D;
-    double branchSlope = 0.13D;
-    double scaleWidth = 1.05D;
+    double heightAttenuation = 0.62D;
+    double branchSlope = 0.20D;
+    double scaleWidth = 1.0D;
     double leafDensity = 1.0D;
     int trunkSize = 1;
-    int heightLimitLimit = 4;
+    int heightLimitLimit = 16;
     int leafDistanceLimit = 5;
     List<FoliageCoordinates> foliageCoords;
 
     private final IBlockState woodState;
     private final IBlockState leavesState;
 
-    public TBXLWorldGenPeachSakuraTree(boolean isWorldGen) {
+    public TBXLWorldGenAutumnalTree(boolean isWorldGen, IBlockState woodState, IBlockState leavesState) {
         super(!isWorldGen);
         this.isWorldGen = isWorldGen;
-        this.woodState = TBXLBlocks.peach_sakura_log.getDefaultState();
-        this.leavesState = TBXLBlocks.peach_sakura_leaves.getDefaultState().withProperty(BlockLeaves.CHECK_DECAY, Boolean.FALSE);
+        this.woodState = woodState;
+        this.leavesState = leavesState;
     }
 
     void generateLeafNodeList() {
@@ -65,6 +63,7 @@ public class TBXLWorldGenPeachSakuraTree extends WorldGenAbstractTree {
 
         for (; k >= 0; --k) {
             float layerRadius = this.layerSize(k);
+
             if (layerRadius >= 0.0F) {
                 for (int l = 0; l < nodeCount; ++l) {
                     double distance = this.scaleWidth * (double) layerRadius * ((double) this.rand.nextFloat() + 0.328D);
@@ -73,8 +72,10 @@ public class TBXLWorldGenPeachSakuraTree extends WorldGenAbstractTree {
                     double offsetZ = distance * Math.cos(angle) + 0.5D;
                     BlockPos foliagePos = this.basePos.add(offsetX, k - 1, offsetZ);
                     BlockPos foliagePosTop = foliagePos.up(this.leafDistanceLimit);
+
                     if (this.checkBlockLine(foliagePos, foliagePosTop) == -1) {
                         BlockPos branchBase = getBlockPos(foliagePos, topY);
+
                         if (this.checkBlockLine(branchBase, foliagePos) == -1) {
                             this.foliageCoords.add(new FoliageCoordinates(foliagePos, branchBase.getY()));
                         }
@@ -108,7 +109,7 @@ public class TBXLWorldGenPeachSakuraTree extends WorldGenAbstractTree {
     }
 
     float layerSize(int y) {
-        if ((float) y < (float) this.heightLimit * 0.28F) {
+        if ((float) y < (float) this.heightLimit * 0.32F) {
             return -1.0F;
         }
 
@@ -121,26 +122,12 @@ public class TBXLWorldGenPeachSakuraTree extends WorldGenAbstractTree {
         } else if (Math.abs(f1) >= f) {
             return 0.0F;
         }
-
-        return f2 * 0.54F;
+        return f2 * 0.50F;
     }
 
     float leafSize(int y) {
         if (y >= 0 && y < this.leafDistanceLimit) {
-            switch (y) {
-                case 0:
-                    return 2.25F;
-                case 1:
-                    return 3.0F;
-                case 2:
-                    return 3.25F;
-                case 3:
-                    return 3.0F;
-                case 4:
-                    return 2.25F;
-                default:
-                    return -1.0F;
-            }
+            return y != 0 && y != this.leafDistanceLimit - 1 ? 3.0F : 2.0F;
         }
         return -1.0F;
     }
@@ -154,12 +141,6 @@ public class TBXLWorldGenPeachSakuraTree extends WorldGenAbstractTree {
     void limb(BlockPos pos, BlockPos pos2) {
         BlockPos delta = pos2.add(-pos.getX(), -pos.getY(), -pos.getZ());
         int distance = this.getGreatestDistance(delta);
-
-        if (distance == 0) {
-            this.setBlockAndNotifyAdequately(this.world, pos, this.woodState.withProperty(BlockLog.LOG_AXIS, BlockLog.EnumAxis.Y));
-            return;
-        }
-
         float xStep = (float) delta.getX() / (float) distance;
         float yStep = (float) delta.getY() / (float) distance;
         float zStep = (float) delta.getZ() / (float) distance;
@@ -168,18 +149,6 @@ public class TBXLWorldGenPeachSakuraTree extends WorldGenAbstractTree {
             BlockPos blockpos = pos.add(0.5F + (float) j * xStep, 0.5F + (float) j * yStep, 0.5F + (float) j * zStep);
             BlockLog.EnumAxis axis = this.getLogAxis(pos, blockpos);
             this.setBlockAndNotifyAdequately(this.world, blockpos, this.woodState.withProperty(BlockLog.LOG_AXIS, axis));
-        }
-    }
-
-    void thickLimb(BlockPos pos, BlockPos pos2) {
-        this.limb(pos, pos2);
-        BlockPos delta = pos2.add(-pos.getX(), -pos.getY(), -pos.getZ());
-        int x = MathHelper.abs(delta.getX());
-        int z = MathHelper.abs(delta.getZ());
-        if (x >= z) {
-            this.limb(pos.south(), pos2.south());
-        } else {
-            this.limb(pos.east(), pos2.east());
         }
     }
 
@@ -215,7 +184,7 @@ public class TBXLWorldGenPeachSakuraTree extends WorldGenAbstractTree {
     }
 
     boolean leafNodeNeedsBase(int node) {
-        return (double) node >= (double) this.heightLimit * 0.18D;
+        return (double) node >= (double) this.heightLimit * 0.20D;
     }
 
     void generateTrunk() {
@@ -234,7 +203,7 @@ public class TBXLWorldGenPeachSakuraTree extends WorldGenAbstractTree {
             int branchBaseY = foliage.getBranchBase();
             BlockPos branchBase = new BlockPos(this.basePos.getX(), branchBaseY, this.basePos.getZ());
             if (!branchBase.equals(foliage) && this.leafNodeNeedsBase(branchBaseY - this.basePos.getY())) {
-                this.thickLimb(branchBase, foliage);
+                this.limb(branchBase, foliage);
             }
         }
     }
@@ -265,16 +234,13 @@ public class TBXLWorldGenPeachSakuraTree extends WorldGenAbstractTree {
         this.leafDistanceLimit = 5;
     }
 
-    @Override
     public boolean generate(@NotNull World world, Random rand, @NotNull BlockPos position) {
         this.world = world;
         this.basePos = position;
         this.rand = new Random(rand.nextLong());
-
         if (this.heightLimit == 0) {
-            this.heightLimit = 8 + this.rand.nextInt(this.heightLimitLimit);
+            this.heightLimit = 9 + this.rand.nextInt(this.heightLimitLimit);
         }
-
         if (!this.validTreeLocation()) {
             this.world = null;
             return false;
@@ -292,7 +258,6 @@ public class TBXLWorldGenPeachSakuraTree extends WorldGenAbstractTree {
         BlockPos down = this.basePos.down();
         IBlockState state = this.world.getBlockState(down);
         boolean isSoil = state.getBlock().canSustainPlant(state, this.world, down, EnumFacing.UP, ((BlockSapling) Blocks.SAPLING));
-
         if (!isSoil) {
             return false;
         } else {

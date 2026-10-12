@@ -1,4 +1,4 @@
-package mod.emt.traverse.world.feature;
+package mod.emt.traverse.world.feature.tree;
 
 import java.util.ArrayList;
 import java.util.HashMap;

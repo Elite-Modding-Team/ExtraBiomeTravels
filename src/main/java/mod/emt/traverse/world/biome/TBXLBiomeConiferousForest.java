@@ -2,8 +2,8 @@ package mod.emt.traverse.world.biome;
 
 import java.util.Random;
 
-import mod.emt.traverse.world.feature.TBXLWorldGenFirTree;
-import mod.emt.traverse.world.feature.TBXLWorldGenHugeFirTree;
+import mod.emt.traverse.world.feature.tree.TBXLWorldGenFirTree;
+import mod.emt.traverse.world.feature.tree.TBXLWorldGenHugeFirTree;
 import net.minecraft.block.BlockDoublePlant;
 import net.minecraft.block.BlockTallGrass;
 import net.minecraft.entity.passive.EntityRabbit;

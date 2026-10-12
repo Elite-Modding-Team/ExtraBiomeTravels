@@ -2,7 +2,7 @@ package mod.emt.traverse.world.biome;
 
 import java.util.Random;
 
-import mod.emt.traverse.world.feature.TBXLWorldGenFirTree;
+import mod.emt.traverse.world.feature.tree.TBXLWorldGenFirTree;
 import net.minecraft.init.Blocks;
 import net.minecraft.world.biome.Biome;
 import net.minecraft.world.gen.feature.WorldGenAbstractTree;

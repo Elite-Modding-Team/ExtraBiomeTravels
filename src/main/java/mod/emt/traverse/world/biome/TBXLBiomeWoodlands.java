@@ -1,6 +1,6 @@
 package mod.emt.traverse.world.biome;
 
-import mod.emt.traverse.world.feature.TBXLWorldGenSimpleFallenTree;
+import mod.emt.traverse.world.feature.tree.TBXLWorldGenSimpleFallenTree;
 import net.minecraft.block.*;
 import net.minecraft.entity.passive.EntityWolf;
 import net.minecraft.init.Blocks;

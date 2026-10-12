@@ -5,7 +5,7 @@ import java.util.Random;
 
 import mod.emt.traverse.TraverseBiomesXL;
 import mod.emt.traverse.init.TBXLBlocks;
-import mod.emt.traverse.world.feature.*;
+import mod.emt.traverse.world.feature.tree.*;
 import net.minecraft.block.*;
 import net.minecraft.block.material.MapColor;
 import net.minecraft.block.material.Material;

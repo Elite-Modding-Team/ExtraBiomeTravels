@@ -1,4 +1,4 @@
-package mod.emt.traverse.world.feature;
+package mod.emt.traverse.world.feature.tree;
 
 import mod.emt.traverse.init.TBXLBlocks;
 import net.minecraft.block.BlockLeaves;

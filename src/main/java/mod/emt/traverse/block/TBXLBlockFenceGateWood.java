@@ -14,6 +14,7 @@ import org.jetbrains.annotations.NotNull;
 
 import java.util.Objects;
 
+@SuppressWarnings("deprecation")
 public class TBXLBlockFenceGateWood extends BlockFenceGate {
     private final MapColor mapColor;
     public boolean flammable;

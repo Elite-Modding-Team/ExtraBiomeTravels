@@ -1,4 +1,4 @@
-package mod.emt.traverse.world.feature;
+package mod.emt.traverse.world.feature.tree;
 
 import net.minecraft.block.BlockLog;
 import net.minecraft.block.BlockOldLog;

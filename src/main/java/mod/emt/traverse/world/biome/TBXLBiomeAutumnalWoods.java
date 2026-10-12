@@ -3,7 +3,7 @@ package mod.emt.traverse.world.biome;
 import java.util.Random;
 
 import mod.emt.traverse.init.TBXLBlocks;
-import mod.emt.traverse.world.feature.TBXLWorldGenTallTree;
+import mod.emt.traverse.world.feature.tree.TBXLWorldGenTallTree;
 import net.minecraft.entity.passive.EntityWolf;
 import net.minecraft.init.Biomes;
 import net.minecraft.init.Blocks;
