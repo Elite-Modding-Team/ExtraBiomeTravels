@@ -1,3 +1,4 @@
+
 package mod.emt.traverse.world.feature.tree;
 
 import java.util.ArrayList;
@@ -11,7 +12,12 @@ import java.util.Set;
 import mod.emt.traverse.init.TBXLBlocks;
 import net.minecraft.block.BlockLeaves;
 import net.minecraft.block.BlockLog;
+import net.minecraft.block.BlockSapling;
+import net.minecraft.block.BlockVine;
+import net.minecraft.block.properties.PropertyBool;
 import net.minecraft.block.state.IBlockState;
+import net.minecraft.init.Blocks;
+import net.minecraft.util.EnumFacing;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
 import net.minecraft.world.gen.feature.WorldGenAbstractTree;
@@ -32,11 +38,13 @@ public class TBXLWorldGenRainbowEucalyptusTree extends WorldGenAbstractTree {
     private static final int CLUSTER_HEIGHT = 2;
     private static final int CLUSTER_HEIGHT_VARIANCE = 1;
 
+    private final boolean generateLeavesVines;
     private final IBlockState stateWood;
     private final IBlockState stateLeaves;
 
-    public TBXLWorldGenRainbowEucalyptusTree(boolean isWorldGen) {
+    public TBXLWorldGenRainbowEucalyptusTree(boolean isWorldGen, boolean generateLeavesVines) {
         super(!isWorldGen);
+        this.generateLeavesVines = generateLeavesVines;
         this.stateWood = TBXLBlocks.rainbow_eucalyptus_log.getDefaultState();
         this.stateLeaves = TBXLBlocks.rainbow_eucalyptus_leaves.getDefaultState().withProperty(BlockLeaves.CHECK_DECAY, false);
     }
@@ -57,6 +65,15 @@ public class TBXLWorldGenRainbowEucalyptusTree extends WorldGenAbstractTree {
             return false;
         }
 
+        BlockPos soilPos = pos.down();
+        IBlockState soilState = world.getBlockState(soilPos);
+
+        if (!soilState.getBlock().canSustainPlant(soilState, world, soilPos, EnumFacing.UP, (BlockSapling) Blocks.SAPLING)) {
+            return false;
+        }
+
+        soilState.getBlock().onPlantGrow(soilState, world, soilPos, pos);
+
         for (BlockPos woodPos : gen.wood) {
             IBlockState woodState = stateWood;
 
@@ -71,6 +88,10 @@ public class TBXLWorldGenRainbowEucalyptusTree extends WorldGenAbstractTree {
             if (!gen.woodSet.contains(leafPos)) {
                 setBlockAndNotifyAdequately(world, leafPos, stateLeaves);
             }
+        }
+
+        if (generateLeavesVines) {
+            generateVines(world, rand, gen);
         }
 
         return true;
@@ -163,7 +184,8 @@ public class TBXLWorldGenRainbowEucalyptusTree extends WorldGenAbstractTree {
 
                     BlockPos leafPos = center.add(dx, layer, dz);
 
-                    if (!gen.woodSet.contains(leafPos) && hasNearbyWood(gen, leafPos, 4)) {
+                    if (!gen.woodSet.contains(leafPos)
+                            && hasNearbyWood(gen, leafPos, 4)) {
                         addLeaves(gen, leafPos);
                     }
                 }
@@ -335,15 +357,61 @@ public class TBXLWorldGenRainbowEucalyptusTree extends WorldGenAbstractTree {
         }
     }
 
+    private void generateVines(World world, Random rand, TreeGen gen) {
+        for (BlockPos leafPos : gen.leaves) {
+            BlockPos vinePos = leafPos.west();
+
+            if (rand.nextInt(4) == 0 && world.isAirBlock(vinePos)) {
+                growVines(world, vinePos, BlockVine.EAST);
+            }
+
+            vinePos = leafPos.east();
+
+            if (rand.nextInt(4) == 0 && world.isAirBlock(vinePos)) {
+                growVines(world, vinePos, BlockVine.WEST);
+            }
+
+            vinePos = leafPos.north();
+
+            if (rand.nextInt(4) == 0 && world.isAirBlock(vinePos)) {
+                growVines(world, vinePos, BlockVine.SOUTH);
+            }
+
+            vinePos = leafPos.south();
+
+            if (rand.nextInt(4) == 0 && world.isAirBlock(vinePos)) {
+                growVines(world, vinePos, BlockVine.NORTH);
+            }
+        }
+    }
+
+    private void growVines(World world, BlockPos pos, PropertyBool facing) {
+        IBlockState vineState = Blocks.VINE.getDefaultState().withProperty(facing, true);
+        setBlockAndNotifyAdequately(world, pos, vineState);
+
+        int remaining = 4;
+        BlockPos below = pos.down();
+
+        while (remaining > 0 && world.isAirBlock(below)) {
+            setBlockAndNotifyAdequately(world, below, vineState);
+            below = below.down();
+            remaining--;
+        }
+    }
+
     private boolean canPlaceTree(World world, TreeGen gen) {
         for (BlockPos pos : gen.wood) {
-            if (!isReplaceable(world, pos)) {
+            IBlockState state = world.getBlockState(pos);
+
+            if (state.getBlock() instanceof BlockLog || !isReplaceable(world, pos)) {
                 return false;
             }
         }
 
         for (BlockPos pos : gen.leaves) {
-            if (!isReplaceable(world, pos)) {
+            IBlockState state = world.getBlockState(pos);
+
+            if (state.getBlock() instanceof BlockLog || !isReplaceable(world, pos)) {
                 return false;
             }
         }

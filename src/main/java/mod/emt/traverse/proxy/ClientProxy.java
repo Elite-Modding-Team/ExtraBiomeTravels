@@ -27,7 +27,7 @@ public class ClientProxy extends CommonProxy {
             }
 
             if (tintIndex == 0 && state.getBlock() == TBXLBlocks.rainbow_eucalyptus_leaves) {
-                return Minecraft.getMinecraft().getBlockColors().colorMultiplier(Blocks.LEAVES.getStateFromMeta(2), null, null, tintIndex);
+                return Minecraft.getMinecraft().getBlockColors().colorMultiplier(Blocks.LEAVES.getStateFromMeta(3), null, null, tintIndex);
             }
 
             if (tintIndex == 0 && state.getBlock() == TBXLBlocks.white_fir_leaves) {
@@ -46,7 +46,7 @@ public class ClientProxy extends CommonProxy {
             }
 
             if (tintIndex == 0 && state.getBlock() == TBXLBlocks.rainbow_eucalyptus_leaves) {
-                return Minecraft.getMinecraft().getBlockColors().colorMultiplier(Blocks.LEAVES.getStateFromMeta(2), null, null, tintIndex);
+                return Minecraft.getMinecraft().getBlockColors().colorMultiplier(Blocks.LEAVES.getStateFromMeta(3), null, null, tintIndex);
             }
 
             if (tintIndex == 0 && state.getBlock() == TBXLBlocks.white_fir_leaves) {

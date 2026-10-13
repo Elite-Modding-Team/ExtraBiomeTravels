@@ -184,7 +184,7 @@ public class TBXLBlockSapling extends BlockBush implements IGrowable {
                 for (i = 0; i >= -1; --i) {
                     for (j = 0; j >= -1; --j) {
                         if (this.isTwoByTwoOfType(world, pos, i, j, EnumWoodType.RAINBOW_EUCALYPTUS)) {
-                            generator = new TBXLWorldGenRainbowEucalyptusTree(true);
+                            generator = new TBXLWorldGenRainbowEucalyptusTree(true, false);
                             flag = true;
                             break check;
                         }
@@ -201,7 +201,7 @@ public class TBXLBlockSapling extends BlockBush implements IGrowable {
                 for (i = 0; i >= -1; --i) {
                     for (j = 0; j >= -1; --j) {
                         if (this.isTwoByTwoOfType(world, pos, i, j, EnumWoodType.SCALEWOOD)) {
-                            generator = new TBXLWorldGenScalewoodTree(true);
+                            generator = new TBXLWorldGenScalewoodTree(true, false, false);
                             flag = true;
                             break check;
                         }

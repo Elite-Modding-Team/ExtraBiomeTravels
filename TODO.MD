@@ -6,8 +6,6 @@
 - Cypress Swampland
 - Ice Wasteland
 - Lush Swampland
-- Marsh
-- Rainforest
 - Rocky Plains
 - Rocky Plateau
 - Shrubland

@@ -1,4 +1,4 @@
-package mod.emt.traverse.world.biome.sub;
+package mod.emt.traverse.world.biome;
 
 import mod.emt.traverse.world.feature.tree.TBXLWorldGenWattleTree;
 import net.minecraft.block.BlockDoublePlant;

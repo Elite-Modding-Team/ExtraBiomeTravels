@@ -1,3 +1,4 @@
+
 package mod.emt.traverse.world.feature.tree;
 
 import java.util.ArrayList;
@@ -9,13 +10,17 @@ import java.util.Set;
 import mod.emt.traverse.init.TBXLBlocks;
 import net.minecraft.block.BlockLeaves;
 import net.minecraft.block.BlockLog;
+import net.minecraft.block.BlockSapling;
+import net.minecraft.block.BlockVine;
+import net.minecraft.block.properties.PropertyBool;
 import net.minecraft.block.state.IBlockState;
+import net.minecraft.init.Blocks;
+import net.minecraft.util.EnumFacing;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
 import net.minecraft.world.gen.feature.WorldGenAbstractTree;
 import org.jetbrains.annotations.NotNull;
 
-// Majority of code is based on the large oak tree
 public class TBXLWorldGenScalewoodTree extends WorldGenAbstractTree {
     private static final int BASE_HEIGHT = 26;
     private static final int HEIGHT_VARIANCE = 23;
@@ -27,11 +32,15 @@ public class TBXLWorldGenScalewoodTree extends WorldGenAbstractTree {
     private static final int BRANCH_DIRECTIONS = 8;
     private static final int LEAF_RADIUS = 3;
 
+    private final boolean generateLeavesVines;
+    private final boolean generateTrunkVines;
     private final IBlockState stateWood;
     private final IBlockState stateLeaves;
 
-    public TBXLWorldGenScalewoodTree(boolean isWorldGen) {
+    public TBXLWorldGenScalewoodTree(boolean isWorldGen, boolean generateTrunkVines, boolean generateLeavesVines) {
         super(!isWorldGen);
+        this.generateLeavesVines = generateLeavesVines;
+        this.generateTrunkVines = generateTrunkVines;
         this.stateWood = TBXLBlocks.scalewood_log.getDefaultState().withProperty(BlockLog.LOG_AXIS, BlockLog.EnumAxis.Y);
         this.stateLeaves = TBXLBlocks.scalewood_leaves.getDefaultState().withProperty(BlockLeaves.CHECK_DECAY, false);
     }
@@ -40,11 +49,11 @@ public class TBXLWorldGenScalewoodTree extends WorldGenAbstractTree {
     public boolean generate(World world, @NotNull Random rand, @NotNull BlockPos pos) {
         TreeGen gen = createTreeGen(pos, rand);
 
-        if (!world.isAreaLoaded(pos.add(-gen.width - 2, 0, -gen.width - 2), pos.add(gen.width + 2, gen.height + 2, gen.width + 2))) {
+        if (!world.isAreaLoaded(pos.add(-gen.width - 2, 0, -gen.width - 2), pos.add(gen.width + 2, gen.height + BRANCH_LENGTH + 2, gen.width + 2))) {
             return false;
         }
 
-        if (pos.getY() < 1 || pos.getY() + gen.height >= 256) {
+        if (pos.getY() < 1 || pos.getY() + gen.height + BRANCH_LENGTH >= 256) {
             return false;
         }
 
@@ -52,8 +61,26 @@ public class TBXLWorldGenScalewoodTree extends WorldGenAbstractTree {
             return false;
         }
 
+        BlockPos soilPos = pos.down();
+        BlockPos eastSoilPos = soilPos.east();
+        BlockPos southSoilPos = soilPos.south();
+        BlockPos southEastSoilPos = soilPos.south().east();
+
+        if (!canSustainPlant(world, soilPos) || !canSustainPlant(world, eastSoilPos) || !canSustainPlant(world, southSoilPos) || !canSustainPlant(world, southEastSoilPos)) {
+            return false;
+        }
+
+        onPlantGrow(world, soilPos, pos);
+        onPlantGrow(world, eastSoilPos, pos);
+        onPlantGrow(world, southSoilPos, pos);
+        onPlantGrow(world, southEastSoilPos, pos);
+
         for (BlockPos woodPos : gen.wood) {
             setBlockAndNotifyAdequately(world, woodPos, stateWood);
+        }
+
+        if (generateTrunkVines) {
+            generateTrunkVines(world, rand, pos, gen);
         }
 
         for (BlockPos leafPos : gen.leaves) {
@@ -62,12 +89,26 @@ public class TBXLWorldGenScalewoodTree extends WorldGenAbstractTree {
             }
         }
 
+        if (generateLeavesVines) {
+            generateVines(world, rand, gen);
+        }
+
         return true;
+    }
+
+    private boolean canSustainPlant(World world, BlockPos pos) {
+        IBlockState state = world.getBlockState(pos);
+        return state.getBlock().canSustainPlant(state, world, pos, EnumFacing.UP, (BlockSapling) Blocks.SAPLING);
+    }
+
+    private void onPlantGrow(World world, BlockPos pos, BlockPos source) {
+        IBlockState state = world.getBlockState(pos);
+        state.getBlock().onPlantGrow(state, world, pos, source);
     }
 
     private TreeGen createTreeGen(BlockPos pos, Random rand) {
         int height = BASE_HEIGHT + rand.nextInt(HEIGHT_VARIANCE);
-        TreeGen gen = new TreeGen(height, LEAF_RADIUS + 1);
+        TreeGen gen = new TreeGen(height, BRANCH_LENGTH + LEAF_RADIUS + 1);
         int trunkHeight = Math.max(height - TRUNK_HEIGHT, 1);
 
         for (int y = 0; y < trunkHeight; y++) {
@@ -225,15 +266,112 @@ public class TBXLWorldGenScalewoodTree extends WorldGenAbstractTree {
         }
     }
 
+    private void generateTrunkVines(World world, Random rand, BlockPos basePos, TreeGen gen) {
+        int trunkHeight = Math.max(gen.height - TRUNK_HEIGHT, 1);
+
+        for (int y = 1; y < trunkHeight; y++) {
+            BlockPos vinePos = basePos.add(-1, y, 0);
+            if (rand.nextInt(3) != 0 && world.isAirBlock(vinePos)) {
+                placeVine(world, vinePos, BlockVine.EAST);
+            }
+
+            vinePos = basePos.add(-1, y, 1);
+            if (rand.nextInt(3) != 0 && world.isAirBlock(vinePos)) {
+                placeVine(world, vinePos, BlockVine.EAST);
+            }
+
+            vinePos = basePos.add(0, y, -1);
+            if (rand.nextInt(3) != 0 && world.isAirBlock(vinePos)) {
+                placeVine(world, vinePos, BlockVine.SOUTH);
+            }
+
+            vinePos = basePos.add(1, y, -1);
+            if (rand.nextInt(3) != 0 && world.isAirBlock(vinePos)) {
+                placeVine(world, vinePos, BlockVine.SOUTH);
+            }
+
+            vinePos = basePos.add(2, y, 0);
+            if (rand.nextInt(3) != 0 && world.isAirBlock(vinePos)) {
+                placeVine(world, vinePos, BlockVine.WEST);
+            }
+
+            vinePos = basePos.add(2, y, 1);
+            if (rand.nextInt(3) != 0 && world.isAirBlock(vinePos)) {
+                placeVine(world, vinePos, BlockVine.WEST);
+            }
+
+            vinePos = basePos.add(0, y, 2);
+            if (rand.nextInt(3) != 0 && world.isAirBlock(vinePos)) {
+                placeVine(world, vinePos, BlockVine.NORTH);
+            }
+
+            vinePos = basePos.add(1, y, 2);
+            if (rand.nextInt(3) != 0 && world.isAirBlock(vinePos)) {
+                placeVine(world, vinePos, BlockVine.NORTH);
+            }
+        }
+    }
+
+    private void generateVines(World world, Random rand, TreeGen gen) {
+        for (BlockPos leafPos : gen.leaves) {
+            BlockPos vinePos = leafPos.west();
+
+            if (rand.nextInt(4) == 0 && world.isAirBlock(vinePos)) {
+                growVines(world, vinePos, BlockVine.EAST);
+            }
+
+            vinePos = leafPos.east();
+
+            if (rand.nextInt(4) == 0 && world.isAirBlock(vinePos)) {
+                growVines(world, vinePos, BlockVine.WEST);
+            }
+
+            vinePos = leafPos.north();
+
+            if (rand.nextInt(4) == 0 && world.isAirBlock(vinePos)) {
+                growVines(world, vinePos, BlockVine.SOUTH);
+            }
+
+            vinePos = leafPos.south();
+
+            if (rand.nextInt(4) == 0 && world.isAirBlock(vinePos)) {
+                growVines(world, vinePos, BlockVine.NORTH);
+            }
+        }
+    }
+
+    private void growVines(World world, BlockPos pos, PropertyBool facing) {
+        IBlockState vineState = Blocks.VINE.getDefaultState().withProperty(facing, true);
+        setBlockAndNotifyAdequately(world, pos, vineState);
+
+        int remaining = 4;
+        BlockPos below = pos.down();
+
+        while (remaining > 0 && world.isAirBlock(below)) {
+            setBlockAndNotifyAdequately(world, below, vineState);
+            below = below.down();
+            remaining--;
+        }
+    }
+
+    private void placeVine(World world, BlockPos pos, PropertyBool facing) {
+        IBlockState vineState = Blocks.VINE.getDefaultState().withProperty(facing, true);
+        setBlockAndNotifyAdequately(world, pos, vineState);
+    }
+
     private boolean canPlaceTree(World world, TreeGen gen) {
         for (BlockPos pos : gen.wood) {
-            if (!isReplaceable(world, pos)) {
+            IBlockState state = world.getBlockState(pos);
+
+            if (state.getBlock() instanceof BlockLog || !isReplaceable(world, pos)) {
                 return false;
             }
         }
 
         for (BlockPos pos : gen.leaves) {
-            if (!isReplaceable(world, pos)) {
+            IBlockState state = world.getBlockState(pos);
+
+            if (state.getBlock() instanceof BlockLog || !isReplaceable(world, pos)) {
                 return false;
             }
         }

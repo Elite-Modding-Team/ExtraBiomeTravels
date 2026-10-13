@@ -27,6 +27,7 @@ public class TBXLBiomes {
     public static Biome GLACIER_SPIKES = new TBXLBiomeGlacier(true);
     public static Biome LUSH_JUNGLE = new TBXLBiomeLushJungle();
     public static Biome PRAIRIE = new TBXLBiomePrairie();
+    public static Biome RAINFOREST = new TBXLBiomeRainforest();
     public static Biome RED_DESERT = new TBXLBiomeRedDesert();
     public static Biome RED_ROCK_DRYLANDS = new TBXLBiomeRedRockDrylands();
     public static Biome RED_ROCK_RIDGE = new TBXLBiomeRedRockRidge();
@@ -47,6 +48,7 @@ public class TBXLBiomes {
         registerBiome(GLACIER, "glacier", false, Type.COLD, Type.HILLS, Type.MOUNTAIN, Type.SNOWY);
         registerBiome(LUSH_JUNGLE, "lush_jungle", false, Type.DENSE, Type.HOT, Type.JUNGLE, Type.WET);
         registerBiome(PRAIRIE, "prairie", true, Type.DRY, Type.HOT, Type.SAVANNA);
+        registerBiome(RAINFOREST, "rainforest", false, Type.HILLS, Type.JUNGLE, Type.WET);
         registerBiome(RED_DESERT, "red_desert", true, Type.DEAD, Type.DRY, Type.HOT, Type.SANDY);
         registerBiome(RED_ROCK_DRYLANDS, "red_rock_drylands", false, Type.DRY, Type.HOT, Type.HILLS, Type.SPARSE);
         registerBiome(RED_ROCK_RIDGE, "red_rock_ridge", false, Type.DRY, Type.HOT, Type.MESA, Type.MOUNTAIN);
@@ -72,6 +74,7 @@ public class TBXLBiomes {
         registerBiomeSpawn(GLACIER, 3, BiomeType.ICY);
         registerBiomeSpawn(LUSH_JUNGLE, 4, BiomeType.WARM);
         registerBiomeSpawn(PRAIRIE, 5, BiomeType.WARM);
+        registerBiomeSpawn(RAINFOREST, 4, BiomeType.WARM);
         registerBiomeSpawn(RED_DESERT, 6, BiomeType.DESERT);
         registerBiomeSpawn(RED_ROCK_DRYLANDS, 4, BiomeType.DESERT);
         registerBiomeSpawn(RED_ROCK_RIDGE, 5, BiomeType.DESERT);
