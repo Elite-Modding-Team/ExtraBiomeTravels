@@ -30,6 +30,7 @@ public class TBXLBiomes {
     public static Biome LUSH_JUNGLE = new TBXLBiomeLushJungle();
     public static Biome MAPLE_SHRUBLANDS = new TBXLBiomeMapleShrublands();
     public static Biome PRAIRIE = new TBXLBiomePrairie();
+    public static Biome PRAIRIE_SHRUBLANDS = new TBXLBiomePrairieShrublands();
     public static Biome RAINFOREST = new TBXLBiomeRainforest();
     public static Biome RED_DESERT = new TBXLBiomeRedDesert();
     public static Biome RED_ROCK_DRYLANDS = new TBXLBiomeRedRockDrylands();
@@ -66,6 +67,7 @@ public class TBXLBiomes {
         // Sub-Biomes: These are never registered to biome spawns!
         registerSubBiome(AUTUMNAL_WOODED_HILLS, AUTUMNAL_WOODS, "autumnal_wooded_hills", false, Type.DENSE, Type.FOREST, Type.HILLS);
         registerSubBiome(GLACIER_SPIKES, GLACIER, "glacier_spikes", false, Type.COLD, Type.HILLS, Type.MOUNTAIN, Type.SNOWY);
+        registerSubBiome(PRAIRIE_SHRUBLANDS, PRAIRIE, "prairie_shrublands", true, Type.DRY, Type.HOT, Type.SAVANNA);
         registerSubBiome(WOODED_RED_DESERT, RED_DESERT, "wooded_red_desert", false, Type.DRY, Type.HILLS, Type.HOT, Type.SPARSE);
 
         // Biome Spawn: Makes them spawn on the world, apply multiple biome types if they are meant to spawn more commonly
@@ -83,6 +85,7 @@ public class TBXLBiomes {
         registerBiomeSpawn(MAPLE_SHRUBLANDS, 4, BiomeType.COOL);
         registerBiomeSpawn(MAPLE_SHRUBLANDS, 4, BiomeType.WARM);
         registerBiomeSpawn(PRAIRIE, 5, BiomeType.WARM);
+        registerBiomeSpawn(PRAIRIE, 5, BiomeType.DESERT);
         registerBiomeSpawn(RAINFOREST, 4, BiomeType.WARM);
         registerBiomeSpawn(RED_DESERT, 6, BiomeType.DESERT);
         registerBiomeSpawn(RED_ROCK_DRYLANDS, 4, BiomeType.DESERT);
@@ -119,7 +122,7 @@ public class TBXLBiomes {
     }
 
     //  TODO: Plans
-    //  More trees and plants (have to list these soon)
+    //  More plants (have to list these soon)
     //  Fancy falling leaves particles
     //  Wasteland: Surface Fossils and Dead Trees
 }

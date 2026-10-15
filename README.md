@@ -26,6 +26,7 @@ More biomes to traverse through in 1.12.2, featuring biomes from ExtrabiomesXL a
 #### Sub-Biomes
 - **Autumnal Wooded Hills**
 - **Glacier Spikes**
+- **Prairie Shrublands**
 - **Wooded Red Desert**
 
 #### Trees

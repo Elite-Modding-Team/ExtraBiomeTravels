@@ -2,7 +2,6 @@
 - Arid Highland
 - Autumnal Grove
 - Crag Plateau
-- Desert Shrubland
 - Ice Wasteland
 - Rocky Plains
 - Rocky Plateau
