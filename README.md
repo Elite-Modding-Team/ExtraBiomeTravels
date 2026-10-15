@@ -18,6 +18,7 @@ More biomes to traverse through in 1.12.2, featuring biomes from ExtrabiomesXL a
 - **Red Desert**
 - **Red Rock Drylands**
 - **Red Rock Ridge**
+- **Rocky Plains**
 - **Rolling Hills**
 - **Snowy Coniferous Forest**
 - **Thicket**

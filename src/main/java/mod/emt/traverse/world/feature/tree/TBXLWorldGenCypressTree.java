@@ -63,15 +63,15 @@ public class TBXLWorldGenCypressTree extends WorldGenAbstractTree {
             return false;
         }
 
-        if (position.getY() >= world.getHeight() - height - 4) {
-            return false;
-        }
-
         if (position.getY() < 1 || position.getY() + height + 4 > world.getHeight()) {
             return false;
         }
 
-        if (!world.isAreaLoaded(position.add(-chunkCheck, -chunkCheck, -chunkCheck), position.add(chunkCheck, chunkCheck, chunkCheck))) {
+        if (position.getY() >= world.getHeight() - height - 4) {
+            return false;
+        }
+
+        if (!world.isAreaLoaded(position.add(-chunkCheck, -chunkCheck, -chunkCheck), position.add(chunkCheck, height + 4, chunkCheck))) {
             return false;
         }
 
@@ -96,6 +96,9 @@ public class TBXLWorldGenCypressTree extends WorldGenAbstractTree {
         int start = CANOPY_START_HEIGHT + (int) ((rand.nextDouble() * CANOPY_START_VARIANCE) - ((double) CANOPY_START_VARIANCE / 2));
         double radius = CANOPY_RADIUS + ((rand.nextDouble() * CANOPY_RADIUS_VARIANCE) + (CANOPY_RADIUS_VARIANCE / 2));
         double factor = 16.0D / (2 + height - start);
+        BlockPos soilPos = position.down();
+        IBlockState soilState = world.getBlockState(soilPos);
+        soilState.getBlock().onPlantGrow(soilState, world, soilPos, position);
 
         if (!placeTrunk(world, position, height)) {
             return false;
@@ -137,6 +140,10 @@ public class TBXLWorldGenCypressTree extends WorldGenAbstractTree {
     }
 
     private boolean checkLeavesCircle(World world, int x, int y, int z, double radius) {
+        if (radius <= 0.0D) {
+            return true;
+        }
+
         int minX = (int) Math.floor(x - radius);
         int maxX = (int) Math.ceil(x + radius);
         int minZ = (int) Math.floor(z - radius);
@@ -148,7 +155,7 @@ public class TBXLWorldGenCypressTree extends WorldGenAbstractTree {
                 if (dx * dx + dz * dz <= radius * radius) {
                     BlockPos pos = new BlockPos(leafX, y, leafZ);
                     IBlockState state = world.getBlockState(pos);
-                    if (!state.getBlock().isAir(state, world, pos) && !state.getBlock().isLeaves(state, world, pos)) {
+                    if (!state.getBlock().isAir(state, world, pos) && !state.getBlock().isLeaves(state, world, pos) && !state.getBlock().canBeReplacedByLeaves(state, world, pos)) {
                         return false;
                     }
                 }
@@ -158,10 +165,15 @@ public class TBXLWorldGenCypressTree extends WorldGenAbstractTree {
     }
 
     private void placeLeavesCircle(World world, int x, int y, int z, double radius) {
+        if (radius <= 0.0D) {
+            return;
+        }
+
         int minX = (int) Math.floor(x - radius);
         int maxX = (int) Math.ceil(x + radius);
         int minZ = (int) Math.floor(z - radius);
         int maxZ = (int) Math.ceil(z + radius);
+
         for (int leafX = minX; leafX <= maxX; ++leafX) {
             for (int leafZ = minZ; leafZ <= maxZ; ++leafZ) {
                 double dx = leafX - x;

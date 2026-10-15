@@ -3,6 +3,5 @@
 - Autumnal Grove
 - Crag Plateau
 - Ice Wasteland
-- Rocky Plains
 - Rocky Plateau
 - Tundra
