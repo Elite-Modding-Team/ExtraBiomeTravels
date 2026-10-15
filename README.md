@@ -13,6 +13,7 @@ More biomes to traverse through in 1.12.2, featuring biomes from ExtrabiomesXL a
 - **Flatlands**
 - **Glacier**
 - **Lush Jungle**
+- **Maple Shrublands**
 - **Rainforest**
 - **Red Desert**
 - **Red Rock Drylands**
