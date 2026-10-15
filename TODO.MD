@@ -3,9 +3,7 @@
 - Autumnal Grove
 - Crag Plateau
 - Desert Shrubland
-- Cypress Swampland
 - Ice Wasteland
-- Lush Swampland
 - Rocky Plains
 - Rocky Plateau
 - Shrubland

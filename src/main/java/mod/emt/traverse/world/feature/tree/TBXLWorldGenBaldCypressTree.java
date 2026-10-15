@@ -9,9 +9,12 @@ import java.util.Random;
 import java.util.Set;
 
 import mod.emt.traverse.init.TBXLBlocks;
-import net.minecraft.block.BlockLog;
 import net.minecraft.block.BlockLeaves;
+import net.minecraft.block.BlockLog;
+import net.minecraft.block.BlockSapling;
 import net.minecraft.block.state.IBlockState;
+import net.minecraft.init.Blocks;
+import net.minecraft.util.EnumFacing;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
 import net.minecraft.world.gen.feature.WorldGenAbstractTree;
@@ -38,28 +41,46 @@ public class TBXLWorldGenBaldCypressTree extends WorldGenAbstractTree {
     }
 
     @Override
-    public boolean generate(World world, @NotNull Random rand, @NotNull BlockPos pos) {
-        TreeGen gen = createTreeGen(pos, rand);
+    public boolean generate(@NotNull World world, @NotNull Random rand, @NotNull BlockPos pos) {
+        BlockPos basePos = findTreeBase(world, pos);
 
-        if (!world.isAreaLoaded(pos.add(-gen.width - 2, 0, -gen.width - 2), pos.add(gen.width + 2, gen.height + 2, gen.width + 2))) {
+        if (basePos == null) {
             return false;
         }
 
-        if (pos.getY() < 1 || pos.getY() + gen.height >= 256) {
+        TreeGen gen = createTreeGen(basePos, rand);
+
+        if (!world.isAreaLoaded(basePos.add(-gen.width - 2, 0, -gen.width - 2), basePos.add(gen.width + 2, gen.height + 2, gen.width + 2))) {
             return false;
         }
 
-        if (!canPlaceTree(world, gen)) {
+        if (basePos.getY() < 1 || basePos.getY() + gen.height >= 256) {
             return false;
         }
+
+        if (!canPlaceTree(world, gen, basePos)) {
+            return false;
+        }
+
+        BlockPos soil = basePos.down();
+        BlockPos soil2 = basePos.east().down();
+        BlockPos soil3 = basePos.south().down();
+        BlockPos soil4 = basePos.east().south().down();
+
+        if (!canSustainPlant(world, soil) || !canSustainPlant(world, soil2) || !canSustainPlant(world, soil3) || !canSustainPlant(world, soil4)) {
+            return false;
+        }
+
+        onPlantGrow(world, soil, basePos);
+        onPlantGrow(world, soil2, basePos);
+        onPlantGrow(world, soil3, basePos);
+        onPlantGrow(world, soil4, basePos);
 
         for (BlockPos woodPos : gen.wood) {
             IBlockState woodState = stateWood;
-
             if (gen.woodAxis.containsKey(woodPos)) {
                 woodState = stateWood.withProperty(BlockLog.LOG_AXIS, gen.woodAxis.get(woodPos));
             }
-
             setBlockAndNotifyAdequately(world, woodPos, woodState);
         }
 
@@ -70,6 +91,45 @@ public class TBXLWorldGenBaldCypressTree extends WorldGenAbstractTree {
         }
 
         return true;
+    }
+
+
+    private BlockPos findTreeBase(World world, BlockPos pos) {
+        BlockPos basePos = pos;
+
+        while (basePos.getY() > 0) {
+            BlockPos below = basePos.down();
+
+            if (!world.isBlockLoaded(below)) {
+                return null;
+            }
+
+            IBlockState state = world.getBlockState(below);
+
+            if (isWater(state)) {
+                basePos = below;
+                continue;
+            }
+
+            return canSustainPlant(world, below) ? basePos : null;
+        }
+
+        return null;
+    }
+
+
+    private boolean canSustainPlant(World world, BlockPos pos) {
+        IBlockState state = world.getBlockState(pos);
+        return state.getBlock().canSustainPlant(state, world, pos, EnumFacing.UP, (BlockSapling) Blocks.SAPLING);
+    }
+
+    private void onPlantGrow(World world, BlockPos pos, BlockPos source) {
+        IBlockState state = world.getBlockState(pos);
+        state.getBlock().onPlantGrow(state, world, pos, source);
+    }
+
+    private boolean isWater(IBlockState state) {
+        return state.getBlock() == Blocks.WATER || state.getBlock() == Blocks.FLOWING_WATER;
     }
 
     private TreeGen createTreeGen(BlockPos pos, Random rand) {
@@ -176,9 +236,6 @@ public class TBXLWorldGenBaldCypressTree extends WorldGenAbstractTree {
 
         if (!crown) {
             radius = Math.max(radius, 3);
-        }
-
-        if (!crown) {
             clusterHeight = Math.max(clusterHeight, 4);
         }
 
@@ -287,6 +344,11 @@ public class TBXLWorldGenBaldCypressTree extends WorldGenAbstractTree {
         int dz = end.getZ() - start.getZ();
         int length = Math.max(Math.abs(dx), Math.max(Math.abs(dy), Math.abs(dz)));
 
+        if (length == 0) {
+            addWood(gen, start);
+            return;
+        }
+
         BlockLog.EnumAxis axis;
 
         if (Math.abs(dy) >= Math.max(Math.abs(dx), Math.abs(dz))) {
@@ -302,11 +364,11 @@ public class TBXLWorldGenBaldCypressTree extends WorldGenAbstractTree {
             int y = start.getY() + Math.round(dy * i / (float) length);
             int z = start.getZ() + Math.round(dz * i / (float) length);
 
-            BlockPos pos = new BlockPos(x, y, z);
+            BlockPos woodPos = new BlockPos(x, y, z);
 
-            if (gen.woodSet.add(pos)) {
-                gen.wood.add(pos);
-                gen.woodAxis.put(pos, axis);
+            if (gen.woodSet.add(woodPos)) {
+                gen.wood.add(woodPos);
+                gen.woodAxis.put(woodPos, axis);
             }
         }
     }
@@ -317,17 +379,34 @@ public class TBXLWorldGenBaldCypressTree extends WorldGenAbstractTree {
         }
     }
 
-    private boolean canPlaceTree(World world, TreeGen gen) {
+    private boolean canPlaceTree(World world, TreeGen gen, BlockPos basePos) {
         for (BlockPos pos : gen.wood) {
+            IBlockState state = world.getBlockState(pos);
+
+            if (state.getBlock() instanceof BlockLog) {
+                return false;
+            }
+
+            if (isWater(state)) {
+                boolean isMainTrunk = pos.getX() >= basePos.getX() && pos.getX() <= basePos.getX() + 1 && pos.getZ() >= basePos.getZ() && pos.getZ() <= basePos.getZ() + 1 && pos.getY() < basePos.getY() + (int) (gen.height * TRUNK_HEIGHT_PERCENT);
+                if (isMainTrunk || pos.getY() <= basePos.getY() + 1) {
+                    continue;
+                }
+            }
+
             if (!isReplaceable(world, pos)) {
                 return false;
             }
         }
+
         for (BlockPos pos : gen.leaves) {
-            if (!isReplaceable(world, pos)) {
+            IBlockState state = world.getBlockState(pos);
+
+            if (state.getBlock() instanceof BlockLog || !isReplaceable(world, pos)) {
                 return false;
             }
         }
+
         return true;
     }
 

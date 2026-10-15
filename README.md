@@ -5,15 +5,15 @@ More biomes to traverse through in 1.12.2, featuring biomes from ExtrabiomesXL a
 
 ### Features
 
-**NOTE:** Wiki coming soon!
-
 #### Biomes
 - **Autumnal Woods**
 - **Cliffs**
 - **Coniferous Forest**
+- **Cypress Swampland**
 - **Flatlands**
 - **Glacier**
 - **Lush Jungle**
+- **Rainforest**
 - **Red Desert**
 - **Red Rock Drylands**
 - **Red Rock Ridge**

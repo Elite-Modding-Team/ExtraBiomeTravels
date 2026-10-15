@@ -15,6 +15,7 @@ import net.minecraftforge.fml.common.registry.ForgeRegistries;
 import net.minecraftforge.fml.common.registry.GameRegistry;
 
 // TODO: Some biomes should affect village blocks (e.g. red deserts have red sandstone villages)
+// All biomes need to have the biome types adjusted and finalized
 @Mod.EventBusSubscriber(modid = TraverseBiomesXL.MOD_ID)
 @GameRegistry.ObjectHolder(TraverseBiomesXL.MOD_ID)
 public class TBXLBiomes {
@@ -22,6 +23,7 @@ public class TBXLBiomes {
     public static Biome AUTUMNAL_WOODED_HILLS = new TBXLBiomeAutumnalWoodedHills();
     public static Biome CLIFFS = new TBXLBiomeCliffs();
     public static Biome CONIFEROUS_FOREST = new TBXLBiomeConiferousForest(false);
+    public static Biome CYPRESS_SWAMP = new TBXLBiomeCypressSwamp();
     public static Biome FLATLANDS = new TBXLBiomeFlatlands();
     public static Biome GLACIER = new TBXLBiomeGlacier(false);
     public static Biome GLACIER_SPIKES = new TBXLBiomeGlacier(true);
@@ -44,6 +46,7 @@ public class TBXLBiomes {
         registerBiome(AUTUMNAL_WOODS, "autumnal_woods", false, Type.DENSE, Type.FOREST);
         registerBiome(CLIFFS, "cliffs", false, Type.COLD, Type.HILLS, Type.MOUNTAIN, Type.SNOWY);
         registerBiome(CONIFEROUS_FOREST, "coniferous_forest", false, Type.COLD, Type.CONIFEROUS, Type.FOREST);
+        registerBiome(CYPRESS_SWAMP, "cypress_swamp", false, Type.SWAMP);
         registerBiome(FLATLANDS, "flatlands", true, Type.LUSH, Type.PLAINS, Type.WET);
         registerBiome(GLACIER, "glacier", false, Type.COLD, Type.HILLS, Type.MOUNTAIN, Type.SNOWY);
         registerBiome(LUSH_JUNGLE, "lush_jungle", false, Type.DENSE, Type.HOT, Type.JUNGLE, Type.WET);
@@ -69,6 +72,8 @@ public class TBXLBiomes {
         registerBiomeSpawn(CLIFFS, 3, BiomeType.COOL);
         registerBiomeSpawn(CLIFFS, 3, BiomeType.WARM);
         registerBiomeSpawn(CONIFEROUS_FOREST, 4, BiomeType.COOL);
+        registerBiomeSpawn(CYPRESS_SWAMP, 4, BiomeType.COOL);
+        registerBiomeSpawn(CYPRESS_SWAMP, 4, BiomeType.WARM);
         registerBiomeSpawn(FLATLANDS, 7, BiomeType.COOL);
         registerBiomeSpawn(FLATLANDS, 7, BiomeType.WARM);
         registerBiomeSpawn(GLACIER, 3, BiomeType.ICY);
