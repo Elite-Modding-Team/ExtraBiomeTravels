@@ -28,6 +28,7 @@ public class TBXLBiomes {
     public static Biome GLACIER = new TBXLBiomeGlacier(false);
     public static Biome GLACIER_SPIKES = new TBXLBiomeGlacier(true);
     public static Biome LUSH_JUNGLE = new TBXLBiomeLushJungle();
+    public static Biome MAPLE_SHRUBLANDS = new TBXLBiomeMapleShrublands();
     public static Biome PRAIRIE = new TBXLBiomePrairie();
     public static Biome RAINFOREST = new TBXLBiomeRainforest();
     public static Biome RED_DESERT = new TBXLBiomeRedDesert();
@@ -50,6 +51,7 @@ public class TBXLBiomes {
         registerBiome(FLATLANDS, "flatlands", true, Type.LUSH, Type.PLAINS, Type.WET);
         registerBiome(GLACIER, "glacier", false, Type.COLD, Type.HILLS, Type.MOUNTAIN, Type.SNOWY);
         registerBiome(LUSH_JUNGLE, "lush_jungle", false, Type.DENSE, Type.HOT, Type.JUNGLE, Type.WET);
+        registerBiome(MAPLE_SHRUBLANDS, "maple_shrublands", true, Type.LUSH, Type.PLAINS, Type.WET);
         registerBiome(PRAIRIE, "prairie", true, Type.DRY, Type.HOT, Type.SAVANNA);
         registerBiome(RAINFOREST, "rainforest", false, Type.HILLS, Type.JUNGLE, Type.WET);
         registerBiome(RED_DESERT, "red_desert", true, Type.DEAD, Type.DRY, Type.HOT, Type.SANDY);
@@ -78,6 +80,8 @@ public class TBXLBiomes {
         registerBiomeSpawn(FLATLANDS, 7, BiomeType.WARM);
         registerBiomeSpawn(GLACIER, 3, BiomeType.ICY);
         registerBiomeSpawn(LUSH_JUNGLE, 4, BiomeType.WARM);
+        registerBiomeSpawn(MAPLE_SHRUBLANDS, 4, BiomeType.COOL);
+        registerBiomeSpawn(MAPLE_SHRUBLANDS, 4, BiomeType.WARM);
         registerBiomeSpawn(PRAIRIE, 5, BiomeType.WARM);
         registerBiomeSpawn(RAINFOREST, 4, BiomeType.WARM);
         registerBiomeSpawn(RED_DESERT, 6, BiomeType.DESERT);

@@ -6,5 +6,4 @@
 - Ice Wasteland
 - Rocky Plains
 - Rocky Plateau
-- Shrubland
 - Tundra
