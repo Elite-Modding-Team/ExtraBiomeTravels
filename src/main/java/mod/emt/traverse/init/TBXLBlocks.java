@@ -174,6 +174,23 @@ public class TBXLBlocks {
     public static TBXLBlockSapling white_fir_sapling = null;
 
     public static TBXLBlockMaterial cracked_sand = null;
+    public static TBXLBlockMaterial crag_rock = null;
+    public static TBXLBlockButtonStone crag_rock_button = null;
+    public static TBXLBlockSlab.Double crag_rock_slab_double = null;
+    public static TBXLBlockSlab.Half crag_rock_slab = null;
+    public static TBXLBlockStairs crag_rock_stairs = null;
+    public static TBXLBlockWall crag_rock_wall = null;
+    public static TBXLBlockMaterial crag_rock_bricks = null;
+    public static TBXLBlockPressurePlateStone crag_rock_pressure_plate = null;
+    public static TBXLBlockSlab.Double crag_rock_bricks_slab_double = null;
+    public static TBXLBlockSlab.Half crag_rock_bricks_slab = null;
+    public static TBXLBlockStairs crag_rock_bricks_stairs = null;
+    public static TBXLBlockWall crag_rock_bricks_wall = null;
+    public static TBXLBlockMaterial crag_rock_cobblestone = null;
+    public static TBXLBlockSlab.Double crag_rock_cobblestone_slab_double = null;
+    public static TBXLBlockSlab.Half crag_rock_cobblestone_slab = null;
+    public static TBXLBlockStairs crag_rock_cobblestone_stairs = null;
+    public static TBXLBlockWall crag_rock_cobblestone_wall = null;
     public static TBXLBlockMaterial red_rock = null;
     public static TBXLBlockButtonStone red_rock_button = null;
     public static TBXLBlockSlab.Double red_rock_slab_double = null;
@@ -368,5 +385,26 @@ public class TBXLBlocks {
         MOD_BLOCKS.add(red_rock_wall = new TBXLBlockWall("red_rock_wall", new TBXLBlockMaterial("red_rock_wall", Material.ROCK, MapColor.ORANGE_STAINED_HARDENED_CLAY, 2.0F, 10.0F, SoundType.STONE), false));
         MOD_BLOCKS.add(red_rock_cobblestone_wall = new TBXLBlockWall("red_rock_cobblestone_wall", new TBXLBlockMaterial("red_rock_cobblestone_wall", Material.ROCK, MapColor.ORANGE_STAINED_HARDENED_CLAY, 2.0F, 10.0F, SoundType.STONE), false));
         MOD_BLOCKS.add(red_rock_bricks_wall = new TBXLBlockWall("red_rock_bricks_wall", new TBXLBlockMaterial("red_rock_bricks_wall", Material.ROCK, MapColor.ORANGE_STAINED_HARDENED_CLAY, 2.0F, 10.0F, SoundType.STONE), false));
+
+        MOD_BLOCKS.add(crag_rock_button = new TBXLBlockButtonStone("crag_rock_button"));
+        MOD_BLOCKS.add(crag_rock = new TBXLBlockRock("crag_rock", MapColor.CYAN));
+        MOD_BLOCKS.add(crag_rock_cobblestone = new TBXLBlockMaterial("crag_rock_cobblestone", Material.ROCK, MapColor.CYAN, 2.0F, 10.0F, SoundType.STONE));
+        MOD_BLOCKS.add(crag_rock_bricks = new TBXLBlockMaterial("crag_rock_bricks", Material.ROCK, MapColor.CYAN, 2.0F, 10.0F, SoundType.STONE));
+        MOD_BLOCKS.add(crag_rock_pressure_plate = new TBXLBlockPressurePlateStone("crag_rock_pressure_plate", MapColor.CYAN));
+
+        MOD_BLOCKS.add(crag_rock_slab_double = new TBXLBlockSlab.Double("crag_rock_slab", Material.ROCK, MapColor.CYAN, 2.0F, 10.0F, false));
+        MOD_BLOCKS.add(crag_rock_slab = new TBXLBlockSlab.Half("crag_rock_slab", Material.ROCK, MapColor.CYAN, 2.0F, 10.0F, false));
+        MOD_BLOCKS.add(crag_rock_cobblestone_slab_double = new TBXLBlockSlab.Double("crag_rock_cobblestone_slab", Material.ROCK, MapColor.CYAN, 2.0F, 10.0F, false));
+        MOD_BLOCKS.add(crag_rock_cobblestone_slab = new TBXLBlockSlab.Half("crag_rock_cobblestone_slab", Material.ROCK, MapColor.CYAN, 2.0F, 10.0F, false));
+        MOD_BLOCKS.add(crag_rock_bricks_slab_double = new TBXLBlockSlab.Double("crag_rock_bricks_slab", Material.ROCK, MapColor.CYAN, 2.0F, 10.0F, false));
+        MOD_BLOCKS.add(crag_rock_bricks_slab = new TBXLBlockSlab.Half("crag_rock_bricks_slab", Material.ROCK, MapColor.CYAN, 2.0F, 10.0F, false));
+
+        MOD_BLOCKS.add(crag_rock_stairs = new TBXLBlockStairs("crag_rock_stairs", new TBXLBlockMaterial("crag_rock_stairs", Material.ROCK, MapColor.CYAN, 2.0F, 10.0F, SoundType.STONE).getDefaultState(), false));
+        MOD_BLOCKS.add(crag_rock_cobblestone_stairs = new TBXLBlockStairs("crag_rock_cobblestone_stairs", new TBXLBlockMaterial("crag_rock_cobblestone_stairs", Material.ROCK, MapColor.CYAN, 2.0F, 10.0F, SoundType.STONE).getDefaultState(), false));
+        MOD_BLOCKS.add(crag_rock_bricks_stairs = new TBXLBlockStairs("crag_rock_bricks_stairs", new TBXLBlockMaterial("crag_rock_bricks_stairs", Material.ROCK, MapColor.CYAN, 2.0F, 10.0F, SoundType.STONE).getDefaultState(), false));
+
+        MOD_BLOCKS.add(crag_rock_wall = new TBXLBlockWall("crag_rock_wall", new TBXLBlockMaterial("red_rock_wall", Material.ROCK, MapColor.CYAN, 2.0F, 10.0F, SoundType.STONE), false));
+        MOD_BLOCKS.add(crag_rock_cobblestone_wall = new TBXLBlockWall("crag_rock_cobblestone_wall", new TBXLBlockMaterial("crag_rock_cobblestone_wall", Material.ROCK, MapColor.CYAN, 2.0F, 10.0F, SoundType.STONE), false));
+        MOD_BLOCKS.add(crag_rock_bricks_wall = new TBXLBlockWall("crag_rock_bricks_wall", new TBXLBlockMaterial("crag_rock_bricks_wall", Material.ROCK, MapColor.CYAN, 2.0F, 10.0F, SoundType.STONE), false));
     }
 }

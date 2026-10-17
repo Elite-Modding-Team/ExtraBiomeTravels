@@ -1,7 +1,2 @@
-- Alpine
-- Arid Highland
 - Autumnal Grove
-- Crag Plateau
 - Ice Wasteland
-- Rocky Plateau
-- Tundra

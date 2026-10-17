@@ -1,0 +1,15 @@
+{
+  "type": "forge:ore_shapeless",
+  "ingredients": [
+    {
+      "item": "minecraft:stone_button"
+    },
+    {
+      "item": "traverse:crag_rock"
+    }
+  ],
+  "result": {
+    "item": "traverse:crag_rock_button",
+    "count": 1
+  }
+}

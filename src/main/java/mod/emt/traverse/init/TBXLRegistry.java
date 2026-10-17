@@ -99,8 +99,11 @@ public class TBXLRegistry {
         ModelLoader.setCustomStateMapper(TBXLBlocks.wattle_fence_gate, (new StateMap.Builder()).ignore(TBXLBlockFenceGateWood.POWERED).build());
         ModelLoader.setCustomStateMapper(TBXLBlocks.white_fir_fence_gate, (new StateMap.Builder()).ignore(TBXLBlockFenceGateWood.POWERED).build());
 
+        ModelLoader.setCustomStateMapper(TBXLBlocks.crag_rock_bricks_wall, (new StateMap.Builder()).ignore(TBXLBlockWall.VARIANT).build());
         ModelLoader.setCustomStateMapper(TBXLBlocks.red_rock_bricks_wall, (new StateMap.Builder()).ignore(TBXLBlockWall.VARIANT).build());
+        ModelLoader.setCustomStateMapper(TBXLBlocks.crag_rock_cobblestone_wall, (new StateMap.Builder()).ignore(TBXLBlockWall.VARIANT).build());
         ModelLoader.setCustomStateMapper(TBXLBlocks.red_rock_cobblestone_wall, (new StateMap.Builder()).ignore(TBXLBlockWall.VARIANT).build());
+        ModelLoader.setCustomStateMapper(TBXLBlocks.crag_rock_wall, (new StateMap.Builder()).ignore(TBXLBlockWall.VARIANT).build());
         ModelLoader.setCustomStateMapper(TBXLBlocks.red_rock_wall, (new StateMap.Builder()).ignore(TBXLBlockWall.VARIANT).build());
     }
 
@@ -151,18 +154,20 @@ public class TBXLRegistry {
 
     public static void registerOreDictionaries() {
         TraverseBiomesXL.LOGGER.info("Registering ore dictionary entries...");
+
+        OreDictionary.registerOre("cobblestone", TBXLBlocks.crag_rock_cobblestone);
         OreDictionary.registerOre("cobblestone", TBXLBlocks.red_rock_cobblestone);
 
-        /*OreDictionary.registerOre("doorWood", TBXLItems.autumnal_door);
+        OreDictionary.registerOre("doorWood", TBXLItems.autumnal_door);
         OreDictionary.registerOre("doorWood", TBXLItems.bald_cypress_door);
         OreDictionary.registerOre("doorWood", TBXLItems.cypress_door);
         OreDictionary.registerOre("doorWood", TBXLItems.douglas_fir_door);
         OreDictionary.registerOre("doorWood", TBXLItems.japanese_maple_door);
-        OreDictionary.registerOre("doorWood", TBXLBlocks.peach_sakura_door);
+        OreDictionary.registerOre("doorWood", TBXLItems.peach_sakura_door);
         OreDictionary.registerOre("doorWood", TBXLItems.rainbow_eucalyptus_door);
-        OreDictionary.registerOre("doorWood", TBXLBlocks.scalewood_door);
-        OreDictionary.registerOre("doorWood", TBXLBlocks.wattle_door);
-        OreDictionary.registerOre("doorWood", TBXLBlocks.white_fir_door);*/
+        OreDictionary.registerOre("doorWood", TBXLItems.scalewood_door);
+        OreDictionary.registerOre("doorWood", TBXLItems.wattle_door);
+        OreDictionary.registerOre("doorWood", TBXLItems.white_fir_door);
 
         OreDictionary.registerOre("fenceGateWood", TBXLBlocks.autumnal_fence_gate);
         OreDictionary.registerOre("fenceGateWood", TBXLBlocks.bald_cypress_fence_gate);
@@ -235,6 +240,7 @@ public class TBXLRegistry {
         //OreDictionary.registerOre("trapdoorWood", TBXLBlocks.fir_trapdoor);
 
         OreDictionary.registerOre("stone", TBXLBlocks.red_rock);
+        OreDictionary.registerOre("stone", TBXLBlocks.crag_rock);
 
         OreDictionary.registerOre("treeLeaves", TBXLBlocks.bald_cypress_leaves);
         OreDictionary.registerOre("treeLeaves", TBXLBlocks.brown_autumnal_oak_leaves);
@@ -284,6 +290,7 @@ public class TBXLRegistry {
 
         // Furnace Recipes
         GameRegistry.addSmelting(new ItemStack(TBXLBlocks.cracked_sand), new ItemStack(Blocks.GLASS), 0.1F);
+        GameRegistry.addSmelting(new ItemStack(TBXLBlocks.crag_rock_cobblestone), new ItemStack(TBXLBlocks.crag_rock), 0.1F);
         GameRegistry.addSmelting(new ItemStack(TBXLBlocks.red_rock_cobblestone), new ItemStack(TBXLBlocks.red_rock), 0.1F);
     }
 }

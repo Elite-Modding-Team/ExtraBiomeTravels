@@ -21,6 +21,7 @@ The mod also features its own content to make it stand out more on its own. You 
 - **Glacier**
 - **Lush Jungle**
 - **Maple Shrublands**
+- **Mountainous Crag**
 - **Rainforest**
 - **Red Desert**
 - **Red Rock Drylands**

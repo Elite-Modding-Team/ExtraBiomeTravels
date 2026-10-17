@@ -12,6 +12,9 @@ public class TBXLItems {
     public static TBXLItemSlab autumnal_slab;
     public static TBXLItemDoor bald_cypress_door;
     public static TBXLItemSlab bald_cypress_slab;
+    public static TBXLItemSlab crag_rock_bricks_slab;
+    public static TBXLItemSlab crag_rock_cobblestone_slab;
+    public static TBXLItemSlab crag_rock_slab;
     public static TBXLItemDoor cypress_door;
     public static TBXLItemSlab cypress_slab;
     public static TBXLItemDoor douglas_fir_door;
@@ -39,6 +42,9 @@ public class TBXLItems {
         MOD_ITEMS.add(autumnal_slab = new TBXLItemSlab("autumnal_slab", TBXLBlocks.autumnal_slab, TBXLBlocks.autumnal_slab, TBXLBlocks.autumnal_slab_double));
         MOD_ITEMS.add(bald_cypress_door = new TBXLItemDoor("bald_cypress_door", TBXLBlocks.bald_cypress_door));
         MOD_ITEMS.add(bald_cypress_slab = new TBXLItemSlab("bald_cypress_slab", TBXLBlocks.bald_cypress_slab, TBXLBlocks.bald_cypress_slab, TBXLBlocks.bald_cypress_slab_double));
+        MOD_ITEMS.add(crag_rock_bricks_slab = new TBXLItemSlab("crag_rock_bricks_slab", TBXLBlocks.crag_rock_bricks_slab, TBXLBlocks.crag_rock_bricks_slab, TBXLBlocks.crag_rock_bricks_slab_double));
+        MOD_ITEMS.add(crag_rock_cobblestone_slab = new TBXLItemSlab("crag_rock_cobblestone_slab", TBXLBlocks.crag_rock_cobblestone_slab, TBXLBlocks.crag_rock_cobblestone_slab, TBXLBlocks.crag_rock_cobblestone_slab_double));
+        MOD_ITEMS.add(crag_rock_slab = new TBXLItemSlab("crag_rock_slab", TBXLBlocks.crag_rock_slab, TBXLBlocks.crag_rock_slab, TBXLBlocks.crag_rock_slab_double));
         MOD_ITEMS.add(cypress_door = new TBXLItemDoor("cypress_door", TBXLBlocks.cypress_door));
         MOD_ITEMS.add(cypress_slab = new TBXLItemSlab("cypress_slab", TBXLBlocks.cypress_slab, TBXLBlocks.cypress_slab, TBXLBlocks.cypress_slab_double));
         MOD_ITEMS.add(douglas_fir_door = new TBXLItemDoor("douglas_fir_door", TBXLBlocks.douglas_fir_door));

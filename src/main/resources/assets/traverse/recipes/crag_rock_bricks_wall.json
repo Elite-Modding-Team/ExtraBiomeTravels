@@ -1,0 +1,16 @@
+{
+  "type": "forge:ore_shaped",
+  "pattern": [
+    "XXX",
+    "XXX"
+  ],
+  "key": {
+    "X": {
+      "item": "traverse:crag_rock_bricks"
+    }
+  },
+  "result": {
+    "item": "traverse:crag_rock_bricks_wall",
+    "count": 6
+  }
+}

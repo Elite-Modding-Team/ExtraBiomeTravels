@@ -9,6 +9,7 @@ import net.minecraft.item.Item;
 import java.util.Random;
 
 import mod.emt.traverse.init.TBXLBlocks;
+import org.jetbrains.annotations.NotNull;
 
 public class TBXLBlockRock extends TBXLBlockMaterial {
     public TBXLBlockRock(String unlocName, MapColor mapColor) {
@@ -16,8 +17,10 @@ public class TBXLBlockRock extends TBXLBlockMaterial {
     }
 
     @Override
-    public Item getItemDropped(IBlockState state, Random rand, int fortune) {
-        if (this == TBXLBlocks.red_rock) {
+    public @NotNull Item getItemDropped(@NotNull IBlockState state, @NotNull Random rand, int fortune) {
+        if (this == TBXLBlocks.crag_rock) {
+            return TBXLBlocks.crag_rock_cobblestone.getItemDropped(TBXLBlocks.crag_rock_cobblestone.getDefaultState(), rand, fortune);
+        } if (this == TBXLBlocks.red_rock) {
             return TBXLBlocks.red_rock_cobblestone.getItemDropped(TBXLBlocks.red_rock_cobblestone.getDefaultState(), rand, fortune);
         } else {
             return Item.getItemFromBlock(this);

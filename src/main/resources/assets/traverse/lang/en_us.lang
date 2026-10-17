@@ -32,6 +32,21 @@ tile.traverse:citrine_autumnal_leaves.name=Citrine Autumnal Leaves
 tile.traverse:citrine_autumnal_sapling.name=Citrine Autumnal Sapling
 tile.traverse:cracked_sand.name=Cracked Sand
 
+tile.traverse:crag_rock_bricks_slab.name=Crag Rock Bricks Slab
+tile.traverse:crag_rock_bricks_stairs.name=Crag Rock Bricks Stairs
+tile.traverse:crag_rock_bricks_wall.name=Crag Rock Bricks Wall
+tile.traverse:crag_rock_bricks.name=Crag Rock Bricks
+tile.traverse:crag_rock_button.name=Crag Rock Button
+tile.traverse:crag_rock_cobblestone_slab.name=Cobbled Crag Rock Slab
+tile.traverse:crag_rock_cobblestone_stairs.name=Cobbled Crag Rock Stairs
+tile.traverse:crag_rock_cobblestone_wall.name=Cobbled Crag Rock Wall
+tile.traverse:crag_rock_cobblestone.name=Cobbled Crag Rock
+tile.traverse:crag_rock_pressure_plate.name=Crag Rock Pressure Plate
+tile.traverse:crag_rock_slab.name=Crag Rock Slab
+tile.traverse:crag_rock_stairs.name=Crag Rock Stairs
+tile.traverse:crag_rock_wall.name=Crag Rock Wall
+tile.traverse:crag_rock.name=Crag Rock
+
 tile.traverse:cypress_button.name=Cypress Button
 tile.traverse:cypress_door.name=Cypress Door
 tile.traverse:cypress_fence_gate.name=Cypress Fence Gate
