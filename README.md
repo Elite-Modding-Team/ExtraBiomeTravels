@@ -1,7 +1,9 @@
 # TraverseBiomesXL
-TraverseBiomesXL is a 1.12.2 mod focused on classic vanilla style biomes. This includes its own implementation of [Traverse](https://www.curseforge.com/minecraft/mc-mods/traverse-reforged) and [ExtraBiomesXL](https://www.curseforge.com/minecraft/mc-mods/extrabiomesxl) biomes (currently a work in progress)!
+TraverseBiomesXL is a 1.12.2 mod focused on classic vanilla style biomes. This includes its own implementation of biomes featured in [Traverse](https://www.curseforge.com/minecraft/mc-mods/traverse-reforged) and [ExtraBiomesXL](https://www.curseforge.com/minecraft/mc-mods/extrabiomesxl)!
 
-The mod also features its own content to make it stand out more on its own. You can see more information about all the biomes in the mod's wiki.
+The mod also features its own content with additional biomes on the way to make it stand out more on its own. You can see more information about all the biomes in the mod's wiki.
+
+#### **_IMPORTANT: This mod is going to stay on 1.12.2, there are no plans for porting from our side! The mod is currently in Beta, things are subject to change and even be removed!_**
 
 ![Flatlands](docs/flatlands.png)
 ![Glaciers](docs/glaciers.png)
