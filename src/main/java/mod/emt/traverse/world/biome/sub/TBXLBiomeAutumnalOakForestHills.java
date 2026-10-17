@@ -1,7 +1,8 @@
-package mod.emt.traverse.world.biome;
+package mod.emt.traverse.world.biome.sub;
 
 import java.util.Random;
 
+import mod.emt.traverse.init.TBXLBiomes;
 import mod.emt.traverse.init.TBXLBlocks;
 import mod.emt.traverse.world.feature.tree.TBXLWorldGenTallTree;
 import net.minecraft.entity.passive.EntityWolf;
@@ -11,17 +12,20 @@ import net.minecraft.world.biome.Biome;
 import net.minecraft.world.gen.feature.WorldGenAbstractTree;
 import org.jetbrains.annotations.NotNull;
 
-public class TBXLBiomeAutumnalWoods extends Biome {
-    public static Biome.BiomeProperties properties = new Biome.BiomeProperties("Autumnal Woods");
+public class TBXLBiomeAutumnalOakForestHills extends Biome {
+    public static Biome.BiomeProperties properties = new Biome.BiomeProperties("Autumnal Wooded Hills");
 
     static {
-        properties.setTemperature(Biomes.FOREST.getDefaultTemperature());
-        properties.setRainfall(Biomes.FOREST.getRainfall());
-        properties.setBaseHeight(Biomes.FOREST.getBaseHeight());
-        properties.setHeightVariation(Biomes.FOREST.getHeightVariation());
+        properties.setTemperature(Biomes.FOREST_HILLS.getDefaultTemperature());
+        properties.setRainfall(Biomes.FOREST_HILLS.getRainfall());
+        properties.setBaseHeight(Biomes.FOREST_HILLS.getBaseHeight());
+        properties.setHeightVariation(Biomes.FOREST_HILLS.getHeightVariation());
+
+        // Important to properly set this as a sub-biome!
+        properties.setBaseBiome(TBXLBiomes.AUTUMNAL_OAK_FOREST.getBiomeName());
     }
 
-    public TBXLBiomeAutumnalWoods() {
+    public TBXLBiomeAutumnalOakForestHills() {
         super(properties);
         decorator.treesPerChunk = 10;
         decorator.flowersPerChunk = 4;

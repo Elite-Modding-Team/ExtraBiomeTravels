@@ -1,2 +1,0 @@
-- Autumnal Grove
-- Ice Wasteland

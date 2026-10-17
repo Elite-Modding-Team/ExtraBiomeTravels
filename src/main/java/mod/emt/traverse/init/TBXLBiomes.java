@@ -19,8 +19,9 @@ import net.minecraftforge.fml.common.registry.GameRegistry;
 @Mod.EventBusSubscriber(modid = TraverseBiomesXL.MOD_ID)
 @GameRegistry.ObjectHolder(TraverseBiomesXL.MOD_ID)
 public class TBXLBiomes {
-    public static Biome AUTUMNAL_WOODS = new TBXLBiomeAutumnalWoods();
-    public static Biome AUTUMNAL_WOODED_HILLS = new TBXLBiomeAutumnalWoodedHills();
+    public static Biome AUTUMNAL_GROVE = new TBXLBiomeAutumnalGrove();
+    public static Biome AUTUMNAL_OAK_FOREST = new TBXLBiomeAutumnalOakForest();
+    public static Biome AUTUMNAL_OAK_FOREST_HILLS = new TBXLBiomeAutumnalOakForestHills();
     public static Biome CLIFFS = new TBXLBiomeCliffs();
     public static Biome CONIFEROUS_FOREST = new TBXLBiomeConiferousForest(false);
     public static Biome CYPRESS_SWAMP = new TBXLBiomeCypressSwamp();
@@ -47,7 +48,8 @@ public class TBXLBiomes {
     @SubscribeEvent
     public static void registerBiomes(RegistryEvent.Register<Biome> event) {
         // Biomes
-        registerBiome(AUTUMNAL_WOODS, "autumnal_woods", false, Type.DENSE, Type.FOREST);
+        registerBiome(AUTUMNAL_GROVE, "autumnal_grove", false, Type.DENSE, Type.FOREST);
+        registerBiome(AUTUMNAL_OAK_FOREST, "autumnal_oak_forest", false, Type.DENSE, Type.FOREST);
         registerBiome(CLIFFS, "cliffs", false, Type.COLD, Type.HILLS, Type.MOUNTAIN, Type.SNOWY);
         registerBiome(CONIFEROUS_FOREST, "coniferous_forest", false, Type.COLD, Type.CONIFEROUS, Type.FOREST);
         registerBiome(CYPRESS_SWAMP, "cypress_swamp", false, Type.SWAMP);
@@ -69,14 +71,16 @@ public class TBXLBiomes {
         registerBiome(WOODLANDS, "woodlands", true, Type.DRY, Type.FOREST, Type.PLAINS);
 
         // Sub-Biomes: These are never registered to biome spawns!
-        registerSubBiome(AUTUMNAL_WOODED_HILLS, AUTUMNAL_WOODS, "autumnal_wooded_hills", false, Type.DENSE, Type.FOREST, Type.HILLS);
+        registerSubBiome(AUTUMNAL_OAK_FOREST_HILLS, AUTUMNAL_OAK_FOREST, "autumnal_oak_forest_hills", false, Type.DENSE, Type.FOREST, Type.HILLS);
         registerSubBiome(GLACIER_SPIKES, GLACIER, "glacier_spikes", false, Type.COLD, Type.HILLS, Type.MOUNTAIN, Type.SNOWY);
         registerSubBiome(PRAIRIE_SHRUBLANDS, PRAIRIE, "prairie_shrublands", true, Type.DRY, Type.HOT, Type.SAVANNA);
         registerSubBiome(WOODED_RED_DESERT, RED_DESERT, "wooded_red_desert", false, Type.DRY, Type.HILLS, Type.HOT, Type.SPARSE);
 
         // Biome Spawn: Makes them spawn on the world, apply multiple biome types if they are meant to spawn more commonly
-        registerBiomeSpawn(AUTUMNAL_WOODS, 6, BiomeType.COOL);
-        registerBiomeSpawn(AUTUMNAL_WOODS, 6, BiomeType.WARM);
+        registerBiomeSpawn(AUTUMNAL_GROVE, 226, BiomeType.COOL);
+        registerBiomeSpawn(AUTUMNAL_GROVE, 226, BiomeType.WARM);
+        registerBiomeSpawn(AUTUMNAL_OAK_FOREST, 6, BiomeType.COOL);
+        registerBiomeSpawn(AUTUMNAL_OAK_FOREST, 6, BiomeType.WARM);
         registerBiomeSpawn(CLIFFS, 3, BiomeType.COOL);
         registerBiomeSpawn(CLIFFS, 3, BiomeType.WARM);
         registerBiomeSpawn(CONIFEROUS_FOREST, 4, BiomeType.COOL);

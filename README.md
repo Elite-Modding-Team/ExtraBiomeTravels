@@ -13,7 +13,8 @@ The mod also features its own content to make it stand out more on its own. You 
 ### Features
 
 #### Biomes
-- **Autumnal Woods**
+- **Autumnal Grove**
+- **Autumnal Oak Forest**
 - **Cliffs**
 - **Coniferous Forest**
 - **Cypress Swampland**
@@ -34,7 +35,7 @@ The mod also features its own content to make it stand out more on its own. You 
 - **Woodlands**
 
 #### Sub-Biomes
-- **Autumnal Wooded Hills**
+- **Autumnal Oak Forest Hills**
 - **Glacier Spikes**
 - **Prairie Shrublands**
 - **Wooded Red Desert**

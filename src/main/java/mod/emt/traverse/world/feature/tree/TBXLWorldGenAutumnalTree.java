@@ -16,6 +16,7 @@ import net.minecraft.world.World;
 import net.minecraft.world.gen.feature.WorldGenAbstractTree;
 import org.jetbrains.annotations.NotNull;
 
+// TODO: Leaves can spawn too far from the logs which will cause natural decay
 // Majority of code is based on the large oak tree
 public class TBXLWorldGenAutumnalTree extends WorldGenAbstractTree {
     public final boolean isWorldGen;
@@ -30,7 +31,7 @@ public class TBXLWorldGenAutumnalTree extends WorldGenAbstractTree {
     double leafDensity = 1.0D;
     int trunkSize = 1;
     int heightLimitLimit = 16;
-    int leafDistanceLimit = 5;
+    int leafDistanceLimit = 4;
     List<FoliageCoordinates> foliageCoords;
 
     private final IBlockState woodState;
@@ -122,7 +123,7 @@ public class TBXLWorldGenAutumnalTree extends WorldGenAbstractTree {
         } else if (Math.abs(f1) >= f) {
             return 0.0F;
         }
-        return f2 * 0.50F;
+        return f2 * 0.5F;
     }
 
     float leafSize(int y) {
@@ -141,14 +142,20 @@ public class TBXLWorldGenAutumnalTree extends WorldGenAbstractTree {
     void limb(BlockPos pos, BlockPos pos2) {
         BlockPos delta = pos2.add(-pos.getX(), -pos.getY(), -pos.getZ());
         int distance = this.getGreatestDistance(delta);
+        if (distance == 0) {
+            return;
+        }
         float xStep = (float) delta.getX() / (float) distance;
         float yStep = (float) delta.getY() / (float) distance;
         float zStep = (float) delta.getZ() / (float) distance;
 
         for (int j = 0; j <= distance; ++j) {
             BlockPos blockpos = pos.add(0.5F + (float) j * xStep, 0.5F + (float) j * yStep, 0.5F + (float) j * zStep);
-            BlockLog.EnumAxis axis = this.getLogAxis(pos, blockpos);
-            this.setBlockAndNotifyAdequately(this.world, blockpos, this.woodState.withProperty(BlockLog.LOG_AXIS, axis));
+            IBlockState current = this.world.getBlockState(blockpos);
+            if (current.getBlock().isAir(current, this.world, blockpos) || current.getBlock().isLeaves(current, this.world, blockpos)) {
+                BlockLog.EnumAxis axis = this.getLogAxis(pos, blockpos);
+                this.setBlockAndNotifyAdequately(this.world, blockpos, this.woodState.withProperty(BlockLog.LOG_AXIS, axis));
+            }
         }
     }
 
@@ -222,7 +229,8 @@ public class TBXLWorldGenAutumnalTree extends WorldGenAbstractTree {
 
         for (int j = 0; j <= distance; ++j) {
             BlockPos blockpos = posOne.add(0.5F + (float) j * xStep, 0.5F + (float) j * yStep, 0.5F + (float) j * zStep);
-            if (!this.isReplaceable(world, blockpos)) {
+            IBlockState state = world.getBlockState(blockpos);
+            if (!state.getBlock().isAir(state, world, blockpos) && !state.getBlock().isLeaves(state, world, blockpos)) {
                 return j;
             }
         }
@@ -231,20 +239,21 @@ public class TBXLWorldGenAutumnalTree extends WorldGenAbstractTree {
     }
 
     public void setDecorationDefaults() {
-        this.leafDistanceLimit = 5;
+        this.leafDistanceLimit = 4;
     }
 
     public boolean generate(@NotNull World world, Random rand, @NotNull BlockPos position) {
         this.world = world;
         this.basePos = position;
         this.rand = new Random(rand.nextLong());
-        if (this.heightLimit == 0) {
-            this.heightLimit = 9 + this.rand.nextInt(this.heightLimitLimit);
-        }
+        this.heightLimit = 9 + this.rand.nextInt(this.heightLimitLimit);
         if (!this.validTreeLocation()) {
             this.world = null;
             return false;
         } else {
+            BlockPos soilPos = this.basePos.down();
+            IBlockState soilState = this.world.getBlockState(soilPos);
+            soilState.getBlock().onPlantGrow(soilState, this.world, soilPos, this.basePos);
             this.generateLeafNodeList();
             this.generateLeaves();
             this.generateTrunk();
@@ -261,6 +270,12 @@ public class TBXLWorldGenAutumnalTree extends WorldGenAbstractTree {
         if (!isSoil) {
             return false;
         } else {
+            int radius = this.heightLimit;
+            BlockPos min = this.basePos.add(-radius, 0, -radius);
+            BlockPos max = this.basePos.add(radius, radius, radius);
+            if (!this.world.isAreaLoaded(min, max)) {
+                return false;
+            }
             int i = this.checkBlockLine(this.basePos, this.basePos.up(this.heightLimit - 1));
             if (i == -1) {
                 return true;
