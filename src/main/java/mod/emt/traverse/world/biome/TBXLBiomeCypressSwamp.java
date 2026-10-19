@@ -16,6 +16,7 @@ public class TBXLBiomeCypressSwamp extends BiomeSwamp {
         properties.setRainfall(Biomes.SWAMPLAND.getRainfall());
         properties.setBaseHeight(Biomes.SWAMPLAND.getBaseHeight());
         properties.setHeightVariation(Biomes.SWAMPLAND.getHeightVariation());
+        properties.setWaterColor(0x617B64);
     }
 
     public TBXLBiomeCypressSwamp() {

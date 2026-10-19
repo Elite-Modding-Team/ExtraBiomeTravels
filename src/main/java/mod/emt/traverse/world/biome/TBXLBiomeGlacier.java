@@ -141,4 +141,9 @@ public class TBXLBiomeGlacier extends Biome {
         }
         super.decorate(world, rand, pos);
     }
+
+    @Override
+    public int getSkyColorByTemp(float currentTemperature) {
+        return 0xFFBFC5CC;
+    }
 }

@@ -122,6 +122,11 @@ public class TBXLBiomeThicket extends Biome {
     }
 
     @Override
+    public int getSkyColorByTemp(float currentTemperature) {
+        return 0xFF88B4E1;
+    }
+
+    @Override
     public int getModdedBiomeGrassColor(int original) {
         return super.getModdedBiomeGrassColor(0xFF74CD61);
     }

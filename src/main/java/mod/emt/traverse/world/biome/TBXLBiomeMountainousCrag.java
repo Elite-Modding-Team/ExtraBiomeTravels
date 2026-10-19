@@ -154,4 +154,9 @@ public class TBXLBiomeMountainousCrag extends BiomePlains {
         n = n ^ (n >> 16);
         return ((n & 0x7fffffffL) / (double) 0x3fffffffL) - 1.0;
     }
+
+    @Override
+    public int getSkyColorByTemp(float currentTemperature) {
+        return 0xFF97C6C0;
+    }
 }

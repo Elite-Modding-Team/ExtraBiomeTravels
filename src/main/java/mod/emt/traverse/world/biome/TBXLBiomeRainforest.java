@@ -24,6 +24,7 @@ public class TBXLBiomeRainforest extends Biome {
         properties.setRainfall(0.9F);
         properties.setBaseHeight(0.4F);
         properties.setHeightVariation(0.4F);
+        properties.setWaterColor(0xFF24B01C);
     }
 
     public TBXLBiomeRainforest() {
