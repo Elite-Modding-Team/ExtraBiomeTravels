@@ -2,6 +2,8 @@ package mod.emt.traverse.block;
 
 import mod.emt.traverse.TraverseBiomesXL;
 import mod.emt.traverse.init.TBXLBlocks;
+
+import net.minecraft.block.Block;
 import net.minecraft.block.BlockLeaves;
 import net.minecraft.block.BlockPlanks.EnumType;
 import net.minecraft.block.SoundType;
@@ -39,14 +41,17 @@ public class TBXLBlockLeaves extends BlockLeaves {
     private final MapColor mapColor;
     public boolean flammable;
     public int saplingDropChance;
+    public int radius;
+    private int[] surroundings;
 
-    public TBXLBlockLeaves(String unlocName, MapColor mapColor, boolean flammable, int saplingDropChance) {
+    public TBXLBlockLeaves(String unlocName, MapColor mapColor, boolean flammable, int saplingDropChance, int radius) {
         this.setRegistryName(TraverseBiomesXL.MOD_ID, unlocName);
         this.setTranslationKey(Objects.requireNonNull(this.getRegistryName()).toString());
         this.setCreativeTab(TraverseBiomesXL.TAB);
         this.mapColor = mapColor;
         this.flammable = flammable;
         this.saplingDropChance = saplingDropChance;
+        this.radius = radius;
         this.setHardness(0.2F);
         this.setLightOpacity(1);
         this.setSoundType(SoundType.PLANT);
@@ -166,8 +171,7 @@ public class TBXLBlockLeaves extends BlockLeaves {
 
     @Override
     public @NotNull IBlockState getStateFromMeta(int meta) {
-        return this.getDefaultState().withProperty(DECAYABLE, (meta & 1) == 0)
-                .withProperty(CHECK_DECAY, (meta & 2) > 0);
+        return this.getDefaultState().withProperty(DECAYABLE, (meta & 1) == 0).withProperty(CHECK_DECAY, (meta & 2) > 0);
     }
 
     @Override
@@ -201,5 +205,63 @@ public class TBXLBlockLeaves extends BlockLeaves {
                 spawnAsEntity(world, pos, new ItemStack(TBXLItems.fir_door));
             }
         }*/
+    }
+
+    @Override
+    public void updateTick(World world, BlockPos pos, IBlockState state, Random rand) {
+        if (world.isRemote || !state.getValue(CHECK_DECAY) || !state.getValue(DECAYABLE)) return;
+        if (!world.isAreaLoaded(pos, 1) || !world.isAreaLoaded(pos, radius + 2)) return;
+
+        final int size = radius > 15 ? 64 : 32;
+        final int sizeH = size / 2;
+        final int sizeSq = size * size;
+
+        if (surroundings == null) surroundings = new int[size * size * size];
+
+        final int x = pos.getX();
+        final int y = pos.getY();
+        final int z = pos.getZ();
+
+        BlockPos.MutableBlockPos mutable = new BlockPos.MutableBlockPos();
+
+        for (int dx = -radius; dx <= radius; dx++) {
+            for (int dy = -radius; dy <= radius; dy++) {
+                for (int dz = -radius; dz <= radius; dz++) {
+                    IBlockState s = world.getBlockState(mutable.setPos(x + dx, y + dy, z + dz));
+                    Block b = s.getBlock();
+                    int idx = (dx + sizeH) * sizeSq + (dy + sizeH) * size + (dz + sizeH);
+                    if (b.canSustainLeaves(s, world, mutable)) surroundings[idx] = 0;
+                    else if (b.isLeaves(s, world, mutable)) surroundings[idx] = -2;
+                    else surroundings[idx] = -1;
+                }
+            }
+        }
+
+        for (int dist = 1; dist <= radius; dist++) {
+            for (int dx = -radius; dx <= radius; dx++) {
+                for (int dy = -radius; dy <= radius; dy++) {
+                    for (int dz = -radius; dz <= radius; dz++) {
+                        int idx = (dx + sizeH) * sizeSq + (dy + sizeH) * size + (dz + sizeH);
+                        if (surroundings[idx] != dist - 1) continue;
+                        if (dx > -radius && surroundings[idx - sizeSq] == -2) surroundings[idx - sizeSq] = dist;
+                        if (dx < radius && surroundings[idx + sizeSq] == -2) surroundings[idx + sizeSq] = dist;
+                        if (dy > -radius && surroundings[idx - size] == -2) surroundings[idx - size] = dist;
+                        if (dy < radius && surroundings[idx + size] == -2) surroundings[idx + size] = dist;
+                        if (dz > -radius && surroundings[idx - 1] == -2) surroundings[idx - 1] = dist;
+                        if (dz < radius && surroundings[idx + 1] == -2) surroundings[idx + 1] = dist;
+                    }
+                }
+            }
+        }
+
+        int centerIdx = sizeH * sizeSq + sizeH * size + sizeH;
+        int distance = surroundings[centerIdx];
+
+        if (distance >= 0) {
+            world.setBlockState(pos, state.withProperty(CHECK_DECAY, false), 4);
+        } else {
+            dropBlockAsItem(world, pos, world.getBlockState(pos), 0);
+            world.setBlockToAir(pos);
+        }
     }
 }
