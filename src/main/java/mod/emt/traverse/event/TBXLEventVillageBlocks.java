@@ -10,6 +10,8 @@ import net.minecraftforge.event.terraingen.BiomeEvent;
 import net.minecraftforge.fml.common.eventhandler.Event;
 import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
 
+// Certain village blocks are hardcoded and will not change, Universal Tweaks partially fixes this at least
+// Blocks Affected: Cobblestone, Doors, Pressure Plates, Slabs
 public class TBXLEventVillageBlocks {
     private static IBlockState getMapleForestVillageBlocks(IBlockState original) {
         if (original.getBlock() == Blocks.LOG || original.getBlock() == Blocks.LOG2) {

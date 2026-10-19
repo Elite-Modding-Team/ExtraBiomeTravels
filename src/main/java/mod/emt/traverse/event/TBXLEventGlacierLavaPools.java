@@ -7,6 +7,7 @@ import net.minecraftforge.event.terraingen.PopulateChunkEvent;
 import net.minecraftforge.fml.common.eventhandler.Event;
 import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
 
+// Disables lava pools from spawning on Glaciers to prevent immersion breaking
 public class TBXLEventGlacierLavaPools {
     @SubscribeEvent
     public void onPopulate(PopulateChunkEvent.Populate event) {
