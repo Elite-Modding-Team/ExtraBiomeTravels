@@ -22,6 +22,7 @@ public class ClientProxy extends CommonProxy {
 
     @Override
     public void postInit() {
+        super.postInit();
         IBlockColor leavesColor = (state, world, pos, tintIndex) -> {
             // Custom Colors
             if (tintIndex == 0 && state.getBlock() == TBXLBlocks.douglas_fir_leaves) {
