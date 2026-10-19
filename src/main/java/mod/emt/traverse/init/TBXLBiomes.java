@@ -14,8 +14,7 @@ import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
 import net.minecraftforge.fml.common.registry.ForgeRegistries;
 import net.minecraftforge.fml.common.registry.GameRegistry;
 
-// TODO: Some biomes should affect village blocks (e.g. red deserts have red sandstone villages)
-// All biomes need to have the biome types adjusted and finalized
+// TODO: All biomes need to have the biome types adjusted and finalized
 @Mod.EventBusSubscriber(modid = TraverseBiomesXL.MOD_ID)
 @GameRegistry.ObjectHolder(TraverseBiomesXL.MOD_ID)
 public class TBXLBiomes {
@@ -63,8 +62,8 @@ public class TBXLBiomes {
         registerBiome(RED_DESERT, "red_desert", true, Type.DEAD, Type.DRY, Type.HOT, Type.SANDY);
         registerBiome(RED_ROCK_DRYLANDS, "red_rock_drylands", false, Type.DRY, Type.HOT, Type.HILLS, Type.SPARSE);
         registerBiome(RED_ROCK_RIDGE, "red_rock_ridge", false, Type.DRY, Type.HOT, Type.MESA, Type.MOUNTAIN);
-        registerBiome(ROCKY_PLAINS, "rocky_plains", false, Type.LUSH, Type.HILLS, Type.SPARSE);
-        registerBiome(ROLLING_HILLS, "rolling_hills", false, Type.LUSH, Type.HILLS, Type.SPARSE);
+        registerBiome(ROCKY_PLAINS, "rocky_plains", true, Type.LUSH, Type.HILLS, Type.SPARSE);
+        registerBiome(ROLLING_HILLS, "rolling_hills", true, Type.LUSH, Type.HILLS, Type.SPARSE);
         registerBiome(SNOWY_CONIFEROUS_FOREST, "snowy_coniferous_forest", false, Type.COLD, Type.CONIFEROUS, Type.FOREST, Type.SNOWY);
         registerBiome(THICKET, "thicket", false, Type.DENSE, Type.FOREST);
         registerBiome(WASTELAND, "wasteland", false, Type.DEAD, Type.DRY, Type.HOT, Type.SPARSE, Type.WASTELAND);
@@ -74,7 +73,7 @@ public class TBXLBiomes {
         registerSubBiome(AUTUMNAL_OAK_FOREST_HILLS, AUTUMNAL_OAK_FOREST, "autumnal_oak_forest_hills", false, Type.DENSE, Type.FOREST, Type.HILLS);
         registerSubBiome(GLACIER_SPIKES, GLACIER, "glacier_spikes", false, Type.COLD, Type.HILLS, Type.MOUNTAIN, Type.SNOWY);
         registerSubBiome(PRAIRIE_SHRUBLANDS, PRAIRIE, "prairie_shrublands", true, Type.DRY, Type.HOT, Type.SAVANNA);
-        registerSubBiome(WOODED_RED_DESERT, RED_DESERT, "wooded_red_desert", false, Type.DRY, Type.HILLS, Type.HOT, Type.SPARSE);
+        registerSubBiome(WOODED_RED_DESERT, RED_DESERT, "wooded_red_desert", true, Type.DRY, Type.HILLS, Type.HOT, Type.SPARSE);
 
         // Biome Spawn: Makes them spawn on the world, apply multiple biome types if they are meant to spawn more commonly
         registerBiomeSpawn(AUTUMNAL_GROVE, 4, BiomeType.COOL);
