@@ -14,7 +14,6 @@ import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
 import net.minecraftforge.fml.common.registry.ForgeRegistries;
 import net.minecraftforge.fml.common.registry.GameRegistry;
 
-// TODO: All biomes need to have the biome types adjusted and finalized
 @Mod.EventBusSubscriber(modid = TraverseBiomesXL.MOD_ID)
 @GameRegistry.ObjectHolder(TraverseBiomesXL.MOD_ID)
 public class TBXLBiomes {
@@ -51,18 +50,18 @@ public class TBXLBiomes {
         registerBiome(AUTUMNAL_OAK_FOREST, "autumnal_oak_forest", false, Type.DENSE, Type.FOREST);
         registerBiome(CLIFFS, "cliffs", false, Type.COLD, Type.HILLS, Type.MOUNTAIN, Type.SNOWY);
         registerBiome(CONIFEROUS_FOREST, "coniferous_forest", false, Type.COLD, Type.CONIFEROUS, Type.FOREST);
-        registerBiome(CYPRESS_SWAMP, "cypress_swamp", false, Type.SWAMP);
+        registerBiome(CYPRESS_SWAMP, "cypress_swamp", false, Type.LUSH, Type.WET, Type.SWAMP);
         registerBiome(FLATLANDS, "flatlands", true, Type.LUSH, Type.PLAINS, Type.WET);
         registerBiome(GLACIER, "glacier", false, Type.COLD, Type.HILLS, Type.MOUNTAIN, Type.SNOWY);
         registerBiome(LUSH_JUNGLE, "lush_jungle", false, Type.DENSE, Type.HOT, Type.JUNGLE, Type.WET);
-        registerBiome(MAPLE_SHRUBLANDS, "maple_shrublands", true, Type.LUSH, Type.PLAINS, Type.WET);
-        registerBiome(MOUNTAINOUS_CRAG, "mountainous_crag", false, Type.COLD, Type.HILLS, Type.MOUNTAIN, Type.SNOWY);
-        registerBiome(PRAIRIE, "prairie", true, Type.DRY, Type.HOT, Type.SAVANNA);
-        registerBiome(RAINFOREST, "rainforest", false, Type.HILLS, Type.JUNGLE, Type.WET);
+        registerBiome(MAPLE_SHRUBLANDS, "maple_shrublands", true, Type.PLAINS, Type.SPARSE);
+        registerBiome(MOUNTAINOUS_CRAG, "mountainous_crag", false, Type.COLD, Type.HILLS, Type.MOUNTAIN);
+        registerBiome(PRAIRIE, "prairie", true, Type.DRY, Type.HOT, Type.PLAINS, Type.SAVANNA);
+        registerBiome(RAINFOREST, "rainforest", false, Type.DENSE, Type.JUNGLE, Type.LUSH, Type.WET);
         registerBiome(RED_DESERT, "red_desert", true, Type.DEAD, Type.DRY, Type.HOT, Type.SANDY);
         registerBiome(RED_ROCK_DRYLANDS, "red_rock_drylands", false, Type.DRY, Type.HOT, Type.HILLS, Type.SPARSE);
         registerBiome(RED_ROCK_RIDGE, "red_rock_ridge", false, Type.DRY, Type.HOT, Type.MESA, Type.MOUNTAIN);
-        registerBiome(ROCKY_PLAINS, "rocky_plains", true, Type.LUSH, Type.HILLS, Type.SPARSE);
+        registerBiome(ROCKY_PLAINS, "rocky_plains", true, Type.HILLS, Type.PLAINS, Type.SPARSE);
         registerBiome(ROLLING_HILLS, "rolling_hills", true, Type.LUSH, Type.HILLS, Type.SPARSE);
         registerBiome(SNOWY_CONIFEROUS_FOREST, "snowy_coniferous_forest", false, Type.COLD, Type.CONIFEROUS, Type.FOREST, Type.SNOWY);
         registerBiome(THICKET, "thicket", false, Type.DENSE, Type.FOREST);
@@ -72,41 +71,40 @@ public class TBXLBiomes {
         // Sub-Biomes: These are never registered to biome spawns!
         registerSubBiome(AUTUMNAL_OAK_FOREST_HILLS, AUTUMNAL_OAK_FOREST, "autumnal_oak_forest_hills", false, Type.DENSE, Type.FOREST, Type.HILLS);
         registerSubBiome(GLACIER_SPIKES, GLACIER, "glacier_spikes", false, Type.COLD, Type.HILLS, Type.MOUNTAIN, Type.SNOWY);
-        registerSubBiome(PRAIRIE_SHRUBLANDS, PRAIRIE, "prairie_shrublands", true, Type.DRY, Type.HOT, Type.SAVANNA);
-        registerSubBiome(WOODED_RED_DESERT, RED_DESERT, "wooded_red_desert", true, Type.DRY, Type.HILLS, Type.HOT, Type.SPARSE);
+        registerSubBiome(PRAIRIE_SHRUBLANDS, PRAIRIE, "prairie_shrublands", true, Type.DRY, Type.HOT, Type.PLAINS, Type.SAVANNA, Type.SPARSE);
+        registerSubBiome(WOODED_RED_DESERT, RED_DESERT, "wooded_red_desert", true, Type.DRY, Type.HILLS, Type.HOT, Type.SANDY, Type.SPARSE);
 
-        // Biome Spawn: Makes them spawn on the world, apply multiple biome types if they are meant to spawn more commonly
+        // Biome Spawns: Makes them spawn on the world, apply multiple biome types if they are meant to spawn more commonly
         registerBiomeSpawn(AUTUMNAL_GROVE, 4, BiomeType.COOL);
         registerBiomeSpawn(AUTUMNAL_GROVE, 4, BiomeType.WARM);
-        registerBiomeSpawn(AUTUMNAL_OAK_FOREST, 6, BiomeType.COOL);
-        registerBiomeSpawn(AUTUMNAL_OAK_FOREST, 6, BiomeType.WARM);
+        registerBiomeSpawn(AUTUMNAL_OAK_FOREST, 5, BiomeType.COOL);
+        registerBiomeSpawn(AUTUMNAL_OAK_FOREST, 5, BiomeType.WARM);
         registerBiomeSpawn(CLIFFS, 3, BiomeType.COOL);
         registerBiomeSpawn(CLIFFS, 3, BiomeType.WARM);
         registerBiomeSpawn(CONIFEROUS_FOREST, 4, BiomeType.COOL);
-        registerBiomeSpawn(CYPRESS_SWAMP, 4, BiomeType.COOL);
         registerBiomeSpawn(CYPRESS_SWAMP, 4, BiomeType.WARM);
-        registerBiomeSpawn(FLATLANDS, 7, BiomeType.COOL);
-        registerBiomeSpawn(FLATLANDS, 7, BiomeType.WARM);
+        registerBiomeSpawn(FLATLANDS, 5, BiomeType.COOL);
+        registerBiomeSpawn(FLATLANDS, 5, BiomeType.WARM);
         registerBiomeSpawn(GLACIER, 3, BiomeType.ICY);
         registerBiomeSpawn(LUSH_JUNGLE, 4, BiomeType.WARM);
         registerBiomeSpawn(MAPLE_SHRUBLANDS, 4, BiomeType.COOL);
         registerBiomeSpawn(MAPLE_SHRUBLANDS, 4, BiomeType.WARM);
         registerBiomeSpawn(MOUNTAINOUS_CRAG, 3, BiomeType.COOL);
         registerBiomeSpawn(MOUNTAINOUS_CRAG, 3, BiomeType.WARM);
-        registerBiomeSpawn(PRAIRIE, 5, BiomeType.WARM);
         registerBiomeSpawn(PRAIRIE, 5, BiomeType.DESERT);
+        registerBiomeSpawn(PRAIRIE, 5, BiomeType.WARM);
         registerBiomeSpawn(RAINFOREST, 4, BiomeType.WARM);
-        registerBiomeSpawn(RED_DESERT, 6, BiomeType.DESERT);
+        registerBiomeSpawn(RED_DESERT, 5, BiomeType.DESERT);
         registerBiomeSpawn(RED_ROCK_DRYLANDS, 4, BiomeType.DESERT);
         registerBiomeSpawn(RED_ROCK_RIDGE, 5, BiomeType.DESERT);
-        registerBiomeSpawn(ROCKY_PLAINS, 6, BiomeType.COOL);
-        registerBiomeSpawn(ROCKY_PLAINS, 6, BiomeType.WARM);
-        registerBiomeSpawn(ROLLING_HILLS, 6, BiomeType.COOL);
+        registerBiomeSpawn(ROCKY_PLAINS, 5, BiomeType.COOL);
+        registerBiomeSpawn(ROCKY_PLAINS, 5, BiomeType.WARM);
+        registerBiomeSpawn(ROLLING_HILLS, 5, BiomeType.COOL);
         registerBiomeSpawn(SNOWY_CONIFEROUS_FOREST, 5, BiomeType.ICY);
-        registerBiomeSpawn(THICKET, 4, BiomeType.WARM);
+        registerBiomeSpawn(THICKET, 3, BiomeType.WARM);
         registerBiomeSpawn(WASTELAND, 4, BiomeType.DESERT);
-        registerBiomeSpawn(WOODLANDS, 9, BiomeType.COOL);
-        registerBiomeSpawn(WOODLANDS, 9, BiomeType.WARM);
+        registerBiomeSpawn(WOODLANDS, 5, BiomeType.COOL);
+        registerBiomeSpawn(WOODLANDS, 5, BiomeType.WARM);
     }
 
     private static void registerBiome(Biome biome, String name, boolean hasVillages, BiomeDictionary.Type... types) {
