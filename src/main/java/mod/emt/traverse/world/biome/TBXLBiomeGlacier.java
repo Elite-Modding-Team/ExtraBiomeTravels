@@ -18,6 +18,7 @@ import net.minecraftforge.event.terraingen.TerrainGen;
 import org.jetbrains.annotations.NotNull;
 
 // TODO: Lava lakes still spawn, which don't make sense on this biome
+@SuppressWarnings("deprecation")
 public class TBXLBiomeGlacier extends Biome {
     public static final TBXLWorldGenGlacierIceSpike ICE_SPIKE_FEATURE = new TBXLWorldGenGlacierIceSpike();
 

@@ -1,5 +1,7 @@
 package mod.emt.traverse.world.biome;
 
+import mod.emt.traverse.world.feature.tree.TBXLWorldGenJapaneseMapleTree;
+import mod.emt.traverse.world.feature.tree.TBXLWorldGenPeachSakuraTree;
 import mod.emt.traverse.world.feature.tree.TBXLWorldGenSimpleFallenTree;
 import net.minecraft.block.*;
 import net.minecraft.entity.passive.EntityWolf;
@@ -78,11 +80,15 @@ public class TBXLBiomeWoodlands extends Biome {
 
     @Override
     public @NotNull WorldGenAbstractTree getRandomTreeFeature(Random rand) {
-        int num = rand.nextInt(3);
+        int num = rand.nextInt(30);
 
-        if (num == 0) {
+        if (num < 8) {
             return new WorldGenShrub(Blocks.LOG.getDefaultState().withProperty(BlockOldLog.VARIANT, BlockPlanks.EnumType.OAK),
                     Blocks.LEAVES.getDefaultState().withProperty(BlockOldLeaf.VARIANT, BlockPlanks.EnumType.OAK).withProperty(BlockLeaves.CHECK_DECAY, false));
+        } else if (num < 9) {
+            return new TBXLWorldGenJapaneseMapleTree(true);
+        } else if (num == 10) {
+            return new TBXLWorldGenPeachSakuraTree(true);
         }
 
         return TREE_FEATURE;

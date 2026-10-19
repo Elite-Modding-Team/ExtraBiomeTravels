@@ -3,6 +3,7 @@ package mod.emt.traverse.world.biome.sub;
 import java.util.Random;
 
 import mod.emt.traverse.init.TBXLBiomes;
+import mod.emt.traverse.world.feature.tree.TBXLWorldGenWattleTree;
 import net.minecraft.block.*;
 import net.minecraft.init.Biomes;
 import net.minecraft.init.Blocks;
@@ -43,7 +44,7 @@ public class TBXLBiomeWoodedRedDesert extends BiomeDesert {
         if (rand.nextInt(2) == 0) {
             return rand.nextBoolean() ? new WorldGenShrub(Blocks.LOG2.getDefaultState().withProperty(BlockNewLog.VARIANT, BlockPlanks.EnumType.ACACIA),
                     Blocks.LEAVES2.getDefaultState().withProperty(BlockNewLeaf.VARIANT, BlockPlanks.EnumType.ACACIA).withProperty(BlockLeaves.CHECK_DECAY, false))
-                    : TREE_FEATURE;
+                    : new TBXLWorldGenWattleTree();
         }
 
         return ACACIA_TREE_FEATURE;

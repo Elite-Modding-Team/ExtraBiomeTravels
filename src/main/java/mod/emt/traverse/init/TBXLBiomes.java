@@ -77,8 +77,8 @@ public class TBXLBiomes {
         registerSubBiome(WOODED_RED_DESERT, RED_DESERT, "wooded_red_desert", false, Type.DRY, Type.HILLS, Type.HOT, Type.SPARSE);
 
         // Biome Spawn: Makes them spawn on the world, apply multiple biome types if they are meant to spawn more commonly
-        registerBiomeSpawn(AUTUMNAL_GROVE, 226, BiomeType.COOL);
-        registerBiomeSpawn(AUTUMNAL_GROVE, 226, BiomeType.WARM);
+        registerBiomeSpawn(AUTUMNAL_GROVE, 4, BiomeType.COOL);
+        registerBiomeSpawn(AUTUMNAL_GROVE, 4, BiomeType.WARM);
         registerBiomeSpawn(AUTUMNAL_OAK_FOREST, 6, BiomeType.COOL);
         registerBiomeSpawn(AUTUMNAL_OAK_FOREST, 6, BiomeType.WARM);
         registerBiomeSpawn(CLIFFS, 3, BiomeType.COOL);

@@ -3,7 +3,9 @@ package mod.emt.traverse.world.biome;
 import java.util.Random;
 
 import mod.emt.traverse.init.TBXLBlocks;
+import mod.emt.traverse.world.feature.tree.TBXLWorldGenWattleTree;
 import net.minecraft.block.*;
+import net.minecraft.block.state.IBlockState;
 import net.minecraft.entity.passive.*;
 import net.minecraft.init.Blocks;
 import net.minecraft.util.math.BlockPos;
@@ -68,20 +70,23 @@ public class TBXLBiomeRedRockDrylands extends Biome {
         if (rand.nextInt(2) == 0) {
             return rand.nextBoolean() ? new WorldGenShrub(Blocks.LOG2.getDefaultState().withProperty(BlockNewLog.VARIANT, BlockPlanks.EnumType.ACACIA),
                     Blocks.LEAVES2.getDefaultState().withProperty(BlockNewLeaf.VARIANT, BlockPlanks.EnumType.ACACIA).withProperty(BlockLeaves.CHECK_DECAY, false))
-                    : TREE_FEATURE;
+                    : new TBXLWorldGenWattleTree();
         }
 
         return ACACIA_TREE_FEATURE;
     }
 
-    @Override
     public void genTerrainBlocks(@NotNull World world, @NotNull Random rand, @NotNull ChunkPrimer chunkPrimer, int x, int z, double noiseVal) {
-        if (noiseVal > 2.25D) {
-            this.topBlock = TBXLBlocks.red_rock.getDefaultState();
-            this.fillerBlock = TBXLBlocks.red_rock.getDefaultState();
-        } else if (noiseVal > 1.8D) {
-            this.topBlock = Blocks.SAND.getDefaultState().withProperty(BlockSand.VARIANT, BlockSand.EnumType.RED_SAND);
-            this.fillerBlock = Blocks.SAND.getDefaultState().withProperty(BlockSand.VARIANT, BlockSand.EnumType.RED_SAND);
+        IBlockState redRock = TBXLBlocks.red_rock.getDefaultState();
+        IBlockState redSand = Blocks.SAND.getDefaultState().withProperty(BlockSand.VARIANT, BlockSand.EnumType.RED_SAND);
+        IBlockState redSandstone = Blocks.RED_SANDSTONE.getDefaultState();
+
+        if (noiseVal > 2.0D) {
+            this.topBlock = redRock;
+            this.fillerBlock = redRock;
+        } else if (noiseVal > 1.0D) {
+            this.topBlock = redSand;
+            this.fillerBlock = redSandstone;
         } else {
             this.topBlock = Blocks.GRASS.getDefaultState();
             this.fillerBlock = Blocks.DIRT.getDefaultState();

@@ -166,8 +166,11 @@ public class TBXLWorldGenPeachSakuraTree extends WorldGenAbstractTree {
 
         for (int j = 0; j <= distance; ++j) {
             BlockPos blockpos = pos.add(0.5F + (float) j * xStep, 0.5F + (float) j * yStep, 0.5F + (float) j * zStep);
-            BlockLog.EnumAxis axis = this.getLogAxis(pos, blockpos);
-            this.setBlockAndNotifyAdequately(this.world, blockpos, this.woodState.withProperty(BlockLog.LOG_AXIS, axis));
+            IBlockState current = this.world.getBlockState(blockpos);
+            if (current.getBlock().isAir(current, this.world, blockpos) || current.getBlock().isLeaves(current, this.world, blockpos)) {
+                BlockLog.EnumAxis axis = this.getLogAxis(pos, blockpos);
+                this.setBlockAndNotifyAdequately(this.world, blockpos, this.woodState.withProperty(BlockLog.LOG_AXIS, axis));
+            }
         }
     }
 
@@ -270,10 +273,7 @@ public class TBXLWorldGenPeachSakuraTree extends WorldGenAbstractTree {
         this.world = world;
         this.basePos = position;
         this.rand = new Random(rand.nextLong());
-
-        if (this.heightLimit == 0) {
-            this.heightLimit = 8 + this.rand.nextInt(this.heightLimitLimit);
-        }
+        this.heightLimit = 8 + this.rand.nextInt(this.heightLimitLimit);
 
         if (!this.validTreeLocation()) {
             this.world = null;
@@ -291,20 +291,28 @@ public class TBXLWorldGenPeachSakuraTree extends WorldGenAbstractTree {
     private boolean validTreeLocation() {
         BlockPos down = this.basePos.down();
         IBlockState state = this.world.getBlockState(down);
-        boolean isSoil = state.getBlock().canSustainPlant(state, this.world, down, EnumFacing.UP, ((BlockSapling) Blocks.SAPLING));
+        boolean isSoil = state.getBlock().canSustainPlant(state, this.world, down, EnumFacing.UP, (BlockSapling) Blocks.SAPLING);
 
         if (!isSoil) {
             return false;
+        }
+
+        BlockPos min = this.basePos.add(-this.heightLimit, 0, -this.heightLimit);
+        BlockPos max = this.basePos.add(this.heightLimit, this.heightLimit, this.heightLimit);
+
+        if (!this.world.isAreaLoaded(min, max)) {
+            return false;
+        }
+
+        int obstruction = this.checkBlockLine(this.basePos, this.basePos.up(this.heightLimit - 1));
+
+        if (obstruction == -1) {
+            return true;
+        } else if (obstruction < 6) {
+            return false;
         } else {
-            int i = this.checkBlockLine(this.basePos, this.basePos.up(this.heightLimit - 1));
-            if (i == -1) {
-                return true;
-            } else if (i < 6) {
-                return false;
-            } else {
-                this.heightLimit = i;
-                return true;
-            }
+            this.heightLimit = obstruction;
+            return true;
         }
     }
 

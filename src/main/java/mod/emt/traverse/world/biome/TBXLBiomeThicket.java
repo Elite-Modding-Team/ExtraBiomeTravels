@@ -10,6 +10,8 @@ import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
 import net.minecraft.world.biome.Biome;
 import net.minecraft.world.chunk.ChunkPrimer;
+import net.minecraft.world.gen.feature.WorldGenAbstractTree;
+import net.minecraft.world.gen.feature.WorldGenCanopyTree;
 import net.minecraft.world.gen.feature.WorldGenShrub;
 import net.minecraftforge.event.terraingen.DecorateBiomeEvent;
 import net.minecraftforge.event.terraingen.TerrainGen;
@@ -36,10 +38,10 @@ public class TBXLBiomeThicket extends Biome {
 
     public TBXLBiomeThicket() {
         super(properties);
-        decorator.treesPerChunk = 35;
-        decorator.extraTreeChance = 4;
+        decorator.treesPerChunk = 20;
+        decorator.extraTreeChance = 0.05F;
         decorator.flowersPerChunk = 0;
-        decorator.grassPerChunk = 3;
+        decorator.grassPerChunk = 5;
 
         spawnableCreatureList.clear();
         spawnableCreatureList.add(new SpawnListEntry(EntitySheep.class, 4, 2, 4));
@@ -47,6 +49,15 @@ public class TBXLBiomeThicket extends Biome {
         spawnableCreatureList.add(new SpawnListEntry(EntityChicken.class, 3, 2, 4));
         spawnableCreatureList.add(new SpawnListEntry(EntityCow.class, 2, 2, 4));
         spawnableCreatureList.add(new SpawnListEntry(EntityRabbit.class, 1, 2, 7));
+    }
+
+    @Override
+    public @NotNull WorldGenAbstractTree getRandomTreeFeature(Random rand) {
+        if (rand.nextInt(10) == 0) {
+            return new WorldGenCanopyTree(false);
+        }
+
+        return TREE_FEATURE;
     }
 
     @Override
@@ -99,10 +110,12 @@ public class TBXLBiomeThicket extends Biome {
         }
 
         if (TerrainGen.decorate(world, rand, pos, DecorateBiomeEvent.Decorate.EventType.TREE)) {
-            int k6 = rand.nextInt(16) + 8;
-            int l = rand.nextInt(16) + 8;
-            BlockPos blockpos = world.getHeight(pos.add(k6, 0, l));
-            OAK_SHRUB_FEATURE.generate(world, rand, blockpos);
+            if (rand.nextInt(2) == 0) {
+                int x = rand.nextInt(16) + 8;
+                int z = rand.nextInt(16) + 8;
+                BlockPos shrubPos = world.getHeight(pos.add(x, 0, z));
+                OAK_SHRUB_FEATURE.generate(world, rand, shrubPos);
+            }
         }
 
         super.decorate(world, rand, pos);
