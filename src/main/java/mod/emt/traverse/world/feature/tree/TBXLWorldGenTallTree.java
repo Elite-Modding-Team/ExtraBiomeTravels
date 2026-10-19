@@ -7,6 +7,7 @@ import net.minecraft.init.Blocks;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
 import net.minecraft.world.gen.feature.WorldGenAbstractTree;
+import org.jetbrains.annotations.NotNull;
 
 public class TBXLWorldGenTallTree extends WorldGenAbstractTree {
     private final IBlockState stateWood;
@@ -20,7 +21,7 @@ public class TBXLWorldGenTallTree extends WorldGenAbstractTree {
         this.stateWood = stateWood;
     }
 
-    public boolean generate(World world, Random rand, BlockPos position) {
+    public boolean generate(@NotNull World world, Random rand, @NotNull BlockPos position) {
         int i = rand.nextInt(3) + 5;
 
         if (this.useExtraRandomHeight) {

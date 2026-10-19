@@ -16,8 +16,6 @@ import mod.emt.traverse.init.TBXLBlocks;
 import net.minecraft.world.gen.feature.WorldGenAbstractTree;
 import org.jetbrains.annotations.NotNull;
 
-// TODO: Leaves can spawn too far from the logs which will cause natural decay
-// TODO: Needs confirmation to see if this still happens
 // Majority of code is based on the large oak tree
 public class TBXLWorldGenJapaneseMapleTree extends WorldGenAbstractTree {
     public final boolean isWorldGen;
@@ -32,7 +30,7 @@ public class TBXLWorldGenJapaneseMapleTree extends WorldGenAbstractTree {
     double leafDensity = 0.65D;
     int trunkSize = 1;
     int heightLimitLimit = 12;
-    int leafDistanceLimit = 4;
+    int leafDistanceLimit = 5;
     List<FoliageCoordinates> foliageCoords;
 
     private final IBlockState woodState;
