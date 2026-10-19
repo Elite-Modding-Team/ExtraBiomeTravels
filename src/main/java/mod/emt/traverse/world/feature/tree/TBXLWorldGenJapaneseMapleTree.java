@@ -241,7 +241,7 @@ public class TBXLWorldGenJapaneseMapleTree extends WorldGenAbstractTree {
     }
 
     public void setDecorationDefaults() {
-        this.leafDistanceLimit = 4;
+        this.leafDistanceLimit = 5;
     }
 
     public boolean generate(@NotNull World world, Random rand, @NotNull BlockPos position) {
