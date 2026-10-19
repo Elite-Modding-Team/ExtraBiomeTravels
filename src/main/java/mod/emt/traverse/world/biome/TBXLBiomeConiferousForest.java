@@ -3,7 +3,9 @@ package mod.emt.traverse.world.biome;
 import java.util.Random;
 
 import mod.emt.traverse.world.feature.tree.TBXLWorldGenFirTree;
+import mod.emt.traverse.world.feature.tree.TBXLWorldGenFirTree2;
 import mod.emt.traverse.world.feature.tree.TBXLWorldGenHugeFirTree;
+import mod.emt.traverse.world.feature.tree.TBXLWorldGenHugeFirTree2;
 import net.minecraft.block.BlockDoublePlant;
 import net.minecraft.block.BlockTallGrass;
 import net.minecraft.entity.passive.EntityRabbit;
@@ -20,8 +22,10 @@ import net.minecraftforge.event.terraingen.TerrainGen;
 import org.jetbrains.annotations.NotNull;
 
 public class TBXLBiomeConiferousForest extends Biome {
-    protected static final TBXLWorldGenFirTree FIR_TREE_FEATURE = new TBXLWorldGenFirTree(true);
-    protected static final TBXLWorldGenHugeFirTree HUGE_FIR_TREE_FEATURE = new TBXLWorldGenHugeFirTree(true, true);
+    protected static final TBXLWorldGenFirTree2 DOUGLAS_FIR_TREE_FEATURE = new TBXLWorldGenFirTree2(true);
+    protected static final TBXLWorldGenHugeFirTree2 HUGE_DOUGLAS_FIR_TREE_FEATURE = new TBXLWorldGenHugeFirTree2(true);
+    protected static final TBXLWorldGenHugeFirTree HUGE_WHITE_FIR_TREE_FEATURE = new TBXLWorldGenHugeFirTree(true, true);
+    protected static final TBXLWorldGenFirTree WHITE_FIR_TREE_FEATURE = new TBXLWorldGenFirTree(true);
 
     public final boolean isSnowy;
 
@@ -29,7 +33,6 @@ public class TBXLBiomeConiferousForest extends Biome {
         super(getProperties(isSnowy));
         this.spawnableCreatureList.add(new Biome.SpawnListEntry(EntityWolf.class, 5, 4, 4));
         this.spawnableCreatureList.add(new Biome.SpawnListEntry(EntityRabbit.class, 3, 2, 3));
-
         this.decorator.treesPerChunk = 7;
         this.decorator.grassPerChunk = 9;
         this.decorator.mushroomsPerChunk = 2;
@@ -77,12 +80,18 @@ public class TBXLBiomeConiferousForest extends Biome {
     }
 
     @Override
-    public @NotNull WorldGenAbstractTree getRandomTreeFeature(Random rand) {
-        if (rand.nextInt(16) == 0) {
-            return HUGE_FIR_TREE_FEATURE;
+    public @NotNull WorldGenAbstractTree getRandomTreeFeature(@NotNull Random rand) {
+        if (isSnowy) {
+            if (rand.nextInt(5) != 0) {
+                return rand.nextInt(16) == 0 ? HUGE_WHITE_FIR_TREE_FEATURE : WHITE_FIR_TREE_FEATURE;
+            }
+            return rand.nextInt(16) == 0 ? HUGE_DOUGLAS_FIR_TREE_FEATURE : DOUGLAS_FIR_TREE_FEATURE;
         }
 
-        return FIR_TREE_FEATURE;
+        if (rand.nextInt(5) != 0) {
+            return rand.nextInt(16) == 0 ? HUGE_DOUGLAS_FIR_TREE_FEATURE : DOUGLAS_FIR_TREE_FEATURE;
+        }
+        return rand.nextInt(16) == 0 ? HUGE_WHITE_FIR_TREE_FEATURE : WHITE_FIR_TREE_FEATURE;
     }
 
     @Override
