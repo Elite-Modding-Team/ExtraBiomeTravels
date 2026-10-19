@@ -3,6 +3,7 @@ package mod.emt.traverse.world.feature.tree;
 import mod.emt.traverse.init.TBXLBlocks;
 import net.minecraft.block.BlockLeaves;
 import net.minecraft.block.BlockSapling;
+import net.minecraft.block.material.Material;
 import net.minecraft.block.state.IBlockState;
 import net.minecraft.init.Blocks;
 import net.minecraft.util.EnumFacing;
@@ -122,8 +123,8 @@ public class TBXLWorldGenFirTree extends WorldGenAbstractTree {
                         BlockPos upN = position.up(k4);
                         state = world.getBlockState(upN);
 
-                        if (state.getBlock().isAir(state, world, upN) || state.getBlock().isLeaves(state, world, upN)) {
-                            this.setBlockAndNotifyAdequately(world, position.up(k4), stateWood);
+                        if (state.getBlock().isAir(state, world, upN) || state.getBlock().isLeaves(state, world, upN) || state.getMaterial() == Material.VINE || state.getBlock().isReplaceable(world, upN)) {
+                            this.setBlockAndNotifyAdequately(world, upN, stateWood);
                         }
                     }
 

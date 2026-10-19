@@ -2,6 +2,7 @@ package mod.emt.traverse.world.feature.tree;
 
 import mod.emt.traverse.init.TBXLBlocks;
 import net.minecraft.block.BlockLeaves;
+import net.minecraft.block.material.Material;
 import net.minecraft.block.state.IBlockState;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
@@ -111,7 +112,7 @@ public class TBXLWorldGenHugeFirTree2 extends WorldGenHugeTrees {
 
     private void placeTrunkIfReplaceable(World world, BlockPos pos) {
         IBlockState state = world.getBlockState(pos);
-        if (state.getBlock().isAir(state, world, pos) || state.getBlock().isLeaves(state, world, pos) || state.getBlock().isReplaceable(world, pos)) {
+        if (state.getBlock().isAir(state, world, pos) || state.getBlock().isLeaves(state, world, pos) || state.getMaterial() == Material.VINE || state.getBlock().isReplaceable(world, pos)) {
             this.setBlockAndNotifyAdequately(world, pos, this.woodMetadata);
         }
     }
