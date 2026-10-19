@@ -129,9 +129,4 @@ public class TBXLBiomes {
     private static void registerBiomeSpawn(Biome biome, int biomeWeight, BiomeManager.BiomeType biomeType) {
         BiomeManager.addBiome(biomeType, new BiomeManager.BiomeEntry(biome, biomeWeight));
     }
-
-    //  TODO: Plans
-    //  More plants (have to list these soon)
-    //  Fancy falling leaves particles
-    //  Wasteland: Surface Fossils and Dead Trees
 }

@@ -6,3 +6,6 @@
 - **Tundra** - Flat plains with red grass, snow, spruce, fir, red oak, and brown oak trees
 - More sub-biomes maybe?
 - Beta inspired biomes?
+- More plants (have to list these soon)
+- Fancy falling leaves particles
+- Wasteland Update - Surface Fossils and Dead Trees
