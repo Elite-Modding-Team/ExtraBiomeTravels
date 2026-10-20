@@ -7,7 +7,7 @@ assignees: ''
 
 ---
 
-This is the repository of TraverseBiomesXL exclusively for 1.12.2 and is not affiliated with Traverse or ports of ExtrabiomesXL. Suggestions meant for these projects will immediately be closed and marked as invalid.
+This is the repository of Extra Biome Travels exclusively for 1.12.2 and is not affiliated with Traverse or ports of ExtrabiomesXL. Suggestions meant for these projects will immediately be closed and marked as invalid.
 
 Note that before making a suggestion, the following will not be taken into consideration:
 
