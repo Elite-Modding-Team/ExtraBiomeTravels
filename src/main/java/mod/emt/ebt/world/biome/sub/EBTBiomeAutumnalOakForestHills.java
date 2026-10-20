@@ -13,7 +13,7 @@ import net.minecraft.world.gen.feature.WorldGenAbstractTree;
 import org.jetbrains.annotations.NotNull;
 
 public class EBTBiomeAutumnalOakForestHills extends Biome {
-    public static Biome.BiomeProperties properties = new Biome.BiomeProperties("Autumnal Wooded Hills");
+    public static Biome.BiomeProperties properties = new Biome.BiomeProperties("Autumnal Oak Forest Hills");
 
     static {
         properties.setTemperature(Biomes.FOREST_HILLS.getDefaultTemperature());

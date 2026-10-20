@@ -41,6 +41,10 @@ public class EBTConfig {
         public int weightConiferousForest = 4;
 
         @Config.RequiresMcRestart
+        @Config.Name("Biome Weight: Cypress Forest")
+        public int weightCypressForest = 3;
+
+        @Config.RequiresMcRestart
         @Config.Name("Biome Weight: Cypress Swamp")
         public int weightCypressSwamp = 4;
 

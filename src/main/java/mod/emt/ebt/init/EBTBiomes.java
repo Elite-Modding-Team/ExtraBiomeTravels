@@ -23,6 +23,8 @@ public class EBTBiomes {
     public static Biome AUTUMNAL_OAK_FOREST_HILLS = new EBTBiomeAutumnalOakForestHills();
     public static Biome CLIFFS = new EBTBiomeCliffs();
     public static Biome CONIFEROUS_FOREST = new EBTBiomeConiferousForest(false);
+    public static Biome CYPRESS_FOREST = new EBTBiomeCypressForest();
+    public static Biome CYPRESS_FOREST_HILLS = new EBTBiomeCypressForestHills();
     public static Biome CYPRESS_SWAMP = new EBTBiomeCypressSwamp();
     public static Biome FLATLANDS = new EBTBiomeFlatlands();
     public static Biome GLACIER = new EBTBiomeGlacier(false);
@@ -51,6 +53,7 @@ public class EBTBiomes {
         registerBiome(AUTUMNAL_OAK_FOREST, "autumnal_oak_forest", false, Type.DENSE, Type.FOREST);
         registerBiome(CLIFFS, "cliffs", false, Type.COLD, Type.HILLS, Type.MOUNTAIN, Type.SNOWY);
         registerBiome(CONIFEROUS_FOREST, "coniferous_forest", false, Type.COLD, Type.CONIFEROUS, Type.FOREST);
+        registerBiome(CYPRESS_FOREST, "cypress_forest", false, Type.DENSE, Type.FOREST);
         registerBiome(CYPRESS_SWAMP, "cypress_swamp", false, Type.LUSH, Type.WET, Type.SWAMP);
         registerBiome(FLATLANDS, "flatlands", true, Type.LUSH, Type.PLAINS, Type.WET);
         registerBiome(GLACIER, "glacier", false, Type.COLD, Type.HILLS, Type.MOUNTAIN, Type.SNOWY);
@@ -71,6 +74,7 @@ public class EBTBiomes {
 
         // Sub-Biomes: These are never registered to biome spawns!
         registerSubBiome(AUTUMNAL_OAK_FOREST_HILLS, AUTUMNAL_OAK_FOREST, "autumnal_oak_forest_hills", false, Type.DENSE, Type.FOREST, Type.HILLS);
+        registerSubBiome(CYPRESS_FOREST_HILLS, CYPRESS_FOREST, "cypress_forest_hills", false, Type.DENSE, Type.FOREST, Type.HILLS);
         registerSubBiome(GLACIER_SPIKES, GLACIER, "glacier_spikes", false, Type.COLD, Type.HILLS, Type.MOUNTAIN, Type.SNOWY);
         registerSubBiome(PRAIRIE_SHRUBLANDS, PRAIRIE, "prairie_shrublands", true, Type.DRY, Type.HOT, Type.PLAINS, Type.SAVANNA, Type.SPARSE);
         registerSubBiome(WOODED_RED_DESERT, RED_DESERT, "wooded_red_desert", true, Type.DRY, Type.HILLS, Type.HOT, Type.SANDY, Type.SPARSE);
@@ -83,6 +87,8 @@ public class EBTBiomes {
         registerBiomeSpawn(CLIFFS, EBTConfig.BIOMES.weightCliffs, BiomeType.COOL);
         registerBiomeSpawn(CLIFFS, EBTConfig.BIOMES.weightCliffs, BiomeType.WARM);
         registerBiomeSpawn(CONIFEROUS_FOREST, EBTConfig.BIOMES.weightConiferousForest, BiomeType.COOL);
+        registerBiomeSpawn(CYPRESS_FOREST, EBTConfig.BIOMES.weightCypressForest, BiomeType.COOL);
+        registerBiomeSpawn(CYPRESS_FOREST, EBTConfig.BIOMES.weightCypressForest, BiomeType.WARM);
         registerBiomeSpawn(CYPRESS_SWAMP, EBTConfig.BIOMES.weightCypressSwamp, BiomeType.WARM);
         registerBiomeSpawn(FLATLANDS, EBTConfig.BIOMES.weightFlatlands, BiomeType.COOL);
         registerBiomeSpawn(FLATLANDS, EBTConfig.BIOMES.weightFlatlands, BiomeType.WARM);

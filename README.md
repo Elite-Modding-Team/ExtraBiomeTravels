@@ -19,6 +19,7 @@ The mod also features its own content with additional biomes on the way to make 
 - **Autumnal Oak Forest**
 - **Cliffs**
 - **Coniferous Forest**
+- **Cypress Forest**
 - **Cypress Swampland**
 - **Flatlands**
 - **Glacier**
@@ -38,6 +39,7 @@ The mod also features its own content with additional biomes on the way to make 
 
 #### Sub-Biomes
 - **Autumnal Oak Forest Hills**
+- **Cypress Forest Hills**
 - **Glacier Spikes**
 - **Prairie Shrublands**
 - **Wooded Red Desert**
