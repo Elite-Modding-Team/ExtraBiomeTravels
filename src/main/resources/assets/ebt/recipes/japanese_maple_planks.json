@@ -1,0 +1,12 @@
+{
+  "type": "forge:ore_shapeless",
+  "ingredients": [
+    {
+      "item": "ebt:japanese_maple_log"
+    }
+  ],
+  "result": {
+    "item": "ebt:japanese_maple_planks",
+    "count": 4
+  }
+}

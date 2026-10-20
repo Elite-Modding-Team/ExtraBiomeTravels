@@ -1,0 +1,17 @@
+{
+  "type": "forge:ore_shaped",
+  "pattern": [
+    "X  ",
+    "XX ",
+    "XXX"
+  ],
+  "key": {
+    "X": {
+      "item": "ebt:scalewood_planks"
+    }
+  },
+  "result": {
+    "item": "ebt:scalewood_stairs",
+    "count": 4
+  }
+}

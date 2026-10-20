@@ -1,0 +1,15 @@
+{
+  "type": "forge:ore_shapeless",
+  "ingredients": [
+    {
+      "item": "minecraft:stone_button"
+    },
+    {
+      "item": "ebt:red_rock"
+    }
+  ],
+  "result": {
+    "item": "ebt:red_rock_button",
+    "count": 1
+  }
+}

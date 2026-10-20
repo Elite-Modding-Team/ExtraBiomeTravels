@@ -1,0 +1,12 @@
+{
+  "type": "forge:ore_shapeless",
+  "ingredients": [
+    {
+      "item": "ebt:wattle_log"
+    }
+  ],
+  "result": {
+    "item": "ebt:wattle_planks",
+    "count": 4
+  }
+}

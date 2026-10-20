@@ -1,0 +1,17 @@
+{
+  "type": "forge:ore_shaped",
+  "pattern": [
+    "X  ",
+    "XX ",
+    "XXX"
+  ],
+  "key": {
+    "X": {
+      "item": "ebt:autumnal_planks"
+    }
+  },
+  "result": {
+    "item": "ebt:autumnal_stairs",
+    "count": 4
+  }
+}

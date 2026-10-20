@@ -1,0 +1,12 @@
+{
+  "type": "forge:ore_shapeless",
+  "ingredients": [
+    {
+      "item": "ebt:rainbow_eucalyptus_log"
+    }
+  ],
+  "result": {
+    "item": "ebt:rainbow_eucalyptus_planks",
+    "count": 4
+  }
+}

@@ -1,0 +1,20 @@
+{
+  "type": "forge:ore_shaped",
+  "pattern": [
+    "X*X",
+    "X*X"
+  ],
+  "key": {
+    "X": {
+      "item": "ebt:bald_cypress_planks"
+    },
+    "*": {
+      "type": "forge:ore_dict",
+      "ore": "stickWood"
+    }
+  },
+  "result": {
+    "item": "ebt:bald_cypress_fence",
+    "count": 3
+  }
+}

@@ -1,0 +1,16 @@
+{
+  "type": "forge:ore_shaped",
+  "pattern": [
+    "XXX"
+  ],
+  "key": {
+    "X": {
+      "item": "ebt:cypress_planks"
+    }
+  },
+  "result": {
+    "item": "ebt:cypress_slab",
+    "data": 0,
+    "count": 6
+  }
+}

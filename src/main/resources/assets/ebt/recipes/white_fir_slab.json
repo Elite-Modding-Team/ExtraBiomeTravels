@@ -1,0 +1,16 @@
+{
+  "type": "forge:ore_shaped",
+  "pattern": [
+    "XXX"
+  ],
+  "key": {
+    "X": {
+      "item": "ebt:white_fir_planks"
+    }
+  },
+  "result": {
+    "item": "ebt:white_fir_slab",
+    "data": 0,
+    "count": 6
+  }
+}

@@ -1,0 +1,127 @@
+package mod.emt.ebt.world.biome;
+
+import mod.emt.ebt.world.feature.tree.EBTWorldGenJapaneseMapleTree;
+import mod.emt.ebt.world.feature.tree.EBTWorldGenPeachSakuraTree;
+import mod.emt.ebt.world.feature.tree.EBTWorldGenSimpleFallenTree;
+import net.minecraft.block.*;
+import net.minecraft.entity.passive.EntityWolf;
+import net.minecraft.init.Blocks;
+import net.minecraft.util.math.BlockPos;
+import net.minecraft.world.World;
+import net.minecraft.world.biome.Biome;
+import net.minecraft.world.gen.feature.WorldGenAbstractTree;
+import net.minecraft.world.gen.feature.WorldGenShrub;
+import net.minecraftforge.event.terraingen.DecorateBiomeEvent;
+import net.minecraftforge.event.terraingen.TerrainGen;
+import org.jetbrains.annotations.NotNull;
+
+import java.util.Random;
+
+@SuppressWarnings("deprecation")
+public class EBTBiomeWoodlands extends Biome {
+    EBTWorldGenSimpleFallenTree SIMPLE_OAK_FALLEN_TREE_FEATURE = new EBTWorldGenSimpleFallenTree(false);
+
+    public static BiomeProperties properties = new BiomeProperties("Woodlands");
+
+    static {
+        properties.setTemperature(0.8F);
+        properties.setRainfall(0.4F);
+        properties.setBaseHeight(0.15F);
+        properties.setHeightVariation(0.05F);
+    }
+
+    public EBTBiomeWoodlands() {
+        super(properties);
+        this.spawnableCreatureList.add(new SpawnListEntry(EntityWolf.class, 4, 4, 4));
+
+        this.decorator.treesPerChunk = 4;
+        this.decorator.flowersPerChunk = 6;
+        this.decorator.grassPerChunk = 16;
+
+        this.flowers.clear();
+        for (BlockFlower.EnumFlowerType type : BlockFlower.EnumFlowerType.values()) {
+            if (type.getBlockType() == BlockFlower.EnumFlowerColor.YELLOW) {
+                continue;
+            }
+
+            if (type == BlockFlower.EnumFlowerType.BLUE_ORCHID) {
+                type = BlockFlower.EnumFlowerType.POPPY;
+            }
+
+            addFlower(Blocks.RED_FLOWER.getDefaultState().withProperty(Blocks.RED_FLOWER.getTypeProperty(), type), 10);
+        }
+    }
+
+    @Override
+    public BlockFlower.@NotNull EnumFlowerType pickRandomFlower(@NotNull Random rand, BlockPos pos) {
+        double d0 = GRASS_COLOR_NOISE.getValue((double) pos.getX() / 200.0D, (double) pos.getZ() / 200.0D);
+
+        if (d0 < -0.8D) {
+            int j = rand.nextInt(4);
+
+            switch (j) {
+                case 0:
+                    return BlockFlower.EnumFlowerType.ORANGE_TULIP;
+                case 1:
+                    return BlockFlower.EnumFlowerType.RED_TULIP;
+                case 2:
+                    return BlockFlower.EnumFlowerType.PINK_TULIP;
+                case 3:
+                default:
+                    return BlockFlower.EnumFlowerType.WHITE_TULIP;
+            }
+        } else if (rand.nextInt(3) > 0) {
+            int i = rand.nextInt(3);
+            return i == 0 ? BlockFlower.EnumFlowerType.POPPY : (i == 1 ? BlockFlower.EnumFlowerType.HOUSTONIA : BlockFlower.EnumFlowerType.OXEYE_DAISY);
+        } else {
+            return BlockFlower.EnumFlowerType.DANDELION;
+        }
+    }
+
+    @Override
+    public @NotNull WorldGenAbstractTree getRandomTreeFeature(Random rand) {
+        int num = rand.nextInt(30);
+
+        if (num < 8) {
+            return new WorldGenShrub(Blocks.LOG.getDefaultState().withProperty(BlockOldLog.VARIANT, BlockPlanks.EnumType.OAK),
+                    Blocks.LEAVES.getDefaultState().withProperty(BlockOldLeaf.VARIANT, BlockPlanks.EnumType.OAK).withProperty(BlockLeaves.CHECK_DECAY, false));
+        } else if (num < 9) {
+            return new EBTWorldGenJapaneseMapleTree(true);
+        } else if (num == 10) {
+            return new EBTWorldGenPeachSakuraTree(true);
+        }
+
+        return TREE_FEATURE;
+    }
+
+    @Override
+    public void decorate(@NotNull World world, @NotNull Random rand, @NotNull BlockPos pos) {
+        if (TerrainGen.decorate(world, rand, pos, DecorateBiomeEvent.Decorate.EventType.TREE)) {
+            int genChance = rand.nextInt(5);
+
+            if (genChance == 0) {
+                int k6 = rand.nextInt(16) + 8;
+                int l = rand.nextInt(16) + 8;
+                BlockPos blockpos = world.getHeight(pos.add(k6, 0, l));
+                SIMPLE_OAK_FALLEN_TREE_FEATURE.generate(world, rand, blockpos);
+            }
+        }
+
+        super.decorate(world, rand, pos);
+    }
+
+    @Override
+    public int getSkyColorByTemp(float currentTemperature) {
+        return 0xFF88B4E1;
+    }
+
+    @Override
+    public int getModdedBiomeGrassColor(int original) {
+        return super.getModdedBiomeGrassColor(0xFF99A955);
+    }
+
+    @Override
+    public int getModdedBiomeFoliageColor(int original) {
+        return super.getModdedBiomeFoliageColor(0xFF849E4A);
+    }
+}

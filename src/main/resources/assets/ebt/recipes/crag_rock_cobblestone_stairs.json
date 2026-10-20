@@ -1,0 +1,17 @@
+{
+  "type": "forge:ore_shaped",
+  "pattern": [
+    "X  ",
+    "XX ",
+    "XXX"
+  ],
+  "key": {
+    "X": {
+      "item": "ebt:crag_rock_cobblestone"
+    }
+  },
+  "result": {
+    "item": "ebt:crag_rock_cobblestone_stairs",
+    "count": 4
+  }
+}

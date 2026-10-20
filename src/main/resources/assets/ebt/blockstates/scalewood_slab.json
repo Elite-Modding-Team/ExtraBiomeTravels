@@ -1,0 +1,23 @@
+{
+  "forge_marker": 1,
+  "defaults": {
+    "model": "cube_all",
+    "textures": {
+      "particle": "ebt:blocks/scalewood_planks",
+      "bottom": "ebt:blocks/scalewood_planks",
+      "top": "ebt:blocks/scalewood_planks",
+      "side": "ebt:blocks/scalewood_planks"
+    }
+  },
+  "variants": {
+    "half=bottom,variant=default": {
+      "model": "half_slab"
+    },
+    "half=top,variant=default": {
+      "model": "upper_slab"
+    },
+    "normal": {
+      "model": "half_slab"
+    }
+  }
+}

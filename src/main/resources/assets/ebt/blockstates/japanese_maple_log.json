@@ -1,0 +1,38 @@
+{
+  "forge_marker": 1,
+  "defaults": {
+    "model": "cube_column",
+    "textures": {
+      "end": "ebt:blocks/japanese_maple_log_top",
+      "side": "ebt:blocks/japanese_maple_log_side"
+    }
+  },
+  "variants": {
+    "normal": [
+      {}
+    ],
+    "inventory": [
+      {
+        "transform": "forge:default-block"
+      }
+    ],
+    "axis=x": {
+      "model": "cube_column",
+      "x": 90,
+      "y": 90
+    },
+    "axis=y": {
+      "model": "cube_column"
+    },
+    "axis=z": {
+      "model": "cube_column",
+      "x": 90
+    },
+    "axis=none": {
+      "model": "cube_all",
+      "textures": {
+        "all": "ebt:blocks/japanese_maple_log_side"
+      }
+    }
+  }
+}

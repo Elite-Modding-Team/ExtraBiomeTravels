@@ -1,0 +1,410 @@
+package mod.emt.ebt.init;
+
+import mod.emt.ebt.block.*;
+import mod.emt.ebt.block.EBTBlockSapling.EnumWoodType;
+import net.minecraft.block.Block;
+import net.minecraft.block.SoundType;
+import net.minecraft.block.material.MapColor;
+import net.minecraft.block.material.Material;
+
+import java.util.ArrayList;
+import java.util.List;
+
+public class EBTBlocks {
+    public static EBTBlockLeaves citrine_autumnal_leaves = null;
+    public static EBTBlockLeaves goldenrod_autumnal_leaves = null;
+    public static EBTBlockLeaves umber_autumnal_leaves = null;
+    public static EBTBlockLeaves vermillion_autumnal_leaves = null;
+    public static EBTBlockLeaves brown_autumnal_oak_leaves = null;
+    public static EBTBlockLeaves green_autumnal_oak_leaves = null;
+    public static EBTBlockLeaves orange_autumnal_oak_leaves = null;
+    public static EBTBlockLeaves purple_autumnal_oak_leaves = null;
+    public static EBTBlockLeaves red_autumnal_oak_leaves = null;
+    public static EBTBlockLeaves yellow_autumnal_oak_leaves = null;
+    public static EBTBlockLeaves bald_cypress_leaves = null;
+    public static EBTBlockLeaves cypress_leaves = null;
+    public static EBTBlockLeaves douglas_fir_leaves = null;
+    public static EBTBlockLeaves japanese_maple_leaves = null;
+    public static EBTBlockLeaves japanese_maple_shrub_leaves = null;
+    public static EBTBlockLeaves peach_sakura_leaves = null;
+    public static EBTBlockLeaves rainbow_eucalyptus_leaves = null;
+    public static EBTBlockLeaves scalewood_leaves = null;
+    public static EBTBlockLeaves wattle_leaves = null;
+    public static EBTBlockLeaves white_fir_leaves = null;
+
+    public static EBTBlockButtonWood autumnal_button = null;
+    public static EBTBlockDoorWood autumnal_door = null;
+    public static EBTBlockFenceGateWood autumnal_fence_gate = null;
+    public static EBTBlockFenceWood autumnal_fence = null;
+    public static EBTBlockLog autumnal_log = null;
+    public static EBTBlockPlanks autumnal_planks = null;
+    public static EBTBlockPressurePlateWood autumnal_pressure_plate = null;
+    public static EBTBlockSlab.Double autumnal_slab_double = null;
+    public static EBTBlockSlab.Half autumnal_slab = null;
+    public static EBTBlockStairs autumnal_stairs = null;
+    public static EBTBlockTrapdoorWood autumnal_trapdoor = null;
+
+    public static EBTBlockButtonWood bald_cypress_button = null;
+    public static EBTBlockDoorWood bald_cypress_door = null;
+    public static EBTBlockFenceGateWood bald_cypress_fence_gate = null;
+    public static EBTBlockFenceWood bald_cypress_fence = null;
+    public static EBTBlockLog bald_cypress_log = null;
+    public static EBTBlockPlanks bald_cypress_planks = null;
+    public static EBTBlockPressurePlateWood bald_cypress_pressure_plate = null;
+    public static EBTBlockSlab.Double bald_cypress_slab_double = null;
+    public static EBTBlockSlab.Half bald_cypress_slab = null;
+    public static EBTBlockStairs bald_cypress_stairs = null;
+    public static EBTBlockTrapdoorWood bald_cypress_trapdoor = null;
+
+    public static EBTBlockButtonWood cypress_button = null;
+    public static EBTBlockDoorWood cypress_door = null;
+    public static EBTBlockFenceGateWood cypress_fence_gate = null;
+    public static EBTBlockFenceWood cypress_fence = null;
+    public static EBTBlockLog cypress_log = null;
+    public static EBTBlockPlanks cypress_planks = null;
+    public static EBTBlockPressurePlateWood cypress_pressure_plate = null;
+    public static EBTBlockSlab.Double cypress_slab_double = null;
+    public static EBTBlockSlab.Half cypress_slab = null;
+    public static EBTBlockStairs cypress_stairs = null;
+    public static EBTBlockTrapdoorWood cypress_trapdoor = null;
+
+    public static EBTBlockButtonWood douglas_fir_button = null;
+    public static EBTBlockDoorWood douglas_fir_door = null;
+    public static EBTBlockFenceGateWood douglas_fir_fence_gate = null;
+    public static EBTBlockFenceWood douglas_fir_fence = null;
+    public static EBTBlockLog douglas_fir_log = null;
+    public static EBTBlockPlanks douglas_fir_planks = null;
+    public static EBTBlockPressurePlateWood douglas_fir_pressure_plate = null;
+    public static EBTBlockSlab.Double douglas_fir_slab_double = null;
+    public static EBTBlockSlab.Half douglas_fir_slab = null;
+    public static EBTBlockStairs douglas_fir_stairs = null;
+    public static EBTBlockTrapdoorWood douglas_fir_trapdoor = null;
+
+    public static EBTBlockButtonWood japanese_maple_button = null;
+    public static EBTBlockDoorWood japanese_maple_door = null;
+    public static EBTBlockFenceGateWood japanese_maple_fence_gate = null;
+    public static EBTBlockFenceWood japanese_maple_fence = null;
+    public static EBTBlockLog japanese_maple_log = null;
+    public static EBTBlockPlanks japanese_maple_planks = null;
+    public static EBTBlockPressurePlateWood japanese_maple_pressure_plate = null;
+    public static EBTBlockSlab.Double japanese_maple_slab_double = null;
+    public static EBTBlockSlab.Half japanese_maple_slab = null;
+    public static EBTBlockStairs japanese_maple_stairs = null;
+    public static EBTBlockTrapdoorWood japanese_maple_trapdoor = null;
+
+    public static EBTBlockButtonWood peach_sakura_button = null;
+    public static EBTBlockDoorWood peach_sakura_door = null;
+    public static EBTBlockFenceGateWood peach_sakura_fence_gate = null;
+    public static EBTBlockFenceWood peach_sakura_fence = null;
+    public static EBTBlockMiniLog peach_sakura_log = null;
+    public static EBTBlockPlanks peach_sakura_planks = null;
+    public static EBTBlockPressurePlateWood peach_sakura_pressure_plate = null;
+    public static EBTBlockSlab.Double peach_sakura_slab_double = null;
+    public static EBTBlockSlab.Half peach_sakura_slab = null;
+    public static EBTBlockStairs peach_sakura_stairs = null;
+    public static EBTBlockTrapdoorWood peach_sakura_trapdoor = null;
+
+    public static EBTBlockButtonWood rainbow_eucalyptus_button = null;
+    public static EBTBlockDoorWood rainbow_eucalyptus_door = null;
+    public static EBTBlockFenceGateWood rainbow_eucalyptus_fence_gate = null;
+    public static EBTBlockFenceWood rainbow_eucalyptus_fence = null;
+    public static EBTBlockLog rainbow_eucalyptus_log = null;
+    public static EBTBlockPlanks rainbow_eucalyptus_planks = null;
+    public static EBTBlockPressurePlateWood rainbow_eucalyptus_pressure_plate = null;
+    public static EBTBlockSlab.Double rainbow_eucalyptus_slab_double = null;
+    public static EBTBlockSlab.Half rainbow_eucalyptus_slab = null;
+    public static EBTBlockStairs rainbow_eucalyptus_stairs = null;
+    public static EBTBlockTrapdoorWood rainbow_eucalyptus_trapdoor = null;
+
+    public static EBTBlockButtonWood scalewood_button = null;
+    public static EBTBlockDoorWood scalewood_door = null;
+    public static EBTBlockFenceGateWood scalewood_fence_gate = null;
+    public static EBTBlockFenceWood scalewood_fence = null;
+    public static EBTBlockLog scalewood_log = null;
+    public static EBTBlockPlanks scalewood_planks = null;
+    public static EBTBlockPressurePlateWood scalewood_pressure_plate = null;
+    public static EBTBlockSlab.Double scalewood_slab_double = null;
+    public static EBTBlockSlab.Half scalewood_slab = null;
+    public static EBTBlockStairs scalewood_stairs = null;
+    public static EBTBlockTrapdoorWood scalewood_trapdoor = null;
+
+    public static EBTBlockButtonWood wattle_button = null;
+    public static EBTBlockDoorWood wattle_door = null;
+    public static EBTBlockFenceGateWood wattle_fence_gate = null;
+    public static EBTBlockFenceWood wattle_fence = null;
+    public static EBTBlockLog wattle_log = null;
+    public static EBTBlockPlanks wattle_planks = null;
+    public static EBTBlockPressurePlateWood wattle_pressure_plate = null;
+    public static EBTBlockSlab.Double wattle_slab_double = null;
+    public static EBTBlockSlab.Half wattle_slab = null;
+    public static EBTBlockStairs wattle_stairs = null;
+    public static EBTBlockTrapdoorWood wattle_trapdoor = null;
+
+    public static EBTBlockButtonWood white_fir_button = null;
+    public static EBTBlockDoorWood white_fir_door = null;
+    public static EBTBlockFenceGateWood white_fir_fence_gate = null;
+    public static EBTBlockFenceWood white_fir_fence = null;
+    public static EBTBlockLog white_fir_log = null;
+    public static EBTBlockPlanks white_fir_planks = null;
+    public static EBTBlockPressurePlateWood white_fir_pressure_plate = null;
+    public static EBTBlockSlab.Double white_fir_slab_double = null;
+    public static EBTBlockSlab.Half white_fir_slab = null;
+    public static EBTBlockStairs white_fir_stairs = null;
+    public static EBTBlockTrapdoorWood white_fir_trapdoor = null;
+
+    public static EBTBlockSapling citrine_autumnal_sapling = null;
+    public static EBTBlockSapling goldenrod_autumnal_sapling = null;
+    public static EBTBlockSapling umber_autumnal_sapling = null;
+    public static EBTBlockSapling vermillion_autumnal_sapling = null;
+    public static EBTBlockSapling brown_autumnal_oak_sapling = null;
+    public static EBTBlockSapling green_autumnal_oak_sapling = null;
+    public static EBTBlockSapling orange_autumnal_oak_sapling = null;
+    public static EBTBlockSapling purple_autumnal_oak_sapling = null;
+    public static EBTBlockSapling red_autumnal_oak_sapling = null;
+    public static EBTBlockSapling yellow_autumnal_oak_sapling = null;
+    public static EBTBlockSapling bald_cypress_sapling = null;
+    public static EBTBlockSapling cypress_sapling = null;
+    public static EBTBlockSapling douglas_fir_sapling = null;
+    public static EBTBlockSapling japanese_maple_sapling = null;
+    public static EBTBlockSapling japanese_maple_shrub_sapling = null;
+    public static EBTBlockSapling peach_sakura_sapling = null;
+    public static EBTBlockSapling rainbow_eucalyptus_sapling = null;
+    public static EBTBlockSapling scalewood_sapling = null;
+    public static EBTBlockSapling wattle_sapling = null;
+    public static EBTBlockSapling white_fir_sapling = null;
+
+    public static EBTBlockMaterial cracked_sand = null;
+    public static EBTBlockMaterial crag_rock = null;
+    public static EBTBlockButtonStone crag_rock_button = null;
+    public static EBTBlockSlab.Double crag_rock_slab_double = null;
+    public static EBTBlockSlab.Half crag_rock_slab = null;
+    public static EBTBlockStairs crag_rock_stairs = null;
+    public static EBTBlockWall crag_rock_wall = null;
+    public static EBTBlockMaterial crag_rock_bricks = null;
+    public static EBTBlockPressurePlateStone crag_rock_pressure_plate = null;
+    public static EBTBlockSlab.Double crag_rock_bricks_slab_double = null;
+    public static EBTBlockSlab.Half crag_rock_bricks_slab = null;
+    public static EBTBlockStairs crag_rock_bricks_stairs = null;
+    public static EBTBlockWall crag_rock_bricks_wall = null;
+    public static EBTBlockMaterial crag_rock_cobblestone = null;
+    public static EBTBlockSlab.Double crag_rock_cobblestone_slab_double = null;
+    public static EBTBlockSlab.Half crag_rock_cobblestone_slab = null;
+    public static EBTBlockStairs crag_rock_cobblestone_stairs = null;
+    public static EBTBlockWall crag_rock_cobblestone_wall = null;
+    public static EBTBlockMaterial red_rock = null;
+    public static EBTBlockButtonStone red_rock_button = null;
+    public static EBTBlockSlab.Double red_rock_slab_double = null;
+    public static EBTBlockSlab.Half red_rock_slab = null;
+    public static EBTBlockStairs red_rock_stairs = null;
+    public static EBTBlockWall red_rock_wall = null;
+    public static EBTBlockMaterial red_rock_bricks = null;
+    public static EBTBlockPressurePlateStone red_rock_pressure_plate = null;
+    public static EBTBlockSlab.Double red_rock_bricks_slab_double = null;
+    public static EBTBlockSlab.Half red_rock_bricks_slab = null;
+    public static EBTBlockStairs red_rock_bricks_stairs = null;
+    public static EBTBlockWall red_rock_bricks_wall = null;
+    public static EBTBlockMaterial red_rock_cobblestone = null;
+    public static EBTBlockSlab.Double red_rock_cobblestone_slab_double = null;
+    public static EBTBlockSlab.Half red_rock_cobblestone_slab = null;
+    public static EBTBlockStairs red_rock_cobblestone_stairs = null;
+    public static EBTBlockWall red_rock_cobblestone_wall = null;
+
+    public static final List<Block> MOD_BLOCKS = new ArrayList<>();
+
+    public static void initBlocks() {
+        MOD_BLOCKS.add(citrine_autumnal_leaves = new EBTBlockLeaves("citrine_autumnal_leaves", MapColor.FOLIAGE, true, 20, 4));
+        MOD_BLOCKS.add(goldenrod_autumnal_leaves = new EBTBlockLeaves("goldenrod_autumnal_leaves", MapColor.FOLIAGE, true, 20, 4));
+        MOD_BLOCKS.add(umber_autumnal_leaves = new EBTBlockLeaves("umber_autumnal_leaves", MapColor.FOLIAGE, true, 20, 4));
+        MOD_BLOCKS.add(vermillion_autumnal_leaves = new EBTBlockLeaves("vermillion_autumnal_leaves", MapColor.FOLIAGE, true, 20, 4));
+        MOD_BLOCKS.add(brown_autumnal_oak_leaves = new EBTBlockLeaves("brown_autumnal_oak_leaves", MapColor.BROWN_STAINED_HARDENED_CLAY, true, 20, 4));
+        MOD_BLOCKS.add(green_autumnal_oak_leaves = new EBTBlockLeaves("green_autumnal_oak_leaves", MapColor.LIME_STAINED_HARDENED_CLAY, true, 20, 4));
+        MOD_BLOCKS.add(orange_autumnal_oak_leaves = new EBTBlockLeaves("orange_autumnal_oak_leaves", MapColor.ORANGE_STAINED_HARDENED_CLAY, true, 20, 4));
+        MOD_BLOCKS.add(purple_autumnal_oak_leaves = new EBTBlockLeaves("purple_autumnal_oak_leaves", MapColor.PURPLE_STAINED_HARDENED_CLAY, true, 20, 4));
+        MOD_BLOCKS.add(red_autumnal_oak_leaves = new EBTBlockLeaves("red_autumnal_oak_leaves", MapColor.RED_STAINED_HARDENED_CLAY, true, 20, 4));
+        MOD_BLOCKS.add(yellow_autumnal_oak_leaves = new EBTBlockLeaves("yellow_autumnal_oak_leaves", MapColor.YELLOW_STAINED_HARDENED_CLAY, true, 20, 4));
+        MOD_BLOCKS.add(bald_cypress_leaves = new EBTBlockLeaves("bald_cypress_leaves", MapColor.FOLIAGE, true, 20, 6));
+        MOD_BLOCKS.add(cypress_leaves = new EBTBlockLeaves("cypress_leaves", MapColor.FOLIAGE, true, 20, 6));
+        MOD_BLOCKS.add(douglas_fir_leaves = new EBTBlockLeaves("douglas_fir_leaves", MapColor.FOLIAGE, true, 20, 6));
+        MOD_BLOCKS.add(japanese_maple_leaves = new EBTBlockLeaves("japanese_maple_leaves", MapColor.FOLIAGE, true, 20, 6));
+        MOD_BLOCKS.add(japanese_maple_shrub_leaves = new EBTBlockLeaves("japanese_maple_shrub_leaves", MapColor.FOLIAGE, true, 20, 6));
+        MOD_BLOCKS.add(peach_sakura_leaves = new EBTBlockLeaves("peach_sakura_leaves", MapColor.FOLIAGE, true, 20, 6));
+        MOD_BLOCKS.add(rainbow_eucalyptus_leaves = new EBTBlockLeaves("rainbow_eucalyptus_leaves", MapColor.FOLIAGE, true, 20, 8));
+        MOD_BLOCKS.add(scalewood_leaves = new EBTBlockLeaves("scalewood_leaves", MapColor.FOLIAGE, true, 20, 8));
+        MOD_BLOCKS.add(wattle_leaves = new EBTBlockLeaves("wattle_leaves", MapColor.FOLIAGE, true, 20, 4));
+        MOD_BLOCKS.add(white_fir_leaves = new EBTBlockLeaves("white_fir_leaves", MapColor.FOLIAGE, true, 20, 4));
+
+        MOD_BLOCKS.add(autumnal_button = new EBTBlockButtonWood("autumnal_button"));
+        MOD_BLOCKS.add(autumnal_door = new EBTBlockDoorWood("autumnal_door", MapColor.ADOBE));
+        MOD_BLOCKS.add(autumnal_fence_gate = new EBTBlockFenceGateWood("autumnal_fence_gate", MapColor.ADOBE, true));
+        MOD_BLOCKS.add(autumnal_fence = new EBTBlockFenceWood("autumnal_fence", MapColor.ADOBE, true));
+        MOD_BLOCKS.add(autumnal_log = new EBTBlockLog("autumnal_log", MapColor.WOOD, 2.0F, true));
+        MOD_BLOCKS.add(autumnal_planks = new EBTBlockPlanks("autumnal_planks", MapColor.ADOBE, 2.0F, 5.0F, true));
+        MOD_BLOCKS.add(autumnal_pressure_plate = new EBTBlockPressurePlateWood("autumnal_pressure_plate", MapColor.ADOBE));
+        MOD_BLOCKS.add(autumnal_slab = new EBTBlockSlab.Half("autumnal_slab", Material.WOOD, MapColor.ADOBE, 2.0F, 5.0F, true));
+        MOD_BLOCKS.add(autumnal_slab_double = new EBTBlockSlab.Double("autumnal_slab", Material.WOOD, MapColor.ADOBE, 2.0F, 5.0F, true));
+        MOD_BLOCKS.add(autumnal_stairs = new EBTBlockStairs("autumnal_stairs", new EBTBlockPlanks("autumnal_planks", MapColor.ADOBE, 2.0F, 5.0F, true).getDefaultState(), true));
+
+        MOD_BLOCKS.add(bald_cypress_button = new EBTBlockButtonWood("bald_cypress_button"));
+        MOD_BLOCKS.add(bald_cypress_door = new EBTBlockDoorWood("bald_cypress_door", MapColor.ADOBE));
+        MOD_BLOCKS.add(bald_cypress_fence_gate = new EBTBlockFenceGateWood("bald_cypress_fence_gate", MapColor.ADOBE, true));
+        MOD_BLOCKS.add(bald_cypress_fence = new EBTBlockFenceWood("bald_cypress_fence", MapColor.ADOBE, true));
+        MOD_BLOCKS.add(bald_cypress_log = new EBTBlockLog("bald_cypress_log", MapColor.WOOD, 2.0F, true));
+        MOD_BLOCKS.add(bald_cypress_planks = new EBTBlockPlanks("bald_cypress_planks", MapColor.ADOBE, 2.0F, 5.0F, true));
+        MOD_BLOCKS.add(bald_cypress_pressure_plate = new EBTBlockPressurePlateWood("bald_cypress_pressure_plate", MapColor.ADOBE));
+        MOD_BLOCKS.add(bald_cypress_slab = new EBTBlockSlab.Half("bald_cypress_slab", Material.WOOD, MapColor.ADOBE, 2.0F, 5.0F, true));
+        MOD_BLOCKS.add(bald_cypress_slab_double = new EBTBlockSlab.Double("bald_cypress_slab", Material.WOOD, MapColor.ADOBE, 2.0F, 5.0F, true));
+        MOD_BLOCKS.add(bald_cypress_stairs = new EBTBlockStairs("bald_cypress_stairs", new EBTBlockPlanks("bald_cypress_planks", MapColor.ADOBE, 2.0F, 5.0F, true).getDefaultState(), true));
+
+        MOD_BLOCKS.add(cypress_button = new EBTBlockButtonWood("cypress_button"));
+        MOD_BLOCKS.add(cypress_door = new EBTBlockDoorWood("cypress_door", MapColor.ADOBE));
+        MOD_BLOCKS.add(cypress_fence_gate = new EBTBlockFenceGateWood("cypress_fence_gate", MapColor.ADOBE, true));
+        MOD_BLOCKS.add(cypress_fence = new EBTBlockFenceWood("cypress_fence", MapColor.ADOBE, true));
+        MOD_BLOCKS.add(cypress_log = new EBTBlockLog("cypress_log", MapColor.WOOD, 2.0F, true));
+        MOD_BLOCKS.add(cypress_planks = new EBTBlockPlanks("cypress_planks", MapColor.ADOBE, 2.0F, 5.0F, true));
+        MOD_BLOCKS.add(cypress_pressure_plate = new EBTBlockPressurePlateWood("cypress_pressure_plate", MapColor.ADOBE));
+        MOD_BLOCKS.add(cypress_slab = new EBTBlockSlab.Half("cypress_slab", Material.WOOD, MapColor.ADOBE, 2.0F, 5.0F, true));
+        MOD_BLOCKS.add(cypress_slab_double = new EBTBlockSlab.Double("cypress_slab", Material.WOOD, MapColor.ADOBE, 2.0F, 5.0F, true));
+        MOD_BLOCKS.add(cypress_stairs = new EBTBlockStairs("cypress_stairs", new EBTBlockPlanks("cypress_planks", MapColor.ADOBE, 2.0F, 5.0F, true).getDefaultState(), true));
+
+        MOD_BLOCKS.add(douglas_fir_button = new EBTBlockButtonWood("douglas_fir_button"));
+        MOD_BLOCKS.add(douglas_fir_door = new EBTBlockDoorWood("douglas_fir_door", MapColor.ADOBE));
+        MOD_BLOCKS.add(douglas_fir_fence_gate = new EBTBlockFenceGateWood("douglas_fir_fence_gate", MapColor.ADOBE, true));
+        MOD_BLOCKS.add(douglas_fir_fence = new EBTBlockFenceWood("douglas_fir_fence", MapColor.ADOBE, true));
+        MOD_BLOCKS.add(douglas_fir_log = new EBTBlockLog("douglas_fir_log", MapColor.WOOD, 2.0F, true));
+        MOD_BLOCKS.add(douglas_fir_planks = new EBTBlockPlanks("douglas_fir_planks", MapColor.ADOBE, 2.0F, 5.0F, true));
+        MOD_BLOCKS.add(douglas_fir_pressure_plate = new EBTBlockPressurePlateWood("douglas_fir_pressure_plate", MapColor.ADOBE));
+        MOD_BLOCKS.add(douglas_fir_slab = new EBTBlockSlab.Half("douglas_fir_slab", Material.WOOD, MapColor.ADOBE, 2.0F, 5.0F, true));
+        MOD_BLOCKS.add(douglas_fir_slab_double = new EBTBlockSlab.Double("douglas_fir_slab", Material.WOOD, MapColor.ADOBE, 2.0F, 5.0F, true));
+        MOD_BLOCKS.add(douglas_fir_stairs = new EBTBlockStairs("douglas_fir_stairs", new EBTBlockPlanks("douglas_fir_planks", MapColor.ADOBE, 2.0F, 5.0F, true).getDefaultState(), true));
+
+        MOD_BLOCKS.add(japanese_maple_button = new EBTBlockButtonWood("japanese_maple_button"));
+        MOD_BLOCKS.add(japanese_maple_door = new EBTBlockDoorWood("japanese_maple_door", MapColor.ADOBE));
+        MOD_BLOCKS.add(japanese_maple_fence_gate = new EBTBlockFenceGateWood("japanese_maple_fence_gate", MapColor.ADOBE, true));
+        MOD_BLOCKS.add(japanese_maple_fence = new EBTBlockFenceWood("japanese_maple_fence", MapColor.ADOBE, true));
+        MOD_BLOCKS.add(japanese_maple_log = new EBTBlockLog("japanese_maple_log", MapColor.WOOD, 2.0F, true));
+        MOD_BLOCKS.add(japanese_maple_planks = new EBTBlockPlanks("japanese_maple_planks", MapColor.ADOBE, 2.0F, 5.0F, true));
+        MOD_BLOCKS.add(japanese_maple_pressure_plate = new EBTBlockPressurePlateWood("japanese_maple_pressure_plate", MapColor.ADOBE));
+        MOD_BLOCKS.add(japanese_maple_slab = new EBTBlockSlab.Half("japanese_maple_slab", Material.WOOD, MapColor.ADOBE, 2.0F, 5.0F, true));
+        MOD_BLOCKS.add(japanese_maple_slab_double = new EBTBlockSlab.Double("japanese_maple_slab", Material.WOOD, MapColor.ADOBE, 2.0F, 5.0F, true));
+        MOD_BLOCKS.add(japanese_maple_stairs = new EBTBlockStairs("japanese_maple_stairs", new EBTBlockPlanks("japanese_maple_planks", MapColor.ADOBE, 2.0F, 5.0F, true).getDefaultState(), true));
+
+        MOD_BLOCKS.add(peach_sakura_button = new EBTBlockButtonWood("peach_sakura_button"));
+        MOD_BLOCKS.add(peach_sakura_door = new EBTBlockDoorWood("peach_sakura_door", MapColor.ADOBE));
+        MOD_BLOCKS.add(peach_sakura_fence_gate = new EBTBlockFenceGateWood("peach_sakura_fence_gate", MapColor.ADOBE, true));
+        MOD_BLOCKS.add(peach_sakura_fence = new EBTBlockFenceWood("peach_sakura_fence", MapColor.ADOBE, true));
+        MOD_BLOCKS.add(peach_sakura_log = new EBTBlockMiniLog("peach_sakura_log", MapColor.WOOD, 2.0F, true));
+        MOD_BLOCKS.add(peach_sakura_planks = new EBTBlockPlanks("peach_sakura_planks", MapColor.ADOBE, 2.0F, 5.0F, true));
+        MOD_BLOCKS.add(peach_sakura_pressure_plate = new EBTBlockPressurePlateWood("peach_sakura_pressure_plate", MapColor.ADOBE));
+        MOD_BLOCKS.add(peach_sakura_slab = new EBTBlockSlab.Half("peach_sakura_slab", Material.WOOD, MapColor.ADOBE, 2.0F, 5.0F, true));
+        MOD_BLOCKS.add(peach_sakura_slab_double = new EBTBlockSlab.Double("peach_sakura_slab", Material.WOOD, MapColor.ADOBE, 2.0F, 5.0F, true));
+        MOD_BLOCKS.add(peach_sakura_stairs = new EBTBlockStairs("peach_sakura_stairs", new EBTBlockPlanks("peach_sakura_planks", MapColor.ADOBE, 2.0F, 5.0F, true).getDefaultState(), true));
+
+        MOD_BLOCKS.add(rainbow_eucalyptus_button = new EBTBlockButtonWood("rainbow_eucalyptus_button"));
+        MOD_BLOCKS.add(rainbow_eucalyptus_door = new EBTBlockDoorWood("rainbow_eucalyptus_door", MapColor.ADOBE));
+        MOD_BLOCKS.add(rainbow_eucalyptus_fence_gate = new EBTBlockFenceGateWood("rainbow_eucalyptus_fence_gate", MapColor.ADOBE, true));
+        MOD_BLOCKS.add(rainbow_eucalyptus_fence = new EBTBlockFenceWood("rainbow_eucalyptus_fence", MapColor.ADOBE, true));
+        MOD_BLOCKS.add(rainbow_eucalyptus_log = new EBTBlockLog("rainbow_eucalyptus_log", MapColor.WOOD, 2.0F, true));
+        MOD_BLOCKS.add(rainbow_eucalyptus_planks = new EBTBlockPlanks("rainbow_eucalyptus_planks", MapColor.ADOBE, 2.0F, 5.0F, true));
+        MOD_BLOCKS.add(rainbow_eucalyptus_pressure_plate = new EBTBlockPressurePlateWood("rainbow_eucalyptus_pressure_plate", MapColor.ADOBE));
+        MOD_BLOCKS.add(rainbow_eucalyptus_slab = new EBTBlockSlab.Half("rainbow_eucalyptus_slab", Material.WOOD, MapColor.ADOBE, 2.0F, 5.0F, true));
+        MOD_BLOCKS.add(rainbow_eucalyptus_slab_double = new EBTBlockSlab.Double("rainbow_eucalyptus_slab", Material.WOOD, MapColor.ADOBE, 2.0F, 5.0F, true));
+        MOD_BLOCKS.add(rainbow_eucalyptus_stairs = new EBTBlockStairs("rainbow_eucalyptus_stairs", new EBTBlockPlanks("rainbow_eucalyptus_stairs", MapColor.ADOBE, 2.0F, 5.0F, true).getDefaultState(), true));
+
+        MOD_BLOCKS.add(scalewood_button = new EBTBlockButtonWood("scalewood_button"));
+        MOD_BLOCKS.add(scalewood_door = new EBTBlockDoorWood("scalewood_door", MapColor.ADOBE));
+        MOD_BLOCKS.add(scalewood_fence_gate = new EBTBlockFenceGateWood("scalewood_fence_gate", MapColor.ADOBE, true));
+        MOD_BLOCKS.add(scalewood_fence = new EBTBlockFenceWood("scalewood_fence", MapColor.ADOBE, true));
+        MOD_BLOCKS.add(scalewood_log = new EBTBlockLog("scalewood_log", MapColor.WOOD, 2.0F, true));
+        MOD_BLOCKS.add(scalewood_planks = new EBTBlockPlanks("scalewood_planks", MapColor.ADOBE, 2.0F, 5.0F, true));
+        MOD_BLOCKS.add(scalewood_pressure_plate = new EBTBlockPressurePlateWood("scalewood_pressure_plate", MapColor.ADOBE));
+        MOD_BLOCKS.add(scalewood_slab = new EBTBlockSlab.Half("scalewood_slab", Material.WOOD, MapColor.ADOBE, 2.0F, 5.0F, true));
+        MOD_BLOCKS.add(scalewood_slab_double = new EBTBlockSlab.Double("scalewood_slab", Material.WOOD, MapColor.ADOBE, 2.0F, 5.0F, true));
+        MOD_BLOCKS.add(scalewood_stairs = new EBTBlockStairs("scalewood_stairs", new EBTBlockPlanks("scalewood_planks", MapColor.ADOBE, 2.0F, 5.0F, true).getDefaultState(), true));
+
+        MOD_BLOCKS.add(wattle_button = new EBTBlockButtonWood("wattle_button"));
+        MOD_BLOCKS.add(wattle_door = new EBTBlockDoorWood("wattle_door", MapColor.ADOBE));
+        MOD_BLOCKS.add(wattle_fence_gate = new EBTBlockFenceGateWood("wattle_fence_gate", MapColor.ADOBE, true));
+        MOD_BLOCKS.add(wattle_fence = new EBTBlockFenceWood("wattle_fence", MapColor.ADOBE, true));
+        MOD_BLOCKS.add(wattle_log = new EBTBlockLog("wattle_log", MapColor.WOOD, 2.0F, true));
+        MOD_BLOCKS.add(wattle_planks = new EBTBlockPlanks("wattle_planks", MapColor.ADOBE, 2.0F, 5.0F, true));
+        MOD_BLOCKS.add(wattle_pressure_plate = new EBTBlockPressurePlateWood("wattle_pressure_plate", MapColor.ADOBE));
+        MOD_BLOCKS.add(wattle_slab = new EBTBlockSlab.Half("wattle_slab", Material.WOOD, MapColor.ADOBE, 2.0F, 5.0F, true));
+        MOD_BLOCKS.add(wattle_slab_double = new EBTBlockSlab.Double("wattle_slab", Material.WOOD, MapColor.ADOBE, 2.0F, 5.0F, true));
+        MOD_BLOCKS.add(wattle_stairs = new EBTBlockStairs("wattle_stairs", new EBTBlockPlanks("wattle_planks", MapColor.ADOBE, 2.0F, 5.0F, true).getDefaultState(), true));
+
+        MOD_BLOCKS.add(white_fir_button = new EBTBlockButtonWood("white_fir_button"));
+        MOD_BLOCKS.add(white_fir_door = new EBTBlockDoorWood("white_fir_door", MapColor.ADOBE));
+        MOD_BLOCKS.add(white_fir_fence_gate = new EBTBlockFenceGateWood("white_fir_fence_gate", MapColor.ADOBE, true));
+        MOD_BLOCKS.add(white_fir_fence = new EBTBlockFenceWood("white_fir_fence", MapColor.ADOBE, true));
+        MOD_BLOCKS.add(white_fir_log = new EBTBlockLog("white_fir_log", MapColor.WOOD, 2.0F, true));
+        MOD_BLOCKS.add(white_fir_planks = new EBTBlockPlanks("white_fir_planks", MapColor.ADOBE, 2.0F, 5.0F, true));
+        MOD_BLOCKS.add(white_fir_pressure_plate = new EBTBlockPressurePlateWood("white_fir_pressure_plate", MapColor.ADOBE));
+        MOD_BLOCKS.add(white_fir_slab = new EBTBlockSlab.Half("white_fir_slab", Material.WOOD, MapColor.ADOBE, 2.0F, 5.0F, true));
+        MOD_BLOCKS.add(white_fir_slab_double = new EBTBlockSlab.Double("white_fir_slab", Material.WOOD, MapColor.ADOBE, 2.0F, 5.0F, true));
+        MOD_BLOCKS.add(white_fir_stairs = new EBTBlockStairs("white_fir_stairs", new EBTBlockPlanks("white_fir_planks", MapColor.ADOBE, 2.0F, 5.0F, true).getDefaultState(), true));
+
+        MOD_BLOCKS.add(citrine_autumnal_sapling = new EBTBlockSapling("citrine_autumnal_sapling", EnumWoodType.AUTUMNAL_CITRINE, MapColor.FOLIAGE, true));
+        MOD_BLOCKS.add(goldenrod_autumnal_sapling = new EBTBlockSapling("goldenrod_autumnal_sapling", EnumWoodType.AUTUMNAL_GOLDENROD, MapColor.FOLIAGE, true));
+        MOD_BLOCKS.add(umber_autumnal_sapling = new EBTBlockSapling("umber_autumnal_sapling", EnumWoodType.AUTUMNAL_UMBER, MapColor.FOLIAGE, true));
+        MOD_BLOCKS.add(vermillion_autumnal_sapling = new EBTBlockSapling("vermillion_autumnal_sapling", EnumWoodType.AUTUMNAL_VERMILLION, MapColor.FOLIAGE, true));
+        MOD_BLOCKS.add(brown_autumnal_oak_sapling = new EBTBlockSapling("brown_autumnal_oak_sapling", EnumWoodType.AUTUMNAL_OAK_BROWN, MapColor.FOLIAGE, true));
+        MOD_BLOCKS.add(green_autumnal_oak_sapling = new EBTBlockSapling("green_autumnal_oak_sapling", EnumWoodType.AUTUMNAL_OAK_GREEN, MapColor.FOLIAGE, true));
+        MOD_BLOCKS.add(orange_autumnal_oak_sapling = new EBTBlockSapling("orange_autumnal_oak_sapling", EnumWoodType.AUTUMNAL_OAK_ORANGE, MapColor.FOLIAGE, true));
+        MOD_BLOCKS.add(purple_autumnal_oak_sapling = new EBTBlockSapling("purple_autumnal_oak_sapling", EnumWoodType.AUTUMNAL_OAK_PURPLE, MapColor.FOLIAGE, true));
+        MOD_BLOCKS.add(red_autumnal_oak_sapling = new EBTBlockSapling("red_autumnal_oak_sapling", EnumWoodType.AUTUMNAL_OAK_RED, MapColor.FOLIAGE, true));
+        MOD_BLOCKS.add(yellow_autumnal_oak_sapling = new EBTBlockSapling("yellow_autumnal_oak_sapling", EnumWoodType.AUTUMNAL_OAK_YELLOW, MapColor.FOLIAGE, true));
+        MOD_BLOCKS.add(bald_cypress_sapling = new EBTBlockSapling("bald_cypress_sapling", EnumWoodType.BALD_CYPRESS, MapColor.FOLIAGE, true));
+        MOD_BLOCKS.add(cypress_sapling = new EBTBlockSapling("cypress_sapling", EnumWoodType.CYPRESS, MapColor.FOLIAGE, true));
+        MOD_BLOCKS.add(douglas_fir_sapling = new EBTBlockSapling("douglas_fir_sapling", EnumWoodType.DOUGLAS_FIR, MapColor.FOLIAGE, true));
+        MOD_BLOCKS.add(japanese_maple_sapling = new EBTBlockSapling("japanese_maple_sapling", EnumWoodType.JAPANESE_MAPLE, MapColor.FOLIAGE, true));
+        MOD_BLOCKS.add(japanese_maple_shrub_sapling = new EBTBlockSapling("japanese_maple_shrub_sapling", EnumWoodType.JAPANESE_MAPLE_SHRUB, MapColor.FOLIAGE, true));
+        MOD_BLOCKS.add(peach_sakura_sapling = new EBTBlockSapling("peach_sakura_sapling", EnumWoodType.PEACH_SAKURA, MapColor.FOLIAGE, true));
+        MOD_BLOCKS.add(rainbow_eucalyptus_sapling = new EBTBlockSapling("rainbow_eucalyptus_sapling", EnumWoodType.RAINBOW_EUCALYPTUS, MapColor.FOLIAGE, true));
+        MOD_BLOCKS.add(scalewood_sapling = new EBTBlockSapling("scalewood_sapling", EnumWoodType.SCALEWOOD, MapColor.FOLIAGE, true));
+        MOD_BLOCKS.add(wattle_sapling = new EBTBlockSapling("wattle_sapling", EnumWoodType.WATTLE, MapColor.FOLIAGE, true));
+        MOD_BLOCKS.add(white_fir_sapling = new EBTBlockSapling("white_fir_sapling", EnumWoodType.WHITE_FIR, MapColor.FOLIAGE, true));
+
+        MOD_BLOCKS.add(cracked_sand = new EBTBlockHardenedSand("cracked_sand", MapColor.SILVER_STAINED_HARDENED_CLAY));
+        MOD_BLOCKS.add(red_rock_button = new EBTBlockButtonStone("red_rock_button"));
+        MOD_BLOCKS.add(red_rock = new EBTBlockRock("red_rock", MapColor.ORANGE_STAINED_HARDENED_CLAY));
+        MOD_BLOCKS.add(red_rock_cobblestone = new EBTBlockMaterial("red_rock_cobblestone", Material.ROCK, MapColor.ORANGE_STAINED_HARDENED_CLAY, 2.0F, 10.0F, SoundType.STONE));
+        MOD_BLOCKS.add(red_rock_bricks = new EBTBlockMaterial("red_rock_bricks", Material.ROCK, MapColor.ORANGE_STAINED_HARDENED_CLAY, 2.0F, 10.0F, SoundType.STONE));
+        MOD_BLOCKS.add(red_rock_pressure_plate = new EBTBlockPressurePlateStone("red_rock_pressure_plate", MapColor.ORANGE_STAINED_HARDENED_CLAY));
+
+        MOD_BLOCKS.add(red_rock_slab_double = new EBTBlockSlab.Double("red_rock_slab", Material.ROCK, MapColor.ORANGE_STAINED_HARDENED_CLAY, 2.0F, 10.0F, false));
+        MOD_BLOCKS.add(red_rock_slab = new EBTBlockSlab.Half("red_rock_slab", Material.ROCK, MapColor.ORANGE_STAINED_HARDENED_CLAY, 2.0F, 10.0F, false));
+        MOD_BLOCKS.add(red_rock_cobblestone_slab_double = new EBTBlockSlab.Double("red_rock_cobblestone_slab", Material.ROCK, MapColor.ORANGE_STAINED_HARDENED_CLAY, 2.0F, 10.0F, false));
+        MOD_BLOCKS.add(red_rock_cobblestone_slab = new EBTBlockSlab.Half("red_rock_cobblestone_slab", Material.ROCK, MapColor.ORANGE_STAINED_HARDENED_CLAY, 2.0F, 10.0F, false));
+        MOD_BLOCKS.add(red_rock_bricks_slab_double = new EBTBlockSlab.Double("red_rock_bricks_slab", Material.ROCK, MapColor.ORANGE_STAINED_HARDENED_CLAY, 2.0F, 10.0F, false));
+        MOD_BLOCKS.add(red_rock_bricks_slab = new EBTBlockSlab.Half("red_rock_bricks_slab", Material.ROCK, MapColor.ORANGE_STAINED_HARDENED_CLAY, 2.0F, 10.0F, false));
+
+        MOD_BLOCKS.add(red_rock_stairs = new EBTBlockStairs("red_rock_stairs", new EBTBlockMaterial("red_rock_stairs", Material.ROCK, MapColor.ORANGE_STAINED_HARDENED_CLAY, 2.0F, 10.0F, SoundType.STONE).getDefaultState(), false));
+        MOD_BLOCKS.add(red_rock_cobblestone_stairs = new EBTBlockStairs("red_rock_cobblestone_stairs", new EBTBlockMaterial("red_rock_cobblestone_stairs", Material.ROCK, MapColor.ORANGE_STAINED_HARDENED_CLAY, 2.0F, 10.0F, SoundType.STONE).getDefaultState(), false));
+        MOD_BLOCKS.add(red_rock_bricks_stairs = new EBTBlockStairs("red_rock_bricks_stairs", new EBTBlockMaterial("red_rock_bricks_stairs", Material.ROCK, MapColor.ORANGE_STAINED_HARDENED_CLAY, 2.0F, 10.0F, SoundType.STONE).getDefaultState(), false));
+
+        MOD_BLOCKS.add(red_rock_wall = new EBTBlockWall("red_rock_wall", new EBTBlockMaterial("red_rock_wall", Material.ROCK, MapColor.ORANGE_STAINED_HARDENED_CLAY, 2.0F, 10.0F, SoundType.STONE), false));
+        MOD_BLOCKS.add(red_rock_cobblestone_wall = new EBTBlockWall("red_rock_cobblestone_wall", new EBTBlockMaterial("red_rock_cobblestone_wall", Material.ROCK, MapColor.ORANGE_STAINED_HARDENED_CLAY, 2.0F, 10.0F, SoundType.STONE), false));
+        MOD_BLOCKS.add(red_rock_bricks_wall = new EBTBlockWall("red_rock_bricks_wall", new EBTBlockMaterial("red_rock_bricks_wall", Material.ROCK, MapColor.ORANGE_STAINED_HARDENED_CLAY, 2.0F, 10.0F, SoundType.STONE), false));
+
+        MOD_BLOCKS.add(crag_rock_button = new EBTBlockButtonStone("crag_rock_button"));
+        MOD_BLOCKS.add(crag_rock = new EBTBlockRock("crag_rock", MapColor.CYAN));
+        MOD_BLOCKS.add(crag_rock_cobblestone = new EBTBlockMaterial("crag_rock_cobblestone", Material.ROCK, MapColor.CYAN, 2.0F, 10.0F, SoundType.STONE));
+        MOD_BLOCKS.add(crag_rock_bricks = new EBTBlockMaterial("crag_rock_bricks", Material.ROCK, MapColor.CYAN, 2.0F, 10.0F, SoundType.STONE));
+        MOD_BLOCKS.add(crag_rock_pressure_plate = new EBTBlockPressurePlateStone("crag_rock_pressure_plate", MapColor.CYAN));
+
+        MOD_BLOCKS.add(crag_rock_slab_double = new EBTBlockSlab.Double("crag_rock_slab", Material.ROCK, MapColor.CYAN, 2.0F, 10.0F, false));
+        MOD_BLOCKS.add(crag_rock_slab = new EBTBlockSlab.Half("crag_rock_slab", Material.ROCK, MapColor.CYAN, 2.0F, 10.0F, false));
+        MOD_BLOCKS.add(crag_rock_cobblestone_slab_double = new EBTBlockSlab.Double("crag_rock_cobblestone_slab", Material.ROCK, MapColor.CYAN, 2.0F, 10.0F, false));
+        MOD_BLOCKS.add(crag_rock_cobblestone_slab = new EBTBlockSlab.Half("crag_rock_cobblestone_slab", Material.ROCK, MapColor.CYAN, 2.0F, 10.0F, false));
+        MOD_BLOCKS.add(crag_rock_bricks_slab_double = new EBTBlockSlab.Double("crag_rock_bricks_slab", Material.ROCK, MapColor.CYAN, 2.0F, 10.0F, false));
+        MOD_BLOCKS.add(crag_rock_bricks_slab = new EBTBlockSlab.Half("crag_rock_bricks_slab", Material.ROCK, MapColor.CYAN, 2.0F, 10.0F, false));
+
+        MOD_BLOCKS.add(crag_rock_stairs = new EBTBlockStairs("crag_rock_stairs", new EBTBlockMaterial("crag_rock_stairs", Material.ROCK, MapColor.CYAN, 2.0F, 10.0F, SoundType.STONE).getDefaultState(), false));
+        MOD_BLOCKS.add(crag_rock_cobblestone_stairs = new EBTBlockStairs("crag_rock_cobblestone_stairs", new EBTBlockMaterial("crag_rock_cobblestone_stairs", Material.ROCK, MapColor.CYAN, 2.0F, 10.0F, SoundType.STONE).getDefaultState(), false));
+        MOD_BLOCKS.add(crag_rock_bricks_stairs = new EBTBlockStairs("crag_rock_bricks_stairs", new EBTBlockMaterial("crag_rock_bricks_stairs", Material.ROCK, MapColor.CYAN, 2.0F, 10.0F, SoundType.STONE).getDefaultState(), false));
+
+        MOD_BLOCKS.add(crag_rock_wall = new EBTBlockWall("crag_rock_wall", new EBTBlockMaterial("red_rock_wall", Material.ROCK, MapColor.CYAN, 2.0F, 10.0F, SoundType.STONE), false));
+        MOD_BLOCKS.add(crag_rock_cobblestone_wall = new EBTBlockWall("crag_rock_cobblestone_wall", new EBTBlockMaterial("crag_rock_cobblestone_wall", Material.ROCK, MapColor.CYAN, 2.0F, 10.0F, SoundType.STONE), false));
+        MOD_BLOCKS.add(crag_rock_bricks_wall = new EBTBlockWall("crag_rock_bricks_wall", new EBTBlockMaterial("crag_rock_bricks_wall", Material.ROCK, MapColor.CYAN, 2.0F, 10.0F, SoundType.STONE), false));
+    }
+}

@@ -1,0 +1,12 @@
+{
+  "type": "forge:ore_shapeless",
+  "ingredients": [
+    {
+      "item": "ebt:autumnal_log"
+    }
+  ],
+  "result": {
+    "item": "ebt:autumnal_planks",
+    "count": 4
+  }
+}

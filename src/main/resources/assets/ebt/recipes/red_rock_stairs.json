@@ -1,0 +1,17 @@
+{
+  "type": "forge:ore_shaped",
+  "pattern": [
+    "X  ",
+    "XX ",
+    "XXX"
+  ],
+  "key": {
+    "X": {
+      "item": "ebt:red_rock"
+    }
+  },
+  "result": {
+    "item": "ebt:red_rock_stairs",
+    "count": 4
+  }
+}

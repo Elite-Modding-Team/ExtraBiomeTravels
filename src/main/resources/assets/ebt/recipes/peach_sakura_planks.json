@@ -1,0 +1,12 @@
+{
+  "type": "forge:ore_shapeless",
+  "ingredients": [
+    {
+      "item": "ebt:peach_sakura_log"
+    }
+  ],
+  "result": {
+    "item": "ebt:peach_sakura_planks",
+    "count": 4
+  }
+}

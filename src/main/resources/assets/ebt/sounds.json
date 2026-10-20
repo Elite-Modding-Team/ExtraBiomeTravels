@@ -1,0 +1,51 @@
+{
+  "blocks.hardened_sand.break": {
+    "sounds": [
+      "ebt:block/hardened_sand/break1",
+      "ebt:block/hardened_sand/break2",
+      "ebt:block/hardened_sand/break3",
+      "ebt:block/hardened_sand/break4",
+      "ebt:block/hardened_sand/break5"
+    ],
+    "subtitle": "subtitles.block.generic.break"
+  },
+  "blocks.hardened_sand.fall": {
+    "sounds": [
+      "ebt:block/hardened_sand/step1",
+      "ebt:block/hardened_sand/step2",
+      "ebt:block/hardened_sand/step3",
+      "ebt:block/hardened_sand/step4",
+      "ebt:block/hardened_sand/step5"
+    ]
+  },
+  "blocks.hardened_sand.hit": {
+    "sounds": [
+      "ebt:block/hardened_sand/step1",
+      "ebt:block/hardened_sand/step2",
+      "ebt:block/hardened_sand/step3",
+      "ebt:block/hardened_sand/step4",
+      "ebt:block/hardened_sand/step5"
+    ],
+    "subtitle": "subtitles.block.generic.hit"
+  },
+  "blocks.hardened_sand.place": {
+    "sounds": [
+      "ebt:block/hardened_sand/break1",
+      "ebt:block/hardened_sand/break2",
+      "ebt:block/hardened_sand/break3",
+      "ebt:block/hardened_sand/break4",
+      "ebt:block/hardened_sand/break5"
+    ],
+    "subtitle": "subtitles.block.generic.place"
+  },
+  "blocks.hardened_sand.step": {
+    "sounds": [
+      "ebt:block/hardened_sand/step1",
+      "ebt:block/hardened_sand/step2",
+      "ebt:block/hardened_sand/step3",
+      "ebt:block/hardened_sand/step4",
+      "ebt:block/hardened_sand/step5"
+    ],
+    "subtitle": "subtitles.block.generic.footsteps"
+  }
+}

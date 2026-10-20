@@ -1,0 +1,15 @@
+{
+  "type": "forge:ore_shapeless",
+  "ingredients": [
+    {
+      "item": "minecraft:wooden_button"
+    },
+    {
+      "item": "ebt:bald_cypress_planks"
+    }
+  ],
+  "result": {
+    "item": "ebt:bald_cypress_button",
+    "count": 1
+  }
+}

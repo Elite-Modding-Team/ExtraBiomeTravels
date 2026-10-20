@@ -1,0 +1,29 @@
+{
+  "forge_marker": 1,
+  "defaults": {
+    "model": "leaves",
+    "textures": {
+      "all": "ebt:blocks/autumnal_leaves"
+    }
+  },
+  "variants": {
+    "normal": [
+      {}
+    ],
+    "inventory": [
+      {}
+    ],
+    "check_decay=false,decayable=false": {
+      "model": "minecraft:leaves"
+    },
+    "check_decay=false,decayable=true": {
+      "model": "minecraft:leaves"
+    },
+    "check_decay=true,decayable=false": {
+      "model": "minecraft:leaves"
+    },
+    "check_decay=true,decayable=true": {
+      "model": "minecraft:leaves"
+    }
+  }
+}

@@ -1,0 +1,20 @@
+{
+  "type": "forge:ore_shaped",
+  "pattern": [
+    "X*X",
+    "X*X"
+  ],
+  "key": {
+    "X": {
+      "item": "ebt:peach_sakura_planks"
+    },
+    "*": {
+      "type": "forge:ore_dict",
+      "ore": "stickWood"
+    }
+  },
+  "result": {
+    "item": "ebt:peach_sakura_fence",
+    "count": 3
+  }
+}

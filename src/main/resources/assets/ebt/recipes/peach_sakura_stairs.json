@@ -1,0 +1,17 @@
+{
+  "type": "forge:ore_shaped",
+  "pattern": [
+    "X  ",
+    "XX ",
+    "XXX"
+  ],
+  "key": {
+    "X": {
+      "item": "ebt:peach_sakura_planks"
+    }
+  },
+  "result": {
+    "item": "ebt:peach_sakura_stairs",
+    "count": 4
+  }
+}

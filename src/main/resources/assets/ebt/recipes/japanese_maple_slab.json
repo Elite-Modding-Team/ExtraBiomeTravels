@@ -1,0 +1,16 @@
+{
+  "type": "forge:ore_shaped",
+  "pattern": [
+    "XXX"
+  ],
+  "key": {
+    "X": {
+      "item": "ebt:japanese_maple_planks"
+    }
+  },
+  "result": {
+    "item": "ebt:japanese_maple_slab",
+    "data": 0,
+    "count": 6
+  }
+}

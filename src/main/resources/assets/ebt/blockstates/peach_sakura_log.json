@@ -1,0 +1,118 @@
+{
+  "forge_marker": 1,
+  "defaults": {
+    "textures": {
+      "end": "ebt:blocks/peach_sakura_log_top",
+      "side": "ebt:blocks/peach_sakura_log_side"
+    }
+  },
+  "variants": {
+    "normal": [
+      {
+        "model": "ebt:mini_log_post"
+      }
+    ],
+    "inventory": [
+      {}
+    ],
+    "axis": {
+      "y": {
+        "submodel": {
+          "post": {
+            "model": "ebt:mini_log_post"
+          }
+        }
+      },
+
+      "x": {
+        "submodel": {
+          "post": {
+            "model": "ebt:mini_log_post",
+            "x": 90,
+            "y": 90
+          }
+        }
+      },
+      "z": {
+        "submodel": {
+          "post": {
+            "model": "ebt:mini_log_post",
+            "x": 90
+          }
+        }
+      },
+      "none": {
+        "submodel": {
+          "post": {
+            "model": "ebt:mini_log_post"
+          }
+        }
+      }
+    },
+    "north": {
+      "true": {
+        "submodel": {
+          "north": {
+            "model": "ebt:mini_log_side",
+            "y": 180
+          }
+        }
+      },
+      "false": {}
+    },
+    "south": {
+      "true": {
+        "submodel": {
+          "south": {
+            "model": "ebt:mini_log_side"
+          }
+        }
+      },
+      "false": {}
+    },
+    "east": {
+      "true": {
+        "submodel": {
+          "east": {
+            "model": "ebt:mini_log_side",
+            "y": 270
+          }
+        }
+      },
+      "false": {}
+    },
+    "west": {
+      "true": {
+        "submodel": {
+          "west": {
+            "model": "ebt:mini_log_side",
+            "y": 90
+          }
+        }
+      },
+      "false": {}
+    },
+    "up": {
+      "true": {
+        "submodel": {
+          "up": {
+            "model": "ebt:mini_log_side",
+            "x": 90
+          }
+        }
+      },
+      "false": {}
+    },
+    "down": {
+      "true": {
+        "submodel": {
+          "down": {
+            "model": "ebt:mini_log_side",
+            "x": 270
+          }
+        }
+      },
+      "false": {}
+    }
+  }
+}

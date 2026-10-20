@@ -1,0 +1,15 @@
+{
+  "forge_marker": 1,
+  "defaults": {
+    "model": "cube_column",
+    "textures": {
+      "end": "ebt:blocks/red_rock_slab_top",
+      "side": "ebt:blocks/red_rock_slab_side"
+    }
+  },
+  "variants": {
+    "variant=default": {
+      "model": "cube_column"
+    }
+  }
+}

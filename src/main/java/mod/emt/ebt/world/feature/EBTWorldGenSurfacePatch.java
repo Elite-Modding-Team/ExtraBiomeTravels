@@ -1,0 +1,56 @@
+package mod.emt.ebt.world.feature;
+
+import net.minecraft.block.Block;
+import net.minecraft.block.material.Material;
+import net.minecraft.block.state.IBlockState;
+import net.minecraft.init.Blocks;
+import net.minecraft.util.math.BlockPos;
+import net.minecraft.world.World;
+import net.minecraft.world.gen.feature.WorldGenerator;
+import org.jetbrains.annotations.NotNull;
+
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
+import java.util.Random;
+
+public class EBTWorldGenSurfacePatch extends WorldGenerator {
+    private final IBlockState state;
+    private final int size;
+    private final List<Block> replaceableBlocks = new ArrayList<>();
+
+    public EBTWorldGenSurfacePatch(IBlockState state, int size, Block... replaceableBlocks) {
+        this.state = state;
+        this.size = size;
+        this.replaceableBlocks.addAll(Arrays.asList(replaceableBlocks));
+    }
+
+    public EBTWorldGenSurfacePatch(IBlockState state, int size) {
+        this(state, size, Blocks.DIRT, Blocks.GRASS, Blocks.STONE);
+    }
+
+    public boolean generate(@NotNull World world, Random rand, BlockPos position) {
+        int i = rand.nextInt(this.size - 2) + 2;
+        for (int k = position.getX() - i; k <= position.getX() + i; ++k) {
+            for (int l = position.getZ() - i; l <= position.getZ() + i; ++l) {
+                int i1 = k - position.getX();
+                int j1 = l - position.getZ();
+                if (i1 * i1 + j1 * j1 <= i * i) {
+                    for (int k1 = position.getY() - 1; k1 <= position.getY() + 1; ++k1) {
+                        BlockPos blockpos = new BlockPos(k, k1, l);
+                        if (world.isAirBlock(blockpos.up()) || world.getBlockState(blockpos.up()).getMaterial() == Material.VINE) {
+                            Block block = world.getBlockState(blockpos).getBlock();
+                            if (replaceableBlocks.contains(block)) {
+                                world.setBlockState(blockpos, state, 2);
+                                if (world.getBlockState(blockpos.up()).getMaterial() == Material.VINE) {
+                                    world.setBlockToAir(blockpos.up());
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+        return true;
+    }
+}

@@ -1,0 +1,12 @@
+{
+  "type": "forge:ore_shapeless",
+  "ingredients": [
+    {
+      "item": "ebt:douglas_fir_log"
+    }
+  ],
+  "result": {
+    "item": "ebt:douglas_fir_planks",
+    "count": 4
+  }
+}

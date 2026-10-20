@@ -1,0 +1,12 @@
+{
+  "type": "forge:ore_shapeless",
+  "ingredients": [
+    {
+      "item": "ebt:cypress_log"
+    }
+  ],
+  "result": {
+    "item": "ebt:cypress_planks",
+    "count": 4
+  }
+}

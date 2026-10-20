@@ -1,0 +1,15 @@
+{
+  "type": "forge:ore_shapeless",
+  "ingredients": [
+    {
+      "item": "minecraft:wooden_button"
+    },
+    {
+      "item": "ebt:rainbow_eucalyptus_planks"
+    }
+  ],
+  "result": {
+    "item": "ebt:rainbow_eucalyptus_button",
+    "count": 1
+  }
+}
