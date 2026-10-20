@@ -29,7 +29,10 @@
       "x": 90
     },
     "axis=none": {
-      "model": "cube_all"
+      "model": "cube_all",
+      "textures": {
+        "all": "ebt:blocks/wattle_log_side"
+      }
     }
   }
 }
