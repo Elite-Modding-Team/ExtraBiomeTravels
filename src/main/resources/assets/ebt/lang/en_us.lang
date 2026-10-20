@@ -196,3 +196,7 @@ item.ebt:rainbow_eucalyptus_door.name=Rainbow Eucalyptus Door
 item.ebt:scalewood_door.name=Scalewood Door
 item.ebt:wattle_door.name=Wattle Door
 item.ebt:white_fir_door.name=White Fir Door
+
+# CONFIG
+cfg.traversebiomesxl.general=General
+cfg.traversebiomesxl.biomes=Biomes
