@@ -13,6 +13,7 @@ import net.minecraft.item.ItemStack;
 import net.minecraft.stats.StatList;
 import net.minecraft.tileentity.TileEntity;
 import net.minecraft.util.EnumFacing;
+import net.minecraft.util.NonNullList;
 import net.minecraft.util.math.AxisAlignedBB;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.IBlockAccess;
@@ -97,5 +98,14 @@ public class EBTBlockTallGrass extends BlockBush implements IShearable {
     @Override
     public boolean isReplaceable(@NotNull IBlockAccess world, @NotNull BlockPos pos) {
         return true;
+    }
+
+    @Override
+    public void getDrops(@NotNull NonNullList<ItemStack> drops, @NotNull IBlockAccess world, @NotNull BlockPos pos, @NotNull IBlockState state, int fortune) {
+        if (RANDOM.nextInt(8) != 0) return;
+        ItemStack seed = net.minecraftforge.common.ForgeHooks.getGrassSeed(RANDOM, fortune);
+        if (!seed.isEmpty()) {
+            drops.add(seed);
+        }
     }
 }
