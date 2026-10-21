@@ -9,6 +9,11 @@ import net.minecraft.item.Item;
 import java.util.Random;
 
 import mod.emt.ebt.init.EBTBlocks;
+import net.minecraft.util.EnumFacing;
+import net.minecraft.util.math.BlockPos;
+import net.minecraft.world.IBlockAccess;
+import net.minecraftforge.common.EnumPlantType;
+import net.minecraftforge.common.IPlantable;
 import org.jetbrains.annotations.NotNull;
 
 public class EBTBlockRock extends EBTBlockMaterial {
@@ -25,5 +30,10 @@ public class EBTBlockRock extends EBTBlockMaterial {
         } else {
             return Item.getItemFromBlock(this);
         }
+    }
+
+    @Override
+    public boolean canSustainPlant(@NotNull IBlockState state, @NotNull IBlockAccess world, BlockPos pos, @NotNull EnumFacing direction, IPlantable plantable) {
+        return plantable.getPlantType(world, pos.offset(direction)) == EnumPlantType.Desert;
     }
 }

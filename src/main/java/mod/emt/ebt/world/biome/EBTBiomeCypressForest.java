@@ -1,5 +1,6 @@
 package mod.emt.ebt.world.biome;
 
+import mod.emt.ebt.init.EBTBlocks;
 import mod.emt.ebt.world.feature.tree.EBTWorldGenCypressTree;
 import net.minecraft.entity.passive.EntityWolf;
 import net.minecraft.init.Biomes;
@@ -25,6 +26,7 @@ public class EBTBiomeCypressForest extends Biome {
         decorator.treesPerChunk = 5;
         decorator.flowersPerChunk = 4;
         decorator.grassPerChunk = 4;
+        this.addFlower(EBTBlocks.toadstools.getDefaultState(), 10);
         this.spawnableCreatureList.add(new SpawnListEntry(EntityWolf.class, 5, 4, 4));
     }
 

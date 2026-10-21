@@ -9,10 +9,10 @@ tile.ebt:autumnal_leaves.name=Autumnal Leaves
 tile.ebt:autumnal_log.name=Autumnal Log
 tile.ebt:autumnal_planks.name=Autumnal Planks
 tile.ebt:autumnal_pressure_plate.name=Autumnal Pressure Plate
+tile.ebt:autumnal_shrub.name=Autumnal Shrub
 tile.ebt:autumnal_slab.name=Autumnal Slab
 tile.ebt:autumnal_stairs.name=Autumnal Stairs
 tile.ebt:autumnal_trapdoor.name=Autumnal Trapdoor
-
 tile.ebt:bald_cypress_button.name=Bald Cypress Button
 tile.ebt:bald_cypress_door.name=Bald Cypress Door
 tile.ebt:bald_cypress_fence_gate.name=Bald Cypress Fence Gate
@@ -25,13 +25,11 @@ tile.ebt:bald_cypress_sapling.name=Bald Cypress Sapling
 tile.ebt:bald_cypress_slab.name=Bald Cypress Slab
 tile.ebt:bald_cypress_stairs.name=Bald Cypress Stairs
 tile.ebt:bald_cypress_trapdoor.name=Bald Cypress Trapdoor
-
 tile.ebt:brown_autumnal_oak_leaves.name=Brown Autumnal Oak Leaves
 tile.ebt:brown_autumnal_oak_sapling.name=Brown Autumnal Oak Sapling
 tile.ebt:citrine_autumnal_leaves.name=Citrine Autumnal Leaves
 tile.ebt:citrine_autumnal_sapling.name=Citrine Autumnal Sapling
 tile.ebt:cracked_sand.name=Cracked Sand
-
 tile.ebt:crag_rock_bricks_slab.name=Crag Rock Bricks Slab
 tile.ebt:crag_rock_bricks_stairs.name=Crag Rock Bricks Stairs
 tile.ebt:crag_rock_bricks_wall.name=Crag Rock Bricks Wall
@@ -46,7 +44,6 @@ tile.ebt:crag_rock_slab.name=Crag Rock Slab
 tile.ebt:crag_rock_stairs.name=Crag Rock Stairs
 tile.ebt:crag_rock_wall.name=Crag Rock Wall
 tile.ebt:crag_rock.name=Crag Rock
-
 tile.ebt:cypress_button.name=Cypress Button
 tile.ebt:cypress_door.name=Cypress Door
 tile.ebt:cypress_fence_gate.name=Cypress Fence Gate
@@ -59,7 +56,6 @@ tile.ebt:cypress_sapling.name=Cypress Sapling
 tile.ebt:cypress_slab.name=Cypress Slab
 tile.ebt:cypress_stairs.name=Cypress Stairs
 tile.ebt:cypress_trapdoor.name=Cypress Trapdoor
-
 tile.ebt:douglas_fir_button.name=Douglas Fir Button
 tile.ebt:douglas_fir_door.name=Douglas Fir Door
 tile.ebt:douglas_fir_fence_gate.name=Douglas Fir Fence Gate
@@ -72,6 +68,8 @@ tile.ebt:douglas_fir_sapling.name=Douglas Fir Sapling
 tile.ebt:douglas_fir_slab.name=Douglas Fir Slab
 tile.ebt:douglas_fir_stairs.name=Douglas Fir Stairs
 tile.ebt:douglas_fir_trapdoor.name=Douglas Fir Trapdoor
+tile.ebt:dead_grass.name=Dead Grass
+tile.ebt:dry_grass.name=Dry Grass
 tile.ebt:goldenrod_autumnal_leaves.name=Goldenrod Autumnal Leaves
 tile.ebt:goldenrod_autumnal_sapling.name=Goldenrod Autumnal Sapling
 tile.ebt:green_autumnal_oak_leaves.name=Green Autumnal Oak Leaves
@@ -94,7 +92,6 @@ tile.ebt:orange_autumnal_oak_leaves.name=Orange Autumnal Oak Leaves
 tile.ebt:orange_autumnal_oak_sapling.name=Orange Autumnal Oak Sapling
 tile.ebt:purple_autumnal_oak_leaves.name=Purple Autumnal Oak Leaves
 tile.ebt:purple_autumnal_oak_sapling.name=Purple Autumnal Oak Sapling
-
 tile.ebt:peach_sakura_button.name=Peach Sakura Button
 tile.ebt:peach_sakura_door.name=Peach Sakura Door
 tile.ebt:peach_sakura_fence_gate.name=Peach Sakura Fence Gate
@@ -107,7 +104,6 @@ tile.ebt:peach_sakura_sapling.name=Peach Sakura Sapling
 tile.ebt:peach_sakura_slab.name=Peach Sakura Slab
 tile.ebt:peach_sakura_stairs.name=Peach Sakura Stairs
 tile.ebt:peach_sakura_trapdoor.name=Peach Sakura Trapdoor
-
 tile.ebt:rainbow_eucalyptus_button.name=Rainbow Eucalyptus Button
 tile.ebt:rainbow_eucalyptus_door.name=Rainbow Eucalyptus Door
 tile.ebt:rainbow_eucalyptus_fence_gate.name=Rainbow Eucalyptus Fence Gate
@@ -120,7 +116,6 @@ tile.ebt:rainbow_eucalyptus_sapling.name=Rainbow Eucalyptus Sapling
 tile.ebt:rainbow_eucalyptus_slab.name=Rainbow Eucalyptus Slab
 tile.ebt:rainbow_eucalyptus_stairs.name=Rainbow Eucalyptus Stairs
 tile.ebt:rainbow_eucalyptus_trapdoor.name=Rainbow Eucalyptus Trapdoor
-
 tile.ebt:red_autumnal_oak_leaves.name=Red Autumnal Oak Leaves
 tile.ebt:red_autumnal_oak_sapling.name=Red Autumnal Oak Sapling
 tile.ebt:red_rock_bricks_slab.name=Red Rock Bricks Slab
@@ -137,7 +132,6 @@ tile.ebt:red_rock_slab.name=Red Rock Slab
 tile.ebt:red_rock_stairs.name=Red Rock Stairs
 tile.ebt:red_rock_wall.name=Red Rock Wall
 tile.ebt:red_rock.name=Red Rock
-
 tile.ebt:scalewood_button.name=Scalewood Button
 tile.ebt:scalewood_door.name=Scalewood Door
 tile.ebt:scalewood_fence_gate.name=Scalewood Fence Gate
@@ -150,12 +144,12 @@ tile.ebt:scalewood_sapling.name=Scalewood Sapling
 tile.ebt:scalewood_slab.name=Scalewood Slab
 tile.ebt:scalewood_stairs.name=Scalewood Stairs
 tile.ebt:scalewood_trapdoor.name=Scalewood Trapdoor
-
+tile.ebt:tiny_cactus.name=Tiny Cactus
+tile.ebt:toadstools.name=Toadstools
 tile.ebt:umber_autumnal_leaves.name=Umber Autumnal Leaves
 tile.ebt:umber_autumnal_sapling.name=Umber Autumnal Sapling
 tile.ebt:vermillion_autumnal_leaves.name=Vermillion Autumnal Leaves
 tile.ebt:vermillion_autumnal_sapling.name=Vermillion Autumnal Sapling
-
 tile.ebt:wattle_button.name=Wattle Button
 tile.ebt:wattle_door.name=Wattle Door
 tile.ebt:wattle_fence_gate.name=Wattle Fence Gate
@@ -168,7 +162,6 @@ tile.ebt:wattle_sapling.name=Wattle Sapling
 tile.ebt:wattle_slab.name=Wattle Slab
 tile.ebt:wattle_stairs.name=Wattle Stairs
 tile.ebt:wattle_trapdoor.name=Wattle Trapdoor
-
 tile.ebt:white_fir_button.name=White Fir Button
 tile.ebt:white_fir_door.name=White Fir Door
 tile.ebt:white_fir_fence_gate.name=White Fir Fence Gate
@@ -181,7 +174,6 @@ tile.ebt:white_fir_sapling.name=White Fir Sapling
 tile.ebt:white_fir_slab.name=White Fir Slab
 tile.ebt:white_fir_stairs.name=White Fir Stairs
 tile.ebt:white_fir_trapdoor.name=White Fir Trapdoor
-
 tile.ebt:yellow_autumnal_oak_leaves.name=Yellow Autumnal Oak Leaves
 tile.ebt:yellow_autumnal_oak_sapling.name=Yellow Autumnal Oak Sapling
 

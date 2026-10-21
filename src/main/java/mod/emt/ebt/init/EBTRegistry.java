@@ -3,9 +3,7 @@ package mod.emt.ebt.init;
 import javax.annotation.Nonnull;
 
 import mod.emt.ebt.ExtraBiomeTravels;
-import mod.emt.ebt.block.EBTBlockDoorWood;
-import mod.emt.ebt.block.EBTBlockFenceGateWood;
-import mod.emt.ebt.block.EBTBlockWall;
+import mod.emt.ebt.block.*;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockDoor;
 import net.minecraft.block.BlockSlab;
@@ -68,7 +66,8 @@ public class EBTRegistry {
                 .filter(block -> !(block instanceof BlockDoor))
                 .filter(block -> !(block instanceof BlockSlab))
                 .forEach(block -> {
-                    ModelResourceLocation loc = new ModelResourceLocation(Objects.requireNonNull(block.getRegistryName()), "normal");
+                    String variant = (block instanceof EBTBlockTallGrass || block instanceof EBTBlockFlower) ? "inventory" : "normal";
+                    ModelResourceLocation loc = new ModelResourceLocation(Objects.requireNonNull(block.getRegistryName()), variant);
                     ModelLoader.setCustomModelResourceLocation(Item.getItemFromBlock(block), 0, loc);
                 });
 

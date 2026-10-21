@@ -6,6 +6,7 @@ import net.minecraft.block.Block;
 import net.minecraft.block.SoundType;
 import net.minecraft.block.material.MapColor;
 import net.minecraft.block.material.Material;
+import net.minecraftforge.common.EnumPlantType;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -209,6 +210,12 @@ public class EBTBlocks {
     public static EBTBlockStairs red_rock_cobblestone_stairs = null;
     public static EBTBlockWall red_rock_cobblestone_wall = null;
 
+    public static EBTBlockTallGrass autumnal_shrub = null;
+    public static EBTBlockTallGrass dead_grass = null;
+    public static EBTBlockTallGrass dry_grass = null;
+    public static EBTBlockFlower tiny_cactus = null;
+    public static EBTBlockFlower toadstools = null;
+
     public static final List<Block> MOD_BLOCKS = new ArrayList<>();
 
     public static void initBlocks() {
@@ -406,5 +413,11 @@ public class EBTBlocks {
         MOD_BLOCKS.add(crag_rock_wall = new EBTBlockWall("crag_rock_wall", new EBTBlockMaterial("red_rock_wall", Material.ROCK, MapColor.CYAN, 2.0F, 10.0F, SoundType.STONE), false));
         MOD_BLOCKS.add(crag_rock_cobblestone_wall = new EBTBlockWall("crag_rock_cobblestone_wall", new EBTBlockMaterial("crag_rock_cobblestone_wall", Material.ROCK, MapColor.CYAN, 2.0F, 10.0F, SoundType.STONE), false));
         MOD_BLOCKS.add(crag_rock_bricks_wall = new EBTBlockWall("crag_rock_bricks_wall", new EBTBlockMaterial("crag_rock_bricks_wall", Material.ROCK, MapColor.CYAN, 2.0F, 10.0F, SoundType.STONE), false));
+
+        MOD_BLOCKS.add(autumnal_shrub = new EBTBlockTallGrass("autumnal_shrub", EnumPlantType.Plains));
+        MOD_BLOCKS.add(dead_grass = new EBTBlockTallGrass("dead_grass", EnumPlantType.Desert));
+        MOD_BLOCKS.add(dry_grass = new EBTBlockTallGrass("dry_grass", EnumPlantType.Desert));
+        MOD_BLOCKS.add(tiny_cactus = new EBTBlockFlower("tiny_cactus", EnumPlantType.Desert));
+        MOD_BLOCKS.add(toadstools = new EBTBlockFlower("toadstools", EnumPlantType.Plains));
     }
 }

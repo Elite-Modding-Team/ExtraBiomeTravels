@@ -1,0 +1,24 @@
+{
+  "forge_marker": 1,
+  "defaults": {
+    "model": "cross",
+    "textures": {
+      "cross": "ebt:blocks/dead_grass",
+      "item": "#cross"
+    }
+  },
+  "variants": {
+    "inventory": [
+      {
+        "transform": "forge:default-item",
+        "model": "builtin/generated",
+        "textures": {
+          "layer0": "ebt:blocks/dead_grass"
+        }
+      }
+    ],
+    "normal": [
+      {}
+    ]
+  }
+}
