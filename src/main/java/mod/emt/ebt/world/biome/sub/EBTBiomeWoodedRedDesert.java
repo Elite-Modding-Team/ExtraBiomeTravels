@@ -28,7 +28,7 @@ public class EBTBiomeWoodedRedDesert extends BiomeDesert {
         properties.setHeightVariation(Biomes.DESERT_HILLS.getHeightVariation());
 
         // Important to properly set this as a sub-biome!
-        properties.setBaseBiome(EBTBiomes.RED_DESERT.getBiomeName());
+        properties.setBaseBiome("Red Desert");
     }
 
     public EBTBiomeWoodedRedDesert() {

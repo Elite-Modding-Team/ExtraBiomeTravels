@@ -51,7 +51,7 @@ public class EBTBiomeGlacier extends Biome {
             properties = new BiomeProperties("Glacier Spikes");
 
             // Important to properly set this as a sub-biome!
-            properties.setBaseBiome(EBTBiomes.GLACIER.getBiomeName());
+            properties.setBaseBiome("Glacier");
         } else {
             properties = new BiomeProperties("Glacier");
         }

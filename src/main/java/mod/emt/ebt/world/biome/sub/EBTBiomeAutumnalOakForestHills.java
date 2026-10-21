@@ -22,7 +22,7 @@ public class EBTBiomeAutumnalOakForestHills extends Biome {
         properties.setHeightVariation(Biomes.FOREST_HILLS.getHeightVariation());
 
         // Important to properly set this as a sub-biome!
-        properties.setBaseBiome(EBTBiomes.AUTUMNAL_OAK_FOREST.getBiomeName());
+        properties.setBaseBiome("Autumnal Oak Forest");
     }
 
     public EBTBiomeAutumnalOakForestHills() {

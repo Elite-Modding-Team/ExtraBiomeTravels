@@ -35,7 +35,7 @@ public class EBTBiomePrairieShrublands extends Biome {
         properties.setHeightVariation(0.05F);
 
         // Important to properly set this as a sub-biome!
-        properties.setBaseBiome(EBTBiomes.PRAIRIE.getBiomeName());
+        properties.setBaseBiome("Prairie");
     }
 
     public EBTBiomePrairieShrublands() {
