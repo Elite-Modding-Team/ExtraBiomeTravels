@@ -75,7 +75,7 @@ public class EBTBiomes {
             registerBiomeSpawn(CYPRESS_FOREST, EBTConfig.BIOMES.weightCypressForest, BiomeType.WARM);
         }
         if (EBTConfig.BIOMES.weightCypressSwamp > 0) {
-            registerBiome(CYPRESS_SWAMP, "cypress_swamp", EBTConfig.BIOMES.villageGenCypressSwamp, Type.LUSH, Type.WET, Type.SWAMP);
+            registerBiome(CYPRESS_SWAMP, "cypress_swamp", EBTConfig.BIOMES.villageGenCypressSwamp, Type.LUSH, Type.SWAMP, Type.WET);
             registerBiomeSpawn(CYPRESS_SWAMP, EBTConfig.BIOMES.weightCypressSwamp, BiomeType.WARM);
         }
         if (EBTConfig.BIOMES.weightFlatlands > 0) {
@@ -131,7 +131,7 @@ public class EBTBiomes {
             registerBiomeSpawn(ROCKY_PLAINS, EBTConfig.BIOMES.weightRockyPlains, BiomeType.WARM);
         }
         if (EBTConfig.BIOMES.weightRollingHills > 0) {
-            registerBiome(ROLLING_HILLS, "rolling_hills", EBTConfig.BIOMES.villageGenRollingHills, Type.LUSH, Type.HILLS, Type.SPARSE);
+            registerBiome(ROLLING_HILLS, "rolling_hills", EBTConfig.BIOMES.villageGenRollingHills, Type.HILLS, Type.LUSH, Type.SPARSE);
             registerBiomeSpawn(ROLLING_HILLS, EBTConfig.BIOMES.weightRollingHills, BiomeType.COOL);
         }
         if (EBTConfig.BIOMES.weightSnowyConiferousForest > 0) {
