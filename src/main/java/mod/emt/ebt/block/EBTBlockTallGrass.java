@@ -19,6 +19,7 @@ import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.IBlockAccess;
 import net.minecraft.world.World;
 import net.minecraftforge.common.EnumPlantType;
+import net.minecraftforge.common.ForgeHooks;
 import net.minecraftforge.common.IShearable;
 import org.jetbrains.annotations.NotNull;
 
@@ -103,7 +104,7 @@ public class EBTBlockTallGrass extends BlockBush implements IShearable {
     @Override
     public void getDrops(@NotNull NonNullList<ItemStack> drops, @NotNull IBlockAccess world, @NotNull BlockPos pos, @NotNull IBlockState state, int fortune) {
         if (RANDOM.nextInt(8) != 0) return;
-        ItemStack seed = net.minecraftforge.common.ForgeHooks.getGrassSeed(RANDOM, fortune);
+        ItemStack seed = ForgeHooks.getGrassSeed(RANDOM, fortune);
         if (!seed.isEmpty()) {
             drops.add(seed);
         }
