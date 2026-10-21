@@ -155,6 +155,94 @@ public class EBTConfig {
         @Config.Comment("Set to 0 to unregister this biome")
         @Config.RangeInt(min = 0)
         public int weightWoodlands = 5;
+
+        @Config.RequiresMcRestart
+        @Config.Name("Village Generation: Autumnal Grove")
+        public boolean villageGenAutumnalGrove = false;
+
+        @Config.RequiresMcRestart
+        @Config.Name("Village Generation: Autumnal Oak Forest")
+        public boolean villageGenAutumnalOakForest = false;
+
+        @Config.RequiresMcRestart
+        @Config.Name("Village Generation: Cliffs")
+        public boolean villageGenCliffs = false;
+
+        @Config.RequiresMcRestart
+        @Config.Name("Village Generation: Coniferous Forest")
+        public boolean villageGenConiferousForest = false;
+
+        @Config.RequiresMcRestart
+        @Config.Name("Village Generation: Cypress Forest")
+        public boolean villageGenCypressForest = false;
+
+        @Config.RequiresMcRestart
+        @Config.Name("Village Generation: Cypress Swamp")
+        public boolean villageGenCypressSwamp = false;
+
+        @Config.RequiresMcRestart
+        @Config.Name("Village Generation: Flatlands")
+        public boolean villageGenFlatlands = true;
+
+        @Config.RequiresMcRestart
+        @Config.Name("Village Generation: Glacier")
+        public boolean villageGenGlacier = false;
+
+        @Config.RequiresMcRestart
+        @Config.Name("Village Generation: Lush Jungle")
+        public boolean villageGenLushJungle = false;
+
+        @Config.RequiresMcRestart
+        @Config.Name("Village Generation: Maple Shrublands")
+        public boolean villageGenMapleShrublands = true;
+
+        @Config.RequiresMcRestart
+        @Config.Name("Village Generation: Mountainous Crag")
+        public boolean villageGenMountainousCrag = false;
+
+        @Config.RequiresMcRestart
+        @Config.Name("Village Generation: Prairie")
+        public boolean villageGenPrairie = true;
+
+        @Config.RequiresMcRestart
+        @Config.Name("Village Generation: Rainforest")
+        public boolean villageGenRainforest = false;
+
+        @Config.RequiresMcRestart
+        @Config.Name("Village Generation: Red Desert")
+        public boolean villageGenRedDesert = true;
+
+        @Config.RequiresMcRestart
+        @Config.Name("Village Generation: Red Rock Drylands")
+        public boolean villageGenRedRockDrylands = false;
+
+        @Config.RequiresMcRestart
+        @Config.Name("Village Generation: Red Rock Ridge")
+        public boolean villageGenRedRockRidge = false;
+
+        @Config.RequiresMcRestart
+        @Config.Name("Village Generation: Rocky Plains")
+        public boolean villageGenRockyPlains = true;
+
+        @Config.RequiresMcRestart
+        @Config.Name("Village Generation: Rolling Hills")
+        public boolean villageGenRollingHills = true;
+
+        @Config.RequiresMcRestart
+        @Config.Name("Village Generation: Snowy Coniferous Forest")
+        public boolean villageGenSnowyConiferousForest = false;
+
+        @Config.RequiresMcRestart
+        @Config.Name("Village Generation: Thicket")
+        public boolean villageGenThicket = false;
+
+        @Config.RequiresMcRestart
+        @Config.Name("Village Generation: Wasteland")
+        public boolean villageGenWasteland = false;
+
+        @Config.RequiresMcRestart
+        @Config.Name("Village Generation: Woodlands")
+        public boolean villageGenWoodlands = true;
     }
 
     @Mod.EventBusSubscriber(modid = ExtraBiomeTravels.MOD_ID)
