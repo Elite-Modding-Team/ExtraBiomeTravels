@@ -38,7 +38,7 @@ public class EBTBiomeConiferousForest extends Biome {
         this.decorator.grassPerChunk = 9;
         this.decorator.mushroomsPerChunk = 2;
         this.isSnowy = isSnowy;
-        this.addFlower(EBTBlocks.toadstools.getDefaultState(), 10);
+        //this.addFlower(EBTBlocks.toadstools.getDefaultState(), 10);
     }
 
     public static BiomeProperties getProperties(boolean isSnowy) {

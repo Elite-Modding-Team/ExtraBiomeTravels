@@ -417,7 +417,7 @@ public class EBTBlocks {
         MOD_BLOCKS.add(autumnal_shrub = new EBTBlockTallGrass("autumnal_shrub", EnumPlantType.Plains));
         MOD_BLOCKS.add(dead_grass = new EBTBlockTallGrass("dead_grass", EnumPlantType.Desert));
         MOD_BLOCKS.add(dry_grass = new EBTBlockTallGrass("dry_grass", EnumPlantType.Desert));
-        MOD_BLOCKS.add(tiny_cactus = new EBTBlockFlower("tiny_cactus", EnumPlantType.Desert));
-        MOD_BLOCKS.add(toadstools = new EBTBlockFlower("toadstools", EnumPlantType.Plains));
+        //MOD_BLOCKS.add(tiny_cactus = new EBTBlockFlower("tiny_cactus", EnumPlantType.Desert));
+        //MOD_BLOCKS.add(toadstools = new EBTBlockFlower("toadstools", EnumPlantType.Plains));
     }
 }

@@ -37,7 +37,7 @@ public class EBTBiomeAutumnalGrove extends Biome {
         decorator.mushroomsPerChunk = 3;
         decorator.grassPerChunk = 6;
         this.addFlower(EBTBlocks.autumnal_shrub.getDefaultState(), 10);
-        this.addFlower(EBTBlocks.toadstools.getDefaultState(), 10);
+        //this.addFlower(EBTBlocks.toadstools.getDefaultState(), 10);
         this.spawnableCreatureList.add(new SpawnListEntry(EntityWolf.class, 5, 4, 4));
     }
 
