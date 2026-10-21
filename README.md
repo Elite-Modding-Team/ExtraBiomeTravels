@@ -1,7 +1,7 @@
 # Extra Biome Travels
 Extra Biome Travels is a 1.12.2 mod focused on classic vanilla style biomes. This includes its own implementation of biomes featured in [Traverse](https://www.curseforge.com/minecraft/mc-mods/traverse-reforged) and [ExtrabiomesXL](https://www.curseforge.com/minecraft/mc-mods/extrabiomesxl)!
 
-The mod also features its own content with additional biomes on the way to make it stand out more on its own. You can see more information about all the biomes in the mod's wiki.
+The mod also features its own content with additional biomes on the way to make it stand out more on its own. You can see more information about all the biomes in the [mod's wiki](https://github.com/Elite-Modding-Team/ExtraBiomeTravels/wiki).
 
 #### **_IMPORTANT: This mod is going to stay on 1.12.2, there are no plans for porting from our side!_**
 
