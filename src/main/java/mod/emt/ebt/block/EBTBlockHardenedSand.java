@@ -2,6 +2,7 @@ package mod.emt.ebt.block;
 
 import java.util.Random;
 
+import mod.emt.ebt.init.EBTBlocks;
 import mod.emt.ebt.init.EBTRegistry;
 import net.minecraft.block.IGrowable;
 import net.minecraft.block.material.MapColor;
@@ -59,12 +60,16 @@ public class EBTBlockHardenedSand extends EBTBlockMaterial implements IGrowable 
             while (true) {
                 if (j >= i / 8) {
                     if (world.isAirBlock(blockpos1)) {
-                        if (rand.nextInt(2) == 0) {
-                            world.getBiome(blockpos1).plantFlower(world, rand, blockpos1);
-                        } else {
+                        if (rand.nextInt(4) == 0) {
                             IBlockState iblockstate1 = Blocks.DEADBUSH.getDefaultState();
 
                             if ((Blocks.DEADBUSH).canBlockStay(world, blockpos1, iblockstate1)) {
+                                world.setBlockState(blockpos1, iblockstate1, 3);
+                            }
+                        } else {
+                            IBlockState iblockstate1 = EBTBlocks.dead_grass.getDefaultState();
+
+                            if ((EBTBlocks.dead_grass).canBlockStay(world, blockpos1, iblockstate1)) {
                                 world.setBlockState(blockpos1, iblockstate1, 3);
                             }
                         }

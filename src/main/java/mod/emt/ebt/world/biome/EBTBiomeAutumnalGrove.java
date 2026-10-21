@@ -1,21 +1,27 @@
 package mod.emt.ebt.world.biome;
 
 import mod.emt.ebt.init.EBTBlocks;
+import mod.emt.ebt.world.feature.EBTWorldGenPlant;
 import mod.emt.ebt.world.feature.tree.EBTWorldGenAutumnalTree;
 import mod.emt.ebt.world.feature.tree.EBTWorldGenJapaneseMapleTree;
 import mod.emt.ebt.world.feature.tree.EBTWorldGenTallTree;
 import net.minecraft.block.BlockLeaves;
+import net.minecraft.block.BlockTallGrass;
 import net.minecraft.entity.passive.EntityWolf;
 import net.minecraft.init.Biomes;
 import net.minecraft.init.Blocks;
 import net.minecraft.world.biome.Biome;
 import net.minecraft.world.gen.feature.WorldGenAbstractTree;
+import net.minecraft.world.gen.feature.WorldGenTallGrass;
+import net.minecraft.world.gen.feature.WorldGenerator;
 import org.jetbrains.annotations.NotNull;
 
 import java.util.Random;
 
 public class EBTBiomeAutumnalGrove extends Biome {
     public static BiomeProperties properties = new BiomeProperties("Autumnal Grove");
+
+    public static final WorldGenerator AUTUMNAL_SHRUB_FEATURE = new EBTWorldGenPlant(EBTBlocks.autumnal_shrub.getDefaultState());
 
     static {
         properties.setTemperature(Biomes.FOREST.getDefaultTemperature());
@@ -64,6 +70,11 @@ public class EBTBiomeAutumnalGrove extends Biome {
                 return new EBTWorldGenTallTree(false, rand.nextBoolean(), Blocks.LOG.getDefaultState(), EBTBlocks.green_autumnal_oak_leaves.getDefaultState().withProperty(BlockLeaves.CHECK_DECAY, false));
             }
         }
+    }
+
+    @Override
+    public @NotNull WorldGenerator getRandomWorldGenForGrass(@NotNull Random rand) {
+        return rand.nextInt(5) > 0 ? new WorldGenTallGrass(BlockTallGrass.EnumType.GRASS) : AUTUMNAL_SHRUB_FEATURE;
     }
 
     @Override

@@ -1,20 +1,24 @@
 package mod.emt.ebt.world.biome;
 
 import mod.emt.ebt.init.EBTBlocks;
+import mod.emt.ebt.world.feature.EBTWorldGenPlant;
 import net.minecraft.block.Block;
 import net.minecraft.block.material.Material;
 import net.minecraft.block.state.IBlockState;
 import net.minecraft.init.Blocks;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
-import net.minecraft.world.biome.BiomePlains;
+import net.minecraft.world.biome.Biome;
 import net.minecraft.world.chunk.ChunkPrimer;
+import net.minecraft.world.gen.feature.WorldGenerator;
 import org.jetbrains.annotations.NotNull;
 
 import java.util.Random;
 
-public class EBTBiomeMountainousCrag extends BiomePlains {
+public class EBTBiomeMountainousCrag extends Biome {
     public static BiomeProperties properties = new BiomeProperties("Mountainous Crag");
+
+    public static final WorldGenerator DRY_GRASS_FEATURE = new EBTWorldGenPlant(EBTBlocks.dry_grass.getDefaultState());
 
     static {
         properties.setTemperature(0.8F);
@@ -24,13 +28,13 @@ public class EBTBiomeMountainousCrag extends BiomePlains {
     }
 
     public EBTBiomeMountainousCrag() {
-        super(false, properties);
+        super(properties);
         this.topBlock = EBTBlocks.crag_rock.getDefaultState();
         this.fillerBlock = EBTBlocks.crag_rock.getDefaultState();
-        decorator.treesPerChunk = 0;
-        decorator.extraTreeChance = 0;
-        decorator.flowersPerChunk = 0;
-        decorator.grassPerChunk = 8;
+        decorator.treesPerChunk = -999;
+        decorator.extraTreeChance = -999;
+        decorator.flowersPerChunk = -999;
+        decorator.grassPerChunk = 1;
         spawnableCreatureList.clear();
     }
 
@@ -153,6 +157,11 @@ public class EBTBiomeMountainousCrag extends BiomePlains {
         n = (n ^ (n >> 13)) * 1274126177L;
         n = n ^ (n >> 16);
         return ((n & 0x7fffffffL) / (double) 0x3fffffffL) - 1.0;
+    }
+
+    @Override
+    public @NotNull WorldGenerator getRandomWorldGenForGrass(@NotNull Random rand) {
+        return DRY_GRASS_FEATURE;
     }
 
     @Override

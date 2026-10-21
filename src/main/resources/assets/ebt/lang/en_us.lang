@@ -190,5 +190,5 @@ item.ebt:wattle_door.name=Wattle Door
 item.ebt:white_fir_door.name=White Fir Door
 
 # CONFIG
-cfg.traversebiomesxl.general=General
-cfg.traversebiomesxl.biomes=Biomes
+cfg.ebt.general=General
+cfg.ebt.biomes=Biomes

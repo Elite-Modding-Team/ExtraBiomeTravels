@@ -1,5 +1,6 @@
 package mod.emt.ebt.world.biome;
 
+import mod.emt.ebt.init.EBTBlocks;
 import mod.emt.ebt.world.feature.tree.EBTWorldGenBaldCypressTree;
 import net.minecraft.init.Biomes;
 import net.minecraft.world.biome.BiomeSwamp;
@@ -23,6 +24,7 @@ public class EBTBiomeCypressSwamp extends BiomeSwamp {
         super(properties);
         this.decorator.flowersPerChunk = 6;
         this.decorator.deadBushPerChunk = 0;
+        this.addFlower(EBTBlocks.toadstools.getDefaultState(), 10);
     }
 
     @Override

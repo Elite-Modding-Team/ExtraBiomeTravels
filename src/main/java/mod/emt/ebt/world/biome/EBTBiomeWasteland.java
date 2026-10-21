@@ -1,14 +1,21 @@
 package mod.emt.ebt.world.biome;
 
 import mod.emt.ebt.init.EBTBlocks;
+import mod.emt.ebt.world.feature.EBTWorldGenPlant;
 import net.minecraft.entity.monster.EntityHusk;
 import net.minecraft.entity.monster.EntityZombie;
 import net.minecraft.entity.monster.EntityZombieVillager;
 import net.minecraft.init.Biomes;
 import net.minecraft.world.biome.Biome;
+import net.minecraft.world.gen.feature.WorldGenerator;
+import org.jetbrains.annotations.NotNull;
+
+import java.util.Random;
 
 public class EBTBiomeWasteland extends Biome {
     public static BiomeProperties properties = new BiomeProperties("Wasteland");
+
+    public static final WorldGenerator DEAD_GRASS_FEATURE = new EBTWorldGenPlant(EBTBlocks.dead_grass.getDefaultState());
 
     static {
         properties.setTemperature(Biomes.DESERT.getDefaultTemperature());
@@ -36,8 +43,13 @@ public class EBTBiomeWasteland extends Biome {
         decorator.flowersPerChunk = 0;
         decorator.deadBushPerChunk = 5;
         decorator.generateFalls = false;
-        decorator.grassPerChunk = 5;
+        decorator.grassPerChunk = 2;
         decorator.treesPerChunk = 0;
+    }
+
+    @Override
+    public @NotNull WorldGenerator getRandomWorldGenForGrass(@NotNull Random rand) {
+        return DEAD_GRASS_FEATURE;
     }
 
     @Override

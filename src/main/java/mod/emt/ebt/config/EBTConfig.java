@@ -7,13 +7,13 @@ import net.minecraftforge.fml.client.event.ConfigChangedEvent;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
 
-@Config(modid = ExtraBiomeTravels.MOD_ID, name = "TraverseBiomesXL")
+@Config(modid = ExtraBiomeTravels.MOD_ID, name = "Extra Biome Travels")
 public class EBTConfig {
-    @Config.LangKey("cfg.traversebiomesxl.general")
+    @Config.LangKey("cfg.ebt.general")
     @Config.Name("General")
     public static final GeneralSettings GENERAL = new GeneralSettings();
 
-    @Config.LangKey("cfg.traversebiomesxl.biomes")
+    @Config.LangKey("cfg.ebt.biomes")
     @Config.Name("Biomes")
     public static final BiomeSettings BIOMES = new BiomeSettings();
 

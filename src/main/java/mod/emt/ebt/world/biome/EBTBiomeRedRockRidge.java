@@ -3,6 +3,7 @@ package mod.emt.ebt.world.biome;
 import java.util.Random;
 
 import mod.emt.ebt.init.EBTBlocks;
+import mod.emt.ebt.world.feature.EBTWorldGenPlant;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockSand;
 import net.minecraft.block.material.Material;
@@ -15,10 +16,13 @@ import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
 import net.minecraft.world.biome.Biome;
 import net.minecraft.world.chunk.ChunkPrimer;
+import net.minecraft.world.gen.feature.WorldGenerator;
 import org.jetbrains.annotations.NotNull;
 
 public class EBTBiomeRedRockRidge extends Biome {
     public static BiomeProperties properties = new BiomeProperties("Red Rock Ridge");
+
+    public static final WorldGenerator DRY_GRASS_FEATURE = new EBTWorldGenPlant(EBTBlocks.dry_grass.getDefaultState());
 
     static {
         properties.setTemperature(1.0F);
@@ -175,6 +179,11 @@ public class EBTBiomeRedRockRidge extends Biome {
         n = (n ^ (n >> 13)) * 1274126177L;
         n = n ^ (n >> 16);
         return ((n & 0x7fffffffL) / (double) 0x3fffffffL) - 1.0;
+    }
+
+    @Override
+    public @NotNull WorldGenerator getRandomWorldGenForGrass(@NotNull Random rand) {
+        return DRY_GRASS_FEATURE;
     }
 
     @Override

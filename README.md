@@ -3,7 +3,7 @@ Extra Biome Travels is a 1.12.2 mod focused on classic vanilla style biomes. Thi
 
 The mod also features its own content with additional biomes on the way to make it stand out more on its own. You can see more information about all the biomes in the mod's wiki.
 
-#### **_IMPORTANT: This mod is going to stay on 1.12.2, there are no plans for porting from our side! The mod is currently in Beta, things are subject to change and even be removed!_**
+#### **_IMPORTANT: This mod is going to stay on 1.12.2, there are no plans for porting from our side!_**
 
 ![Flatlands](docs/flatlands.png)
 ![Glaciers](docs/glaciers.png)

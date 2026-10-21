@@ -3,6 +3,7 @@ package mod.emt.ebt.world.biome;
 import java.util.Random;
 
 import mod.emt.ebt.init.EBTBlocks;
+import mod.emt.ebt.world.feature.EBTWorldGenPlant;
 import mod.emt.ebt.world.feature.tree.EBTWorldGenWattleTree;
 import net.minecraft.block.*;
 import net.minecraft.block.state.IBlockState;
@@ -12,10 +13,7 @@ import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
 import net.minecraft.world.biome.Biome;
 import net.minecraft.world.chunk.ChunkPrimer;
-import net.minecraft.world.gen.feature.WorldGenAbstractTree;
-import net.minecraft.world.gen.feature.WorldGenLakes;
-import net.minecraft.world.gen.feature.WorldGenSavannaTree;
-import net.minecraft.world.gen.feature.WorldGenShrub;
+import net.minecraft.world.gen.feature.*;
 import net.minecraftforge.event.terraingen.DecorateBiomeEvent;
 import net.minecraftforge.event.terraingen.TerrainGen;
 import org.jetbrains.annotations.NotNull;
@@ -23,6 +21,7 @@ import org.jetbrains.annotations.NotNull;
 @SuppressWarnings("deprecation")
 public class EBTBiomeRedRockDrylands extends Biome {
     protected static final WorldGenSavannaTree ACACIA_TREE_FEATURE = new WorldGenSavannaTree(false);
+    public static final WorldGenerator DEAD_GRASS_FEATURE = new EBTWorldGenPlant(EBTBlocks.dead_grass.getDefaultState());
     protected static final WorldGenLakes LAVA_LAKE_FEATURE = new WorldGenLakes(Blocks.LAVA);
 
     public static BiomeProperties properties = new BiomeProperties("Red Rock Drylands");
@@ -93,6 +92,11 @@ public class EBTBiomeRedRockDrylands extends Biome {
         }
 
         this.generateBiomeTerrain(world, rand, chunkPrimer, x, z, noiseVal);
+    }
+
+    @Override
+    public @NotNull WorldGenerator getRandomWorldGenForGrass(@NotNull Random rand) {
+        return rand.nextInt(5) > 0 ? new WorldGenTallGrass(BlockTallGrass.EnumType.GRASS) : DEAD_GRASS_FEATURE;
     }
 
     @Override
