@@ -15,6 +15,6 @@ public class EBTCreativeTab extends CreativeTabs {
     @Override
     @SideOnly(Side.CLIENT)
     public @NotNull ItemStack createIcon() {
-        return new ItemStack(EBTBlocks.rainbow_eucalyptus_sapling);
+        return new ItemStack(EBTBlocks.cypress_sapling);
     }
 }
