@@ -71,6 +71,8 @@ The mod also features its own content with additional biomes on the way to make 
 
 #### Wood
 
+Comes in buttons, doors, fence gates, fences, logs, planks, pressure plates, slabs, and stairs!
+
 ![List of Planks](docs/planks.png)
 
 - **Autumnal**
@@ -83,6 +85,15 @@ The mod also features its own content with additional biomes on the way to make 
 - **Scalewood**
 - **Wattle**
 - **White Fir**
+
+#### Stone Variants
+
+Comes in bricks, buttons, cobblestone, pressure plates, slabs, stairs, stone, and walls!
+
+![List of Stone Variants](docs/stone_variants.png)
+
+- **Crag Rock**
+- **Red Rock**
 
 ---
 
