@@ -25,134 +25,244 @@ public class EBTConfig {
 
     public static class BiomeSettings {
         @Config.RequiresMcRestart
+        @Config.Name("Biome Enable: Autumnal Grove")
+        @Config.Comment("Set to false to unregister this biome")
+        public boolean enableAutumnalGrove = true;
+
+        @Config.RequiresMcRestart
+        @Config.Name("Biome Enable: Autumnal Oak Forest")
+        @Config.Comment("Set to false to unregister this biome")
+        public boolean enableAutumnalOakForest = true;
+
+        @Config.RequiresMcRestart
+        @Config.Name("Biome Enable: Cliffs")
+        @Config.Comment("Set to false to unregister this biome")
+        public boolean enableCliffs = true;
+
+        @Config.RequiresMcRestart
+        @Config.Name("Biome Enable: Coniferous Forest")
+        @Config.Comment("Set to false to unregister this biome")
+        public boolean enableConiferousForest = true;
+
+        @Config.RequiresMcRestart
+        @Config.Name("Biome Enable: Cypress Forest")
+        @Config.Comment("Set to false to unregister this biome")
+        public boolean enableCypressForest = true;
+
+        @Config.RequiresMcRestart
+        @Config.Name("Biome Enable: Cypress Swamp")
+        @Config.Comment("Set to false to unregister this biome")
+        public boolean enableCypressSwamp = true;
+
+        @Config.RequiresMcRestart
+        @Config.Name("Biome Enable: Flatlands")
+        @Config.Comment("Set to false to unregister this biome")
+        public boolean enableFlatlands = true;
+
+        @Config.RequiresMcRestart
+        @Config.Name("Biome Enable: Glacier")
+        @Config.Comment("Set to false to unregister this biome")
+        public boolean enableGlacier = true;
+
+        @Config.RequiresMcRestart
+        @Config.Name("Biome Enable: Lush Jungle")
+        @Config.Comment("Set to false to unregister this biome")
+        public boolean enableLushJungle = true;
+
+        @Config.RequiresMcRestart
+        @Config.Name("Biome Enable: Maple Shrublands")
+        @Config.Comment("Set to false to unregister this biome")
+        public boolean enableMapleShrublands = true;
+
+        @Config.RequiresMcRestart
+        @Config.Name("Biome Enable: Mountainous Crag")
+        @Config.Comment("Set to false to unregister this biome")
+        public boolean enableMountainousCrag = true;
+
+        @Config.RequiresMcRestart
+        @Config.Name("Biome Enable: Prairie")
+        @Config.Comment("Set to false to unregister this biome")
+        public boolean enablePrairie = true;
+
+        @Config.RequiresMcRestart
+        @Config.Name("Biome Enable: Rainforest")
+        @Config.Comment("Set to false to unregister this biome")
+        public boolean enableRainforest = true;
+
+        @Config.RequiresMcRestart
+        @Config.Name("Biome Enable: Red Desert")
+        @Config.Comment("Set to false to unregister this biome")
+        public boolean enableRedDesert = true;
+
+        @Config.RequiresMcRestart
+        @Config.Name("Biome Enable: Red Rock Drylands")
+        @Config.Comment("Set to false to unregister this biome")
+        public boolean enableRedRockDrylands = true;
+
+        @Config.RequiresMcRestart
+        @Config.Name("Biome Enable: Red Rock Ridge")
+        @Config.Comment("Set to false to unregister this biome")
+        public boolean enableRedRockRidge = true;
+
+        @Config.RequiresMcRestart
+        @Config.Name("Biome Enable: Rocky Plains")
+        @Config.Comment("Set to false to unregister this biome")
+        public boolean enableRockyPlains = true;
+
+        @Config.RequiresMcRestart
+        @Config.Name("Biome Enable: Rolling Hills")
+        @Config.Comment("Set to false to unregister this biome")
+        public boolean enableRollingHills = true;
+
+        @Config.RequiresMcRestart
+        @Config.Name("Biome Enable: Snowy Coniferous Forest")
+        @Config.Comment("Set to false to unregister this biome")
+        public boolean enableSnowyConiferousForest = true;
+
+        @Config.RequiresMcRestart
+        @Config.Name("Biome Enable: Thicket")
+        @Config.Comment("Set to false to unregister this biome")
+        public boolean enableThicket = true;
+
+        @Config.RequiresMcRestart
+        @Config.Name("Biome Enable: Wasteland")
+        @Config.Comment("Set to false to unregister this biome")
+        public boolean enabletWasteland = true;
+
+        @Config.RequiresMcRestart
+        @Config.Name("Biome Enable: Woodlands")
+        @Config.Comment("Set to false to unregister this biome")
+        public boolean enableWoodlands = true;
+
+        @Config.RequiresMcRestart
         @Config.Name("Biome Weight: Autumnal Grove")
-        @Config.Comment("Set to 0 to unregister this biome")
+        @Config.Comment("Adjusts the spawn weight, higher numbers make it more common, while 0 completely prevents it from generating")
         @Config.RangeInt(min = 0)
         public int weightAutumnalGrove = 4;
 
         @Config.RequiresMcRestart
         @Config.Name("Biome Weight: Autumnal Oak Forest")
-        @Config.Comment("Set to 0 to unregister this biome including sub-variants")
+        @Config.Comment("Adjusts the spawn weight, higher numbers make it more common, while 0 completely prevents it from generating")
         @Config.RangeInt(min = 0)
         public int weightAutumnalOakForest = 5;
 
         @Config.RequiresMcRestart
         @Config.Name("Biome Weight: Cliffs")
-        @Config.Comment("Set to 0 to unregister this biome")
+        @Config.Comment("Adjusts the spawn weight, higher numbers make it more common, while 0 completely prevents it from generating")
         @Config.RangeInt(min = 0)
         public int weightCliffs = 3;
 
         @Config.RequiresMcRestart
         @Config.Name("Biome Weight: Coniferous Forest")
-        @Config.Comment("Set to 0 to unregister this biome")
+        @Config.Comment("Adjusts the spawn weight, higher numbers make it more common, while 0 completely prevents it from generating")
         @Config.RangeInt(min = 0)
         public int weightConiferousForest = 4;
 
         @Config.RequiresMcRestart
         @Config.Name("Biome Weight: Cypress Forest")
-        @Config.Comment("Set to 0 to unregister this biome including sub-variants")
+        @Config.Comment("Adjusts the spawn weight, higher numbers make it more common, while 0 completely prevents it from generating")
         @Config.RangeInt(min = 0)
         public int weightCypressForest = 3;
 
         @Config.RequiresMcRestart
         @Config.Name("Biome Weight: Cypress Swamp")
-        @Config.Comment("Set to 0 to unregister this biome")
+        @Config.Comment("Adjusts the spawn weight, higher numbers make it more common, while 0 completely prevents it from generating")
         @Config.RangeInt(min = 0)
         public int weightCypressSwamp = 4;
 
         @Config.RequiresMcRestart
         @Config.Name("Biome Weight: Flatlands")
-        @Config.Comment("Set to 0 to unregister this biome")
+        @Config.Comment("Adjusts the spawn weight, higher numbers make it more common, while 0 completely prevents it from generating")
         @Config.RangeInt(min = 0)
         public int weightFlatlands = 5;
 
         @Config.RequiresMcRestart
         @Config.Name("Biome Weight: Glacier")
-        @Config.Comment("Set to 0 to unregister this biome including sub-variants")
+        @Config.Comment("Adjusts the spawn weight, higher numbers make it more common, while 0 completely prevents it from generating")
         @Config.RangeInt(min = 0)
         public int weightGlacier = 3;
 
         @Config.RequiresMcRestart
         @Config.Name("Biome Weight: Lush Jungle")
-        @Config.Comment("Set to 0 to unregister this biome")
+        @Config.Comment("Adjusts the spawn weight, higher numbers make it more common, while 0 completely prevents it from generating")
         @Config.RangeInt(min = 0)
         public int weightLushJungle = 4;
 
         @Config.RequiresMcRestart
         @Config.Name("Biome Weight: Maple Shrublands")
-        @Config.Comment("Set to 0 to unregister this biome")
+        @Config.Comment("Adjusts the spawn weight, higher numbers make it more common, while 0 completely prevents it from generating")
         @Config.RangeInt(min = 0)
         public int weightMapleShrublands = 4;
 
         @Config.RequiresMcRestart
         @Config.Name("Biome Weight: Mountainous Crag")
-        @Config.Comment("Set to 0 to unregister this biome")
+        @Config.Comment("Adjusts the spawn weight, higher numbers make it more common, while 0 completely prevents it from generating")
         @Config.RangeInt(min = 0)
         public int weightMountainousCrag = 3;
 
         @Config.RequiresMcRestart
         @Config.Name("Biome Weight: Prairie")
-        @Config.Comment("Set to 0 to unregister this biome including sub-variants")
+        @Config.Comment("Adjusts the spawn weight, higher numbers make it more common, while 0 completely prevents it from generating")
         @Config.RangeInt(min = 0)
         public int weightPrairie = 5;
 
         @Config.RequiresMcRestart
         @Config.Name("Biome Weight: Rainforest")
-        @Config.Comment("Set to 0 to unregister this biome")
+        @Config.Comment("Adjusts the spawn weight, higher numbers make it more common, while 0 completely prevents it from generating")
         @Config.RangeInt(min = 0)
         public int weightRainforest = 4;
 
         @Config.RequiresMcRestart
         @Config.Name("Biome Weight: Red Desert")
-        @Config.Comment("Set to 0 to unregister this biome including sub-variants")
+        @Config.Comment("Adjusts the spawn weight, higher numbers make it more common, while 0 completely prevents it from generating")
         @Config.RangeInt(min = 0)
         public int weightRedDesert = 5;
 
         @Config.RequiresMcRestart
         @Config.Name("Biome Weight: Red Rock Drylands")
-        @Config.Comment("Set to 0 to unregister this biome")
+        @Config.Comment("Adjusts the spawn weight, higher numbers make it more common, while 0 completely prevents it from generating")
         @Config.RangeInt(min = 0)
         public int weightRedRockDrylands = 4;
 
         @Config.RequiresMcRestart
         @Config.Name("Biome Weight: Red Rock Ridge")
-        @Config.Comment("Set to 0 to unregister this biome")
+        @Config.Comment("Adjusts the spawn weight, higher numbers make it more common, while 0 completely prevents it from generating")
         @Config.RangeInt(min = 0)
         public int weightRedRockRidge = 5;
 
         @Config.RequiresMcRestart
         @Config.Name("Biome Weight: Rocky Plains")
-        @Config.Comment("Set to 0 to unregister this biome")
+        @Config.Comment("Adjusts the spawn weight, higher numbers make it more common, while 0 completely prevents it from generating")
         @Config.RangeInt(min = 0)
         public int weightRockyPlains = 5;
 
         @Config.RequiresMcRestart
         @Config.Name("Biome Weight: Rolling Hills")
-        @Config.Comment("Set to 0 to unregister this biome")
+        @Config.Comment("Adjusts the spawn weight, higher numbers make it more common, while 0 completely prevents it from generating")
         @Config.RangeInt(min = 0)
         public int weightRollingHills = 5;
 
         @Config.RequiresMcRestart
         @Config.Name("Biome Weight: Snowy Coniferous Forest")
-        @Config.Comment("Set to 0 to unregister this biome")
+        @Config.Comment("Adjusts the spawn weight, higher numbers make it more common, while 0 completely prevents it from generating")
         @Config.RangeInt(min = 0)
         public int weightSnowyConiferousForest = 5;
 
         @Config.RequiresMcRestart
         @Config.Name("Biome Weight: Thicket")
-        @Config.Comment("Set to 0 to unregister this biome")
+        @Config.Comment("Adjusts the spawn weight, higher numbers make it more common, while 0 completely prevents it from generating")
         @Config.RangeInt(min = 0)
         public int weightThicket = 3;
 
         @Config.RequiresMcRestart
         @Config.Name("Biome Weight: Wasteland")
-        @Config.Comment("Set to 0 to unregister this biome")
+        @Config.Comment("Adjusts the spawn weight, higher numbers make it more common, while 0 completely prevents it from generating")
         @Config.RangeInt(min = 0)
         public int weightWasteland = 4;
 
         @Config.RequiresMcRestart
         @Config.Name("Biome Weight: Woodlands")
-        @Config.Comment("Set to 0 to unregister this biome")
+        @Config.Comment("Adjusts the spawn weight, higher numbers make it more common, while 0 completely prevents it from generating")
         @Config.RangeInt(min = 0)
         public int weightWoodlands = 5;
 
