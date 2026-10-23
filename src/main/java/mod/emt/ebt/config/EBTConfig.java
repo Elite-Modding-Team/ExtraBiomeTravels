@@ -267,6 +267,31 @@ public class EBTConfig {
         public int weightWoodlands = 5;
 
         @Config.RequiresMcRestart
+        @Config.Name("Sub-Biome Enable: Autumnal Oak Forest Hills")
+        @Config.Comment({"[Requires Autumnal Oak Forest] Set to false to unregister this sub-biome", "Note that sub-biomes cannot have their spawn weight adjusted!"})
+        public boolean enableAutumnalOakForestHills = true;
+
+        @Config.RequiresMcRestart
+        @Config.Name("Sub-Biome Enable: Cypress Forest Hills")
+        @Config.Comment({"[Requires Cypress Forest] Set to false to unregister this sub-biome", "Note that sub-biomes cannot have their spawn weight adjusted!"})
+        public boolean enableCypressForestHills = true;
+
+        @Config.RequiresMcRestart
+        @Config.Name("Sub-Biome Enable: Glacier Spikes")
+        @Config.Comment({"[Requires Glacier] Set to false to unregister this sub-biome", "Note that sub-biomes cannot have their spawn weight adjusted!"})
+        public boolean enableGlacierSpikes = true;
+
+        @Config.RequiresMcRestart
+        @Config.Name("Sub-Biome Enable: Prairie Shrublands")
+        @Config.Comment({"[Requires Prairie] Set to false to unregister this sub-biome", "Note that sub-biomes cannot have their spawn weight adjusted!"})
+        public boolean enablePrairieShrublands = true;
+
+        @Config.RequiresMcRestart
+        @Config.Name("Sub-Biome Enable: Wooded Red Desert")
+        @Config.Comment({"[Requires Red Desert] Set to false to unregister this sub-biome", "Note that sub-biomes cannot have their spawn weight adjusted!"})
+        public boolean enableWoodedRedDesert = true;
+
+        @Config.RequiresMcRestart
         @Config.Name("Village Generation: Autumnal Grove")
         public boolean villageGenAutumnalGrove = false;
 

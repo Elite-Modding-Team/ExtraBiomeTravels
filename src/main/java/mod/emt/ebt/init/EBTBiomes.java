@@ -55,7 +55,9 @@ public class EBTBiomes {
         }
         if (EBTConfig.BIOMES.enableAutumnalOakForest) {
             registerBiome(AUTUMNAL_OAK_FOREST, "autumnal_oak_forest", EBTConfig.BIOMES.villageGenAutumnalOakForest, Type.DENSE, Type.FOREST);
-            registerSubBiome(AUTUMNAL_OAK_FOREST_HILLS, AUTUMNAL_OAK_FOREST, "autumnal_oak_forest_hills", EBTConfig.BIOMES.villageGenAutumnalOakForest, Type.DENSE, Type.FOREST, Type.HILLS);
+            if (EBTConfig.BIOMES.enableAutumnalOakForestHills) {
+                registerSubBiome(AUTUMNAL_OAK_FOREST_HILLS, AUTUMNAL_OAK_FOREST, "autumnal_oak_forest_hills", EBTConfig.BIOMES.villageGenAutumnalOakForest, Type.DENSE, Type.FOREST, Type.HILLS);
+            }
             registerBiomeSpawn(AUTUMNAL_OAK_FOREST, EBTConfig.BIOMES.weightAutumnalOakForest, BiomeType.COOL);
             registerBiomeSpawn(AUTUMNAL_OAK_FOREST, EBTConfig.BIOMES.weightAutumnalOakForest, BiomeType.WARM);
         }
@@ -70,7 +72,9 @@ public class EBTBiomes {
         }
         if (EBTConfig.BIOMES.enableCypressForest) {
             registerBiome(CYPRESS_FOREST, "cypress_forest", EBTConfig.BIOMES.villageGenCypressForest, Type.DENSE, Type.FOREST);
-            registerSubBiome(CYPRESS_FOREST_HILLS, CYPRESS_FOREST, "cypress_forest_hills", EBTConfig.BIOMES.villageGenCypressForest, Type.DENSE, Type.FOREST, Type.HILLS);
+            if (EBTConfig.BIOMES.enableCypressForestHills) {
+                registerSubBiome(CYPRESS_FOREST_HILLS, CYPRESS_FOREST, "cypress_forest_hills", EBTConfig.BIOMES.villageGenCypressForest, Type.DENSE, Type.FOREST, Type.HILLS);
+            }
             registerBiomeSpawn(CYPRESS_FOREST, EBTConfig.BIOMES.weightCypressForest, BiomeType.COOL);
             registerBiomeSpawn(CYPRESS_FOREST, EBTConfig.BIOMES.weightCypressForest, BiomeType.WARM);
         }
@@ -85,7 +89,9 @@ public class EBTBiomes {
         }
         if (EBTConfig.BIOMES.enableGlacier) {
             registerBiome(GLACIER, "glacier", EBTConfig.BIOMES.villageGenGlacier, Type.COLD, Type.HILLS, Type.MOUNTAIN, Type.SNOWY);
-            registerSubBiome(GLACIER_SPIKES, GLACIER, "glacier_spikes", EBTConfig.BIOMES.villageGenGlacier, Type.COLD, Type.HILLS, Type.MOUNTAIN, Type.SNOWY);
+            if (EBTConfig.BIOMES.enableGlacierSpikes) {
+                registerSubBiome(GLACIER_SPIKES, GLACIER, "glacier_spikes", EBTConfig.BIOMES.villageGenGlacier, Type.COLD, Type.HILLS, Type.MOUNTAIN, Type.SNOWY);
+            }
             registerBiomeSpawn(GLACIER, EBTConfig.BIOMES.weightGlacier, BiomeType.ICY);
         }
         if (EBTConfig.BIOMES.enableLushJungle) {
@@ -104,7 +110,9 @@ public class EBTBiomes {
         }
         if (EBTConfig.BIOMES.enablePrairie) {
             registerBiome(PRAIRIE, "prairie", EBTConfig.BIOMES.villageGenPrairie, Type.DRY, Type.HOT, Type.PLAINS, Type.SAVANNA);
-            registerSubBiome(PRAIRIE_SHRUBLANDS, PRAIRIE, "prairie_shrublands", EBTConfig.BIOMES.villageGenPrairie, Type.DRY, Type.HOT, Type.PLAINS, Type.SAVANNA, Type.SPARSE);
+            if (EBTConfig.BIOMES.enablePrairieShrublands) {
+                registerSubBiome(PRAIRIE_SHRUBLANDS, PRAIRIE, "prairie_shrublands", EBTConfig.BIOMES.villageGenPrairie, Type.DRY, Type.HOT, Type.PLAINS, Type.SAVANNA, Type.SPARSE);
+            }
             registerBiomeSpawn(PRAIRIE, EBTConfig.BIOMES.weightPrairie, BiomeType.DESERT);
             registerBiomeSpawn(PRAIRIE, EBTConfig.BIOMES.weightPrairie, BiomeType.WARM);
         }
@@ -114,7 +122,9 @@ public class EBTBiomes {
         }
         if (EBTConfig.BIOMES.enableRedDesert) {
             registerBiome(RED_DESERT, "red_desert", EBTConfig.BIOMES.villageGenRedDesert, Type.DEAD, Type.DRY, Type.HOT, Type.SANDY);
-            registerSubBiome(WOODED_RED_DESERT, RED_DESERT, "wooded_red_desert", EBTConfig.BIOMES.villageGenRedDesert, Type.DRY, Type.HILLS, Type.HOT, Type.SANDY, Type.SPARSE);
+            if (EBTConfig.BIOMES.enableWoodedRedDesert) {
+                registerSubBiome(WOODED_RED_DESERT, RED_DESERT, "wooded_red_desert", EBTConfig.BIOMES.villageGenRedDesert, Type.DRY, Type.HILLS, Type.HOT, Type.SANDY, Type.SPARSE);
+            }
             registerBiomeSpawn(RED_DESERT, EBTConfig.BIOMES.weightRedDesert, BiomeType.DESERT);
         }
         if (EBTConfig.BIOMES.enableRedRockDrylands) {
