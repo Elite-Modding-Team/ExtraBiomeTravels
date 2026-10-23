@@ -80,6 +80,11 @@ public class EBTConfig {
         public boolean enableMountainousCrag = true;
 
         @Config.RequiresMcRestart
+        @Config.Name("Biome Enable: Plains Plateau")
+        @Config.Comment("Set to false to unregister this biome")
+        public boolean enablePlainsPlateau = true;
+
+        @Config.RequiresMcRestart
         @Config.Name("Biome Enable: Prairie")
         @Config.Comment("Set to false to unregister this biome")
         public boolean enablePrairie = true;
@@ -199,6 +204,12 @@ public class EBTConfig {
         @Config.Comment("Adjusts the spawn weight, higher numbers make it more common, while 0 completely prevents it from generating")
         @Config.RangeInt(min = 0)
         public int weightMountainousCrag = 3;
+
+        @Config.RequiresMcRestart
+        @Config.Name("Biome Weight: Plains Plateau")
+        @Config.Comment("Adjusts the spawn weight, higher numbers make it more common, while 0 completely prevents it from generating")
+        @Config.RangeInt(min = 0)
+        public int weightPlainsPlateau = 3;
 
         @Config.RequiresMcRestart
         @Config.Name("Biome Weight: Prairie")
@@ -334,6 +345,10 @@ public class EBTConfig {
         @Config.RequiresMcRestart
         @Config.Name("Village Generation: Mountainous Crag")
         public boolean villageGenMountainousCrag = false;
+
+        @Config.RequiresMcRestart
+        @Config.Name("Village Generation: Plains Plateau")
+        public boolean villageGenPlainsPlateau = false;
 
         @Config.RequiresMcRestart
         @Config.Name("Village Generation: Prairie")

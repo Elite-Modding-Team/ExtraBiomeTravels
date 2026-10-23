@@ -3,7 +3,6 @@
 - **Frozen Forest** - Vanilla forest but with white leaves (based on Bedrock Edition) and small icicles
 - **Ice Wasteland** - Ice version of the Mesa biomes
 - **Marsh** - Swampy area with Bald Cypress trees around (maybe a new tree type?)
-- **Rocky Plateau** - Plateau grass area with stone
 - **Scalewood Marsh** - Full of scalewood trees (maybe others?) and very marshy
 - **Tundra** - Flat plains with red grass, snow, spruce, fir, red oak, and brown oak trees
 - Forest counterpart of the Lush Jungle?

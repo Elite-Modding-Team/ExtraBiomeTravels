@@ -32,6 +32,7 @@ public class EBTBiomes {
     public static Biome LUSH_JUNGLE = new EBTBiomeLushJungle();
     public static Biome MAPLE_SHRUBLANDS = new EBTBiomeMapleShrublands();
     public static Biome MOUNTAINOUS_CRAG = new EBTBiomeMountainousCrag();
+    public static Biome PLAINS_PLATEAU = new EBTBiomePlainsPlateau();
     public static Biome PRAIRIE = new EBTBiomePrairie();
     public static Biome PRAIRIE_SHRUBLANDS = new EBTBiomePrairieShrublands();
     public static Biome RAINFOREST = new EBTBiomeRainforest();
@@ -107,6 +108,11 @@ public class EBTBiomes {
             registerBiome(MOUNTAINOUS_CRAG, "mountainous_crag", EBTConfig.BIOMES.villageGenMountainousCrag, Type.COLD, Type.HILLS, Type.MOUNTAIN);
             registerBiomeSpawn(MOUNTAINOUS_CRAG, EBTConfig.BIOMES.weightMountainousCrag, BiomeType.COOL);
             registerBiomeSpawn(MOUNTAINOUS_CRAG, EBTConfig.BIOMES.weightMountainousCrag, BiomeType.WARM);
+        }
+        if (EBTConfig.BIOMES.enablePlainsPlateau) {
+            registerBiome(PLAINS_PLATEAU, "plains_plateau", EBTConfig.BIOMES.villageGenPlainsPlateau, Type.HILLS, Type.HOT, Type.MOUNTAIN, Type.PLAINS);
+            registerBiomeSpawn(PLAINS_PLATEAU, EBTConfig.BIOMES.weightPlainsPlateau, BiomeType.COOL);
+            registerBiomeSpawn(PLAINS_PLATEAU, EBTConfig.BIOMES.weightPlainsPlateau, BiomeType.WARM);
         }
         if (EBTConfig.BIOMES.enablePrairie) {
             registerBiome(PRAIRIE, "prairie", EBTConfig.BIOMES.villageGenPrairie, Type.DRY, Type.HOT, Type.PLAINS, Type.SAVANNA);

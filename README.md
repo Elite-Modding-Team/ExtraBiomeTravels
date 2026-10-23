@@ -26,6 +26,7 @@ The mod also features its own content with additional biomes on the way to make 
 - **Lush Jungle**
 - **Maple Shrublands**
 - **Mountainous Crag**
+- **Plains Plateau**
 - **Prairie**
 - **Rainforest**
 - **Red Desert**
