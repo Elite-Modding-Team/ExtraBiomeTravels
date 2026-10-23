@@ -6,4 +6,3 @@
 - Added config options to disable sub-biomes (spawn weight will not be adjustable due to limitations).
 ### Changed
 - Updated several blocks to have more fitting map colors.
-### Fixed
