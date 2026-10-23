@@ -13,6 +13,7 @@ import net.minecraft.block.properties.PropertyInteger;
 import net.minecraft.block.state.BlockStateContainer;
 import net.minecraft.block.state.IBlockState;
 import net.minecraft.init.Blocks;
+import net.minecraft.item.ItemStack;
 import net.minecraft.util.EnumFacing;
 import net.minecraft.util.IStringSerializable;
 import net.minecraft.util.math.AxisAlignedBB;
@@ -25,7 +26,7 @@ import net.minecraftforge.event.terraingen.TerrainGen;
 import org.jetbrains.annotations.NotNull;
 
 @SuppressWarnings("deprecation")
-public class EBTBlockSapling extends BlockBush implements IGrowable {
+public class EBTBlockSapling extends BlockBush implements IGrowable, IBurnableFuel {
     public static final PropertyInteger STAGE = PropertyInteger.create("stage", 0, 1);
     protected static final AxisAlignedBB AABB = new AxisAlignedBB(0.1D, 0.0D, 0.1D, 0.9D, 0.8D, 0.9D);
     public boolean flammable;
@@ -368,5 +369,10 @@ public class EBTBlockSapling extends BlockBush implements IGrowable {
         public @NotNull String getName() {
             return this.name;
         }
+    }
+
+    @Override
+    public int getBlockBurnTime(ItemStack itemStack) {
+        return 100; // 0.5 items
     }
 }

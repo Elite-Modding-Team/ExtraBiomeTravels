@@ -18,7 +18,6 @@ import net.minecraft.item.crafting.IRecipe;
 import net.minecraftforge.client.event.ModelRegistryEvent;
 import net.minecraftforge.client.model.ModelLoader;
 import net.minecraftforge.event.RegistryEvent;
-import net.minecraftforge.event.furnace.FurnaceFuelBurnTimeEvent;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
 import net.minecraftforge.fml.common.registry.GameRegistry;
@@ -26,6 +25,7 @@ import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
 import net.minecraftforge.oredict.OreDictionary;
 import net.minecraftforge.registries.IForgeRegistry;
+import org.jetbrains.annotations.NotNull;
 
 import java.util.Objects;
 
@@ -46,16 +46,23 @@ public class EBTRegistry {
         IForgeRegistry<Item> registry = event.getRegistry();
         EBTItems.initItems();
         EBTItems.MOD_ITEMS.forEach(registry::register);
-
         EBTBlocks.MOD_BLOCKS.stream()
                 .filter(block -> !(block instanceof BlockDoor))
                 .filter(block -> !(block instanceof BlockSlab))
-                .forEach(block -> registry.register(new ItemBlock(block)
-                        .setRegistryName(Objects.requireNonNull(block.getRegistryName()))
-                        .setTranslationKey(block.getTranslationKey())
-                        .setCreativeTab(block.getCreativeTab())
+                .forEach(block -> registry.register(new ItemBlock(block) {
+                            @Override
+                            public int getItemBurnTime(@NotNull ItemStack itemStack) {
+                                if (block instanceof IBurnableFuel) {
+                                    return ((IBurnableFuel) block).getBlockBurnTime(itemStack);
+                                } else {
+                                    return super.getItemBurnTime(itemStack);
+                                }
+                            }
+                        }
+                                .setRegistryName(Objects.requireNonNull(block.getRegistryName()))
+                                .setTranslationKey(block.getTranslationKey())
+                                .setCreativeTab(block.getCreativeTab())
                 ));
-
         registerOreDictionaries();
     }
 
@@ -104,51 +111,6 @@ public class EBTRegistry {
         ModelLoader.setCustomStateMapper(EBTBlocks.red_rock_cobblestone_wall, (new StateMap.Builder()).ignore(EBTBlockWall.VARIANT).build());
         ModelLoader.setCustomStateMapper(EBTBlocks.crag_rock_wall, (new StateMap.Builder()).ignore(EBTBlockWall.VARIANT).build());
         ModelLoader.setCustomStateMapper(EBTBlocks.red_rock_wall, (new StateMap.Builder()).ignore(EBTBlockWall.VARIANT).build());
-    }
-
-    @SubscribeEvent
-    public static void registerFuels(FurnaceFuelBurnTimeEvent event) {
-        if (event.getItemStack().getItem() == Item.getItemFromBlock(EBTBlocks.bald_cypress_sapling)) {
-            event.setBurnTime(100); // 0.5 items
-        } else if (event.getItemStack().getItem() == Item.getItemFromBlock(EBTBlocks.brown_autumnal_oak_sapling)) {
-            event.setBurnTime(100); // 0.5 items
-        } else if (event.getItemStack().getItem() == Item.getItemFromBlock(EBTBlocks.citrine_autumnal_sapling)) {
-            event.setBurnTime(100); // 0.5 items
-        } else if (event.getItemStack().getItem() == Item.getItemFromBlock(EBTBlocks.cypress_sapling)) {
-            event.setBurnTime(100); // 0.5 items
-        } else if (event.getItemStack().getItem() == Item.getItemFromBlock(EBTBlocks.douglas_fir_button)) {
-            event.setBurnTime(100); // 0.5 items
-        } else if (event.getItemStack().getItem() == Item.getItemFromBlock(EBTBlocks.goldenrod_autumnal_sapling)) {
-            event.setBurnTime(100); // 0.5 items
-        } else if (event.getItemStack().getItem() == Item.getItemFromBlock(EBTBlocks.green_autumnal_oak_sapling)) {
-            event.setBurnTime(100); // 0.5 items
-        } else if (event.getItemStack().getItem() == Item.getItemFromBlock(EBTBlocks.japanese_maple_sapling)) {
-            event.setBurnTime(100); // 0.5 items
-        } else if (event.getItemStack().getItem() == Item.getItemFromBlock(EBTBlocks.japanese_maple_shrub_sapling)) {
-            event.setBurnTime(100); // 0.5 items
-        } else if (event.getItemStack().getItem() == Item.getItemFromBlock(EBTBlocks.orange_autumnal_oak_sapling)) {
-            event.setBurnTime(100); // 0.5 items
-        } else if (event.getItemStack().getItem() == Item.getItemFromBlock(EBTBlocks.peach_sakura_sapling)) {
-            event.setBurnTime(100); // 0.5 items
-        } else if (event.getItemStack().getItem() == Item.getItemFromBlock(EBTBlocks.purple_autumnal_oak_sapling)) {
-            event.setBurnTime(100); // 0.5 items
-        } else if (event.getItemStack().getItem() == Item.getItemFromBlock(EBTBlocks.rainbow_eucalyptus_sapling)) {
-            event.setBurnTime(100); // 0.5 items
-        } else if (event.getItemStack().getItem() == Item.getItemFromBlock(EBTBlocks.red_autumnal_oak_sapling)) {
-            event.setBurnTime(100); // 0.5 items
-        } else if (event.getItemStack().getItem() == Item.getItemFromBlock(EBTBlocks.scalewood_sapling)) {
-            event.setBurnTime(100); // 0.5 items
-        } else if (event.getItemStack().getItem() == Item.getItemFromBlock(EBTBlocks.umber_autumnal_sapling)) {
-            event.setBurnTime(100); // 0.5 items
-        } else if (event.getItemStack().getItem() == Item.getItemFromBlock(EBTBlocks.vermillion_autumnal_sapling)) {
-            event.setBurnTime(100); // 0.5 items
-        } else if (event.getItemStack().getItem() == Item.getItemFromBlock(EBTBlocks.wattle_sapling)) {
-            event.setBurnTime(100); // 0.5 items
-        } else if (event.getItemStack().getItem() == Item.getItemFromBlock(EBTBlocks.white_fir_sapling)) {
-            event.setBurnTime(100); // 0.5 items
-        } else if (event.getItemStack().getItem() == Item.getItemFromBlock(EBTBlocks.yellow_autumnal_oak_sapling)) {
-            event.setBurnTime(100); // 0.5 items
-        }
     }
 
     public static void registerOreDictionaries() {
