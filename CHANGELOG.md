@@ -3,4 +3,5 @@
 ### Added
 - Added separate config options to disable biomes rather than depending on a weight of 0.
 ### Changed
+- Updated several blocks to have more fitting map colors.
 ### Fixed
