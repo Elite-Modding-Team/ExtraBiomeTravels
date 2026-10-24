@@ -165,7 +165,6 @@ public class EBTWorldGenRainbowEucalyptusTree extends WorldGenAbstractTree {
 
         BlockPos crown = pos.add(0, trunkHeight, 0);
         generateLeafCluster(gen, crown, 4, 3);
-        pruneLeaves(gen);
         return gen;
     }
 
@@ -184,34 +183,12 @@ public class EBTWorldGenRainbowEucalyptusTree extends WorldGenAbstractTree {
 
                     BlockPos leafPos = center.add(dx, layer, dz);
 
-                    if (!gen.woodSet.contains(leafPos)
-                            && hasNearbyWood(gen, leafPos, 4)) {
+                    if (!gen.woodSet.contains(leafPos)) {
                         addLeaves(gen, leafPos);
                     }
                 }
             }
         }
-    }
-
-    private void pruneLeaves(TreeGen gen) {
-        gen.leaves.removeIf(leafPos -> !hasNearbyWood(gen, leafPos, 4));
-        gen.leafSet.retainAll(gen.leaves);
-    }
-
-    private boolean hasNearbyWood(TreeGen gen, BlockPos leaf, int range) {
-        for (int dx = -range; dx <= range; dx++) {
-            for (int dy = -range; dy <= range; dy++) {
-                for (int dz = -range; dz <= range; dz++) {
-                    if (Math.max(Math.abs(dx), Math.max(Math.abs(dy), Math.abs(dz))) > range) {
-                        continue;
-                    }
-                    if (gen.woodSet.contains(leaf.add(dx, dy, dz))) {
-                        return true;
-                    }
-                }
-            }
-        }
-        return false;
     }
 
     private void addLeaves(TreeGen gen, BlockPos pos) {

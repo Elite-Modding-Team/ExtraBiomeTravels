@@ -2,9 +2,9 @@ package mod.emt.ebt.world.biome;
 
 import java.util.Random;
 
-import mod.emt.ebt.init.EBTBiomes;
 import mod.emt.ebt.world.feature.EBTWorldGenGlacierIceSpike;
-import net.minecraft.block.Block;
+import net.minecraft.block.material.Material;
+import net.minecraft.block.state.IBlockState;
 import net.minecraft.entity.monster.EntityPolarBear;
 import net.minecraft.entity.monster.EntitySkeleton;
 import net.minecraft.entity.monster.EntityStray;
@@ -65,68 +65,70 @@ public class EBTBiomeGlacier extends Biome {
     }
 
     @Override
-    public void genTerrainBlocks(@NotNull World world, @NotNull Random rand, @NotNull ChunkPrimer primer, int chunkX, int chunkZ, double noiseVal) {
-        super.genTerrainBlocks(world, rand, primer, chunkX, chunkZ, noiseVal);
-        int[][] surface = new int[16][16];
+    public void genTerrainBlocks(World world, Random rand, @NotNull ChunkPrimer chunkPrimer, int x, int z, double noiseVal) {
+        int i = world.getSeaLevel();
+        IBlockState state = this.topBlock;
+        IBlockState state1 = this.fillerBlock;
+        int j = -1;
+        int k = (int) (noiseVal / 3.0D + 3.0D + rand.nextDouble() * 0.25D);
+        int l = x & 15;
+        int i1 = z & 15;
+        BlockPos.MutableBlockPos pos = new BlockPos.MutableBlockPos();
 
-        for (int x = 0; x < 16; x++) {
-            for (int z = 0; z < 16; z++) {
-                surface[x][z] = -1;
-                for (int y = 255; y >= 0; y--) {
-                    if (primer.getBlockState(x, y, z).getBlock() != Blocks.AIR) {
-                        surface[x][z] = y;
-                        break;
+        for (int j1 = 255; j1 >= 0; --j1) {
+            if (j1 <= rand.nextInt(5)) {
+                chunkPrimer.setBlockState(i1, j1, l, BEDROCK);
+            } else {
+                IBlockState state2 = chunkPrimer.getBlockState(i1, j1, l);
+
+                if (state2.getMaterial() == Material.AIR) {
+                    j = -1;
+                } else if (state2.getBlock() == Blocks.STONE) {
+                    if (j == -1) {
+                        if (k <= 0) {
+                            state = AIR;
+                            state1 = STONE;
+                        } else if (j1 >= i - 4 && j1 <= i + 1) {
+                            state = this.topBlock;
+                            state1 = this.fillerBlock;
+                        }
+
+                        if (j1 < i && (state == null || state.getMaterial() == Material.AIR)) {
+                            if (this.getTemperature(pos.setPos(x, j1, z)) < 0.15F) {
+                                state = ICE;
+                            } else {
+                                state = WATER;
+                            }
+                        }
+
+                        j = k;
+
+                        if (j1 >= i - 1) {
+                            chunkPrimer.setBlockState(i1, j1, l, state);
+                        } else if (j1 < i - 7 - k) {
+                            state = AIR;
+                            state1 = STONE;
+                            chunkPrimer.setBlockState(i1, j1, l, GRAVEL);
+                        } else {
+                            chunkPrimer.setBlockState(i1, j1, l, state1);
+                        }
+                    } else if (j > 0) {
+                        --j;
+                        chunkPrimer.setBlockState(i1, j1, l, state1);
+
+                        if (j == 0 && state == fillerBlock && k > 0) {
+                            j = rand.nextInt(4) + Math.max(0, j1 - 63);
+                            state = fillerBlock;
+                        }
+
+                        if (j == 0 && state1 == fillerBlock && k > 0) {
+                            j = rand.nextInt(4) + Math.max(0, j1 - 63);
+                            state1 = fillerBlock;
+                        }
                     }
                 }
             }
         }
-
-        for (int x = 0; x < 16; x++) {
-            for (int z = 0; z < 16; z++) {
-                int surfaceY = surface[x][z];
-
-                if (surfaceY < 1) {
-                    continue;
-                }
-
-                int worldX = chunkX * 16 + x;
-                int worldZ = chunkZ * 16 + z;
-                double variation = smoothNoise(worldX, worldZ, 24.0);
-
-                int depth = 11 + (int) Math.round(variation * 3.0);
-                depth = Math.max(8, Math.min(14, depth));
-
-                for (int y = surfaceY - 1; y >= Math.max(1, surfaceY - depth); y--) {
-                    Block block = primer.getBlockState(x, y, z).getBlock();
-                    if (block == Blocks.STONE || block == Blocks.GRASS || block == Blocks.DIRT) {
-                        primer.setBlockState(x, y, z, Blocks.PACKED_ICE.getDefaultState());
-                    }
-                }
-            }
-        }
-    }
-
-    private static double smoothNoise(int x, int z, double scale) {
-        int gx = (int) Math.floor(x / scale);
-        int gz = (int) Math.floor(z / scale);
-        double fx = x / scale - gx;
-        double fz = z / scale - gz;
-        fx = fx * fx * (3.0 - 2.0 * fx);
-        fz = fz * fz * (3.0 - 2.0 * fz);
-        double a = lattice(gx, gz);
-        double b = lattice(gx + 1, gz);
-        double c = lattice(gx, gz + 1);
-        double d = lattice(gx + 1, gz + 1);
-        double ab = a + (b - a) * fx;
-        double cd = c + (d - c) * fx;
-        return ab + (cd - ab) * fz;
-    }
-
-    private static double lattice(int x, int z) {
-        long n = x * 341873128712L + z * 132897987541L;
-        n = (n ^ (n >> 13)) * 1274126177L;
-        n = n ^ (n >> 16);
-        return ((n & 0x7fffffffL) / (double) 0x3fffffffL) - 1.0;
     }
 
     @Override

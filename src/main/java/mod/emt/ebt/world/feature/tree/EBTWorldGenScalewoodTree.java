@@ -133,7 +133,6 @@ public class EBTWorldGenScalewoodTree extends WorldGenAbstractTree {
             }
         }
 
-        pruneLeaves(gen);
         return gen;
     }
 
@@ -207,7 +206,7 @@ public class EBTWorldGenScalewoodTree extends WorldGenAbstractTree {
                 if ((Math.abs(dx) == LEAF_RADIUS && Math.abs(dz) == LEAF_RADIUS) || (Math.abs(dx) == LEAF_RADIUS && Math.abs(dz) == LEAF_RADIUS - 1) || (Math.abs(dx) == LEAF_RADIUS - 1 && Math.abs(dz) == LEAF_RADIUS)) {
                     continue;
                 }
-                addLeafIfSupported(gen, center.add(dx, 0, dz));
+                addLeaves(gen, center.add(dx, 0, dz));
             }
         }
 
@@ -216,38 +215,10 @@ public class EBTWorldGenScalewoodTree extends WorldGenAbstractTree {
                 if (Math.abs(dx) == LEAF_RADIUS - 1 && Math.abs(dz) == LEAF_RADIUS - 1) {
                     continue;
                 }
-                addLeafIfSupported(gen, center.add(dx, 1, dz));
-                addLeafIfSupported(gen, center.add(dx, -1, dz));
+                addLeaves(gen, center.add(dx, 1, dz));
+                addLeaves(gen, center.add(dx, -1, dz));
             }
         }
-    }
-
-    private void addLeafIfSupported(TreeGen gen, BlockPos pos) {
-        if (!gen.woodSet.contains(pos) && hasNearbyWood(gen, pos, 4)) {
-            addLeaves(gen, pos);
-        }
-    }
-
-    private void pruneLeaves(TreeGen gen) {
-        gen.leaves.removeIf(leafPos -> !hasNearbyWood(gen, leafPos, 4));
-        gen.leafSet.retainAll(gen.leaves);
-    }
-
-    private boolean hasNearbyWood(TreeGen gen, BlockPos leaf, int range) {
-        for (int dx = -range; dx <= range; dx++) {
-            for (int dy = -range; dy <= range; dy++) {
-                for (int dz = -range; dz <= range; dz++) {
-                    if (Math.max(Math.abs(dx), Math.max(Math.abs(dy), Math.abs(dz))) > range) {
-                        continue;
-                    }
-                    if (gen.woodSet.contains(leaf.add(dx, dy, dz))) {
-                        return true;
-                    }
-                }
-            }
-        }
-
-        return false;
     }
 
     private void addLeaves(TreeGen gen, BlockPos pos) {

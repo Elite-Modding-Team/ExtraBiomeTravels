@@ -2,7 +2,6 @@ package mod.emt.ebt.world.biome;
 
 import mod.emt.ebt.init.EBTBlocks;
 import mod.emt.ebt.world.feature.EBTWorldGenPlant;
-import net.minecraft.block.Block;
 import net.minecraft.block.material.Material;
 import net.minecraft.block.state.IBlockState;
 import net.minecraft.init.Blocks;
@@ -90,73 +89,19 @@ public class EBTBiomeMountainousCrag extends Biome {
                         --j;
                         chunkPrimer.setBlockState(i1, j1, l, state1);
 
-                        if (j == 0 && state == EBTBlocks.crag_rock.getDefaultState() && k > 1) {
+                        if (j == 0 && state == fillerBlock && k > 0) {
                             j = rand.nextInt(4) + Math.max(0, j1 - 63);
-                            state = EBTBlocks.crag_rock.getDefaultState();
+                            state = fillerBlock;
                         }
 
-                        if (j == 0 && state1 == EBTBlocks.crag_rock.getDefaultState() && k > 1) {
+                        if (j == 0 && state1 == fillerBlock && k > 0) {
                             j = rand.nextInt(4) + Math.max(0, j1 - 63);
-                            state1 = EBTBlocks.crag_rock.getDefaultState();
+                            state1 = fillerBlock;
                         }
                     }
                 }
             }
         }
-
-        for (int x1 = 0; x1 < 16; x1++) {
-            for (int z1 = 0; z1 < 16; z1++) {
-                int surfaceY = -1;
-
-                for (int y = 255; y >= 0; y--) {
-                    if (chunkPrimer.getBlockState(x1, y, z1).getMaterial() != Material.AIR) {
-                        surfaceY = y;
-                        break;
-                    }
-                }
-
-                if (surfaceY < 1) {
-                    continue;
-                }
-
-                int worldX = (x & ~15) + x1;
-                int worldZ = (z & ~15) + z1;
-                double variation = smoothNoise(worldX, worldZ, 24.0);
-
-                int depth = 11 + (int) Math.round(variation * 3.0);
-                depth = Math.max(8, Math.min(14, depth));
-
-                for (int y = surfaceY - 1; y >= Math.max(1, surfaceY - depth); y--) {
-                    Block block = chunkPrimer.getBlockState(x1, y, z1).getBlock();
-                    if (block == Blocks.STONE) {
-                        chunkPrimer.setBlockState(x1, y, z1, EBTBlocks.crag_rock.getDefaultState());
-                    }
-                }
-            }
-        }
-    }
-
-    private static double smoothNoise(int x, int z, double scale) {
-        int gx = (int) Math.floor(x / scale);
-        int gz = (int) Math.floor(z / scale);
-        double fx = x / scale - gx;
-        double fz = z / scale - gz;
-        fx = fx * fx * (3.0 - 2.0 * fx);
-        fz = fz * fz * (3.0 - 2.0 * fz);
-        double a = lattice(gx, gz);
-        double b = lattice(gx + 1, gz);
-        double c = lattice(gx, gz + 1);
-        double d = lattice(gx + 1, gz + 1);
-        double ab = a + (b - a) * fx;
-        double cd = c + (d - c) * fx;
-        return ab + (cd - ab) * fz;
-    }
-
-    private static double lattice(int x, int z) {
-        long n = x * 341873128712L + z * 132897987541L;
-        n = (n ^ (n >> 13)) * 1274126177L;
-        n = n ^ (n >> 16);
-        return ((n & 0x7fffffffL) / (double) 0x3fffffffL) - 1.0;
     }
 
     @Override
