@@ -75,6 +75,11 @@ public class EBTConfig {
         public boolean enableMapleShrublands = true;
 
         @Config.RequiresMcRestart
+        @Config.Name("Biome Enable: Marsh")
+        @Config.Comment("Set to false to unregister this biome")
+        public boolean enableMarsh = true;
+
+        @Config.RequiresMcRestart
         @Config.Name("Biome Enable: Mountainous Crag")
         @Config.Comment("Set to false to unregister this biome")
         public boolean enableMountainousCrag = true;
@@ -198,6 +203,12 @@ public class EBTConfig {
         @Config.Comment("Adjusts the spawn weight, higher numbers make it more common, while 0 completely prevents it from generating")
         @Config.RangeInt(min = 0)
         public int weightMapleShrublands = 4;
+
+        @Config.RequiresMcRestart
+        @Config.Name("Biome Weight: Marsh")
+        @Config.Comment("Adjusts the spawn weight, higher numbers make it more common, while 0 completely prevents it from generating")
+        @Config.RangeInt(min = 0)
+        public int weightMarsh = 2;
 
         @Config.RequiresMcRestart
         @Config.Name("Biome Weight: Mountainous Crag")
@@ -341,6 +352,10 @@ public class EBTConfig {
         @Config.RequiresMcRestart
         @Config.Name("Village Generation: Maple Shrublands")
         public boolean villageGenMapleShrublands = true;
+
+        @Config.RequiresMcRestart
+        @Config.Name("Village Generation: Marsh")
+        public boolean villageGenMarsh = false;
 
         @Config.RequiresMcRestart
         @Config.Name("Village Generation: Mountainous Crag")

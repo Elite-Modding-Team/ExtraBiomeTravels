@@ -31,6 +31,7 @@ public class EBTBiomes {
     public static Biome GLACIER_SPIKES = new EBTBiomeGlacier(true);
     public static Biome LUSH_JUNGLE = new EBTBiomeLushJungle();
     public static Biome MAPLE_SHRUBLANDS = new EBTBiomeMapleShrublands();
+    public static Biome MARSH = new EBTBiomeMarsh();
     public static Biome MOUNTAINOUS_CRAG = new EBTBiomeMountainousCrag();
     public static Biome PLAINS_PLATEAU = new EBTBiomePlainsPlateau();
     public static Biome PRAIRIE = new EBTBiomePrairie();
@@ -103,6 +104,10 @@ public class EBTBiomes {
             registerBiome(MAPLE_SHRUBLANDS, "maple_shrublands", EBTConfig.BIOMES.villageGenMapleShrublands, Type.PLAINS, Type.SPARSE);
             registerBiomeSpawn(MAPLE_SHRUBLANDS, EBTConfig.BIOMES.weightMapleShrublands, BiomeType.COOL);
             registerBiomeSpawn(MAPLE_SHRUBLANDS, EBTConfig.BIOMES.weightMapleShrublands, BiomeType.WARM);
+        }
+        if (EBTConfig.BIOMES.enableMarsh) {
+            registerBiome(MARSH, "marsh", EBTConfig.BIOMES.villageGenMarsh, Type.SWAMP, Type.WET);
+            registerBiomeSpawn(MARSH, EBTConfig.BIOMES.weightMarsh, BiomeType.WARM);
         }
         if (EBTConfig.BIOMES.enableMountainousCrag) {
             registerBiome(MOUNTAINOUS_CRAG, "mountainous_crag", EBTConfig.BIOMES.villageGenMountainousCrag, Type.COLD, Type.HILLS, Type.MOUNTAIN);
