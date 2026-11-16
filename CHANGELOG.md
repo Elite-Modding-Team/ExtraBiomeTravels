@@ -1,4 +1,10 @@
 # Extra Biome Travels Changelog
+## 1.0.2
+### Added
+- Added Marshy Wetlands biome, you can see more info about it on the [wiki](https://github.com/Elite-Modding-Team/ExtraBiomeTravels/wiki/Biomes#marshy-wetlands).
+### Fixed
+- Fixed large lag spikes caused by certain biomes.
+---
 ## 1.0.1
 ### Added
 - Added Plains Plateau biome, you can see more info about it on the [wiki](https://github.com/Elite-Modding-Team/ExtraBiomeTravels/wiki/Biomes#plains-plateau).

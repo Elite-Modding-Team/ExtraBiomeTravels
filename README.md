@@ -25,6 +25,7 @@ The mod also features its own content with additional biomes on the way to make 
 - **Glacier**
 - **Lush Jungle**
 - **Maple Shrublands**
+- **Marshy Wetlands**
 - **Mountainous Crag**
 - **Plains Plateau**
 - **Prairie**

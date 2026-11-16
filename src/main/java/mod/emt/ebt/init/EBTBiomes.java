@@ -105,9 +105,9 @@ public class EBTBiomes {
             registerBiomeSpawn(MAPLE_SHRUBLANDS, EBTConfig.BIOMES.weightMapleShrublands, BiomeType.COOL);
             registerBiomeSpawn(MAPLE_SHRUBLANDS, EBTConfig.BIOMES.weightMapleShrublands, BiomeType.WARM);
         }
-        if (EBTConfig.BIOMES.enableMarsh) {
-            registerBiome(MARSHY_WETLANDS, "marshy_wetlands", EBTConfig.BIOMES.villageGenMarsh, Type.SWAMP, Type.WET);
-            registerBiomeSpawn(MARSHY_WETLANDS, EBTConfig.BIOMES.weightMarsh, BiomeType.WARM);
+        if (EBTConfig.BIOMES.enableMarshyWetlands) {
+            registerBiome(MARSHY_WETLANDS, "marshy_wetlands", EBTConfig.BIOMES.villageGenMarshyWetlands, Type.SWAMP, Type.WET);
+            registerBiomeSpawn(MARSHY_WETLANDS, EBTConfig.BIOMES.weightMarshyWetlands, BiomeType.WARM);
         }
         if (EBTConfig.BIOMES.enableMountainousCrag) {
             registerBiome(MOUNTAINOUS_CRAG, "mountainous_crag", EBTConfig.BIOMES.villageGenMountainousCrag, Type.COLD, Type.HILLS, Type.MOUNTAIN);
