@@ -208,7 +208,7 @@ public class EBTConfig {
         @Config.Name("Biome Weight: Marshy Wetlands")
         @Config.Comment("Adjusts the spawn weight, higher numbers make it more common, while 0 completely prevents it from generating")
         @Config.RangeInt(min = 0)
-        public int weightMarshyWetlands = 2;
+        public int weightMarshyWetlands = 3;
 
         @Config.RequiresMcRestart
         @Config.Name("Biome Weight: Mountainous Crag")
