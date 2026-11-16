@@ -12,18 +12,18 @@ import org.jetbrains.annotations.NotNull;
 
 import java.util.Random;
 
-public class EBTBiomeMarsh extends BiomeSwamp {
-    public static BiomeProperties properties = new BiomeProperties("Marsh");
+public class EBTBiomeMarshyWetlands extends BiomeSwamp {
+    public static BiomeProperties properties = new BiomeProperties("Marshy Wetlands");
 
     static {
         properties.setTemperature(Biomes.SWAMPLAND.getDefaultTemperature());
         properties.setRainfall(Biomes.SWAMPLAND.getRainfall());
         properties.setBaseHeight(-0.1F);
         properties.setHeightVariation(0.0F);
-        properties.setWaterColor(0xFF7A7560);
+        properties.setWaterColor(0x617B64);
     }
 
-    public EBTBiomeMarsh() {
+    public EBTBiomeMarshyWetlands() {
         super(properties);
         this.decorator.flowersPerChunk = 3;
         this.decorator.grassPerChunk = 10;
@@ -57,20 +57,36 @@ public class EBTBiomeMarsh extends BiomeSwamp {
 
         primer.setBlockState(j, surfaceY, i, Blocks.GRASS.getDefaultState());
 
+        /*double dirtNoise = GRASS_COLOR_NOISE.getValue(
+                (double) x * 0.08D,
+                (double) z * 0.08D
+        );
+
+        if (dirtNoise > 0.15D) {
+            primer.setBlockState(j, surfaceY, i, Blocks.DIRT.getStateFromMeta(1));
+        } else {
+            primer.setBlockState(j, surfaceY, i, Blocks.GRASS.getDefaultState());
+        }*/
+
         for (int y = surfaceY - 1; y >= surfaceY - 3; y--) {
             primer.setBlockState(j, y, i, Blocks.DIRT.getDefaultState());
         }
 
         if (puddleNoise > 0.0D) {
             primer.setBlockState(j, surfaceY, i, Blocks.WATER.getDefaultState());
-            if (puddleNoise < 0.12D) {
+            /*if (puddleNoise < 0.12D) {
                 primer.setBlockState(j, surfaceY + 1, i, Blocks.WATERLILY.getDefaultState());
-            }
+            }*/
         }
     }
 
     @Override
     public @NotNull WorldGenAbstractTree getRandomTreeFeature(@NotNull Random rand) {
         return SWAMP_FEATURE;
+    }
+
+    @Override
+    public int getSkyColorByTemp(float currentTemperature) {
+        return super.getModdedBiomeGrassColor(0x65776E);
     }
 }

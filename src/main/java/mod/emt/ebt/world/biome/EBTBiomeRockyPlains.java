@@ -115,4 +115,9 @@ public class EBTBiomeRockyPlains extends BiomePlains {
             }
         }
     }
+
+    /*@Override
+    public int getModdedBiomeGrassColor(int original) {
+        return super.getModdedBiomeGrassColor(0xFF5FAD63);
+    }*/
 }
